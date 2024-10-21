@@ -62,7 +62,7 @@ const verifyUser = async(req,res) => {
 const resendVerificationEmail = async (req, res) => {
         const { token } = req.params;
 
-        const user = await userModel.findOne({
+        const user = await User.findOne({
             'verificationToken.token': token,
         });
 
@@ -70,7 +70,7 @@ const resendVerificationEmail = async (req, res) => {
             return res.status(404).send("User not found");
         }
 
-        const verificationToken = otpGenerator.generate(6, { upperCaseAlphabets: false, specialChars: false });
+        const verificationToken = user.otp();
 
         const expires = new Date();
         expires.setMinutes(expires.getMinutes() + 5);
@@ -113,4 +113,4 @@ const login = async(req,res)=>
     res.json({message:'logged User',token});
 }
 
-module.exports = {register,login};
+module.exports = {register,login,verifyUser,resendVerificationEmail};

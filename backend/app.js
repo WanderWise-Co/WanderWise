@@ -5,7 +5,7 @@ const app = express();
 
 
 //routers
-const jobRouter = require('./routes/jobs')
+// const jobRouter = require('./routes/jobs')
 const AuthRouter = require('./routes/auth')
 // error handler
 const notFoundMiddleware = require('./middleware/not-found');
@@ -16,9 +16,9 @@ app.use(express.json());
 
 // routes
 app.get('/', (req, res) => {
-  res.send('jobs api');
+  res.send('WanderWise');
 });
-app.use('/api/v1/',jobRouter);
+// app.use('/api/v1/',jobRouter);
 app.use('/api/v1/auth',AuthRouter);
 
 app.use(notFoundMiddleware);
@@ -28,6 +28,8 @@ const port = process.env.PORT || 3000;
 
 const start = async () => {
   try {
+    await connectDB(process.env.MONGO_URI);
+    console.log('connected to db');
     app.listen(port, () =>
       console.log(`Server is listening on port ${port}...`)
     );
