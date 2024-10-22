@@ -8,18 +8,18 @@ import Auth from "./Utils/Auth";
 
 function App() {
   
-
   return (
     <>
       <Router>
         <Routes>
+        <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route element={<Auth/>}>
-              <Route path="/home" element={<Home />} />
+              <Route path="/" element={<Home />} />
             </Route>
             <Route path="/signup" element={<Signup />} />
             <Route path="/forgotpassword" element={<ForgotPassword/>}/>
-            <Route path="/*" element ={<Errorpage/>}/>
+            <Route path="/error" element ={<Errorpage/>}/>
         </Routes>
       </Router>
     </>
