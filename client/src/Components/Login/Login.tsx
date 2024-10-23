@@ -8,7 +8,7 @@ import { LoginSocialFacebook } from 'reactjs-social-login';
 import { FacebookLoginButton, GoogleLoginButton } from 'react-social-login-buttons'
 import {useGoogleLogin} from '@react-oauth/google';
 
-const Login = () => {
+export default function Login() {
 
   const [userDetails, setuserDetails] = useState({
     userEmail:"",
@@ -110,5 +110,3 @@ const Login = () => {
     </div>
   )
 }
-
-export default Login;

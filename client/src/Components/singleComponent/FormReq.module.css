@@ -1,0 +1,26 @@
+.datepicker {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #d1d5db; /* Tailwind's 'gray-300' */
+    border-radius: 0.375rem; /* Tailwind's 'rounded-md' */
+  }
+  
+  table {
+    width: 50%;
+    margin-top: 2rem; /* Add space above the table */
+  }
+  
+  td {
+    padding: 1rem;
+    vertical-align: top; /* Align content to the top of each cell */
+  }
+  
+  .label {
+    margin-bottom: 0.5rem; /* Space between label and input */
+  }
+  
+  .textfield {
+    width: 100%;
+  }
+  
+  

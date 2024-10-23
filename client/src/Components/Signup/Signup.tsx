@@ -5,7 +5,7 @@ import { emailRegex, passwordRegex } from '../../Utils/Reg'
 import toast from 'react-hot-toast'
 import axios from 'axios';
 
-const Signup = () => {
+export default function Signup() {
   const [userDetails, setuserDetails] = useState({
     userName:"",
     userEmail:"",
@@ -68,4 +68,3 @@ const Signup = () => {
   )
 }
 
-export default Signup

@@ -1,4 +1,4 @@
-const User = require("../Models/userModels");
+const User = require("../models/User");
 const otpGenerator = require('otp-generator');
 // const bcrypt = require('bcrypt');
 const sendEmail = require('../emailService/email');
@@ -92,25 +92,26 @@ const resendVerificationEmail = async (req, res) => {
 
 const login = async(req,res)=>
 {
-    const{username,password} = req.params;
+    // const{username,password} = req.params;
     
-    if(!username||!password)
-    {
-        throw new BadRequestError("please provide both username and password");
-    }
-    const user = User.findOne({userName:username});
-    if(!user)
-    {
-        throw new UnauthenticatedError("please register first");
-    }
-    const isPasswordcorrect = user.checkPassword(password);
-    if(!isPasswordcorrect)
-    {
-        throw new UnauthenticatedError("invalid credentials!!!!!!");
-    }
-    const token = user.createJWT();
+    // if(!username||!password)
+    // {
+    //     throw new BadRequestError("please provide both username and password");
+    // }
+    // const user = User.findOne({userName:username});
+    // if(!user)
+    // {
+    //     throw new UnauthenticatedError("please register first");
+    // }
+    // const isPasswordcorrect = user.checkPassword(password);
+    // if(!isPasswordcorrect)
+    // {
+    //     throw new UnauthenticatedError("invalid credentials!!!!!!");
+    // }
+    // const token = user.createJWT();
 
-    res.json({message:'logged User',token});
+    // res.json({message:'logged User',token});
+    res.send('logged in');
 }
 
 module.exports = {register,login,verifyUser,resendVerificationEmail};

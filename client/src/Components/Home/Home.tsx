@@ -1,11 +1,16 @@
-
-const Home = () => {
+import styles from './Home.module.css';
+import Header from '../singleComponent/Header'
+import Footer from '../singleComponent/footer'
+import FormReq from '../singleComponent/FormReq'
+export default function Home()  {
   return (
     <>
-    <h1>Home</h1>
-    </>
-    
-  )
-}
+      <Header></Header>
 
-export default Home
+      <FormReq></FormReq>
+      
+      <Footer></Footer>
+
+    </>
+  );
+}
