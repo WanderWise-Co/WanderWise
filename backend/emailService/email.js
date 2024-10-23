@@ -1,5 +1,5 @@
 const nodemailer = require('nodemailer');
-const transpoter = nodemailer.createTransport(
+const transporter = nodemailer.createTransport(
     {
         service:'gmail',
         auth:{
@@ -8,26 +8,28 @@ const transpoter = nodemailer.createTransport(
         }
     }
 )
-const sendEmail = async (to,subject,body)=>{
+const sendEmail = async (to, subject, body) => {
+    console.log('sending email now');
     let mailOption = {
-        to  ,
+        to,
         from: "bharathsindhe03@gmail.com",
         subject,
-        html : body
-    }
-    await new Promise((resolve, reject)=>{
-
-        transpoter.sendMail(mailOption,(err,res)=>{
-            if(err){
+        html: body
+    };
+    console.log('sending email');
+    // Ensure transporter is correctly defined (assume nodemailer)
+    return new Promise((resolve, reject) => {
+        transporter.sendMail(mailOption, (err, res) => {
+            if (err) {
                 console.log(err);
-                
-                reject(err)
-            }else{
+                reject(err);
+            } else {
                 console.log(res);
-                resolve(res)
+                resolve(res);
             }
-        })
-    })
-}
+        });
+    });
+};
+
 
 module.exports = {sendEmail};

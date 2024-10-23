@@ -1,14 +1,14 @@
-const User = require("../Models/userModels");
+const User = require("../models/User");
 const otpGenerator = require('otp-generator');
 // const bcrypt = require('bcrypt');
-const sendEmail = require('../emailService/email');
+const {sendEmail} = require('../emailService/email');
 const {BadRequestError,UnauthenticatedError} = require('../errors/index')
-
+// userModel
 const register = async(req,res)=>
 {
 
-        console.log(req.body);
-        // const { userName, userEmail, userPassword } = req.body;
+        // console.log(req.body);
+        const { userName, userEmail, userPassword } = req.body;
 
         // const isUserExisting = await User.findOne({userEmail : userEmail})
         // if (!isUserExisting) {
@@ -28,13 +28,17 @@ const register = async(req,res)=>
         // console.log(newUser);  
         // await newUser.save(); 
         
-        const User = await User.create({...req.body});
-        const token = User.createJWT();
-
+        const user = await User.create({...req.body});
+        console.log(user);
+        console.log('here');
+        const token = user.createJWT();
+        console.log('again here');
+       
+        console.log(userEmail);
         const emailBody = `<p>Please click on the link to verify your account.<b> http://localhost:3000/User/verify/${verificationToken} </b></p>`
         const subject = `Verification Email`
-
-        await sendEmail(userEmail, subject, emailBody)
+        await sendEmail(userEmail, subject, emailBody);
+        console.log('already here');
         res.json({message: "Verification link sent to User email.",token});
 
     res.send('registered User');
