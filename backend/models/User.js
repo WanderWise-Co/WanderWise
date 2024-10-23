@@ -1,68 +1,65 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken')
-
+const jwt = require('jsonwebtoken');
+const otpGenerator = require('otp-generator'); // Assuming otpGenerator is being used
 
 const userSchema = new mongoose.Schema({
-    userName:{
-        type:String,
-        require:[true,'username is required'],
-        unique:[true,"username already exists"],
-        minlength:10,
-        maxlength:30,
+    userName: {
+        type: String,
+        required: [true, 'username is required'],
+        unique: [true, "username already exists"],
+        minlength: 10,
+        maxlength: 30,
     },
-    userEmail:{
-        type:String,
-        unique:true,
-        require:[true,"email is mandatory"]
-        
+    userEmail: {
+        type: String,
+        unique: true,
+        required: [true, "email is mandatory"]
     },
-    userPassword:{
-        type:String,
-        require:[true,"Password is required"]
+    userPassword: {
+        type: String,
+        required: [true, "Password is required"]
     },
-    isVerfied:{
-        type:Boolean,
-        default:false
+    isVerified: {
+        type: Boolean,
+        default: false
     },
-    OTP_verificationToken:{
-        OTP:String,
-        expires:Date
+    OTP_verificationToken: {
+        OTP: String,
+        expires: Date
     },
-    verificationToken:{
-        token:String,
-        expires:Date
+    verificationToken: {
+        token: String,
+        expires: Date
     }
 });
 
-userSchema.pre('save',async function(next){
-    const salt = bcrypt.genSalt(10);
-    this.password = bcrypt.hash(this.password,salt); //hashing password
+userSchema.pre('save', async function (next) {
+    const salt = await bcrypt.genSalt(10); // await the genSalt function
+    this.userPassword = await bcrypt.hash(this.userPassword, salt); //hashing password
 
     //creating verification token
     this.verificationToken.token = this.otp();
 
     //expiring date
-    this.verificationToken.expires = new Date().setMinutes(expires.getMinutes()+5);
+    this.verificationToken.expires = new Date(new Date().setMinutes(new Date().getMinutes() + 5)); // updated expiry time logic
+
+    next();
 });
 
 //otp generator
-userSchema.methods.otp = ()=>{
-    return otpGenerator.generate(6,{upperCaseAlphabets:false,specialChars:false});
+userSchema.methods.otp = function () {
+    return otpGenerator.generate(6, { upperCaseAlphabets: false, specialChars: false });
 }
-userSchema.methods.checkPassword = async function(newpassword){
-    const match = await bcrypt.compare(newpassword,this.password)
+
+userSchema.methods.checkPassword = async function (newPassword) {
+    const match = await bcrypt.compare(newPassword, this.userPassword); // correct comparison using userPassword
     return match;
-
 }
 
-userSchema.methods.createJWT = async function()
-{
-    return jwt.sign({userId:this._id,name:this.userName});
+userSchema.methods.createJWT = function () {
+    console.log('came here');
+    return jwt.sign({ userId: this._id, name: this.userName }, process.env.JWT_SECRET, { expiresIn: '1h' }); // JWT created
 }
 
-
-
-module.exports = mongoose.model('user',userSchema);
-
-module.exports = userModel;
+module.exports = mongoose.model('User', userSchema);
