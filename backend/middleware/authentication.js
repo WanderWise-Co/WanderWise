@@ -13,8 +13,8 @@ const authMiddle = (req,res,next)=>{
     try {
         console.log('verfying  token');
         const decoded = jwt.verify(token,process.env.JWT_SECRET);
-        const{_id,name} = decoded;
-        req.user = { userId: _id, name: name }
+        // const{_id,name} = decoded;
+        req.user = { _id:decoded.userId,name:decoded.name};
 
         next();
     } catch (error) {
