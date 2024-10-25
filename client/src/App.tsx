@@ -21,7 +21,7 @@ function App() {
         <Route path="/api/v1/home" element={<Home />} />
             <Route path="/api/v1/auth/login" element={<Login />} />
             <Route element={<Auth/>}>
-              <Route path="/api" element={<Home />} />
+              <Route path="/api/v1/planpage" element={<PlanPage/>} />
             </Route>
             <Route path="/api/v1/auth/signup" element={<Signup />} />
             <Route path="/api/v1/auth/forgotpassword" element={<ForgotPassword/>}/>

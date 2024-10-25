@@ -1,6 +1,6 @@
 import Footer from "../singleComponent/Footer";
 import Header from "../singleComponent/Header";
-import styles from "../PlanPage/"
+import styles from "../PlanPage/PlanPage.module.css"
 export default function PlanPage(){
     return(
         <>

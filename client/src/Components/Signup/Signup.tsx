@@ -62,7 +62,7 @@ export default function Signup() {
                 
                 <button onClick={handleSignUp}>Sign Up</button>
             </div>
-            <Link to="/login">Already have an account? Login</Link>
+            <Link to="/api/v1/auth/login">Already have an account? Login</Link>
         </div>
     </div>
   )

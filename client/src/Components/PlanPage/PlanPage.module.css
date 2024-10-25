@@ -1,0 +1,20 @@
+.planPageContainer {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+  }
+  
+  .planDetails {
+    flex: 7; /* 70% width */
+    padding: 20px;
+    background-color: #f5f5f5; /* Light background */
+  }
+  
+  .mapContainer {
+    flex: 3; /* 30% width */
+    padding: 20px;
+    background-color: #fff; /* White background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
