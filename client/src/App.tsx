@@ -23,7 +23,7 @@ function App() {
             <Route element={<Auth/>}>
               <Route path="/api/v1/planpage" element={<PlanPage/>} />
             </Route>
-            <Route path="/api/v1/auth/signup" element={<Signup />} />
+            <Route path="/api/v1/auth/register" element={<Signup />} />
             <Route path="/api/v1/auth/forgotpassword" element={<ForgotPassword/>}/>
             <Route path="api/v1/error" element ={<Errorpage/>}/>
         </Routes>

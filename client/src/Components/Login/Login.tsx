@@ -104,7 +104,7 @@ export default function Login() {
                 <button onClick={handleLogin}>Login</button>
             </div>
             <div className={styles.footer}>
-            <Link to="/api/v1/auth/signup">Don't have an account? Sign Up</Link>
+            <Link to="/api/v1/auth/register">Don't have an account? Sign Up</Link>
             <Link to="/api/v1/auth/forgotpassword">Forgot Password</Link>
             </div>
         </div>
