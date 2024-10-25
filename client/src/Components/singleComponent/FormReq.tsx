@@ -50,6 +50,7 @@ export default function FormReq() {
     });
   };
 
+  
   return (
     <>
       <div className={styles.imageContainer}>
@@ -111,7 +112,7 @@ export default function FormReq() {
           </div>
 
           <div className={styles.buttonContainer}>
-            <Button>
+            <Button href="/planpage">
               Choose plan
               <HiOutlineArrowRight className="ml-2 h-5 w-5" />
             </Button>
