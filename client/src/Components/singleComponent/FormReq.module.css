@@ -1,12 +1,12 @@
 .imageContainer {
-  background-image: url(../../assets/image1.png); /* Your background image path */
+  background-image: url(../../assets/image1.png); /* Adjust the background image path */
   background-size: cover;
   background-position: center;
   height: 100vh;
   width: 100vw;
-  display: flex; /* Center the container */
-  justify-content: center; /* Horizontally center */
-  align-items: center; /* Vertically center */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
@@ -14,26 +14,25 @@
   flex-direction: column;
   gap: 1rem;
   background-color: white;
-  padding: 2rem; /* Padding inside the container */
-  border-radius: 8px; /* Round corners */
-  box-shadow: none; /* Remove shadow from button */
-  width: 60%; /* Width of the form container */
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: none;
+  width: 60%;
 }
 
 .row {
   display: flex;
-  justify-content: space-between; /* Evenly space children */
-  gap: 1rem; /* Space between items */
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap; /* Allow wrapping of items on smaller screens */
 }
 
-.inputField {
-  width: 45%; /* Width for Source and Destination */
-  padding: 10px;
-  flex: 1; /* Allow the field to grow */
+.inputField, .currencyInput {
+  width: 45%;
+  flex: 1;
 }
 
 .currencyInput {
-  width: 45%;
   position: relative;
 }
 
@@ -45,64 +44,110 @@
 }
 
 .datepicker {
-  width: 100%; /* Full width for DatePicker */
+  width: 100%;
   padding: 10px;
   border-radius: 4px;
   border: 1px solid #ccc;
-  transition: border-color 0.3s;
-}
-
-.datepicker:focus {
-  border-color: #ffffff; /* Indigo color */
 }
 
 .buttonContainer {
   display: flex;
-  justify-content: flex-end; /* Align button to the right */
-  align-items: center; /* Center vertically */
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .budgetContainer {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  flex: 1; /* Allow the budget input to grow */
 }
 
 .categoryContainer {
   display: flex;
-  flex-direction: row; /* Arrange categories in a row */
-  justify-content: space-around; /* Space between categories */
+  flex-wrap: wrap;
+  justify-content: space-between;
   gap: 1rem;
+  width: 100%;
 }
 
+/* Category Button Styling */
 .categoryButton {
   border: none;
+  margin-top: 2rem;
   background: none;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0px; /* Space around the button */
-  margin: 0px; /* Add space between category buttons */
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
 }
 
 .buttonImage {
-  width: 100px; /* Icon-like appearance */
-  height: 100px;
-  object-fit: cover;
-  border-radius: 10%; /* Soft look */
+  width: 100%; /* Ensure the image takes up full width of the button */
+  max-width: 80px; /* Limit the maximum width */
+  height: auto;
+  border-radius: 10%; /* Keep a small border radius on the image itself */
   margin-bottom: 5px;
-  transition: transform 0.3s ease, border 0.3s ease; /* Add border transition */
-  border: 2px solid transparent; /* Default no border */
+  transition: transform 0.3s ease;
 }
 
 .selectedImage {
-  width: 100px; /* Keep the size the same as unselected */
-  height: 100px;
-  border: 2px solid rgb(119, 232, 107); 
+  border: 2px solid rgb(119, 232, 107);
 }
 
 .categoryButton:hover .buttonImage {
-  transform: scale(1.1); /* Scale effect on hover */
+  transform: scale(1.1);
+}
+
+.categoryButton span {
+  font-size: 0.875rem; /* Adjust font size for smaller screens */
+  color: #333;
+  word-wrap: break-word;
+  width: 100%; /* Make sure text takes up full width of the button */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .inputField, .currencyInput {
+    width: 100%;
+  }
+
+  .categoryContainer {
+    justify-content: space-between;
+  }
+
+  
+
+  .buttonImage {
+    max-width: 70px; /* Adjust image size on medium screens */
+  }
+
+  .categoryButton span {
+    font-size: 0.85rem; /* Slightly reduce the text size */
+  }
+}
+
+@media (max-width: 480px) {
+  
+
+  .buttonImage {
+    max-width: 60px; /* Reduce image size for small screens */
+  }
+
+  .categoryButton span {
+    font-size: 0.8rem; /* Reduce font size for smaller screens */
+    word-wrap: break-word;
+  }
 }

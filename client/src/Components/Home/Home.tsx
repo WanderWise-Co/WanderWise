@@ -9,8 +9,8 @@ export default function Home()  {
 
       <FormReq></FormReq>
       
-      {/* <Footer></Footer> */}
-
+      <Footer></Footer>
+    
     </>
   );
 }
