@@ -35,7 +35,7 @@ export default function Signup() {
       return;
     }
     try {
-      const response = await axios.post(`${import.meta.env.VITE_BASE_SERVER_URL}/api/v1/auth/register`,userDetails);
+      const response = await axios.post(`${import.meta.env.VITE_BASE_SERVER_URL}/auth/register`,userDetails);
       console.log(response);
     } catch (error) {
       console.log(error);

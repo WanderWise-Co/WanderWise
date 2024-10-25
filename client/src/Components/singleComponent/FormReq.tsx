@@ -3,11 +3,13 @@ import { HiOutlineArrowRight } from "react-icons/hi";
 import TextField from '@mui/material/TextField';
 import DatePicker from "react-datepicker";
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom'; 
 import styles from './FormReq.module.css';
 import "react-datepicker/dist/react-datepicker.css";
 import beach from '../../assets/beach.jpeg';
 import hill from '../../assets/hillstation.jpeg';
 import temple from '../../assets/temple.webp';
+import Auth, { isLoggedin } from "../../Utils/Auth"; // Import isLoggedin separately
 
 const categories = [
   { id: 1, name: 'Beaches', imgSrc: beach },
@@ -34,6 +36,7 @@ export default function FormReq() {
   const [fromDate, setFromDate] = useState<Date | null>(null);
   const [currencySymbol, setCurrencySymbol] = useState('$');
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const navigate = useNavigate(); 
 
   const handleCurrencyChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedCurrency = event.target.value;
@@ -43,14 +46,21 @@ export default function FormReq() {
   const handleCategoryClick = (categoryName: string) => {
     setSelectedCategories((prevSelected) => {
       if (prevSelected.includes(categoryName)) {
-        return prevSelected.filter((cat) => cat !== categoryName); // Deselect if already selected
+        return prevSelected.filter((cat) => cat !== categoryName); 
       } else {
-        return [...prevSelected, categoryName]; // Select category
+        return [...prevSelected, categoryName]; 
       }
     });
   };
 
-  
+  const handleChoosePlanClick = () => {
+    if (isLoggedin()) { 
+      navigate("/api/v1/planpage"); 
+    } else {
+      navigate("/api/v1/auth/login"); 
+    }
+  };
+
   return (
     <>
       <div className={styles.imageContainer}>
@@ -112,7 +122,7 @@ export default function FormReq() {
           </div>
 
           <div className={styles.buttonContainer}>
-            <Button href="/planpage">
+            <Button onClick={handleChoosePlanClick}> 
               Choose plan
               <HiOutlineArrowRight className="ml-2 h-5 w-5" />
             </Button>
