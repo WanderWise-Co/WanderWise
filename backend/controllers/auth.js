@@ -3,42 +3,16 @@ const otpGenerator = require('otp-generator');
 // const bcrypt = require('bcrypt');
 const {sendEmail} = require('../emailService/email');
 const {BadRequestError,UnauthenticatedError} = require('../errors/index')
-// userModel
+
+
 const register = async(req,res)=>
 {
-
-        // console.log(req.body);
         const { userName, userEmail, userPassword } = req.body;
-
-        // const isUserExisting = await User.findOne({userEmail : userEmail})
-        // if (!isUserExisting) {
-        //     return res.status(400).json({message:"User already exists"})
-        // }
-        
-        // const newUser = await User({
-        //     userName : userName, 
-        //     userPassword : hashedPassword, 
-        //     userEmail : userEmail,
-        //     verificationToken:{
-        //         token: verificationToken,
-        //         expires:expires
-        //     }
-        // })
-
-        // console.log(newUser);  
-        // await newUser.save(); 
-        
         const user = await User.create({...req.body});
-        // console.log(user);
-        // const token = user.createJWT();
-       
-        // console.log(userEmail);
         const emailBody = `<p>Please click on the link to verify your account.<b> http://localhost:3000/api/v1/auth/verify/${user.verificationToken.token} </b></p>`
         const subject = `Verification Email`
         await sendEmail(userEmail, subject, emailBody);
         res.json({message: "Verification link sent to User email.",OTP:user.verificationToken.token});
-
-    // res.send('registered User');
 }
 
 const verifyUser = async(req,res) => {
@@ -93,20 +67,20 @@ const resendVerificationEmail = async (req, res) => {
 
 const login = async(req,res)=>
 {
-    const{username,password} = req.body;
+    const{userEmail,userPassword} = req.body;
     
     console.log(req.body);
-    if(!username || !password)
+    if(!userEmail || !userPassword)
     {
         throw new BadRequestError("please provide both username and password");
     }
-    const user = await User.findOne({userName:username});
+    const user = await User.findOne({userEmail:userEmail});
     console.log(user.userEmail);
     if(!user)
     {
         throw new UnauthenticatedError("please register first");
     }
-    const isPasswordcorrect = user.checkPassword(password);
+    const isPasswordcorrect = user.checkPassword(userPassword);
     if(!isPasswordcorrect)
     {
         throw new UnauthenticatedError("invalid credentials!!!!!!");

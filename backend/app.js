@@ -2,6 +2,7 @@ require('dotenv').config();
 require('express-async-errors');
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const connectDB = require('./db/connect');
 
 //routers
@@ -12,6 +13,7 @@ const notFoundMiddleware = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
 
 app.use(express.json());
+app.use(cors({origin: 'http://localhost:5173'}));
 // extra packages
 
 // routes

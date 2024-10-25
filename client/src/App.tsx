@@ -17,14 +17,14 @@ function App() {
     <>
       <Router>
         <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/api/v1/home" element={<Home />} />
             <Route path="/api/v1/auth/login" element={<Login />} />
             <Route element={<Auth/>}>
-              <Route path="/" element={<Home />} />
+              <Route path="/api" element={<Home />} />
             </Route>
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/forgotpassword" element={<ForgotPassword/>}/>
-            <Route path="/error" element ={<Errorpage/>}/>
+            <Route path="/api/v1/auth/signup" element={<Signup />} />
+            <Route path="/api/v1/auth/forgotpassword" element={<ForgotPassword/>}/>
+            <Route path="api/v1/error" element ={<Errorpage/>}/>
         </Routes>
       </Router>
     </>

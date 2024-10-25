@@ -34,12 +34,13 @@ export default function Login() {
       return;
     }
     try {
-      const response = await axios.post(`${import.meta.env.VITE_BASE_SERVER_URL}/user/login`,userDetails)
+      console.log('logging');
+      const response = await axios.post(`${import.meta.env.VITE_BASE_SERVER_URL}/auth/login`,userDetails)
       console.log(response);
 
       toast.success(response.data.message);
 
-      localStorage.setItem("token",response.data.jwttoken)
+      localStorage.setItem("token",response.data.token)
       navigate("/home");
     } catch (error: any) {
       toast.error(error.response.data.message);
