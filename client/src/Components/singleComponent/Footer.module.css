@@ -1,0 +1,38 @@
+.footer {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 0.875rem; /* Decreased font size */
+  }
+  
+  .footer-content {
+    padding: 0.5rem 0; /* Less padding for more compact appearance */
+  }
+  
+  .company-col h6,
+  .products-col h6,
+  .links-col h6,
+  .contact-col h6 {
+    font-size: 0.875rem; /* Smaller section headings */
+    margin-bottom: 0.75rem; /* Reduce margin below headings */
+  }
+  
+  .footer-text {
+    font-size: 0.75rem; /* Decrease text size for footer content */
+    margin-bottom: 0.75rem; /* Reduce space between paragraphs */
+  }
+  
+  .footer-bottom {
+    font-size: 0.75rem; /* Smaller font for bottom section */
+    padding: 0.5rem; /* Less padding */
+  }
+  
+  .footer a {
+    font-size: 0.875rem; /* Small size for links */
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .footer p {
+    margin-bottom: 0.5rem; /* Reduce space between contact details */
+  }
+  

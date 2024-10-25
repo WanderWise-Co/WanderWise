@@ -6,7 +6,7 @@ export default function Header() {
     <>
     <div className={styles.headerContainer}>
         <h1>Wander Wise</h1>
-        <h3>Moto</h3>
+        <h3>Craft Your Perfect Journey With Ease</h3>
       </div>
     </>
   );
