@@ -16,7 +16,7 @@
   background-color: white;
   padding: 2rem; /* Padding inside the container */
   border-radius: 8px; /* Round corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-shadow: none; /* Remove shadow from button */
   width: 60%; /* Width of the form container */
 }
 
@@ -68,38 +68,41 @@
   flex: 1; /* Allow the budget input to grow */
 }
 
-.category-container {
+.categoryContainer {
   display: flex;
-  justify-content: center;
-  gap: 5rem; /* Space between category buttons */
+  flex-direction: row; /* Arrange categories in a row */
+  justify-content: space-around; /* Space between categories */
+  gap: 1rem;
 }
 
-.category-button {
+.categoryButton {
   border: none;
   background: none;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px; /* Space around the button */
-  margin: 10px; /* Add space between category buttons */
+  padding: 0px; /* Space around the button */
+  margin: 0px; /* Add space between category buttons */
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.button-image {
-  width: 100px; /* Smaller size for an icon-like appearance */
-  height: 100px; /* Maintain aspect ratio */
+.buttonImage {
+  width: 100px; /* Icon-like appearance */
+  height: 100px;
   object-fit: cover;
-  border-radius: 10%; /* Slight rounding for a softer look */
-  transition: transform 0.3s ease;
-  margin-bottom: 5px; /* Space below each image */
+  border-radius: 10%; /* Soft look */
+  margin-bottom: 5px;
+  transition: transform 0.3s ease, border 0.3s ease; /* Add border transition */
+  border: 2px solid transparent; /* Default no border */
 }
 
-.category-button span {
-  margin-top: 10px; /* Space between image and text */
-  font-size: 16px;
-  font-weight: bold;
+.selectedImage {
+  width: 100px; /* Keep the size the same as unselected */
+  height: 100px;
+  border: 2px solid rgb(119, 232, 107); 
 }
 
-.category-button:hover .button-image {
+.categoryButton:hover .buttonImage {
   transform: scale(1.1); /* Scale effect on hover */
 }

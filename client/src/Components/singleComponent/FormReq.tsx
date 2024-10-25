@@ -5,9 +5,9 @@ import DatePicker from "react-datepicker";
 import React, { useState } from "react";
 import styles from './FormReq.module.css';
 import "react-datepicker/dist/react-datepicker.css";
-import beach from '../../assets/beach.png';
-import hill from '../../assets/hillstation.png';
-import temple from '../../assets/temple.png';
+import beach from '../../assets/beach.jpeg';
+import hill from '../../assets/hillstation.jpeg';
+import temple from '../../assets/temple.webp';
 
 const categories = [
   { id: 1, name: 'Beaches', imgSrc: beach },
@@ -15,9 +15,16 @@ const categories = [
   { id: 3, name: 'Temple', imgSrc: temple },
 ];
 
-const CategoryButton = ({ category, onClick }: any) => (
-  <button className={styles.categoryButton} onClick={() => onClick(category.name)}>
-    <img src={category.imgSrc} alt={category.name} className={styles.buttonImage} />
+const CategoryButton = ({ category, isSelected, onClick }: any) => (
+  <button
+    className={`${styles.categoryButton} ${isSelected ? styles.selected : ''}`}
+    onClick={() => onClick(category.name)}
+  >
+    <img 
+      src={category.imgSrc}
+      alt={category.name}
+      className={`${styles.buttonImage} ${isSelected ? styles.selectedImage : ''}`}
+    />
     <span>{category.name}</span>
   </button>
 );
@@ -25,7 +32,8 @@ const CategoryButton = ({ category, onClick }: any) => (
 export default function FormReq() {
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [fromDate, setFromDate] = useState<Date | null>(null);
-  const [currencySymbol, setCurrencySymbol] = useState('$'); 
+  const [currencySymbol, setCurrencySymbol] = useState('$');
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
   const handleCurrencyChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedCurrency = event.target.value;
@@ -33,7 +41,13 @@ export default function FormReq() {
   };
 
   const handleCategoryClick = (categoryName: string) => {
-    // handle category click logic
+    setSelectedCategories((prevSelected) => {
+      if (prevSelected.includes(categoryName)) {
+        return prevSelected.filter((cat) => cat !== categoryName); // Deselect if already selected
+      } else {
+        return [...prevSelected, categoryName]; // Select category
+      }
+    });
   };
 
   return (
@@ -104,15 +118,14 @@ export default function FormReq() {
           </div>
 
           <div className={styles.categoryContainer}>
-            <div className="category-container">
-              {categories.map((category) => (
-                <CategoryButton
-                  key={category.id}
-                  category={category}
-                  onClick={handleCategoryClick}
-                />
-              ))}
-            </div>
+            {categories.map((category) => (
+              <CategoryButton
+                key={category.id}
+                category={category}
+                isSelected={selectedCategories.includes(category.name)}
+                onClick={handleCategoryClick}
+              />
+            ))}
           </div>
         </div>
       </div>
