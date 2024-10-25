@@ -13,7 +13,7 @@ const notFoundMiddleware = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
 
 app.use(express.json());
-app.use(cors({origin: 'http://localhost:5173'}));
+app.use(cors({origin: 'http://localhost:5174'}));
 // extra packages
 
 // routes
