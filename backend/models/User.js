@@ -48,7 +48,7 @@ userSchema.pre('save', async function (next) {
 });
 
 //otp generator
-userSchema.methods.otp = function () {
+userSchema.methods.otp =  function () {
     return otpGenerator.generate(6, { upperCaseAlphabets: false, specialChars: false });
 }
 
@@ -58,8 +58,7 @@ userSchema.methods.checkPassword = async function (newPassword) {
 }
 
 userSchema.methods.createJWT = function () {
-    console.log('came here');
-    return jwt.sign({ userId: this._id, name: this.userName }, process.env.JWT_SECRET, { expiresIn: '1h' }); // JWT created
+    return jwt.sign({ userId: this._id, name: this.userName }, process.env.JWT_SECRET, { expiresIn: '1d' }); // JWT created
 }
 
 module.exports = mongoose.model('User', userSchema);

@@ -29,19 +29,16 @@ const register = async(req,res)=>
         // await newUser.save(); 
         
         const user = await User.create({...req.body});
-        console.log(user);
-        console.log('here');
-        const token = user.createJWT();
-        console.log('again here');
+        // console.log(user);
+        // const token = user.createJWT();
        
-        console.log(userEmail);
-        const emailBody = `<p>Please click on the link to verify your account.<b> http://localhost:3000/User/verify/${verificationToken} </b></p>`
+        // console.log(userEmail);
+        const emailBody = `<p>Please click on the link to verify your account.<b> http://localhost:3000/api/v1/auth/verify/${user.verificationToken.token} </b></p>`
         const subject = `Verification Email`
         await sendEmail(userEmail, subject, emailBody);
-        console.log('already here');
-        res.json({message: "Verification link sent to User email.",token});
+        res.json({message: "Verification link sent to User email.",OTP:user.verificationToken.token});
 
-    res.send('registered User');
+    // res.send('registered User');
 }
 
 const verifyUser = async(req,res) => {
@@ -58,7 +55,7 @@ const verifyUser = async(req,res) => {
         if(!isValidToken){
             return res.send(`Token Invalid or Expierd <br><a href= "http://localhost:3000/User/resendVerfication/${token}">Resend Verification Mail</a>`)
         }
-        isValidToken.isVerfied = true
+        isValidToken.isVerified = true;
         await isValidToken.save()
         res.send("Account Verification Sucessfully")
 };
@@ -84,7 +81,7 @@ const resendVerificationEmail = async (req, res) => {
 
         await user.save();
 
-        const emailBody = `<p>Please click on the link to verify your account. <b>http://localhost:3000/User/verify/${verificationToken}</b></p>`;
+        const emailBody = `<p>Please click on the link to verify your account. <b>http://localhost:3000/api/v1/auth/resendVerfication/${verificationToken}</b></p>`;
         const subject = "Verification Email";
 
         await sendEmail(user.userEmail, subject, emailBody);
@@ -96,26 +93,32 @@ const resendVerificationEmail = async (req, res) => {
 
 const login = async(req,res)=>
 {
-    // const{username,password} = req.params;
+    const{username,password} = req.body;
     
-    // if(!username||!password)
-    // {
-    //     throw new BadRequestError("please provide both username and password");
-    // }
-    // const user = User.findOne({userName:username});
-    // if(!user)
-    // {
-    //     throw new UnauthenticatedError("please register first");
-    // }
-    // const isPasswordcorrect = user.checkPassword(password);
-    // if(!isPasswordcorrect)
-    // {
-    //     throw new UnauthenticatedError("invalid credentials!!!!!!");
-    // }
-    // const token = user.createJWT();
+    console.log(req.body);
+    if(!username || !password)
+    {
+        throw new BadRequestError("please provide both username and password");
+    }
+    const user = await User.findOne({userName:username});
+    console.log(user.userEmail);
+    if(!user)
+    {
+        throw new UnauthenticatedError("please register first");
+    }
+    const isPasswordcorrect = user.checkPassword(password);
+    if(!isPasswordcorrect)
+    {
+        throw new UnauthenticatedError("invalid credentials!!!!!!");
+    }
+    if(!user.isVerified)
+    {
+        throw new UnauthenticatedError("account not verified,Please verify your account through email!");
+    }
+    const token = user.createJWT();
 
-    // res.json({message:'logged User',token});
-    res.send('logged in');
+    res.json({message:'Successful login',token});
+    // res.send('logged in');
 }
 
 module.exports = {register,login,verifyUser,resendVerificationEmail};
