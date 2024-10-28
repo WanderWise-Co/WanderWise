@@ -62,7 +62,7 @@ export default function FormReq() {
   };
 
   return (
-    <>
+    <form>
       <div className={styles.imageContainer}>
         <div className={styles.container}>
           <div className={styles.row}>
@@ -140,6 +140,6 @@ export default function FormReq() {
           </div>
         </div>
       </div>
-    </>
+    </form>
   );
 }

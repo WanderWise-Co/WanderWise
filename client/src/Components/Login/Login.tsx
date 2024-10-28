@@ -41,7 +41,7 @@ export default function Login() {
       toast.success(response.data.message);
 
       localStorage.setItem("token",response.data.token)
-      navigate("/api/v1/planpage");
+      navigate("/home");
     } catch (error: any) {
       toast.error(error.response.data.message);
       console.log(error);
@@ -70,6 +70,7 @@ export default function Login() {
 
 
   return (
+    <form>
     <div className={styles.container}>
         <div className={styles.formContainer}>
             <h2>Login</h2>
@@ -109,5 +110,6 @@ export default function Login() {
             </div>
         </div>
     </div>
+    </form>
   )
 }

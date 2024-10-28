@@ -47,6 +47,8 @@ export default function Signup() {
   const [showPassword, setshowPassword] = useState(false)
 
   return (
+    <form>
+
     <div className={styles.container}>
         <div className={styles.formContainer}>
             <h2>Sign Up</h2>
@@ -65,6 +67,8 @@ export default function Signup() {
             <Link to="/api/v1/auth/login">Already have an account? Login</Link>
         </div>
     </div>
-  )
+
+    </form>
+      )
 }
 
