@@ -1,16 +1,34 @@
-import React, { useState } from "react";
+// Map.tsx
+import { useState } from "react";
 import { GoogleMap, LoadScript, Marker, InfoWindow } from "@react-google-maps/api";
 
-const mapContainerStyle = {
-    width: "100%",
-    height: "400px",
+// Define the type for a restaurant
+interface Restaurant {
+  place_id: string;
+  name: string;
+  rating: number;
+  vicinity: string;
+  geometry: {
+    location: {
+      lat: number;
+      lng: number;
+    };
   };
+  photos?: {
+    photo_reference: string;
+  }[];
+}
 
-export default function Map({coordinates, restaurants}){
-    const [selectedRestaurant, setSelectedRestaurant] = useState(null);
+const mapContainerStyle = {
+  width: "100%",
+  height: "400px",
+};
 
-    return(
-        <LoadScript googleMapsApiKey={import.meta.env.GOOGLE_MAPS_API_KEY}>
+export default function Map({ coordinates, restaurants }: { coordinates: { lat: number, lng: number }, restaurants: Restaurant[] }) {
+  const [selectedRestaurant, setSelectedRestaurant] = useState<Restaurant | null>(null); // Explicitly type state
+
+  return (
+    <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         center={coordinates}
@@ -23,9 +41,7 @@ export default function Map({coordinates, restaurants}){
               lat: restaurant.geometry.location.lat,
               lng: restaurant.geometry.location.lng,
             }}
-            onClick={() => {
-              setSelectedRestaurant(restaurant); // Set the clicked restaurant as the selected one
-            }}
+            onClick={() => setSelectedRestaurant(restaurant)} // Set the clicked restaurant as the selected one
           />
         ))}
 
@@ -43,15 +59,15 @@ export default function Map({coordinates, restaurants}){
               <p>{selectedRestaurant.vicinity}</p>
               {selectedRestaurant.photos && selectedRestaurant.photos.length > 0 && (
                 <img
-                src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photoreference=${selectedRestaurant.photos[0].photo_reference}&key=${GOOGLE_MAPS_API_KEY}`}
-                alt={selectedRestaurant.name}
-                style={{ width: "100%", borderRadius: "4px" }}
-              />
+                  src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photoreference=${selectedRestaurant.photos[0].photo_reference}&key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}`}
+                  alt={selectedRestaurant.name}
+                  style={{ width: "100%", borderRadius: "4px" }}
+                />
               )}
             </div>
           </InfoWindow>
-           )}
-           </GoogleMap>
-         </LoadScript>
-    )
+        )}
+      </GoogleMap>
+    </LoadScript>
+  );
 }

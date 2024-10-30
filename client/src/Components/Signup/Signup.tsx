@@ -1,3 +1,4 @@
+// Signup.tsx
 import React, { ChangeEvent, useState } from 'react'
 import styles from "./Signup.module.css"
 import { Link } from 'react-router-dom'
@@ -47,7 +48,7 @@ export default function Signup() {
   const [showPassword, setshowPassword] = useState(false)
 
   return (
-    <form>
+    
 
     <div className={styles.container}>
         <div className={styles.formContainer}>
@@ -68,7 +69,6 @@ export default function Signup() {
         </div>
     </div>
 
-    </form>
       )
 }
 

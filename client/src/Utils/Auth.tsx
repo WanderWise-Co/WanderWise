@@ -9,7 +9,7 @@ export const isLoggedin = () => {
 const Auth = () => {
   const navigate = useNavigate(); // Use the hook for navigation
 
-  const handleChoosePlanClick = () => {
+  const handleChoosePlanClick = () =>  {
     if (isLoggedin()) {
       navigate("/api/v1/planpage"); // Programmatically navigate to the plan page if logged in
     } else {
@@ -17,7 +17,7 @@ const Auth = () => {
     }
   };
 
-  return isLoggedin() ? <Outlet /> : <Navigate to="/login" />;
+  return isLoggedin() ? <Outlet /> : <Navigate to="api/v1/auth/login" />;
 };
 
 export default Auth;

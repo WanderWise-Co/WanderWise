@@ -1,3 +1,4 @@
+// Home.tsx
 import styles from './Home.module.css';
 import Header from '../singleComponent/Header'
 import Footer from '../singleComponent/Footer'

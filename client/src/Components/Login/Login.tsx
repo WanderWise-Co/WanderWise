@@ -1,3 +1,4 @@
+// Login.tsx
 import  { ChangeEvent, useState } from 'react'
 import styles from "./Login.module.css"
 import { Link, useNavigate } from 'react-router-dom'
@@ -70,7 +71,7 @@ export default function Login() {
 
 
   return (
-    <form>
+    
     <div className={styles.container}>
         <div className={styles.formContainer}>
             <h2>Login</h2>
@@ -110,6 +111,6 @@ export default function Login() {
             </div>
         </div>
     </div>
-    </form>
+    
   )
 }

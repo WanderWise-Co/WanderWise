@@ -1,6 +1,7 @@
+// Footer.tsx
 import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
-import styles from './Footer.module.css'; // Import your custom styles
+import styles from './Footer.module.css'; 
 
 export default function Footer() {
   return (
@@ -38,8 +39,8 @@ export default function Footer() {
                 <h6 className='text-uppercase fw-bold mb-3'>Contact</h6>
                 <p><MDBIcon icon="home" className="me-1" /> Bengaluru, Karnataka, IN</p>
                 <p><MDBIcon icon="envelope" className="me-1" /> wanderWise2024@ww.co.in</p>
-                <p><MDBIcon icon="phone" className="me-1" /> +01 234 567 88</p>
-                <p><MDBIcon icon="print" className="me-1" /> +01 234 567 89</p>
+                <p><MDBIcon icon="phone" className="me-1" /> +91 9036969825</p>
+                <p><MDBIcon icon="print" className="me-1" /> +91 8792821211</p>
               </MDBCol>
             </MDBRow>
           </MDBContainer>
