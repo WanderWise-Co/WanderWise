@@ -1,21 +1,26 @@
 /* PlanPage.module.css */
+
+/* Make sure the body and html take full height */
+html, body {
+  height: 100%; /* Ensures the full height is used */
+  margin: 0; /* Remove default margin */
+}
+
 .planPageContainer {
-    display: flex;
-    height: 100vh; /* Full viewport height */
-  }
-  
-  .planDetails {
-    flex: 7; /* 70% width */
-    padding: 20px;
-    background-color: #f5f5f5; /* Light background */
-  }
-  
-  .mapContainer {
-    flex: 3; /* 30% width */
-    padding: 20px;
-    background-color: #fff; /* White background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
+  display: flex; /* Use flexbox to align children */
+  width: 100%; /* Full width */
+  height: 100vh; /* Full viewport height */
+}
+
+.restaurantList {
+  flex: 7; /* 70% of the space */
+  padding: 20px; /* Add some padding */
+  overflow-y: auto; /* Allow scrolling if the content exceeds the height */
+}
+
+.mapContainer {
+  flex: 3; /* 30% of the space */
+  padding: 20px; /* Add some padding */
+  background-color: #fff; /* Ensure a white background for the map */
+  height: 100%; /* Ensure the map container takes full height */
+}

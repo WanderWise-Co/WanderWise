@@ -1,13 +1,13 @@
-// Map.tsx
 import { useState } from "react";
 import { GoogleMap, LoadScript, Marker, InfoWindow } from "@react-google-maps/api";
 
-// Define the type for a restaurant
-interface Restaurant {
+// Export the Restaurant interface
+export interface Restaurant {
   place_id: string;
   name: string;
   rating: number;
   vicinity: string;
+  price_level?: number;
   geometry: {
     location: {
       lat: number;
@@ -20,20 +20,26 @@ interface Restaurant {
 }
 
 const mapContainerStyle = {
-  width: "100%",
-  height: "400px",
+  flex: 3,
+  padding: "20px",
+  backgroundColor: "#fff", // Correct background-color to backgroundColor
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
 };
 
-export default function Map({ coordinates, restaurants }: { coordinates: { lat: number, lng: number }, restaurants: Restaurant[] }) {
-  const [selectedRestaurant, setSelectedRestaurant] = useState<Restaurant | null>(null); // Explicitly type state
+export default function Map({
+  coordinates,
+  restaurants,
+}: {
+  coordinates: { lat: number; lng: number };
+  restaurants: Restaurant[];
+}) {
+  const [selectedRestaurant, setSelectedRestaurant] = useState<Restaurant | null>(null);
 
   return (
     <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
-      <GoogleMap
-        mapContainerStyle={mapContainerStyle}
-        center={coordinates}
-        zoom={14}
-      >
+      <GoogleMap mapContainerStyle={mapContainerStyle} center={coordinates} zoom={14}>
         {restaurants.map((restaurant) => (
           <Marker
             key={restaurant.place_id}
@@ -41,7 +47,7 @@ export default function Map({ coordinates, restaurants }: { coordinates: { lat: 
               lat: restaurant.geometry.location.lat,
               lng: restaurant.geometry.location.lng,
             }}
-            onClick={() => setSelectedRestaurant(restaurant)} // Set the clicked restaurant as the selected one
+            onClick={() => setSelectedRestaurant(restaurant)}
           />
         ))}
 
@@ -51,7 +57,7 @@ export default function Map({ coordinates, restaurants }: { coordinates: { lat: 
               lat: selectedRestaurant.geometry.location.lat,
               lng: selectedRestaurant.geometry.location.lng,
             }}
-            onCloseClick={() => setSelectedRestaurant(null)} // Clear the selection when the InfoWindow is closed
+            onCloseClick={() => setSelectedRestaurant(null)}
           >
             <div>
               <h3>{selectedRestaurant.name}</h3>

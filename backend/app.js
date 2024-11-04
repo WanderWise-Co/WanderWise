@@ -4,6 +4,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const connectDB = require('./db/connect');
+const { createProxyMiddleware } = require('http-proxy-middleware');
 
 //routers
 // const jobRouter = require('./routes/jobs')
@@ -39,5 +40,14 @@ const start = async () => {
     console.log(error);
   }
 };
+
+// Proxy requests to the Google Maps API
+app.use('/api', createProxyMiddleware({
+  target: 'https://maps.googleapis.com',
+  changeOrigin: true,
+  pathRewrite: {
+    '^/api': '', // whenevr we send a request to google map api there will be an extra \api which should be removed so this does that work
+  },
+}));
 
 start();

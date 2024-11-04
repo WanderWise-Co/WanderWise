@@ -1,12 +1,17 @@
-// RestaurantList.tsx
+// Import the Restaurant interface from Map.tsx
+import { Restaurant } from "./Map";
 import RestaurantItem from "./RestaurantItem";
 
-export default function RestaurantList({ restaurants }: any) {
+interface RestaurantListProps {
+  restaurants: Restaurant[];
+}
+
+export default function RestaurantList({ restaurants }: RestaurantListProps) {
   return (
     <div className="restaurant-list">
       <h2>Nearby Restaurants</h2>
       {restaurants.length > 0 ? (
-        restaurants.map((restaurant: { place_id: any; }) => (
+        restaurants.map((restaurant) => (
           <RestaurantItem key={restaurant.place_id} restaurant={restaurant} />
         ))
       ) : (

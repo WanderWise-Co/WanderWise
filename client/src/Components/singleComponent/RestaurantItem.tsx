@@ -1,5 +1,11 @@
-// RestaurantItem.tsx
-export default function RestaurantItem({ restaurant }: any) {
+// Import the Restaurant interface from Map.tsx
+import { Restaurant } from "./Map";
+
+interface RestaurantProps {
+  restaurant: Restaurant;
+}
+
+export default function RestaurantItem({ restaurant }: RestaurantProps) {
   const { name, rating, price_level, photos, vicinity } = restaurant;
 
   // Log the restaurant details for debugging
@@ -16,7 +22,7 @@ export default function RestaurantItem({ restaurant }: any) {
       <img src={photoUrl} alt={name} width="100" height="100" />
       <h3>{name}</h3>
       <p>Rating: {rating ? rating : "N/A"}</p>
-      <p>Price Level: {price_level ? "$".repeat(price_level) : "N/A"}</p> {/* Display price level as dollar signs */}
+      <p>Price Level: {price_level ? "$".repeat(price_level) : "N/A"}</p>
       <p>Address: {vicinity}</p>
     </div>
   );

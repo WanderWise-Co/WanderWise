@@ -1,3 +1,4 @@
+// PlanPage.tsx
 import Footer from "../singleComponent/Footer";
 import Header from "../singleComponent/Header";
 import styles from "../PlanPage/PlanPage.module.css";
@@ -36,11 +37,13 @@ export default function PlanPage() {
     <>
       <Header />
       <div className={styles.planPageContainer}>
-        <RestaurantList restaurants={restaurants} />
-      </div>
+        <div className={styles.restaurantList}>
+          <RestaurantList restaurants={restaurants} />
+        </div>
 
-      <div className={styles.mapContainer}>
-        <Map coordinates={coordinates} restaurants={restaurants} />
+        <div className={styles.mapContainer}>
+          <Map coordinates={coordinates} restaurants={restaurants} />
+        </div>
       </div>
       <Footer />
     </>

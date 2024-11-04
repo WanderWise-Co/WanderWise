@@ -11,7 +11,7 @@ import axios from "axios";
 import beach from '../../assets/beach.jpeg';
 import hill from '../../assets/hillstation.jpeg';
 import temple from '../../assets/temple.webp';
-
+import {isLoggedin} from '../../Utils/Auth'
 const categories = [
   { id: 1, name: 'Beaches', imgSrc: beach },
   { id: 2, name: 'Mountains', imgSrc: hill },
@@ -36,6 +36,7 @@ export default function FormReq() {
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [fromDate, setFromDate] = useState<Date | null>(null);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [source , setSource] = useState("");
   const [destination, setDestination] = useState("");
   const [coordinates, setCoordinates] = useState<{ lat: number, lng: number } | null>(null); // Store coordinates
 
@@ -50,27 +51,35 @@ export default function FormReq() {
   };
 
   const handleChoosePlanClick = async () => {
-    try {
-      const response = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json`, {
-        params: {
-          address: destination, // Use the destination entered by the user
-          key: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
-        },
-      });
-
-      if (response.data.results.length > 0) {
-        const { lat, lng } = response.data.results[0].geometry.location;
-        setCoordinates({ lat, lng }); // Store the coordinates
-
-        // Navigate to PlanPage with coordinates as state
-        navigate("/api/v1/planpage", { state: { coordinates: { lat, lng } } });
-      } else {
-        console.error("No results found for the specified destination.");
+    if (isLoggedin()) { 
+      try {
+        // Make sure the destination is passed to the geocode API request
+        const response = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json`, {
+          params: {
+            address: destination, // Use the destination state value
+            key: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
+          },
+        });
+        console.log(response);
+        // Check if geocoding returns results
+        if (response.data.results.length > 0) {
+          const { lat, lng } = response.data.results[0].geometry.location;
+  
+          // Pass coordinates via navigation state to the PlanPage
+          navigate("/api/v1/planpage", {
+            state: { coordinates: { lat, lng } },
+          });
+        } else {
+          console.error("No results found for the specified location.");
+        }
+      } catch (error) {
+        console.error("Error fetching location:", error);
       }
-    } catch (error) {
-      console.error("Error fetching location:", error);
+    } else {
+      navigate("/api/v1/auth/login"); 
     }
   };
+  
 
   return (
     <div className={styles.imageContainer}>
@@ -80,6 +89,8 @@ export default function FormReq() {
             id="outlined-basic"
             label="Source"
             variant="outlined"
+            value={source}
+            onChange={(e)=>setSource(e.target.value)}
             className={`${styles.inputField} ${styles.smallInputField}`}
           />
           <DatePicker

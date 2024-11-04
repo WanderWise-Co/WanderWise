@@ -1,0 +1,8 @@
+.mapContainer {
+    flex: 3; /* 30% width */
+    padding: 20px;
+    background-color: #fff; /* White background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
