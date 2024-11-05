@@ -7,6 +7,7 @@ interface RestaurantListProps {
 }
 
 export default function RestaurantList({ restaurants }: RestaurantListProps) {
+  console.log(restaurants)
   return (
     <div className="restaurant-list">
       <h2>Nearby Restaurants</h2>

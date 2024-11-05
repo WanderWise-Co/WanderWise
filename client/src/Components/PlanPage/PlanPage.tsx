@@ -15,17 +15,22 @@ export default function PlanPage() {
 
   const fetchNearbyRestaurants = async (lat: number, lng: number) => {
     try {
-      const response = await axios.get(`https://maps.googleapis.com/maps/api/place/nearbysearch/json`, {
+      const response = await axios.get(`http://localhost:3000/api/maps/api/place/nearbysearch/json`, {
         params: {
           location: `${lat},${lng}`,
           radius: 5000, // Radius in meters
           type: "restaurant",
-          key: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
+          key: import.meta.env.VITE_GOOGLE_MAPS_API_KEY, // Optional: Consider using server-side key management for better security.
         },
       });
+      console.log(response.data);     
       setRestaurants(response.data.results);
     } catch (error) {
-      console.error("Error fetching restaurants:", error);
+      if (axios.isAxiosError(error)) {
+        console.error("Error fetching restaurants:", error.response?.data || error.message);
+      } else {
+        console.error("Unknown error:", error);
+      }
     }
   };
 

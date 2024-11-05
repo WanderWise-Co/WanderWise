@@ -17,15 +17,7 @@ app.use(express.json());
 app.use(cors({origin: 'http://localhost:5173'}));
 // extra packages
 
-// routes
-app.get('/', (req, res) => {
-  res.send('WanderWise');
-});
-// app.use('/api/v1/',jobRouter);
-app.use('/api/v1/auth',AuthRouter);
 
-app.use(notFoundMiddleware);
-app.use(errorHandlerMiddleware);
 
 const port = process.env.PORT || 3000;
 
