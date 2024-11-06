@@ -6,34 +6,44 @@ const cors = require('cors');
 const connectDB = require('./db/connect');
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
-//routers
-const AuthRouter = require('./routes/auth')
-// error handler
+// Routers
+const AuthRouter = require('./routes/auth');
+
+// Error handlers
 const notFoundMiddleware = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
 
-app.use(cors({origin: 'http://localhost:5173'}));
+// Middlewares
+app.use(cors({ origin: 'http://localhost:5173' }));
+app.use(express.json());  // Ensure JSON middleware is used early
 
+// Proxy requests to the Google Maps API
+app.use('/api', createProxyMiddleware({
+  target: 'https://maps.googleapis.com',
+  changeOrigin: true,
+  pathRewrite: {
+    '^/api': '', // Removes '/api' prefix for Google Maps API
+  },
+}));
+
+// Test route
 app.get('/', (req, res) => {
   res.send('WanderWise');
 });
-app.use('/api/v1/auth',AuthRouter);
 
+// Route for authentication
+app.use('/api/v1/auth', AuthRouter);
+
+// Error handling middleware (keep these last)
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
-app.use(express.json());
-
-// extra packages
-
-
-
+// Database connection and server start
 const port = process.env.PORT || 3000;
-
 const start = async () => {
   try {
     await connectDB(process.env.MONGO_URI);
-    console.log('connected to db');
+    console.log('Connected to DB');
     app.listen(port, () =>
       console.log(`Server is listening on port ${port}...`)
     );
@@ -41,14 +51,5 @@ const start = async () => {
     console.log(error);
   }
 };
-
-// Proxy requests to the Google Maps API
-app.use('/api', createProxyMiddleware({
-  target: 'https://maps.googleapis.com',
-  changeOrigin: true,
-  pathRewrite: {
-    '^/api': '', // whenevr we send a request to google map api there will be an extra \api which should be removed so this does that work
-  },
-}));
 
 start();
