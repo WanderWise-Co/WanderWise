@@ -1,7 +1,6 @@
 // Import the Restaurant interface from Map.tsx
 import { Restaurant } from "./Map";
 import RestaurantItem from "./RestaurantItem";
-
 interface RestaurantListProps {
   restaurants: Restaurant[];
 }
@@ -9,6 +8,8 @@ interface RestaurantListProps {
 export default function RestaurantList({ restaurants }: RestaurantListProps) {
   console.log(restaurants)
   return (
+    <>
+    
     <div className="restaurant-list">
       <h2>Nearby Restaurants</h2>
       {restaurants.length > 0 ? (
@@ -19,5 +20,7 @@ export default function RestaurantList({ restaurants }: RestaurantListProps) {
         <p>No restaurants found.</p>
       )}
     </div>
+    </>
+    
   );
 }
