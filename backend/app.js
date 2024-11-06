@@ -7,14 +7,23 @@ const connectDB = require('./db/connect');
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
 //routers
-// const jobRouter = require('./routes/jobs')
 const AuthRouter = require('./routes/auth')
 // error handler
 const notFoundMiddleware = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
 
-app.use(express.json());
 app.use(cors({origin: 'http://localhost:5173'}));
+
+app.get('/', (req, res) => {
+  res.send('WanderWise');
+});
+app.use('/api/v1/auth',AuthRouter);
+
+app.use(notFoundMiddleware);
+app.use(errorHandlerMiddleware);
+
+app.use(express.json());
+
 // extra packages
 
 
