@@ -1,0 +1,33 @@
+/* RestaurantItem.module.css */
+
+.restaurantItem {
+    display: flex;
+    align-items: flex-start;
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1rem;
+  }
+  
+  .image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 1rem; /* Space between image and text */
+  }
+  
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .h3 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
+  p {
+    margin: 0.5rem 0;
+  }
+  
