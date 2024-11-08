@@ -1,6 +1,7 @@
 // Import the Restaurant interface from Map.tsx
 import { Restaurant } from "./Map";
 import styles from "./RestaurantItem.module.css";
+import { Button } from "flowbite-react";
 
 interface RestaurantProps {
   restaurant: Restaurant;
@@ -8,9 +9,6 @@ interface RestaurantProps {
 
 export default function RestaurantItem({ restaurant }: RestaurantProps) {
   const { name, rating, price_level, photos, vicinity } = restaurant;
-
-  // Log the restaurant details for debugging
-  console.log("Restaurant details:", restaurant);
 
   // Construct the photo URL with a fallback
   const photoUrl =
@@ -22,7 +20,10 @@ export default function RestaurantItem({ restaurant }: RestaurantProps) {
     <div className={styles.restaurantItem}>
       <img src={photoUrl} alt={name} className={styles.image} />
       <div className={styles.info}>
-        <h3 className={styles.h3}>{name}</h3>
+        <div className={styles.header}>
+          <h3 className={styles.h3}>{name}</h3>
+          <Button pill className={styles.buttonTopRight}>Add</Button>
+        </div>
         <p>Rating: {rating ? rating : "N/A"}</p>
         <p>Price Level: {price_level ? "$".repeat(price_level) : "N/A"}</p>
         <p>Address: {vicinity}</p>

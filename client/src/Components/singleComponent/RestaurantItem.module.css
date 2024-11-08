@@ -1,33 +1,38 @@
 /* RestaurantItem.module.css */
-
 .restaurantItem {
+    position: relative;
     display: flex;
-    align-items: flex-start;
-    padding: 1rem;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 1rem;
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 16px;
   }
   
   .image {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
     border-radius: 8px;
-    margin-right: 1rem; /* Space between image and text */
+    margin-right: 16px;
   }
   
   .info {
+    flex: 1;
+  }
+  
+  .header {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
   }
   
   .h3 {
-    font-size: 1.5rem;
     margin: 0;
+    font-size: 18px;
+    font-weight: bold;
   }
   
-  p {
-    margin: 0.5rem 0;
+  .buttonTopRight {
+    margin-left: auto;
   }
   
