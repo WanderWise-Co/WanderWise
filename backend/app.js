@@ -8,6 +8,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 // Routers
 const AuthRouter = require('./routes/auth');
+const googlemap=require('./routes/googlemap');
 
 // Error handlers
 const notFoundMiddleware = require('./middleware/not-found');
@@ -29,19 +30,19 @@ app.get('/', (req, res) => {
 app.use(express.json());  // Ensure JSON middleware is used early
 // Route for authentication
 app.use('/api/v1/auth', AuthRouter);
-
+app.use('/api/v1',googlemap);
 // Error handling middleware (keep these last)
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
 // Proxy requests to the Google Maps API
-app.use('/googleApi', createProxyMiddleware({
-  target: 'https://maps.googleapis.com',
-  changeOrigin: true,
-  pathRewrite: {
-    '^/googleApi': '', // Removes '/api' prefix for Google Maps API
-  },
-}));
+// app.use('/googleApi', createProxyMiddleware({
+//   target: 'https://maps.googleapis.com',
+//   changeOrigin: true,
+//   pathRewrite: {
+//     '^/googleApi': '', // Removes '/api' prefix for Google Maps API
+//   },
+// }));
 // Database connection and server start
 const port = process.env.PORT || 3000;
 const start = async () => {
