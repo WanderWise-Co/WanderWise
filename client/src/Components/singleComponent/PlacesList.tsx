@@ -1,25 +1,18 @@
-// Import the Restaurant interface from Map.tsx
-import { Restaurant } from "./Map";
+import { Places } from "./Map";
 import PlacesItem from "./PlacesItem";
-interface RestaurantListProps {
-  places: Restaurant[];
+
+interface PlacesListProps {
+  places: Places[];
 }
 
 export default function PlacesList({ places }: PlacesListProps) {
-  console.log(places)
   return (
-    <>
-    
-    <div className="restaurant-list">
+    <div>
       {places.length > 0 ? (
-        places.map((restaurant) => (
-          <PlacesItem key={restaurant.place_id} restaurant={restaurant} />
-        ))
+        places.map((place) => <PlacesItem key={place.place_id} place={place} />)
       ) : (
         <p>No places found.</p>
       )}
     </div>
-    </>
-    
   );
 }

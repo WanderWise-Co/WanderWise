@@ -1,14 +1,14 @@
-// Import the Restaurant interface from Map.tsx
-import { Restaurant } from "./Map";
-import styles from "./RestaurantItem.module.css";
+// Import the Place interface from Map.tsx
+import { Places } from "./Map";
+import styles from "./PlacesItem.module.css";
 import { Button } from "flowbite-react";
 
-interface RestaurantProps {
-  restaurant: Restaurant;
+interface PlacesProps {
+  place: Places;
 }
 
-export default function RestaurantItem({ restaurant }: RestaurantProps) {
-  const { name, rating, price_level, photos, vicinity } = restaurant;
+export default function PlaceItem({ place }: PlacesProps) {
+  const { name, rating, price_level, photos, vicinity } = place;
 
   // Construct the photo URL with a fallback
   const photoUrl =
@@ -17,7 +17,7 @@ export default function RestaurantItem({ restaurant }: RestaurantProps) {
       : "https://via.placeholder.com/400"; // Fallback image if no photo is available
 
   return (
-    <div className={styles.restaurantItem}>
+    <div className={styles.placeItem}>
       <img src={photoUrl} alt={name} className={styles.image} />
       <div className={styles.info}>
         <div className={styles.header}>

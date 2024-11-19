@@ -12,7 +12,7 @@ html, body {
   height: 100vh; /* Full viewport height */
 }
 
-.restaurantList {
+.placeList {
   flex: 7; /* 70% of the space */
   padding: 20px; /* Add some padding */
   overflow-y: auto; /* Allow scrolling if the content exceeds the height */
