@@ -20,7 +20,7 @@ export default function PlanPage() {
   // Function to fetch nearby places based on type (restaurant, hotel, rental, etc.)
   const fetchNearbyPlaces = async (lat: number, lng: number, type: string) => {
     try {
-      const response = await axios.get(`http://localhost:3000/api/maps/api/place/nearbysearch/json`, {
+      const response = await axios.get(`http://localhost:3000/googleApi/maps/api/place/nearbysearch/json`, {
         params: {
           location: `${lat},${lng}`,
           radius: 5000,

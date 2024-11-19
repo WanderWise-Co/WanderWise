@@ -7,6 +7,8 @@ const {BadRequestError,UnauthenticatedError} = require('../errors/index')
 
 const register = async(req,res)=>
 {
+        console.log("request",req);
+        console.log('registering user');
         const { userName, userEmail, userPassword } = req.body;
         const user = await User.create({...req.body});
         const emailBody = `<p>Please click on the link to verify your account.<b> http://localhost:3000/api/v1/auth/verify/${user.verificationToken.token} </b></p>`

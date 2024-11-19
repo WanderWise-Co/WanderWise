@@ -13,24 +13,20 @@ const AuthRouter = require('./routes/auth');
 const notFoundMiddleware = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
 
-// Middlewares
-app.use(cors({ origin: 'http://localhost:5173' }));
-app.use(express.json());  // Ensure JSON middleware is used early
 
-// Proxy requests to the Google Maps API
-app.use('/api', createProxyMiddleware({
-  target: 'https://maps.googleapis.com',
-  changeOrigin: true,
-  pathRewrite: {
-    '^/api': '', // Removes '/api' prefix for Google Maps API
-  },
+// Middlewares
+app.use(cors({ 
+  origin: 'http://localhost:5173', 
+  credentials: true 
 }));
+
 
 // Test route
 app.get('/', (req, res) => {
   res.send('WanderWise');
 });
 
+app.use(express.json());  // Ensure JSON middleware is used early
 // Route for authentication
 app.use('/api/v1/auth', AuthRouter);
 
@@ -38,6 +34,14 @@ app.use('/api/v1/auth', AuthRouter);
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
+// Proxy requests to the Google Maps API
+app.use('/googleApi', createProxyMiddleware({
+  target: 'https://maps.googleapis.com',
+  changeOrigin: true,
+  pathRewrite: {
+    '^/googleApi': '', // Removes '/api' prefix for Google Maps API
+  },
+}));
 // Database connection and server start
 const port = process.env.PORT || 3000;
 const start = async () => {
