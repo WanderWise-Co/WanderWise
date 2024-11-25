@@ -3,8 +3,47 @@ const otpGenerator = require('otp-generator');
 // const bcrypt = require('bcrypt');
 const {sendEmail} = require('../emailService/email');
 const {BadRequestError,UnauthenticatedError} = require('../errors/index')
+const axios = require('axios')
 
+const oauth = async(req,res)=>{
+    console.log('oauth');
+    const{headers:{authorization:auth_token},query:{oauth_provider:provider}} = req;
+    if(!auth_token || !auth_token.startsWith('Bearer')){
+        throw new UnauthenticatedError('No authentication header');
+    }
+    const token = auth_token.split(' ')[1];
+    if(!provider)
+    {
+        throw new BadRequestError('no provider name specified');
+    }
+    let userData;
+    if (provider === 'google') {
+        userData = await axios.get('https://www.googleapis.com/oauth2/v3/userinfo', {
+            headers: { Authorization: `Bearer ${token}` }
+        });
+    } else {
+        return res.status(400).json({ error: `Unsupported provider: ${provider}` });
+    }
+    const { email, name,  sub: oauthId } = userData.data;
+    console.log(email,name,oauthId);
+    if (!email) {
+        return res.status(400).json({ error: 'Failed to fetch user email from provider' });
+    }
 
+    let user = await User.findOne({ oauth_provider: provider, oauth_id: oauthId });
+    if (!user) {
+        user = await User.create({
+            userName: name,  
+            userEmail: email,
+            oauth_provider: provider,
+            oauth_id: oauthId,
+            isVerified: true, 
+        });
+    }
+    const jwttoken = user.createJWT();
+    // console.log(req.headers);
+    res.status(200).json({token:jwttoken,message:'success'});
+}
 const register = async(req,res)=>
 {
         console.log("request",req);
@@ -97,4 +136,4 @@ const login = async(req,res)=>
     // res.send('logged in');
 }
 
-module.exports = {register,login,verifyUser,resendVerificationEmail};
+module.exports = {register,login,verifyUser,resendVerificationEmail,oauth};

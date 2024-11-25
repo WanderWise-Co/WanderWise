@@ -17,7 +17,9 @@ const userSchema = new mongoose.Schema({
     },
     userPassword: {
         type: String,
-        required: [true, "Password is required"]
+        required: function() {
+            return !this.oauth_provider; 
+        }
     },
     isVerified: {
         type: Boolean,
@@ -30,10 +32,23 @@ const userSchema = new mongoose.Schema({
     verificationToken: {
         token: String,
         expires: Date
+    },
+    oauth_provider: {
+        type: String,
+        enum: ['google', 'facebook', null], 
+        default: null
+    },
+    oauth_id: {
+        type: String,
+        default: null 
     }
 });
 
 userSchema.pre('save', async function (next) {
+    if (this.oauth_id) {  
+        //skip for oauth users ,do not need to hash the passwords
+        return next();
+    }
     const salt = await bcrypt.genSalt(10); // await the genSalt function
     this.userPassword = await bcrypt.hash(this.userPassword, salt); //hashing password
 
