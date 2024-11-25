@@ -1,5 +1,6 @@
 import { Button } from "flowbite-react";
 import { HiOutlineArrowRight } from "react-icons/hi";
+<<<<<<< HEAD
 import TextField from "@mui/material/TextField";
 import DatePicker from "react-datepicker";
 import React, { useState } from "react";
@@ -11,6 +12,17 @@ import beach from "../../assets/beach.jpeg";
 import hill from "../../assets/hillstation.jpeg";
 import temple from "../../assets/temple.webp";
 import { isLoggedin } from "../../Utils/Auth";
+=======
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import styles from './FormReq.module.css';
+import Datepicker from "react-tailwindcss-datepicker";
+import axios from "axios";
+import beach from '../../assets/beach.jpeg';
+import hill from '../../assets/hillstation.jpeg';
+import temple from '../../assets/temple.webp';
+import { isLoggedin } from '../../Utils/Auth';
+>>>>>>> 1c320b18cdfcbc58369eebfee36a75eb7f48a835
 
 const categories = [
   { id: 1, name: "Beaches", imgSrc: beach },
@@ -35,15 +47,17 @@ const CategoryButton = ({ category, isSelected, onClick }: any) => (
 );
 
 export default function FormReq() {
-  const [startDate, setStartDate] = useState<Date | null>(null);
-  const [fromDate, setFromDate] = useState<Date | null>(null);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [source, setSource] = useState("");
   const [destination, setDestination] = useState("");
+<<<<<<< HEAD
   const [coordinates, setCoordinates] = useState<{
     lat: number;
     lng: number;
   } | null>(null);
+=======
+  const [coordinates, setCoordinates] = useState<{ lat: number, lng: number } | null>(null);
+>>>>>>> 1c320b18cdfcbc58369eebfee36a75eb7f48a835
 
   const navigate = useNavigate();
 
@@ -57,6 +71,7 @@ export default function FormReq() {
 
   const handleChoosePlanClick = async () => {
     if (isLoggedin()) {
+<<<<<<< HEAD
       try {
         const response = await axios.get(
           `https://maps.googleapis.com/maps/api/geocode/json`,
@@ -76,14 +91,38 @@ export default function FormReq() {
           });
         } else {
           console.error("No results found for the specified location.");
+=======
+      if (!destination.trim()) {
+        console.error("Destination cannot be empty.");
+        return;
+      }
+
+      try {
+        const response = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json`, {
+          params: {
+            address: destination.trim(),
+            key: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
+          },
+        });
+
+        if (response.data.status !== "OK" || response.data.results.length === 0) {
+          console.error("Geocoding failed:", response.data.status);
+          return;
+>>>>>>> 1c320b18cdfcbc58369eebfee36a75eb7f48a835
         }
+
+        const { lat, lng } = response.data.results[0].geometry.location;
+        setCoordinates({ lat, lng });
+
+        navigate("/api/v1/planpage", { state: { coordinates: { lat, lng } } });
       } catch (error) {
-        console.error("Error fetching location:", error);
+        console.error("Error fetching location:", error.message);
       }
     } else {
       navigate("/api/v1/auth/login");
     }
   };
+<<<<<<< HEAD
 
   return (
     <div className={styles.imageContainer}>
@@ -93,38 +132,54 @@ export default function FormReq() {
       <p style={{ textAlign: "center", fontSize: "1.2rem", marginBottom: "2rem" }}>
         Craft Your Perfect Journey With Ease
       </p>
+=======
+
+  const [value, setValue] = useState({
+    startDate: new Date(),
+    endDate: new Date(new Date().setMonth(11)), // Ensure this is a Date object
+  });
+
+  const handleValueChange = (newValue: any) => {
+    console.log("newValue:", newValue);
+    setValue(newValue);
+  };
+
+  return (
+    <div className={styles.imageContainer}>
+      <div className={styles.headerContainer}>
+        <h1>Wander Wise</h1>
+        <h3>Craft Your Perfect Journey With Ease</h3>
+      </div>
+>>>>>>> 1c320b18cdfcbc58369eebfee36a75eb7f48a835
       <div className={styles.container}>
         <div className={styles.row}>
-          <TextField
+          <input
+            type="text"
             id="outlined-basic"
-            label="Source"
-            variant="outlined"
+            name="source"
+            placeholder="Source"
             value={source}
             onChange={(e) => setSource(e.target.value)}
+<<<<<<< HEAD
             className={styles.inputField}
-          />
-          <DatePicker
-            selected={fromDate}
-            onChange={(date) => setFromDate(date)}
-            placeholderText="Select From Date"
-            className={styles.datepicker}
+=======
+            className={`${styles.inputField} ${styles.smallInputField}`}
+>>>>>>> 1c320b18cdfcbc58369eebfee36a75eb7f48a835
           />
         </div>
 
         <div className={styles.row}>
-          <TextField
-            id="outlined-basic"
-            label="Destination"
-            variant="outlined"
+          <input
+            type="text"
+            name="Destination"
+            placeholder="Destination"
             value={destination}
             onChange={(e) => setDestination(e.target.value)}
             className={styles.inputField}
           />
-          <DatePicker
-            selected={startDate}
-            onChange={(date) => setStartDate(date)}
-            placeholderText="Select To Date"
-            className={styles.datepicker}
+          <Datepicker
+            value={value}
+            onChange={handleValueChange}
           />
         </div>
 

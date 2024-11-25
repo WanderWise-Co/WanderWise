@@ -42,7 +42,7 @@ export default function Login() {
       toast.success(response.data.message);
 
       localStorage.setItem("token",response.data.token)
-      navigate("/home");
+      navigate("/api/v1/planpage");
     } catch (error: any) {
       toast.error(error.response.data.message);
       console.log(error);
@@ -55,13 +55,16 @@ export default function Login() {
   const handleContinueWithGoogle =  useGoogleLogin({
     onSuccess: async(response:any)=>{
       console.log(response);
-      const userData = await axios.get("https://www.googleapis.com/oauth2/v3/userinfo", {
+      const res = await axios.post(`${import.meta.env.VITE_BASE_SERVER_URL}/auth/Oauth?oauth_provider=google`,{}, {
         headers: {
             Authorization: `Bearer ${response.access_token}`
         }
     });
-    
-        console.log(userData);    
+    if(res.data.message ==='success'){
+    localStorage.setItem("token",res.data.token)
+      navigate("/home");
+    }
+        console.log(res);    
     },
     onError: async(error:any)=>{
       console.log(error);

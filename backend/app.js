@@ -9,10 +9,12 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 // Routers
 const AuthRouter = require('./routes/auth');
 const googlemap=require('./routes/googlemap');
+const userPreferenceRouter = require('./routes/userPreference');
 
 // Error handlers
 const notFoundMiddleware = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
+const authMiddle = require('./middleware/authentication');
 
 
 // Middlewares
@@ -28,9 +30,13 @@ app.get('/', (req, res) => {
 });
 
 app.use(express.json());  // Ensure JSON middleware is used early
+
+
 // Route for authentication
 app.use('/api/v1/auth', AuthRouter);
 app.use('/api/v1',googlemap);
+app.use('api/v1/planage',authMiddle,userPreferenceRouter);
+
 // Error handling middleware (keep these last)
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);

@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken')
-const {UnauthenticatedError}= require('./errors/unauthenticated')
+const {UnauthenticatedError}= require('../errors/unauthenticated')
 
 
 const authMiddle = (req,res,next)=>{
@@ -23,7 +23,6 @@ const authMiddle = (req,res,next)=>{
 
 
 }
-
 
 module.exports = authMiddle; 
 
