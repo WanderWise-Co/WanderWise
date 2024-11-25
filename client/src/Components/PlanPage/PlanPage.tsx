@@ -39,7 +39,6 @@ export default function PlanPage() {
 
   return (
     <>
-      <Header />
       <Navbar setPlaceType={setPlaceType} />
       <div className={styles.planPageContainer}>
         <div className={styles.placeList}>

@@ -1,38 +1,45 @@
-/* placeItem.module.css */
 .placeItem {
-    position: relative;
-    display: flex;
-    padding: 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    margin-bottom: 16px;
-  }
-  
-  .image {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-right: 16px;
-  }
-  
-  .info {
-    flex: 1;
-  }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .h3 {
-    margin: 0;
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .buttonTopRight {
-    margin-left: auto;
-  }
-  
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  color: white; /* To make text readable on the background */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 120px; /* Ensure enough height for content */
+}
+
+/* Optional overlay for better text visibility */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay */
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.info {
+  z-index: 1; /* Ensure content stays above the overlay */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rating {
+  margin: 4px 0;
+}
+
+.h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.buttonTopRight {
+  margin-left: auto;
+}

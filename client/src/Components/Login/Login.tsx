@@ -42,7 +42,7 @@ export default function Login() {
       toast.success(response.data.message);
 
       localStorage.setItem("token",response.data.token)
-      navigate("/home");
+      navigate("/api/v1/planpage");
     } catch (error: any) {
       toast.error(error.response.data.message);
       console.log(error);
