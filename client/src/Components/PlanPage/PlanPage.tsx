@@ -1,5 +1,4 @@
 import Footer from "../singleComponent/Footer";
-import Header from "../singleComponent/Header";
 import styles from "../PlanPage/PlanPage.module.css";
 import PlacesList from "../singleComponent/PlacesList";
 import Map from "../singleComponent/Map";
@@ -7,6 +6,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "../singleComponent/Navbar";
+import { SortButton } from 'react-admin';
 
 export default function PlanPage() {
   const location = useLocation();
@@ -42,7 +42,7 @@ export default function PlanPage() {
       <Navbar setPlaceType={setPlaceType} />
       <div className={styles.planPageContainer}>
         <div className={styles.placeList}>
-          <PlacesList places={places} />
+        <PlacesList places={places} />
         </div>
         <div className={styles.mapContainer}>
           <Map coordinates={coordinates} places={places} />
