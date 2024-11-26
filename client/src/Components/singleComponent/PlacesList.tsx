@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Places } from "./Map";
 import PlacesItem from "./PlacesItem";
 import styles from "./PlacesList.module.css";
@@ -7,47 +7,62 @@ import { HiOutlineArrowRight } from "react-icons/hi";
 
 interface PlacesListProps {
   places: Places[];
+  selectedPlaces: string[];
+  onSelectedPlacesChange: (selectedPlaces: string[]) => void;
+  onAdd: () => void;
 }
 
-export default function PlacesList({ places }: PlacesListProps) {
+export default function PlacesList({ places, selectedPlaces, onSelectedPlacesChange, onAdd }: PlacesListProps) {
+  const [currentSelected, setCurrentSelected] = useState<string[]>(selectedPlaces);
+  const [sortedPlaces, setSortedPlaces] = useState<Places[]>(places);
   const [isAscending, setIsAscending] = useState(true);
-  const [selectedPlaces, setSelectedPlaces] = useState<string[]>([]); // Store names instead of IDs
 
-  const handleSort = () => {
-    setIsAscending(!isAscending);
-    // Add sorting logic here if necessary
-  };
+  useEffect(() => {
+    setCurrentSelected(selectedPlaces);
+  }, [selectedPlaces]);
+
+  useEffect(() => {
+    setSortedPlaces([...places]); // Sync sortedPlaces with incoming places
+  }, [places]);
 
   const handleCheckboxToggle = (placeName: string, isChecked: boolean) => {
-    setSelectedPlaces((prevSelected) =>
-      isChecked
-        ? [...prevSelected, placeName] // Add place name to the selected list
-        : prevSelected.filter((name) => name !== placeName) // Remove place name from the selected list
-    );
+    const updatedSelection = isChecked
+      ? [...currentSelected, placeName]
+      : currentSelected.filter((name) => name !== placeName);
+
+    setCurrentSelected(updatedSelection);
+    onSelectedPlacesChange(updatedSelection);
   };
 
-  const handleAddButton = () => {
-    console.log("Selected Place Names:", selectedPlaces);
+  const handleSort = () => {
+    const sorted = [...sortedPlaces].sort((a, b) =>
+      isAscending
+        ? a.name.localeCompare(b.name) // Sort ascending
+        : b.name.localeCompare(a.name) // Sort descending
+    );
+    setSortedPlaces(sorted);
+    setIsAscending(!isAscending);
   };
 
   return (
     <>
       <div className={styles.header}>
         <button className={styles.sortButton} onClick={handleSort}>
-          Sort {isAscending ? "↑" : "↓"}
+          Sort by Name {isAscending ? "↑" : "↓"}
         </button>
-        <Button onClick={handleAddButton} className={styles.addButton}>
+        <Button onClick={onAdd} className={styles.addButton}>
           Add
           <HiOutlineArrowRight className="ml-2 h-5 w-5" />
         </Button>
       </div>
       <div>
-        {places.length > 0 ? (
-          places.map((place) => (
+        {sortedPlaces.length > 0 ? (
+          sortedPlaces.map((place) => (
             <PlacesItem
               key={place.place_id}
               place={place}
-              onCheckboxToggle={handleCheckboxToggle} // Pass the callback function
+              isChecked={currentSelected.includes(place.name)}
+              onCheckboxToggle={handleCheckboxToggle}
             />
           ))
         ) : (
