@@ -142,6 +142,7 @@ const get_hotel_data = async (req, res) => {
         }
     });
 };
+
 module.exports = {get_aero_data,get_bus_data,get_hotel_data};
 
 

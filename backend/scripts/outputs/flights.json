@@ -1,0 +1,191 @@
+[
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-5114",
+        "departure_time": "05:00",
+        "arrival_time": "06:50",
+        "duration": "1h 50m",
+        "stops": "non-stop",
+        "price": "4770"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-5323",
+        "departure_time": "03:00",
+        "arrival_time": "05:00",
+        "duration": "2h 0m",
+        "stops": "non-stop",
+        "price": "4770"
+    },
+    {
+        "airline": "Akasa Air",
+        "flight_number": "QP-1194",
+        "departure_time": "03:50",
+        "arrival_time": "05:35",
+        "duration": "1h 45m",
+        "stops": "non-stop",
+        "price": "4852"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-5075",
+        "departure_time": "07:00",
+        "arrival_time": "09:05",
+        "duration": "2h 5m",
+        "stops": "non-stop",
+        "price": "5145"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-5051",
+        "departure_time": "09:55",
+        "arrival_time": "12:00",
+        "duration": "2h 5m",
+        "stops": "non-stop",
+        "price": "5145"
+    },
+    {
+        "airline": "Air India Express",
+        "flight_number": "IX-1242",
+        "departure_time": "01:25",
+        "arrival_time": "02:50",
+        "duration": "1h 25m",
+        "stops": "non-stop",
+        "price": "5175"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-5293",
+        "departure_time": "12:50",
+        "arrival_time": "14:40",
+        "duration": "1h 50m",
+        "stops": "non-stop",
+        "price": "5558"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-5011",
+        "departure_time": "11:30",
+        "arrival_time": "13:30",
+        "duration": "2h 0m",
+        "stops": "non-stop",
+        "price": "5558"
+    },
+    {
+        "airline": "Akasa Air",
+        "flight_number": "QP-1736",
+        "departure_time": "06:20",
+        "arrival_time": "08:05",
+        "duration": "1h 45m",
+        "stops": "non-stop",
+        "price": "5592"
+    },
+    {
+        "airline": "Akasa Air",
+        "flight_number": "QP-1375",
+        "departure_time": "08:10",
+        "arrival_time": "09:55",
+        "duration": "1h 45m",
+        "stops": "non-stop",
+        "price": "5592"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-6283",
+        "departure_time": "23:30",
+        "arrival_time": "01:15\n+1D",
+        "duration": "1h 45m",
+        "stops": "non-stop",
+        "price": "6011"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-5073",
+        "departure_time": "16:45",
+        "arrival_time": "18:35",
+        "duration": "1h 50m",
+        "stops": "non-stop",
+        "price": "6011"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-5216",
+        "departure_time": "08:30",
+        "arrival_time": "10:30",
+        "duration": "2h 0m",
+        "stops": "non-stop",
+        "price": "6011"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-5218",
+        "departure_time": "13:55",
+        "arrival_time": "16:05",
+        "duration": "2h 10m",
+        "stops": "non-stop",
+        "price": "6011"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-5094",
+        "departure_time": "20:30",
+        "arrival_time": "22:40",
+        "duration": "2h 10m",
+        "stops": "non-stop",
+        "price": "6011"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-5295",
+        "departure_time": "22:10",
+        "arrival_time": "00:20\n+1D",
+        "duration": "2h 10m",
+        "stops": "non-stop",
+        "price": "6011"
+    },
+    {
+        "airline": "Air India",
+        "flight_number": "AI-2604",
+        "departure_time": "09:20",
+        "arrival_time": "11:10",
+        "duration": "1h 50m",
+        "stops": "non-stop",
+        "price": "6201"
+    },
+    {
+        "airline": "Air India",
+        "flight_number": "AI-2402",
+        "departure_time": "06:00",
+        "arrival_time": "08:10",
+        "duration": "2h 10m",
+        "stops": "non-stop",
+        "price": "6201"
+    },
+    {
+        "airline": "Akasa Air",
+        "flight_number": "QP-1366",
+        "departure_time": "21:30",
+        "arrival_time": "23:15",
+        "duration": "1h 45m",
+        "stops": "non-stop",
+        "price": "6205"
+    },
+    {
+        "airline": "Air India",
+        "flight_number": "AI-2840",
+        "departure_time": "22:45",
+        "arrival_time": "00:50\n+1D",
+        "duration": "2h 5m",
+        "stops": "non-stop",
+        "price": "6303"
+    },
+    {
+        "airline": "Akasa Air",
+        "flight_number": "QP-1887",
+        "departure_time": "10:55",
+        "arrival_time": "12:55",
+        "duration": "2h 0m",
+        "stops": "non-stop",
+        "price": "6407"
+    }
+]

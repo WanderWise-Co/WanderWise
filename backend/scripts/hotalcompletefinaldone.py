@@ -1,4 +1,5 @@
-import csv
+import csv  # (kept for reference but not used now)
+import json
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
@@ -11,9 +12,10 @@ import traceback
 from random import randint
 import pandas as pd
 import numpy as np
+import os as os
 
 # Initialize the Chrome Driver
-chrome_service = Service('C:\\Users\\Saicharan\\Documents\\chromedriver-win64\\chromedriver.exe')
+chrome_service = Service('C:\\Users\\shett\\Downloads\\chromedriver-win64\\chromedriver.exe')
 driver = webdriver.Chrome(service=chrome_service)
 driver.get("https://www.agoda.com/en-in/")
 
@@ -42,7 +44,6 @@ all_features = [
 # Scroll function
 def scrollDown():
     try:
-        # sleep(8)
         last_height = driver.execute_script("return document.body.scrollHeight")
         
         while True:
@@ -220,7 +221,7 @@ try:
     next_button, links = getHotelLinks()
     print(links)    
     while next_button is not None and counter < 5:
-        if c>=15:break
+        if c >= 10: break
         try:
             for link in links:
                 driver.get(link)
@@ -241,10 +242,10 @@ try:
                 print(c)
 
             next_button.click()
-            if c==10:
+            if c == 10:
                 break
             counter += 1
-            sleep(5)
+            # sleep(5)
 
             next_button, links = getHotelLinks()
             
@@ -252,17 +253,26 @@ try:
             print(f"Error in main loop: {e}")
             continue
 
-    # Saving to CSV files
-    df_features = pd.DataFrame(features_data)
-    df_reviews = pd.DataFrame(reviews_data)
+    # Commented out CSV saving
+    # pd.DataFrame(features_data).to_csv('./outputs/hotel_features.csv', index=False)
+    # pd.DataFrame(reviews_data).to_csv('./outputs/hotel_reviews.csv', index=False)
 
-   # Save features data to JSON
-    df_features.to_json("hotel_features.json", orient='records', indent=4)
+    # Saving to JSON files
+    script_dir = os.path.dirname(os.path.abspath(__file__))
 
-    # Save reviews data to JSON
-    df_reviews.to_json("hotel_reviews.json", orient='records', indent=4)
+# Construct full paths for the output files
+    features_file_path = os.path.join(script_dir, "outputs", "hotel_features.json")
+    reviews_file_path = os.path.join(script_dir, "outputs", "hotel_reviews.json")
+
+    # Write features data
+    with open(features_file_path, "w", encoding="utf-8") as f:
+        json.dump(features_data, f, ensure_ascii=False, indent=4)
+
+    # Write reviews data
+    with open(reviews_file_path, "w", encoding="utf-8") as f:
+        json.dump(reviews_data, f, ensure_ascii=False, indent=4)
     
-    print("Hotel data saved to CSV files.")
+    print("Hotel data saved to JSON files.")
     
 except Exception as e:
     print(f"Error in script execution: {e}")

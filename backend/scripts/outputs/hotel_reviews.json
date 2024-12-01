@@ -1,0 +1,272 @@
+[
+    {
+        "UserID":"Bharadwaj from United States",
+        "Rating":10.0,
+        "Date":"Reviewed January 21, 2024",
+        "Hotel_Name":"The Park Chennai"
+    },
+    {
+        "UserID":"Alok from India",
+        "Rating":10.0,
+        "Date":"Responded January 25, 2024",
+        "Hotel_Name":"The Park Chennai"
+    },
+    {
+        "UserID":"Darshit from United States",
+        "Rating":6.8,
+        "Date":"Reviewed August 12, 2024",
+        "Hotel_Name":"The Park Chennai"
+    },
+    {
+        "UserID":"Arun from India",
+        "Rating":10.0,
+        "Date":"Responded August 12, 2024",
+        "Hotel_Name":"The Park Chennai"
+    },
+    {
+        "UserID":"Anushka from India",
+        "Rating":9.2,
+        "Date":"Reviewed July 30, 2024",
+        "Hotel_Name":"The Park Chennai"
+    },
+    {
+        "UserID":"Shuvadeep from India",
+        "Rating":8.4,
+        "Date":"Reviewed November 04, 2024",
+        "Hotel_Name":"A.R Residency"
+    },
+    {
+        "UserID":"ELANGOVAN from Singapore",
+        "Rating":8.4,
+        "Date":"Reviewed November 23, 2024",
+        "Hotel_Name":"A.R Residency"
+    },
+    {
+        "UserID":"D. from India",
+        "Rating":8.4,
+        "Date":"Reviewed August 08, 2024",
+        "Hotel_Name":"A.R Residency"
+    },
+    {
+        "UserID":"Lalmuanpuii from India",
+        "Rating":8.8,
+        "Date":"Reviewed April 22, 2024",
+        "Hotel_Name":"A.R Residency"
+    },
+    {
+        "UserID":"Vignesh from India",
+        "Rating":10.0,
+        "Date":"Reviewed April 30, 2024",
+        "Hotel_Name":"A.R Residency"
+    },
+    {
+        "UserID":"GEORGE from India",
+        "Rating":10.0,
+        "Date":"Reviewed July 17, 2024",
+        "Hotel_Name":"Hablis Chennai Hotel"
+    },
+    {
+        "UserID":"praveen from India",
+        "Rating":8.4,
+        "Date":"Reviewed November 23, 2024",
+        "Hotel_Name":"Hablis Chennai Hotel"
+    },
+    {
+        "UserID":"Om from Singapore",
+        "Rating":8.4,
+        "Date":"Reviewed July 12, 2024",
+        "Hotel_Name":"Hablis Chennai Hotel"
+    },
+    {
+        "UserID":"Pradipe from India",
+        "Rating":6.4,
+        "Date":"Reviewed September 27, 2024",
+        "Hotel_Name":"Hablis Chennai Hotel"
+    },
+    {
+        "UserID":"Jill from Tanzania",
+        "Rating":10.0,
+        "Date":"Reviewed April 22, 2024",
+        "Hotel_Name":"Hablis Chennai Hotel"
+    },
+    {
+        "UserID":"M",
+        "Rating":7.0,
+        "Date":"Reviewed October 24, 2024",
+        "Hotel_Name":"Hotel Ambika Palace"
+    },
+    {
+        "UserID":"Saranya",
+        "Rating":8.0,
+        "Date":"Reviewed October 24, 2024",
+        "Hotel_Name":"Hotel Ambika Palace"
+    },
+    {
+        "UserID":"Sanyal",
+        "Rating":10.0,
+        "Date":"Reviewed July 17, 2024",
+        "Hotel_Name":"Hotel Ambika Palace"
+    },
+    {
+        "UserID":"Satya",
+        "Rating":9.0,
+        "Date":"Reviewed October 23, 2024",
+        "Hotel_Name":"Hotel Ambika Palace"
+    },
+    {
+        "UserID":"Deepak",
+        "Rating":9.0,
+        "Date":"Reviewed August 09, 2024",
+        "Hotel_Name":"Hotel Ambika Palace"
+    },
+    {
+        "UserID":"Srinath from Australia",
+        "Rating":10.0,
+        "Date":"Reviewed November 25, 2022",
+        "Hotel_Name":"Hotel Southern Comfort"
+    },
+    {
+        "UserID":"Saravanan from India",
+        "Rating":8.8,
+        "Date":"Responded December 20, 2022",
+        "Hotel_Name":"Hotel Southern Comfort"
+    },
+    {
+        "UserID":"Praveen from India",
+        "Rating":9.2,
+        "Date":"Reviewed August 02, 2024",
+        "Hotel_Name":"Hotel Southern Comfort"
+    },
+    {
+        "UserID":"sajineesh from India",
+        "Rating":7.2,
+        "Date":"Reviewed August 21, 2024",
+        "Hotel_Name":"Hotel Southern Comfort"
+    },
+    {
+        "UserID":"Baskar from India",
+        "Rating":6.8,
+        "Date":"Reviewed September 12, 2024",
+        "Hotel_Name":"Hotel Southern Comfort"
+    },
+    {
+        "UserID":"Kalaiisehilvie from Malaysia",
+        "Rating":10.0,
+        "Date":"Reviewed July 16, 2024",
+        "Hotel_Name":"Taj Club House"
+    },
+    {
+        "UserID":"Nayanesh from United Kingdom",
+        "Rating":9.6,
+        "Date":"Reviewed November 15, 2024",
+        "Hotel_Name":"Taj Club House"
+    },
+    {
+        "UserID":"MATHAI from India",
+        "Rating":10.0,
+        "Date":"Reviewed August 17, 2024",
+        "Hotel_Name":"Taj Club House"
+    },
+    {
+        "UserID":"Rajithangani from Sri Lanka",
+        "Rating":10.0,
+        "Date":"Reviewed June 16, 2024",
+        "Hotel_Name":"Taj Club House"
+    },
+    {
+        "UserID":"Guna from Malaysia",
+        "Rating":10.0,
+        "Date":"Reviewed August 06, 2024",
+        "Hotel_Name":"Taj Club House"
+    },
+    {
+        "UserID":"Saravanan from India",
+        "Rating":8.8,
+        "Date":"Reviewed November 03, 2024",
+        "Hotel_Name":"Gokulam Park Sabari OMR SIPCOT"
+    },
+    {
+        "UserID":"Muralidharan from India",
+        "Rating":9.6,
+        "Date":"Responded November 22, 2024",
+        "Hotel_Name":"Gokulam Park Sabari OMR SIPCOT"
+    },
+    {
+        "UserID":"Parthiban from India",
+        "Rating":10.0,
+        "Date":"Reviewed November 24, 2024",
+        "Hotel_Name":"Gokulam Park Sabari OMR SIPCOT"
+    },
+    {
+        "UserID":"Seenivasan from India",
+        "Rating":10.0,
+        "Date":"Responded November 25, 2024",
+        "Hotel_Name":"Gokulam Park Sabari OMR SIPCOT"
+    },
+    {
+        "UserID":"Saravanan from India",
+        "Rating":9.6,
+        "Date":"Reviewed May 08, 2024",
+        "Hotel_Name":"Gokulam Park Sabari OMR SIPCOT"
+    },
+    {
+        "UserID":"Jibin from India",
+        "Rating":9.6,
+        "Date":"Reviewed October 04, 2024",
+        "Hotel_Name":"Hostel Gandhi"
+    },
+    {
+        "UserID":"Sunil from India",
+        "Rating":10.0,
+        "Date":"Reviewed December 17, 2023",
+        "Hotel_Name":"Hostel Gandhi"
+    },
+    {
+        "UserID":"Vishnu from India",
+        "Rating":10.0,
+        "Date":"Reviewed October 05, 2024",
+        "Hotel_Name":"Hostel Gandhi"
+    },
+    {
+        "UserID":"Saravanan from Malaysia",
+        "Rating":10.0,
+        "Date":"Reviewed July 15, 2024",
+        "Hotel_Name":"Hostel Gandhi"
+    },
+    {
+        "UserID":"Vishnu from India",
+        "Rating":10.0,
+        "Date":"Reviewed November 24, 2024",
+        "Hotel_Name":"Hostel Gandhi"
+    },
+    {
+        "UserID":"Sinduja from India",
+        "Rating":10.0,
+        "Date":"Reviewed January 29, 2023",
+        "Hotel_Name":"Hotel Park Elanza Chennai"
+    },
+    {
+        "UserID":"Yashvinder from India",
+        "Rating":10.0,
+        "Date":"Reviewed April 03, 2022",
+        "Hotel_Name":"Hotel Park Elanza Chennai"
+    },
+    {
+        "UserID":"Pankaj from India",
+        "Rating":8.4,
+        "Date":"Reviewed June 05, 2023",
+        "Hotel_Name":"Hotel Park Elanza Chennai"
+    },
+    {
+        "UserID":"Dhritiman from India",
+        "Rating":10.0,
+        "Date":"Reviewed January 28, 2024",
+        "Hotel_Name":"Hotel Park Elanza Chennai"
+    },
+    {
+        "UserID":"rajeev from India",
+        "Rating":9.2,
+        "Date":"Reviewed October 11, 2024",
+        "Hotel_Name":"Hotel Park Elanza Chennai"
+    }
+]

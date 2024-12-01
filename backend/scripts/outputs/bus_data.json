@@ -1,0 +1,142 @@
+[
+    {
+        "Bus Name": "Gajamukha Travels",
+        "Rating": "4.7\n/5",
+        "Departure Time": "22:30",
+        "Departure Location": "Yeshwantpur",
+        "Arrival Time": "05:00",
+        "Arrival Location": "Bus stand",
+        "Price": "647",
+        "Window Seats": "15 window seats",
+        "Amenities": [
+            "Charging Point",
+            "Reading Light"
+        ]
+    },
+    {
+        "Bus Name": "Benaka Motors",
+        "Rating": "4.6\n/5",
+        "Departure Time": "23:30",
+        "Departure Location": "Majestic",
+        "Arrival Time": "05:45",
+        "Arrival Location": "Shimogga",
+        "Price": "555",
+        "Window Seats": "14 window seats",
+        "Amenities": [
+            "Charging Point",
+            "Reading Light"
+        ]
+    },
+    {
+        "Bus Name": "Guru Shakthi Motors",
+        "Rating": "4.7\n/5",
+        "Departure Time": "21:45",
+        "Departure Location": "Mantri Square Metro Station",
+        "Arrival Time": "04:30",
+        "Arrival Location": "Near Mayura Hotel",
+        "Price": "850",
+        "Window Seats": "14 window seats",
+        "Amenities": [
+            "Charging Point",
+            "Reading Light"
+        ]
+    },
+    {
+        "Bus Name": "Sri Durgamba Travels - R No M",
+        "Rating": "4.6\n/5",
+        "Departure Time": "22:35",
+        "Departure Location": "Nelamangala",
+        "Arrival Time": "04:00",
+        "Arrival Location": "Sharadha Travels Shimoga",
+        "Price": "900",
+        "Window Seats": "10 window seats",
+        "Amenities": [
+            "Charging Point",
+            "Reading Light"
+        ]
+    },
+    {
+        "Bus Name": "Sri Vivek Travels",
+        "Rating": "4.6\n/5",
+        "Departure Time": "22:30",
+        "Departure Location": "Majestic",
+        "Arrival Time": "04:30",
+        "Arrival Location": "Shivamogga",
+        "Price": "800",
+        "Window Seats": "1 window seat",
+        "Amenities": [
+            "Charging Point",
+            "Reading Light"
+        ]
+    },
+    {
+        "Bus Name": "Sugama Tourist",
+        "Rating": "4.3\n/5",
+        "Departure Time": "22:15",
+        "Departure Location": "Anand Rao Circle",
+        "Arrival Time": "04:45",
+        "Arrival Location": "Shimoga Sugama Tourist",
+        "Price": "650",
+        "Window Seats": "6 window seats",
+        "Amenities": [
+            "Charging Point",
+            "Reading Light"
+        ]
+    },
+    {
+        "Bus Name": "VSM Travels",
+        "Rating": "4.2\n/5",
+        "Departure Time": "22:45",
+        "Departure Location": "Majestic",
+        "Arrival Time": "05:15",
+        "Arrival Location": "Shivamogga",
+        "Price": "850",
+        "Window Seats": "8 window seats",
+        "Amenities": [
+            "Charging Point",
+            "Reading Light"
+        ]
+    },
+    {
+        "Bus Name": "VSM Travels",
+        "Rating": "4\n/5",
+        "Departure Time": "23:30",
+        "Departure Location": "Majestic",
+        "Arrival Time": "05:45",
+        "Arrival Location": "JPN Road",
+        "Price": "750",
+        "Window Seats": "15 window seats",
+        "Amenities": [
+            "Charging Point",
+            "Reading Light"
+        ]
+    },
+    {
+        "Bus Name": "Sam Tourist",
+        "Rating": "3.1\n/5",
+        "Departure Time": "21:30",
+        "Departure Location": "Majestic",
+        "Arrival Time": "02:30",
+        "Arrival Location": "Shimoga",
+        "Price": "759",
+        "Window Seats": "11 window seats",
+        "Amenities": [
+            "Charging Point",
+            "Reading Light"
+        ]
+    },
+    {
+        "Bus Name": "Shrungagiri Travels",
+        "Rating": "3.8\n/5",
+        "Departure Time": "20:00",
+        "Departure Location": "Arekere",
+        "Arrival Time": "04:30",
+        "Arrival Location": "shivamogga",
+        "Price": "665",
+        "Window Seats": "16 window seats",
+        "Amenities": [
+            "Charging Point",
+            "Reading Light"
+        ]
+    }
+]
