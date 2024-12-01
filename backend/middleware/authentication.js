@@ -3,8 +3,7 @@ const {UnauthenticatedError}= require('../errors/unauthenticated')
 
 
 const authMiddle = (req,res,next)=>{
-
-    const authHeader = req.headers.Authorization;
+    const authHeader = req.headers.authorization;
     if(!authHeader || !authHeader.startsWith('Bearer')){
         throw new UnauthenticatedError('No authentication header');
     }
@@ -15,7 +14,6 @@ const authMiddle = (req,res,next)=>{
         const decoded = jwt.verify(token,process.env.JWT_SECRET);
         // const{_id,name} = decoded;
         req.user = { _id:decoded.userId,name:decoded.name};
-
         next();
     } catch (error) {
         throw new UnauthenticatedError(`Invalid token ${error}`);

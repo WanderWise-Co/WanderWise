@@ -110,13 +110,13 @@ const login = async(req,res)=>
 {
     const{userEmail,userPassword} = req.body;
     
-    console.log(req.body);
+    // console.log(req.body);
     if(!userEmail || !userPassword)
     {
         throw new BadRequestError("please provide both username and password");
     }
     const user = await User.findOne({userEmail:userEmail});
-    console.log(user.userEmail);
+    // console.log(user.userEmail);
     if(!user)
     {
         throw new UnauthenticatedError("please register first");
