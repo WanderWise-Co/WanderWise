@@ -1,5 +1,4 @@
 import Footer from "../singleComponent/Footer";
-import Header from "../singleComponent/Header";
 import styles from "../PlanPage/PlanPage.module.css";
 import PlacesList from "../singleComponent/PlacesList";
 import Map from "../singleComponent/Map";
@@ -14,6 +13,7 @@ export default function PlanPage() {
   const [coordinates, setCoordinates] = useState(initialCoordinates);
   const [places, setPlaces] = useState([]);
   const [placeType, setPlaceType] = useState("");
+  const [selectedPlacesByType, setSelectedPlacesByType] = useState<Record<string, string[]>>({}); // Categorize selected places
 
   const fetchNearbyPlaces = async (lat: number, lng: number, type: string) => {
     try {
@@ -26,7 +26,7 @@ export default function PlanPage() {
         },
       });
       setPlaces(response.data.results || []);
-    } catch (error:any) {
+    } catch (error: any) {
       console.error("Error fetching places:", error.message || error.response?.data);
     }
   };
@@ -37,12 +37,28 @@ export default function PlanPage() {
     }
   }, [coordinates, placeType]);
 
+  const handleSelectedPlaces = (selectedPlaces: string[]) => {
+    setSelectedPlacesByType((prev) => ({
+      ...prev,
+      [placeType]: selectedPlaces, // Save selections for the current type
+    }));
+  };
+
+  const handleAddButton = () => {
+    console.log("Selected Places By Type:", selectedPlacesByType);
+  };
+
   return (
     <>
       <Navbar setPlaceType={setPlaceType} />
       <div className={styles.planPageContainer}>
         <div className={styles.placeList}>
-          <PlacesList places={places} />
+          <PlacesList
+            places={places}
+            selectedPlaces={selectedPlacesByType[placeType] || []}
+            onSelectedPlacesChange={handleSelectedPlaces}
+            onAdd={handleAddButton}
+          />
         </div>
         <div className={styles.mapContainer}>
           <Map coordinates={coordinates} places={places} />
