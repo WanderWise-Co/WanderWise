@@ -12,7 +12,7 @@ export default function Navbar({ setPlaceType, setTransportData }: NavbarProps) 
     console.log("try")
     try {
       console.log("try 1")
-      console.log(`${import.meta.env.VITE_BASE_SERVER_URL}/planpage/transport/aeroplane`)
+      console.log(`${import.meta.env.VITE_BASE_SERVER_URL}/planpage/transport/aeroplane`,{})
       const response = await axios.get(`${import.meta.env.VITE_BASE_SERVER_URL}/planpage/transport/aeroplane`);
       console.log("Planes API Response:", response.data);
       console.log(response)

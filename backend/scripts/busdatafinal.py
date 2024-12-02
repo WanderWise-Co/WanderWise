@@ -7,7 +7,7 @@ import time
 import json
 import os
 from datetime import datetime
-from sys import sys
+import sys
 
 # Function to scrape bus details based on the source, destination, and travel date input
 bus_data = []
@@ -227,8 +227,18 @@ def scrape_Busses(srcplace, destplace, check_in_date):
 
 
     print('writing bus data')
+    
+    timestamp = datetime.now().isoformat()
+    data_to_save = {
+        "timestamp": timestamp,
+        "bus_data": bus_data
+    }
     with open('./outputs/bus_data.json', 'w', encoding="utf-8") as json_file:
-        json.dump(bus_data, json_file, ensure_ascii=False, indent=4)
+        json.dump(data_to_save, json_file, ensure_ascii=False, indent=4)
+
+
+    # with open('./outputs/bus_data.json', 'w', encoding="utf-8") as json_file:
+    #     json.dump(bus_data, json_file, ensure_ascii=False, indent=4)
 
     print("Bus data successfully written to 'bus_data.json'.")
 
@@ -241,8 +251,8 @@ def scrape_Busses(srcplace, destplace, check_in_date):
 # check_in_date = 29
 today = datetime.today()
 srcplace = sys.argv[1] if len(sys.argv) > 1 else "banglore"
-destplace = sys.argv[2] if len(sys.args)>2 else "mumbai"
+destplace = sys.argv[2] if len(sys.argv)>2 else "mumbai"
 month = sys.argv[3] if len(sys.argv) > 3 else today.strftime("%B")
 check_in_date = int(sys.argv[4]) if len(sys.argv) > 4 else today.day
-print(srcplace,destplace)
+print(srcplace,destplace,check_in_date)
 scrape_Busses(srcplace, destplace, check_in_date)
