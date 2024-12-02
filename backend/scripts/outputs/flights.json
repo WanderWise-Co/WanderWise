@@ -1,194 +1,191 @@
-{
-    "timestamp": "2024-12-02T15:58:33.606412",
-    "flights": [
-        {
-            "airline": "IndiGo",
-            "flight_number": "6E-7171",
-            "departure_time": "06:00",
-            "arrival_time": "07:30",
-            "duration": "1h 30m",
-            "stops": "non-stop",
-            "price": "7935"
-        },
-        {
-            "airline": "IndiGo",
-            "flight_number": "6E-7586",
-            "departure_time": "18:20",
-            "arrival_time": "19:50",
-            "duration": "1h 30m",
-            "stops": "non-stop",
-            "price": "10670"
-        },
-        {
-            "airline": "IndiGo",
-            "flight_number": "6E-7207",
-            "departure_time": "10:15",
-            "arrival_time": "11:50",
-            "duration": "1h 35m",
-            "stops": "non-stop",
-            "price": "11813"
-        },
-        {
-            "airline": "IndiGo",
-            "flight_number": "6E-575",
-            "departure_time": "05:00",
-            "arrival_time": "11:25",
-            "duration": "6h 25m",
-            "stops": "1 stop",
-            "price": "11848"
-        },
-        {
-            "airline": "IndiGo",
-            "flight_number": "6E-575",
-            "departure_time": "05:00",
-            "arrival_time": "09:40",
-            "duration": "4h 40m",
-            "stops": "1 stop",
-            "price": "12058"
-        },
-        {
-            "airline": "Air India",
-            "flight_number": "AI-561",
-            "departure_time": "05:50",
-            "arrival_time": "13:00",
-            "duration": "7h 10m",
-            "stops": "1 stop",
-            "price": "12178"
-        },
-        {
-            "airline": "IndiGo",
-            "flight_number": "6E-904",
-            "departure_time": "09:25",
-            "arrival_time": "18:40",
-            "duration": "9h 15m",
-            "stops": "1 stop",
-            "price": "12426"
-        },
-        {
-            "airline": "IndiGo",
-            "flight_number": "6E-506",
-            "departure_time": "14:55",
-            "arrival_time": "18:40",
-            "duration": "3h 45m",
-            "stops": "1 stop",
-            "price": "12478"
-        },
-        {
-            "airline": "IndiGo",
-            "flight_number": "6E-506",
-            "departure_time": "14:55",
-            "arrival_time": "20:45",
-            "duration": "5h 50m",
-            "stops": "1 stop",
-            "price": "12478"
-        },
-        {
-            "airline": "IndiGo",
-            "flight_number": "6E-575",
-            "departure_time": "05:00",
-            "arrival_time": "13:20",
-            "duration": "8h 20m",
-            "stops": "1 stop",
-            "price": "12732"
-        },
-        {
-            "airline": "IndiGo",
-            "flight_number": "6E-575",
-            "departure_time": "05:00",
-            "arrival_time": "15:15",
-            "duration": "10h 15m",
-            "stops": "1 stop",
-            "price": "12732"
-        },
-        {
-            "airline": "IndiGo",
-            "flight_number": "6E-6269",
-            "departure_time": "07:00",
-            "arrival_time": "11:25",
-            "duration": "4h 25m",
-            "stops": "1 stop",
-            "price": "12793"
-        },
-        {
-            "airline": "IndiGo",
-            "flight_number": "6E-6012",
-            "departure_time": "16:30",
-            "arrival_time": "20:45",
-            "duration": "4h 15m",
-            "stops": "1 stop",
-            "price": "13003"
-        },
-        {
-            "airline": "IndiGo",
-            "flight_number": "6E-7258",
-            "departure_time": "16:20",
-            "arrival_time": "17:50",
-            "duration": "1h 30m",
-            "stops": "non-stop",
-            "price": "13097"
-        },
-        {
-            "airline": "IndiGo",
-            "flight_number": "6E-904",
-            "departure_time": "09:25",
-            "arrival_time": "13:20",
-            "duration": "3h 55m",
-            "stops": "1 stop",
-            "price": "13100"
-        },
-        {
-            "airline": "IndiGo",
-            "flight_number": "6E-904",
-            "departure_time": "09:25",
-            "arrival_time": "15:15",
-            "duration": "5h 50m",
-            "stops": "1 stop",
-            "price": "13100"
-        },
-        {
-            "airline": "IndiGo",
-            "flight_number": "6E-6146",
-            "departure_time": "22:40",
-            "arrival_time": "07:40\n+1D",
-            "duration": "9h 0m",
-            "stops": "1 stop",
-            "price": "13100"
-        },
-        {
-            "airline": "IndiGo",
-            "flight_number": "6E-6269",
-            "departure_time": "07:00",
-            "arrival_time": "13:20",
-            "duration": "6h 20m",
-            "stops": "1 stop",
-            "price": "13677"
-        },
-        {
-            "airline": "IndiGo",
-            "flight_number": "6E-6269",
-            "departure_time": "07:00",
-            "arrival_time": "15:15",
-            "duration": "8h 15m",
-            "stops": "1 stop",
-            "price": "13677"
-        },
-        {
-            "airline": "IndiGo",
-            "flight_number": "6E-904",
-            "departure_time": "09:25",
-            "arrival_time": "17:10",
-            "duration": "7h 45m",
-            "stops": "1 stop",
-            "price": "14298"
-        },
-        {
-            "airline": "IndiGo",
-            "flight_number": "6E-6269",
-            "departure_time": "07:00",
-            "arrival_time": "17:10",
-            "duration": "10h 10m",
-            "stops": "1 stop",
-            "price": "14875"
-        }
-    ]
-}
+[
+    {
+        "airline": "Air India Express",
+        "flight_number": "IX-1242",
+        "departure_time": "01:25",
+        "arrival_time": "02:50",
+        "duration": "1h 25m",
+        "stops": "non-stop",
+        "price": "7695"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-5114",
+        "departure_time": "05:00",
+        "arrival_time": "06:50",
+        "duration": "1h 50m",
+        "stops": "non-stop",
+        "price": "8323"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-5323",
+        "departure_time": "03:00",
+        "arrival_time": "05:00",
+        "duration": "2h 0m",
+        "stops": "non-stop",
+        "price": "8323"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-904",
+        "departure_time": "09:25",
+        "arrival_time": "14:50",
+        "duration": "5h 25m",
+        "stops": "1 stop",
+        "price": "8955"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-6923",
+        "departure_time": "04:55",
+        "arrival_time": "09:25",
+        "duration": "4h 30m",
+        "stops": "1 stop",
+        "price": "9128"
+    },
+    {
+        "airline": "Akasa Air",
+        "flight_number": "QP-1736",
+        "departure_time": "06:20",
+        "arrival_time": "08:05",
+        "duration": "1h 45m",
+        "stops": "non-stop",
+        "price": "9571"
+    },
+    {
+        "airline": "Air India",
+        "flight_number": "AI-561",
+        "departure_time": "05:50",
+        "arrival_time": "11:45",
+        "duration": "5h 55m",
+        "stops": "1 stop",
+        "price": "9685"
+    },
+    {
+        "airline": "Air India",
+        "flight_number": "AI-561",
+        "departure_time": "05:50",
+        "arrival_time": "21:55",
+        "duration": "16h 5m",
+        "stops": "1 stop",
+        "price": "9685"
+    },
+    {
+        "airline": "Air India",
+        "flight_number": "AI-561",
+        "departure_time": "05:50",
+        "arrival_time": "22:45",
+        "duration": "16h 55m",
+        "stops": "1 stop",
+        "price": "9685"
+    },
+    {
+        "airline": "Air India",
+        "flight_number": "AI-561",
+        "departure_time": "05:50",
+        "arrival_time": "23:25",
+        "duration": "17h 35m",
+        "stops": "1 stop",
+        "price": "9685"
+    },
+    {
+        "airline": "Air India",
+        "flight_number": "AI-561",
+        "departure_time": "05:50",
+        "arrival_time": "09:00\n+1D",
+        "duration": "27h 10m",
+        "stops": "1 stop",
+        "price": "9685"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-6269",
+        "departure_time": "07:00",
+        "arrival_time": "11:25",
+        "duration": "4h 25m",
+        "stops": "1 stop",
+        "price": "9690"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-356",
+        "departure_time": "17:30",
+        "arrival_time": "22:45",
+        "duration": "5h 15m",
+        "stops": "1 stop",
+        "price": "9795"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-5351",
+        "departure_time": "15:15",
+        "arrival_time": "16:55",
+        "duration": "1h 40m",
+        "stops": "non-stop",
+        "price": "9852"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-5293",
+        "departure_time": "12:50",
+        "arrival_time": "14:40",
+        "duration": "1h 50m",
+        "stops": "non-stop",
+        "price": "9852"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-5075",
+        "departure_time": "07:00",
+        "arrival_time": "09:05",
+        "duration": "2h 5m",
+        "stops": "non-stop",
+        "price": "9852"
+    },
+    {
+        "airline": "Air India Express",
+        "flight_number": "IX-2696",
+        "departure_time": "17:10",
+        "arrival_time": "21:45",
+        "duration": "4h 35m",
+        "stops": "1 stop",
+        "price": "9858"
+    },
+    {
+        "airline": "Air India Express",
+        "flight_number": "IX-2702",
+        "departure_time": "12:10",
+        "arrival_time": "21:45",
+        "duration": "9h 35m",
+        "stops": "1 stop",
+        "price": "9858"
+    },
+    {
+        "airline": "Akasa Air",
+        "flight_number": "QP-1375",
+        "departure_time": "08:10",
+        "arrival_time": "09:55",
+        "duration": "1h 45m",
+        "stops": "non-stop",
+        "price": "10157"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-7223",
+        "departure_time": "15:45",
+        "arrival_time": "20:20",
+        "duration": "4h 35m",
+        "stops": "1 stop",
+        "price": "10665"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-6234",
+        "departure_time": "20:55",
+        "arrival_time": "01:15\n+1D",
+        "duration": "4h 20m",
+        "stops": "1 stop",
+        "price": "10673"
+    }
+]

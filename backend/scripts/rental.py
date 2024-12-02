@@ -15,7 +15,7 @@ destination=sys.argv[1] if len(sys.argv)>1 else "bangalore"
 url = f"https://www.justdial.com/{destination}/Car-Rental-For-Self-Driven/nct-11276270"
 
 # Set up the Selenium WebDriver (assuming you're using Chrome)
-driver_path = "C:\\Users\\Saicharan\\Documents\\chromedriver-win64\\chromedriver.exe"  # Replace with the path to your chromedriver
+driver_path = "C:\\Users\\shett\\Downloads\\chromedriver-win64\\chromedriver.exe"  # Replace with the path to your chromedriver
 
 # Use the Service class to specify the path to the chromedriver
 service = Service(executable_path=driver_path)

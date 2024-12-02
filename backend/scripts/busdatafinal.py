@@ -252,8 +252,8 @@ def scrape_Busses(srcplace, destplace, check_in_date):
 # check_in_date = 29
 today = datetime.today()
 srcplace = sys.argv[1] if len(sys.argv) > 1 else "banglore"
-destplace = sys.argv[2] if len(sys.args)>2 else "mumbai"
+destplace = sys.argv[2] if len(sys.argv)>2 else "mumbai"
 month = sys.argv[3] if len(sys.argv) > 3 else today.strftime("%B")
 check_in_date = int(sys.argv[4]) if len(sys.argv) > 4 else today.day
-print(srcplace,destplace)
+print(srcplace,destplace,check_in_date)
 scrape_Busses(srcplace, destplace, check_in_date)

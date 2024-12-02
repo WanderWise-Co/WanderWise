@@ -288,6 +288,7 @@ try:
         json.dump(reviews_json, f, indent=4, ensure_ascii=False)
     print("Hotel data saved to CSV files.")
     
+    
 except Exception as e:
     print(f"Error in script execution: {e}")
 finally:

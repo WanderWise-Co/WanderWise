@@ -8,12 +8,14 @@ import { useLocation } from "react-router-dom";
 import Navbar from "../singleComponent/Navbar";
 
 export default function PlanPage() {
+
   const location = useLocation();
   const initialCoordinates = location.state?.coordinates || { lat: 12.9716, lng: 77.5946 }; // Default to Bangalore
   const [coordinates, setCoordinates] = useState(initialCoordinates);
   const [places, setPlaces] = useState([]);
   const [placeType, setPlaceType] = useState("");
   const [selectedPlacesByType, setSelectedPlacesByType] = useState<Record<string, string[]>>({}); // Categorize selected places
+  const [transportData, setTransportData] = useState(null); // State to hold transport data
 
   const fetchNearbyPlaces = async (lat: number, lng: number, type: string) => {
     try {
@@ -37,6 +39,13 @@ export default function PlanPage() {
     }
   }, [coordinates, placeType]);
 
+  useEffect(() => {
+    if (transportData) {
+      console.log("Transport Data:", transportData);
+      // Handle transport data (e.g., display in UI)
+    }
+  }, [transportData]);
+  
   const handleSelectedPlaces = (selectedPlaces: string[]) => {
     setSelectedPlacesByType((prev) => ({
       ...prev,
@@ -50,7 +59,7 @@ export default function PlanPage() {
 
   return (
     <>
-      <Navbar setPlaceType={setPlaceType} />
+      <Navbar setPlaceType={setPlaceType} setTransportData={setTransportData} />
       <div className={styles.planPageContainer}>
         <div className={styles.placeList}>
           <PlacesList
