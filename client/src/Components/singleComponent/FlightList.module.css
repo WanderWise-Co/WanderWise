@@ -1,0 +1,58 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .sortButtons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .sortButton {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .sortButton:hover {
+    background-color: #0056b3;
+  }
+  
+  .addButton {
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    padding: 8px 12px;
+  }
+  
+  .addButton:hover {
+    background-color: #218838;
+  }
+  
+  .flightItem {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+  }
+  
+  .flightDetails h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .flightDetails p {
+    margin: 5px 0;
+  }
+  
+  .flightDetails strong {
+    color: #333;
+  }
+  
