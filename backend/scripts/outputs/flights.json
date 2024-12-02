@@ -10,6 +10,7 @@
     },
     {
         "airline": "IndiGo",
+<<<<<<< HEAD
         "flight_number": "6E-5114",
         "departure_time": "05:00",
         "arrival_time": "06:50",
@@ -187,5 +188,193 @@
         "duration": "4h 20m",
         "stops": "1 stop",
         "price": "10673"
+=======
+        "flight_number": "6E-6135",
+        "departure_time": "18:45",
+        "arrival_time": "01:00\n+1D",
+        "duration": "6h 15m",
+        "stops": "1 stop",
+        "price": "9112"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-6135",
+        "departure_time": "18:45",
+        "arrival_time": "04:45\n+1D",
+        "duration": "10h 0m",
+        "stops": "1 stop",
+        "price": "9112"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-6786",
+        "departure_time": "09:20",
+        "arrival_time": "19:50",
+        "duration": "10h 30m",
+        "stops": "1 stop",
+        "price": "9112"
+    },
+    {
+        "airline": "Air India Express",
+        "flight_number": "IX-2747",
+        "departure_time": "14:15",
+        "arrival_time": "02:50\n+1D",
+        "duration": "12h 35m",
+        "stops": "1 stop",
+        "price": "9626"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-6786",
+        "departure_time": "09:20",
+        "arrival_time": "16:35",
+        "duration": "7h 15m",
+        "stops": "1 stop",
+        "price": "9757"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-292",
+        "departure_time": "14:45",
+        "arrival_time": "01:00\n+1D",
+        "duration": "10h 15m",
+        "stops": "1 stop",
+        "price": "10455"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-6786",
+        "departure_time": "09:20",
+        "arrival_time": "21:40",
+        "duration": "12h 20m",
+        "stops": "1 stop",
+        "price": "10455"
+    },
+    {
+        "airline": "SpiceJet",
+        "flight_number": "SG-391",
+        "departure_time": "18:30",
+        "arrival_time": "21:45",
+        "duration": "3h 15m",
+        "stops": "non-stop",
+        "price": "10573"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-619",
+        "departure_time": "13:10",
+        "arrival_time": "01:15\n+1D",
+        "duration": "12h 5m",
+        "stops": "1 stop",
+        "price": "11209"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-347",
+        "departure_time": "11:20",
+        "arrival_time": "18:40",
+        "duration": "7h 20m",
+        "stops": "1 stop",
+        "price": "11306"
+    },
+    {
+        "airline": "Air India Express",
+        "flight_number": "IX-1384",
+        "departure_time": "13:05",
+        "arrival_time": "23:35",
+        "duration": "10h 30m",
+        "stops": "1 stop",
+        "price": "11353"
+    },
+    {
+        "airline": "Air India Express",
+        "flight_number": "IX-1013",
+        "departure_time": "12:05",
+        "arrival_time": "23:35",
+        "duration": "11h 30m",
+        "stops": "1 stop",
+        "price": "11353"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-347",
+        "departure_time": "11:20",
+        "arrival_time": "23:20",
+        "duration": "12h 0m",
+        "stops": "1 stop",
+        "price": "11627"
+    },
+    {
+        "airline": "SpiceJet",
+        "flight_number": "SG-3453",
+        "departure_time": "17:40",
+        "arrival_time": "14:10\n+1D",
+        "duration": "20h 30m",
+        "stops": "1 stop",
+        "price": "11686"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-619",
+        "departure_time": "13:10",
+        "arrival_time": "18:40",
+        "duration": "5h 30m",
+        "stops": "1 stop",
+        "price": "11992"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-292",
+        "departure_time": "14:45",
+        "arrival_time": "21:40",
+        "duration": "6h 55m",
+        "stops": "1 stop",
+        "price": "12026"
+    },
+    {
+        "airline": "IndiGo",
+        "flight_number": "6E-619",
+        "departure_time": "13:10",
+        "arrival_time": "23:20",
+        "duration": "10h 10m",
+        "stops": "1 stop",
+        "price": "12313"
+    },
+    {
+        "airline": "Air India",
+        "flight_number": "AI-9634",
+        "departure_time": "08:55",
+        "arrival_time": "23:35",
+        "duration": "14h 40m",
+        "stops": "1 stop",
+        "price": "12807"
+    },
+    {
+        "airline": "Air India",
+        "flight_number": "AI-9634",
+        "departure_time": "08:55",
+        "arrival_time": "08:05\n+1D",
+        "duration": "23h 10m",
+        "stops": "1 stop",
+        "price": "12807"
+    },
+    {
+        "airline": "Air India",
+        "flight_number": "AI-9634",
+        "departure_time": "08:55",
+        "arrival_time": "11:10\n+1D",
+        "duration": "26h 15m",
+        "stops": "1 stop",
+        "price": "12807"
+    },
+    {
+        "airline": "Air India",
+        "flight_number": "AI-9659",
+        "departure_time": "17:50",
+        "arrival_time": "07:50\n+1D",
+        "duration": "14h 0m",
+        "stops": "1 stop",
+        "price": "12815"
+>>>>>>> 6f82fc2f9e768ce9a488df079201bb8052100c97
     }
 ]
