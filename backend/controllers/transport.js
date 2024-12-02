@@ -2,17 +2,30 @@ const express = require('express');
 const {spawn} = require('child_process')
 const fs = require('fs')
 const path = require('path')
-
+const {BadRequestError} = require('../errors/index')
 
 const get_aero_data = async (req, res) => {
 
-    const pythonScriptPath = path.join(__dirname, '../scripts/aeroplanefinaldata.py');
-    
+    const { startDate, endDate } = req.body;
 
-    const python = spawn('python', [pythonScriptPath], {
+        const parseDate = (dateString) => {
+            const date = new Date(dateString);
+            return {
+                month: date.toLocaleString('default', { month: 'long' }),
+                date: date.getDate(),
+            };
+        };
+        const today = new Date();
+        const start = startDate ? parseDate(startDate) : parseDate(today);
+        const end = endDate ? parseDate(endDate) : parseDate(today);
+        const month = start.month;
+        const date = start.date;
+
+    const pythonScriptPath = path.join(__dirname, '../scripts/aeroplanefinaldata.py');
+
+    const python = spawn('python', [pythonScriptPath,month,date], {
         cwd: path.join(__dirname, '../scripts')
     });
-
 
     python.stdout.on('data', (data) => {
         console.log(`Python script output: ${data}`);
@@ -55,7 +68,25 @@ const get_aero_data = async (req, res) => {
 };
 const get_bus_data = async(req,res)=>{
    
-    const python = spawn('python', [path.join(__dirname, '../scripts/busdatafinal.py')],{
+    const { from,to,startDate, endDate } = req.body;
+    if(!from || !to )
+    {
+        throw new BadRequestError('provide from and to ')
+    }
+    const parseDate = (dateString) => {
+        const date = new Date(dateString);
+        return {
+            month: date.toLocaleString('default', { month: 'long' }),
+            date: date.getDate(),
+        };
+    };
+    const today = new Date();
+    const start = startDate ? parseDate(startDate) : parseDate(today);
+    const end = endDate ? parseDate(endDate) : parseDate(today);
+    const month = start.month;
+    const date = start.date;
+
+    const python = spawn('python', [path.join(__dirname, '../scripts/busdatafinal.py'),from,to,month,date],{
         cwd: path.join(__dirname, '../scripts')
     });
 

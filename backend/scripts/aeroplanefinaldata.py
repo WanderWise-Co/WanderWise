@@ -131,6 +131,11 @@ try:
     )
     date_picker.click()
     print("Date picker opened.")
+    today = datetime.today()
+    month = sys.argv[1] if len(sys.argv) > 1 else today.strftime("%B")
+    date = int(sys.argv[2]) if len(sys.argv) > 2 else today.day
+    
+    print(month,date)
 
     # # Define target month and date
     # target_month = "November"
@@ -169,8 +174,8 @@ try:
     # date_element.click()
     # print(f"Selected date: {aria_label}")
 
-    month = "November"
-    date = 27
+    # month = "December"
+    # date = 27
 
     while True:
         current_month_element = WebDriverWait(driver, 10).until(
