@@ -10,8 +10,12 @@ from datetime import datetime
 import json
 import sys
 import re
+import os
 # Initialize the browser
-service = Service("D:\\WanderWise\\backend\\scripts\\resources\\chromedriver-win64\\chromedriver.exe")  # Replace with your chromedriver path
+current_dir = os.path.dirname(os.path.realpath(__file__))
+driver_path = os.path.join(current_dir,  'resources', 'chromedriver-win64', 'chromedriver.exe')
+service = Service(driver_path)
+# service = Service("D:\\WanderWise\\backend\\scripts\\resources\\chromedriver-win64\\chromedriver.exe") 
 driver = webdriver.Chrome(service=service)
 driver.maximize_window()
 
