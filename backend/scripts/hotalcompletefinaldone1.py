@@ -11,9 +11,11 @@ import traceback
 from random import randint
 import pandas as pd
 import numpy as np
-
+import sys 
+from datetime import datetime
+import json
 # Initialize the Chrome Driver
-chrome_service = Service('C:\\Users\\shett\\Downloads\\chromedriver-win64\\chromedriver.exe')
+chrome_service = Service("C:\\Users\\Saicharan\\Documents\\chromedriver-win64\\chromedriver.exe" )
 driver = webdriver.Chrome(service=chrome_service)
 driver.get("https://www.agoda.com/en-in/")
 
@@ -203,9 +205,19 @@ def handle_new_tab():
 
 # Main script
 try:
-    place = "chennai"
-    check_in_date = "2024-12-28"
-    check_out_date = "2024-12-29"
+    # place = "chennai"
+    # check_in_date = "2024-12-28"
+    # check_out_date = "2024-12-29"
+    # place = sys.argv[2] if len(sys.argv)>2 else "mumbai"
+    # check_in_date = sys.argv[3] if len(sys.argv) > 3 else "2024-12-28"
+    # check_out_date = sys.argv[4] if len(sys.argv) > 3 else "2024-12-28"
+    place = sys.argv[2] if len(sys.argv) > 2 else "mumbai"
+    check_in_date = sys.argv[3] if len(sys.argv) > 3 else "2024-12-28"
+    check_out_date = sys.argv[4] if len(sys.argv) > 4 else "2024-12-28"
+
+    print(f"Place: {place}")
+    print(f"Check-in Date: {check_in_date}")
+    print(f"Check-out Date: {check_out_date}")
     
     search_hotels(place, check_in_date, check_out_date)
     
@@ -256,12 +268,24 @@ try:
     df_features = pd.DataFrame(features_data)
     df_reviews = pd.DataFrame(reviews_data)
 
-   # Save features data to JSON
-    df_features.to_json("./outputs/hotel_features.json", orient='records', indent=4)
+#    # Save features data to JSON
+#     df_features.to_json("./outputs/hotel_features.json", orient='records', indent=4)
 
-    # Save reviews data to JSON
-    df_reviews.to_json("./outputs/hotel_reviews.json", orient='records', indent=4)
-    
+#     # Save reviews data to JSON
+#     df_reviews.to_json("./outputs/hotel_reviews.json", orient='records', indent=4)
+    timestamp = datetime.now().isoformat()
+    features_json = {
+        "timestamp": timestamp,
+        "data": df_features.to_dict(orient='records')
+    }
+    with open("./outputs/hotel_features.json", "w", encoding="utf-8") as f:
+        json.dump(features_json, f, indent=4, ensure_ascii=False)
+    reviews_json = {
+        "timestamp": timestamp,
+        "data": df_reviews.to_dict(orient='records')
+    }
+    with open("./outputs/hotel_reviews.json", "w", encoding="utf-8") as f:
+        json.dump(reviews_json, f, indent=4, ensure_ascii=False)
     print("Hotel data saved to CSV files.")
     
 except Exception as e:

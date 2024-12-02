@@ -176,8 +176,11 @@ try:
 
     # month = "December"
     # date = 27
-    month = "December"
-    date = 10
+    # month = "December"
+    # date = 10
+    today = datetime.today()
+    month = sys.argv[1] if len(sys.argv) > 1 else today.strftime("%B")
+    date = int(sys.argv[2]) if len(sys.argv) > 2 else today.day
 
     while True:
         current_month_element = WebDriverWait(driver, 10).until(
@@ -243,12 +246,31 @@ try:
 
     # Save the details to a JSON file
     
+    # if all_flight_details:
+    #     try:
+    #         # Open the file with utf-8 encoding
+    #         with open('./outputs/flights.json', 'w', encoding='utf-8') as json_file:
+    #             # Dump the flight details into the JSON file with proper formatting
+    #             json.dump(all_flight_details, json_file, indent=4, ensure_ascii=False)
+    #             print("Flight details have been saved to 'flights.json'.")
+    #     except Exception as e:
+    #         print(f"Error saving flight details: {e}")
+    # else:
+    #     print("No flight details found.")
     if all_flight_details:
         try:
-            # Open the file with utf-8 encoding
+            # Get the current timestamp
+            timestamp = datetime.now().isoformat()
+
+            # Prepare the JSON structure with the timestamp
+            data_to_save = {
+                "timestamp": timestamp,
+                "flights": all_flight_details
+            }
+
+            # Open the file with utf-8 encoding and save the JSON
             with open('./outputs/flights.json', 'w', encoding='utf-8') as json_file:
-                # Dump the flight details into the JSON file with proper formatting
-                json.dump(all_flight_details, json_file, indent=4, ensure_ascii=False)
+                json.dump(data_to_save, json_file, indent=4, ensure_ascii=False)
                 print("Flight details have been saved to 'flights.json'.")
         except Exception as e:
             print(f"Error saving flight details: {e}")

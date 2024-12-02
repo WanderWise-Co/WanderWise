@@ -7,13 +7,13 @@ import time
 import json
 import os
 from datetime import datetime
-from sys import sys
+import sys
 
 # Function to scrape bus details based on the source, destination, and travel date input
 bus_data = []
 def scrape_Busses(srcplace, destplace, check_in_date):
     # Set up WebDriver service
-    chrome_service = Service('C:\\Users\\shett\\Downloads\\chromedriver-win64\\chromedriver.exe')
+    chrome_service = Service("C:\\Users\\Saicharan\\Documents\\chromedriver-win64\\chromedriver.exe")
     driver = webdriver.Chrome(service=chrome_service)
     
     # Open Goibibo Bus page
@@ -227,8 +227,19 @@ def scrape_Busses(srcplace, destplace, check_in_date):
 
 
     print('writing bus data')
+    timestamp = datetime.now().isoformat()
+
+# Prepare the data with timestamp
+    data_to_save = {
+        "timestamp": timestamp,
+        "bus_data": bus_data
+    }
+
+    # Save the data to JSON
     with open('./outputs/bus_data.json', 'w', encoding="utf-8") as json_file:
-        json.dump(bus_data, json_file, ensure_ascii=False, indent=4)
+        json.dump(data_to_save, json_file, ensure_ascii=False, indent=4)
+    # with open('./outputs/bus_data.json', 'w', encoding="utf-8") as json_file:
+    #     json.dump(bus_data, json_file, ensure_ascii=False, indent=4)
 
     print("Bus data successfully written to 'bus_data.json'.")
 

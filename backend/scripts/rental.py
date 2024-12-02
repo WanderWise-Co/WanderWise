@@ -6,9 +6,11 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import os
+from datetime import datetime
+import sys
 # Ask for user input for the destination
-destination = "bangalore"
-
+# destination = "bangalore"
+destination=sys.argv[1] if len(sys.argv)>1 else "bangalore"
 # Construct the URL with the destination
 url = f"https://www.justdial.com/{destination}/Car-Rental-For-Self-Driven/nct-11276270"
 
@@ -105,9 +107,16 @@ output_dir = os.path.join(os.path.dirname(__file__), 'outputs')  # Correctly res
 os.makedirs(output_dir, exist_ok=True)  # Ensure the directory exists
 
 output_file_path = os.path.join(output_dir, "rental.json") 
+timestamp = datetime.now().isoformat()
+
+# Wrap the data with a timestamp
+data_to_save = {
+    "timestamp": timestamp,
+    "car_rentals": car_rentals
+}
 try:
     with open(output_file_path, "w") as json_file:
-        json.dump(car_rentals, json_file, indent=4)
+        json.dump(data_to_save, json_file, indent=4)
     print("Car rental details have been saved to 'car_rentals.json'.")
 except Exception as e:
     print(f"Error while saving data to JSON: {e}")

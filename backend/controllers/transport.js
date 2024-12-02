@@ -136,7 +136,35 @@ const get_bus_data = async(req,res)=>{
 }
 
 const get_hotel_data = async (req, res) => {
-    const python = spawn('python', [path.join(__dirname, '../scripts/hotalcompletefinaldone1.py')],{
+
+    const { from,to,startDate, endDate } = req.body;
+    if(!from || !to )
+    {
+        throw new BadRequestError('provide from and to ')
+    }
+    // const parseDate = (dateString) => {
+    //     const date = new Date(dateString);
+    //     return {
+    //         month: date.toLocaleString('default', { month: 'long' }),
+    //         date: date.getDate(),
+    //     };
+    // };
+    // const today = new Date();
+    // const start = startDate ? parseDate(startDate) : parseDate(today);
+    // const end = endDate ? parseDate(endDate) : parseDate(today);
+    // const month = start.month;
+    // const date = start.date;
+    const parseDate = (dateString) => {
+        const date = new Date(dateString);
+        // Format the date as "YYYY-MM-DD"
+        return date.toISOString().split('T')[0];
+    };
+    
+    const today = new Date();
+    const start = startDate ? parseDate(startDate) : parseDate(today);
+    const end = endDate ? parseDate(endDate) : parseDate(today);
+
+    const python = spawn('python', [path.join(__dirname, '../scripts/hotalcompletefinaldone1.py'),from,to,start,end],{
         cwd: path.join(__dirname, '../scripts') 
     });
 
@@ -175,7 +203,21 @@ const get_hotel_data = async (req, res) => {
 };
 
 const get_rental_data = async (req, res) => {
-    const python = spawn('python', [path.join(__dirname, '../scripts/rental.py')],{
+
+    const { from } = req.body;
+    if(!from )
+    {
+        throw new BadRequestError('provide from and to ')
+    }
+    // const parseDate = (dateString) => {
+    //     const date = new Date(dateString);
+    //     return {
+    //         month: date.toLocaleString('default', { month: 'long' }),
+    //         date: date.getDate(),
+    //     };
+    // };
+
+    const python = spawn('python', [path.join(__dirname, '../scripts/rental.py'),from],{
         cwd: path.join(__dirname, '../scripts') 
     });
 
