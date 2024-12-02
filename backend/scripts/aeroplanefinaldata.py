@@ -11,7 +11,7 @@ import json
 import sys
 import re
 # Initialize the browser
-service = Service('C:\\Users\\shett\\Downloads\\chromedriver-win64\\chromedriver.exe')  # Replace with your chromedriver path
+service = Service("C:\\Users\\Saicharan\\Documents\\chromedriver-win64\\chromedriver.exe")  # Replace with your chromedriver path
 driver = webdriver.Chrome(service=service)
 driver.maximize_window()
 
@@ -169,8 +169,8 @@ try:
     # date_element.click()
     # print(f"Selected date: {aria_label}")
 
-    month = "November"
-    date = 27
+    month = "December"
+    date = 10
 
     while True:
         current_month_element = WebDriverWait(driver, 10).until(
