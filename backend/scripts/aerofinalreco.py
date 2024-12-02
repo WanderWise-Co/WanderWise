@@ -4,14 +4,23 @@ import numpy as np
 from datetime import datetime
 
 # Path to the JSON file
-file_path = r'D:\\WanderWise\\backend'
+# file_path = 'backend\\scripts\\outputs\\flights.json'
+import os
 
+# Path to the JSON file
+file_path = os.path.join(os.path.dirname(__file__), 'outputs', 'flights.json')
+
+# 
 # Load JSON data from file with UTF-8 encoding
 with open(file_path, 'r', encoding='utf-8') as file:
     data = json.load(file)
 
 # Convert JSON data to DataFrame
-df = pd.DataFrame(data)
+# df = pd.DataFrame(data)
+flights_data = data['flights']
+
+# Convert JSON data to DataFrame
+df = pd.DataFrame(flights_data)
 
 # Clean the price column (convert to numeric)
 df['price'] = (
