@@ -11,7 +11,8 @@ import json
 import sys
 import re
 # Initialize the browser
-service = Service("D:\\WanderWise\\backend\\scripts\\resources\\chromedriver-win64\\chromedriver.exe")  # Replace with your chromedriver path
+# backend\scripts\resources\chromedriver-win64\chromedriver.exe
+service = Service("C:\\Users\\Saicharan\\Desktop\\finalyear\\WanderWise\\backend\\scripts\\resources\\chromedriver-win64\\chromedriver.exe")  # Replace with your chromedriver path
 driver = webdriver.Chrome(service=service)
 driver.maximize_window()
 
