@@ -38,10 +38,11 @@ app.use(express.json());  // Ensure JSON middleware is used early
 // Route for authentication
 app.use('/api/v1/auth', AuthRouter);
 app.use('/api/v1',googlemap);
-app.use('/api/v1/planage/cart',authMiddle,userPreferenceRouter);
+app.use('/api/v1/planpage/cart',authMiddle,userPreferenceRouter);
 app.use('/api/v1/planpage/transport',authMiddle,transport);
-app.use('api/v1/planpage/gemini',authMiddle,gemini)
-app.use('api/v1/planpage/recommendation',authMiddle,recommendation)
+app.use('/api/v1/planpage/gemini', authMiddle, gemini);
+app.use('/api/v1/planpage/recommendation', authMiddle, recommendation);
+
 
 // Error handling middleware (keep these last)
 app.use(notFoundMiddleware);

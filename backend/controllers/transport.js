@@ -6,7 +6,7 @@ const {BadRequestError} = require('../errors/index')
 
 const get_aero_data = async (req, res) => {
     console.log('aeroplaning');
-    const { startDate, endDate } = req.body;
+    const { startDate, endDate } = req.query;
         const parseDate = (dateString) => {
             const date = new Date(dateString);
             return {
@@ -68,8 +68,7 @@ const get_aero_data = async (req, res) => {
     });
 };
 const get_bus_data = async(req,res)=>{
-   
-    const { from,to,startDate, endDate } = req.body;
+    const { from,to,startDate, endDate } = req.query;
     if(!from || !to )
     {
         throw new BadRequestError('provide from and to ')
@@ -138,7 +137,7 @@ const get_bus_data = async(req,res)=>{
 
 const get_hotel_data = async (req, res) => {
 
-    const { from,to,startDate, endDate } = req.body;
+    const { from,to,startDate, endDate } = req.query;
     if(!from || !to )
     {
         throw new BadRequestError('provide from and to ')
@@ -205,7 +204,7 @@ const get_hotel_data = async (req, res) => {
 
 const get_rental_data = async (req, res) => {
 
-    const { from } = req.body;
+    const { from } = req.query;
     if(!from )
     {
         throw new BadRequestError('provide from and to ')
