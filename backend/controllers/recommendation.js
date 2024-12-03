@@ -11,35 +11,30 @@ const hotel_reco = async(req,res)=>{
 const aero_reco = async (req, res) => {
     const pythonScriptPath = path.join(__dirname, '../scripts/aerofinalreco.py');
     
-    // Spawn the Python process
     const python = spawn('python', [pythonScriptPath], {
         cwd: path.join(__dirname, '../scripts')
     });
 
-    let pythonOutput = ''; // Initialize variable to accumulate Python output
+    let pythonOutput = ''; 
 
-    // Collect the data from stdout
+
     python.stdout.on('data', (data) => {
-        pythonOutput += data.toString(); // Accumulate data in the variable
+        pythonOutput += data.toString();
         console.log(`Python script output: ${data}`);
     });
 
-    // Capture errors from stderr
     python.stderr.on('data', (data) => {
         console.error(`Python script error: ${data}`);
     });
 
-    // Handle the process closure
     python.on('close', (code) => {
         if (code === 0) {
             console.log('Python script executed successfully');
             
             try {
-                // Process the accumulated output (trim whitespace)
                 const outputData = pythonOutput.trim();
                 console.log(outputData);
 
-                // Respond with the data
                 return res.json({ data: outputData });
             } catch (err) {
                 console.error('Error processing Python script output:', err);

@@ -21,7 +21,8 @@ const oauth = async(req,res)=>{
         userData = await axios.get('https://www.googleapis.com/oauth2/v3/userinfo', {
             headers: { Authorization: `Bearer ${token}` }
         });
-    } else {
+    } 
+    else {
         return res.status(400).json({ error: `Unsupported provider: ${provider}` });
     }
     const { email, name,  sub: oauthId } = userData.data;

@@ -8,11 +8,12 @@ spark = SparkSession.builder.appName('HotelRecommenderSystem').getOrCreate()
 
 # Step 2: Load datasets
 # Load the hotel review dataset
-reviews_df = spark.read.csv('hotel_reviews.csv', header=True, inferSchema=True)
+reviews_df = spark.read.json('hotel_reviews.json', header=True, inferSchema=True)
 
 # Load the hotel feature dataset
-features_df = spark.read.csv('hotel_features.csv', header=True, inferSchema=True)
-
+features_df = spark.read.json('hotel_features.json', header=True, inferSchema=True)
+features_df = features_df['data']
+reviews_df = reviews_df['data']
 # Step 3: Preprocess the Data
 # Convert 'Rating' to float for proper numerical processing
 reviews_df = reviews_df.withColumn("Rating", col("Rating").cast("float"))
