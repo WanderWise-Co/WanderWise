@@ -183,10 +183,10 @@ try:
     # date = 27
     # month = "December"
     # date = 10
-    today = datetime.today()
-    month = sys.argv[1] if len(sys.argv) > 1 else today.strftime("%B")
-    date = int(sys.argv[2]) if len(sys.argv) > 2 else today.day
-    year = int(sys.argv[3]) if len(sys.agrv) >3 else today.year
+    # today = datetime.today()
+    # month = sys.argv[1] if len(sys.argv) > 1 else today.strftime("%B")
+    # date = int(sys.argv[2]) if len(sys.argv) > 2 else today.day
+    # year = int(sys.argv[3]) if len(sys.agrv) >3 else today.year
 
     while True:
         current_month_element = WebDriverWait(driver, 10).until(
