@@ -132,8 +132,17 @@ export default function Navbar({
   
 
   const HandelRecoClick = async () => {
-    if (!from || !to) {
-      console.error("From and To locations must be provided.");
+    // if (!from || !to) {
+    //   console.error("From and To locations must be provided.");
+    //   return;
+    // }
+    const token = localStorage.getItem("token");
+    const from = localStorage.getItem("from");
+    const to = localStorage.getItem("to");
+    const sDate = localStorage.getItem("startDate");
+    const eDate = localStorage.getItem("endDate");
+    if (!(token && from && to && sDate && eDate)) {
+      alert('Input token and other details');
       return;
     }
 
@@ -146,10 +155,10 @@ export default function Navbar({
           headers: {
             Authorization: `Bearer ${token}`,
           },
-          params: { from: "bangalore",
-            to: "chennai",
-            startDate: "Fri Dec 20 2024 00:00:00 GMT+0530 (India Standard Time)",
-            endDate: "Fri Dec 20 2024 00:00:00 GMT+0530 (India Standard Time)",},
+          params: { from,
+            to,
+            startDate:sDate,
+            endDate:eDate},
         }
       );
       console.log(response.data)
