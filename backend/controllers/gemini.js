@@ -5,7 +5,23 @@ const path = require('path')
 const {BadRequestError} = require('../errors/index')
 
 const get_gemeni_data = async (req, res) => {
-    const python = spawn('python', [path.join(__dirname, '../scripts/gemeni.py')], {
+    const { from,to,startDate, endDate } = req.body;
+    if(!from || !to )
+        {
+            throw new BadRequestError('provide from and to ')
+        }
+        const parseDate = (dateString) => {
+            const date = new Date(dateString);
+            const day = String(date.getDate()).padStart(2, '0');
+            const month = String(date.getMonth() + 1).padStart(2, '0');  // Get month (0-based)
+            const year = date.getFullYear();
+            return `${day}-${month}-${year}`;
+    
+        };
+        const today = new Date();
+        const start = startDate ? parseDate(startDate) : parseDate(today);
+        const end = endDate ? parseDate(endDate) : parseDate(today);
+    const python = spawn('python', [path.join(__dirname, '../scripts/gemeni.py'),from,to,start,end], {
         cwd: path.join(__dirname, '../scripts'),
     });
 
