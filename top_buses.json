@@ -1,0 +1,87 @@
+[
+    {
+        "Bus Name":"Guru Shakthi Motors",
+        "Rating":4.75,
+        "Departure Time":"21:45",
+        "Departure Location":"Mantri Square Metro Station",
+        "Arrival Time":"04:30",
+        "Arrival Location":"Near Mayura Hotel",
+        "Price":1000.0,
+        "Window Seats":16,
+        "Amenities":[
+            "Emergency Contact Number",
+            "Charging Point",
+            "M-ticket"
+        ],
+        "Amenities Count":3,
+        "Bus ID":3
+    },
+    {
+        "Bus Name":"Gajamukha Travels",
+        "Rating":4.75,
+        "Departure Time":"22:30",
+        "Departure Location":"Yeshwantpur",
+        "Arrival Time":"05:00",
+        "Arrival Location":"Bus stand",
+        "Price":800.0,
+        "Window Seats":15,
+        "Amenities":[
+            "Emergency Contact Number",
+            "Charging Point",
+            "M-ticket"
+        ],
+        "Amenities Count":3,
+        "Bus ID":4
+    },
+    {
+        "Bus Name":"Sri Vivek Travels",
+        "Rating":4.65,
+        "Departure Time":"22:30",
+        "Departure Location":"Majestic",
+        "Arrival Time":"04:30",
+        "Arrival Location":"Shivamogga",
+        "Price":900.0,
+        "Window Seats":16,
+        "Amenities":[
+            "Emergency Contact Number",
+            "Charging Point",
+            "M-ticket"
+        ],
+        "Amenities Count":3,
+        "Bus ID":5
+    },
+    {
+        "Bus Name":"VSM Travels",
+        "Rating":4.25,
+        "Departure Time":"22:45",
+        "Departure Location":"Majestic",
+        "Arrival Time":"05:15",
+        "Arrival Location":"Shivamogga",
+        "Price":850.0,
+        "Window Seats":16,
+        "Amenities":[
+            "Emergency Contact Number",
+            "Charging Point",
+            "M-ticket"
+        ],
+        "Amenities Count":3,
+        "Bus ID":8
+    },
+    {
+        "Bus Name":"Nelson Travels",
+        "Rating":45.0,
+        "Departure Time":"23:40",
+        "Departure Location":"Majestic",
+        "Arrival Time":"05:45",
+        "Arrival Location":"Private Bus Stand",
+        "Price":1500.0,
+        "Window Seats":12,
+        "Amenities":[
+            "Emergency Contact Number",
+            "Charging Point",
+            "M-ticket"
+        ],
+        "Amenities Count":3,
+        "Bus ID":10
+    }
+]

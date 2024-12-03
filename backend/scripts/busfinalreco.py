@@ -15,6 +15,9 @@ load_dotenv()  # Load environment variables from .env file
 
 pyspark_python = os.getenv('PYSPARK_PYTHON')
 
+load_dotenv()  # Load environment variables from .env file
+
+pyspark_python = os.getenv('PYSPARK_PYTHON')
 def load_bus_data(json_file):
     """
     Load bus data from a JSON file and preprocess it.
@@ -50,24 +53,12 @@ def create_spark_df(df):
     Convert pandas DataFrame to Spark DataFrame.
     """
     # spark = SparkSession.builder.appName("BusRecommendationSystem").getOrCreate()
-    # spark = SparkSession.builder \
-    # .appName("BusRecommendationSystem") \
-    # .config("spark.driver.memory", "4g") \
-    # .config("spark.executor.memory", "4g") \
-    # .config("spark.network.timeout", "600s") \
-    # .getOrCreate()
-
-    # spark_df = spark.createDataFrame(df)
-
     spark = SparkSession.builder \
     .appName("BusRecommendationSystem") \
-    .master("local[*]")  \
     .config("spark.driver.memory", "4g") \
     .config("spark.executor.memory", "4g") \
     .config("spark.network.timeout", "600s") \
     .getOrCreate()
-
-
     spark_df = spark.createDataFrame(df)
     return spark, spark_df
 
@@ -123,8 +114,8 @@ def save_recommendations(top_buses, output_file='top_buses.json'):
     """
     Save recommended buses to a JSON file.
     """
-    top_buses.to_json(output_file, orient='records', indent=4)
-    print(f"Top recommended buses saved to {output_file}.")
+    # top_buses.to_json(output_file, orient='records', indent=4)
+    print(f"Top recommended buses saved to {top_buses}.")
 
 # Main function
 def recommend_buses_with_als(json_file, output_file='top_buses.json'):
@@ -147,7 +138,6 @@ def recommend_buses_with_als(json_file, output_file='top_buses.json'):
     # Save recommendations
     save_recommendations(top_buses, output_file)
 
-# # Example usage
-# recommend_buses_with_als('bus_data.json')
+# Example usage
 file_path = os.path.join(os.path.dirname(__file__), 'outputs', 'bus_data.json')
 recommend_buses_with_als(file_path)
