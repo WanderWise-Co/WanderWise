@@ -8,13 +8,13 @@ interface NavbarProps {
 }
 
 export default function Navbar({ setPlaceType, setTransportData }: NavbarProps) {
-  
+
   const handlePlaneClick = async () => {
     console.log("try")
     try {
       const token = localStorage.getItem("token");
       console.log("try 1")
-      console.log(`${import.meta.env.VITE_BASE_SERVER_URL}/planpage/transport/aeroplane`,token);
+      console.log(`${import.meta.env.VITE_BASE_SERVER_URL}/planpage/transport/aeroplane`, token);
       const response = await axios.get(
         `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/transport/aeroplane`, 
         {
@@ -24,8 +24,7 @@ export default function Navbar({ setPlaceType, setTransportData }: NavbarProps) 
         }
       );
       console.log("Planes API Response:", response.data);
-      console.log(response)
-      setTransportData(response.data); // Pass data to the parent
+      setTransportData(response.data.data); // Pass data to the parent
     } catch (error: any) {
       console.error("Error fetching planes data:", error.message || error.response?.data);
     }

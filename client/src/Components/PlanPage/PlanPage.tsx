@@ -6,16 +6,16 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "../singleComponent/Navbar";
+import FlightsList from "../singleComponent/FlightList"; // Import FlightsList
 
 export default function PlanPage() {
-
   const location = useLocation();
   const initialCoordinates = location.state?.coordinates || { lat: 12.9716, lng: 77.5946 }; // Default to Bangalore
   const [coordinates, setCoordinates] = useState(initialCoordinates);
   const [places, setPlaces] = useState([]);
   const [placeType, setPlaceType] = useState("");
   const [selectedPlacesByType, setSelectedPlacesByType] = useState<Record<string, string[]>>({}); // Categorize selected places
-  const [transportData, setTransportData] = useState(null); // State to hold transport data
+  const [transportData, setTransportData] = useState<any>(null); // State to hold transport data
 
   const fetchNearbyPlaces = async (lat: number, lng: number, type: string) => {
     try {
@@ -39,13 +39,6 @@ export default function PlanPage() {
     }
   }, [coordinates, placeType]);
 
-  useEffect(() => {
-    if (transportData) {
-      console.log("Transport Data:", transportData);
-      // Handle transport data (e.g., display in UI)
-    }
-  }, [transportData]);
-  
   const handleSelectedPlaces = (selectedPlaces: string[]) => {
     setSelectedPlacesByType((prev) => ({
       ...prev,
@@ -62,12 +55,18 @@ export default function PlanPage() {
       <Navbar setPlaceType={setPlaceType} setTransportData={setTransportData} />
       <div className={styles.planPageContainer}>
         <div className={styles.placeList}>
-          <PlacesList
-            places={places}
-            selectedPlaces={selectedPlacesByType[placeType] || []}
-            onSelectedPlacesChange={handleSelectedPlaces}
-            onAdd={handleAddButton}
-          />
+          {transportData ? (
+            <FlightsList
+              flights={transportData.flights || []} // Fallback to empty array if flights is undefined
+            />
+          ) : (
+            <PlacesList
+              places={places}
+              selectedPlaces={selectedPlacesByType[placeType] || []}
+              onSelectedPlacesChange={handleSelectedPlaces}
+              onAdd={handleAddButton}
+            />
+          )}
         </div>
         <div className={styles.mapContainer}>
           <Map coordinates={coordinates} places={places} />
