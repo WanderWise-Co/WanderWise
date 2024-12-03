@@ -1,154 +1,175 @@
 {
-    "timestamp": "2024-12-02T16:13:38.536520",
+    "timestamp": "2024-12-03T14:37:38.044898",
     "bus_data": [
         {
-            "Bus Name": "Sri Durgamba Travels - R No M",
-            "Rating": "4.6\n/5",
-            "Departure Time": "22:35",
-            "Departure Location": "Nelamangala",
-            "Arrival Time": "04:00",
-            "Arrival Location": "Sharadha Travels Shimoga",
-            "Price": "1499",
-            "Window Seats": "14 window seats",
-            "Amenities": [
-                "Emergency Contact Number",
-                "Charging Point",
-                "M-ticket"
-            ]
-        },
-        {
-            "Bus Name": "Shrungagiri Travels",
-            "Rating": "3.8\n/5",
-            "Departure Time": "20:00",
-            "Departure Location": "Arekere",
-            "Arrival Time": "04:30",
-            "Arrival Location": "shivamogga",
-            "Price": "665",
-            "Window Seats": "16 window seats",
-            "Amenities": [
-                "Emergency Contact Number",
-                "Charging Point",
-                "M-ticket"
-            ]
-        },
-        {
-            "Bus Name": "Guru Shakthi Motors",
+            "Bus Name": "FlixBus",
             "Rating": "4.7\n/5",
-            "Departure Time": "21:45",
-            "Departure Location": "Mantri Square Metro Station",
-            "Arrival Time": "04:30",
-            "Arrival Location": "Near Mayura Hotel",
-            "Price": "1000",
-            "Window Seats": "16 window seats",
+            "Departure Time": "00:10",
+            "Departure Location": "Silk Board",
+            "Arrival Time": "08:15",
+            "Arrival Location": "Velachery",
+            "Price": "1296",
+            "Window Seats": "18 window seats",
             "Amenities": [
-                "Emergency Contact Number",
+                "Water Bottle",
+                "Blankets",
                 "Charging Point",
-                "M-ticket"
+                "Reading Light",
+                "Waiting lounge",
+                "M-ticket",
+                "Deep Cleaned Buses"
             ]
         },
         {
-            "Bus Name": "Gajamukha Travels",
-            "Rating": "4.7\n/5",
-            "Departure Time": "22:30",
-            "Departure Location": "Yeshwantpur",
-            "Arrival Time": "05:00",
-            "Arrival Location": "Bus stand",
-            "Price": "800",
-            "Window Seats": "15 window seats",
-            "Amenities": [
-                "Emergency Contact Number",
-                "Charging Point",
-                "M-ticket"
-            ]
-        },
-        {
-            "Bus Name": "Sri Vivek Travels",
-            "Rating": "4.6\n/5",
-            "Departure Time": "22:30",
-            "Departure Location": "Majestic",
-            "Arrival Time": "04:30",
-            "Arrival Location": "Shivamogga",
-            "Price": "900",
-            "Window Seats": "16 window seats",
-            "Amenities": [
-                "Emergency Contact Number",
-                "Charging Point",
-                "M-ticket"
-            ]
-        },
-        {
-            "Bus Name": "Sugama Tourist",
-            "Rating": "4.4\n/5",
-            "Departure Time": "22:15",
-            "Departure Location": "Anand Rao Circle",
-            "Arrival Time": "04:45",
-            "Arrival Location": "Shimoga Sugama Tourist",
-            "Price": "950",
-            "Window Seats": "10 window seats",
-            "Amenities": [
-                "Emergency Contact Number",
-                "Charging Point",
-                "M-ticket"
-            ]
-        },
-        {
-            "Bus Name": "Sri Ranganatha Tours and Travels",
-            "Rating": "4.3\n/5",
-            "Departure Time": "22:45",
-            "Departure Location": "Navarang Theater",
-            "Arrival Time": "05:15",
-            "Arrival Location": "shivamogga",
-            "Price": "799",
-            "Window Seats": "15 window seats",
-            "Amenities": [
-                "Emergency Contact Number",
-                "Charging Point",
-                "M-ticket"
-            ]
-        },
-        {
-            "Bus Name": "VSM Travels",
+            "Bus Name": "FlixBus",
             "Rating": "4.2\n/5",
-            "Departure Time": "22:45",
-            "Departure Location": "Majestic",
+            "Departure Time": "00:10",
+            "Departure Location": "Attibele",
+            "Arrival Time": "06:35",
+            "Arrival Location": "Koyambedu",
+            "Price": "1296",
+            "Window Seats": "18 window seats",
+            "Amenities": [
+                "Water Bottle",
+                "Blankets",
+                "Charging Point",
+                "Reading Light",
+                "Waiting lounge",
+                "M-ticket",
+                "Deep Cleaned Buses"
+            ]
+        },
+        {
+            "Bus Name": "SST Limoliner",
+            "Rating": "5\n/5",
+            "Departure Time": "23:00",
+            "Departure Location": "Madiwala",
             "Arrival Time": "05:15",
-            "Arrival Location": "Shivamogga",
-            "Price": "850",
-            "Window Seats": "16 window seats",
+            "Arrival Location": "Koyambedu",
+            "Price": "3283",
+            "Window Seats": "11 window seats",
             "Amenities": [
-                "Emergency Contact Number",
+                "Water Bottle",
+                "Blankets",
                 "Charging Point",
-                "M-ticket"
+                "Reading Light",
+                "Waiting lounge",
+                "M-ticket",
+                "Deep Cleaned Buses"
             ]
         },
         {
-            "Bus Name": "VSM Travels",
-            "Rating": "4.1\n/5",
-            "Departure Time": "23:30",
-            "Departure Location": "Majestic",
-            "Arrival Time": "05:45",
-            "Arrival Location": "JPN Road",
-            "Price": "750",
-            "Window Seats": "16 window seats",
+            "Bus Name": "Adithiya AirBus",
+            "Rating": "4.7\n/5",
+            "Departure Time": "21:30",
+            "Departure Location": "Madiwala",
+            "Arrival Time": "04:10",
+            "Arrival Location": "Koyambedu",
+            "Price": "1900",
+            "Window Seats": "18 window seats",
             "Amenities": [
-                "Emergency Contact Number",
+                "Water Bottle",
+                "Blankets",
                 "Charging Point",
-                "M-ticket"
+                "Reading Light",
+                "Waiting lounge",
+                "M-ticket",
+                "Deep Cleaned Buses"
             ]
         },
         {
-            "Bus Name": "Nelson Travels",
-            "Rating": "4\n/5",
-            "Departure Time": "23:40",
-            "Departure Location": "Majestic",
-            "Arrival Time": "05:45",
-            "Arrival Location": "Private Bus Stand",
-            "Price": "1500",
-            "Window Seats": "12 window seats",
+            "Bus Name": "FlixBus",
+            "Rating": "4.7\n/5",
+            "Departure Time": "23:59",
+            "Departure Location": "Madiwala",
+            "Arrival Time": "08:15",
+            "Arrival Location": "Velachery",
+            "Price": "1464",
+            "Window Seats": "17 window seats",
             "Amenities": [
-                "Emergency Contact Number",
+                "Water Bottle",
+                "Blankets",
                 "Charging Point",
-                "M-ticket"
+                "Reading Light",
+                "Waiting lounge",
+                "M-ticket",
+                "Deep Cleaned Buses"
+            ]
+        },
+        {
+            "Bus Name": "KBS Luxury Bus",
+            "Rating": "4.7\n/5",
+            "Departure Time": "20:30",
+            "Departure Location": "Madiwala",
+            "Arrival Time": "03:40",
+            "Arrival Location": "Koyambedu",
+            "Price": "1700",
+            "Window Seats": "16 window seats",
+            "Amenities": [
+                "Water Bottle",
+                "Blankets",
+                "Charging Point",
+                "Reading Light",
+                "Waiting lounge",
+                "M-ticket",
+                "Deep Cleaned Buses"
+            ]
+        },
+        {
+            "Bus Name": "IntrCity SmartBus",
+            "Rating": "4.6\n/5",
+            "Departure Time": "23:20",
+            "Departure Location": "Madiwala",
+            "Arrival Time": "06:50",
+            "Arrival Location": "Koyambedu",
+            "Price": "1259",
+            "Window Seats": "22 window seats",
+            "Amenities": [
+                "Water Bottle",
+                "Blankets",
+                "Charging Point",
+                "Reading Light",
+                "Waiting lounge",
+                "M-ticket",
+                "Deep Cleaned Buses"
+            ]
+        },
+        {
+            "Bus Name": "KMRL Kalaimakal",
+            "Rating": "4.7\n/5",
+            "Departure Time": "22:30",
+            "Departure Location": "Madiwala",
+            "Arrival Time": "05:15",
+            "Arrival Location": "Koyambedu",
+            "Price": "990",
+            "Window Seats": "16 window seats",
+            "Amenities": [
+                "Water Bottle",
+                "Blankets",
+                "Charging Point",
+                "Reading Light",
+                "Waiting lounge",
+                "M-ticket",
+                "Deep Cleaned Buses"
+            ]
+        },
+        {
+            "Bus Name": "VGO BUS",
+            "Rating": "4.8\n/5",
+            "Departure Time": "23:45",
+            "Departure Location": "Madiwala",
+            "Arrival Time": "05:32",
+            "Arrival Location": "Koyambedu",
+            "Price": "1499",
+            "Window Seats": "24 window seats",
+            "Amenities": [
+                "Water Bottle",
+                "Blankets",
+                "Charging Point",
+                "Reading Light",
+                "Waiting lounge",
+                "M-ticket",
+                "Deep Cleaned Buses"
             ]
         }
     ]

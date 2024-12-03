@@ -64,7 +64,7 @@ def scrollDown():
 def getHotelLinks():
     sleep(5)
     scrollDown()
-    sleep(7)
+    sleep(5)
     
     try:
         links = driver.find_elements(By.XPATH, "//a[@class = 'PropertyCard__Link']")
@@ -170,8 +170,29 @@ def search_hotels(place, check_in_date, check_out_date):
         first_suggestion = driver.find_element(By.CSS_SELECTOR, 'ul.AutocompleteList li.Suggestion[data-element-index="0"]')
         ActionChains(driver).move_to_element(first_suggestion).click().perform()
         sleep(2)
+        check_in_year, check_in_month, check_in_day = check_in_date.split('-')
+        # print(check_in_year)
+        check_in_month = datetime.strptime(check_in_month, "%m").strftime("%B")
+        # print(check_in_month)
 
         try:
+            # check_in_element = WebDriverWait(driver, 10).until(
+            #     EC.element_to_be_clickable((By.XPATH, f"//span[@data-selenium-date='{check_in_date}']"))
+            # )
+            # check_in_element.click()
+            current_month_caption = driver.find_element(By.XPATH, "//div[contains(@class, 'DayPicker-Caption')]")
+            # current_month_caption=current_month_captio.text
+            # print(current_month_caption)
+            current_month_year = current_month_caption.text.split()[-1]
+            print(current_month_year)
+            current_month_name = current_month_caption.text.split()[0]
+            print(current_month_name)
+            while f"{check_in_month} {check_in_year}" != f"{current_month_name} {current_month_year}":
+                next_month_button = driver.find_element(By.XPATH, "//button[@aria-label='Next Month']")
+                next_month_button.click()
+                current_month_caption = driver.find_element(By.XPATH, "//div[contains(@class, 'DayPicker-Caption')]")
+                current_month_year = current_month_caption.text.split()[-1]
+                current_month_name = current_month_caption.text.split()[0]
             check_in_element = WebDriverWait(driver, 10).until(
                 EC.element_to_be_clickable((By.XPATH, f"//span[@data-selenium-date='{check_in_date}']"))
             )
