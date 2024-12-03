@@ -54,7 +54,7 @@ export default function Navbar({
     }
 
     try {
-      setNavButton("buses"); // Set the navButton state to "buses"
+      setNavButton("buses"); 
       const token = localStorage.getItem("token");
       const response = await axios.get(
         `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/transport/bus`,
