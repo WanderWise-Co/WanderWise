@@ -22,6 +22,7 @@ export default function PlanPage() {
   const [source, setSource] = useState(location.state?.source || "");
   const [destination, setDestination] = useState(location.state?.destination || "");
   const [date, setDate] = useState(location.state?.date || "");
+  const [page,showppage] = useState('restaurant');
 
   useEffect(() => {
     console.log("Received Data in PlanPage:");

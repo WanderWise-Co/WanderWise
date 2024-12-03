@@ -24,6 +24,7 @@ export default function Navbar({
   
 
   const handlePlaneClick = async () => {
+    
     if (!from || !to) {
       console.error("From and To locations must be provided.");
       return;

@@ -1,7 +1,7 @@
 // FormReq.tsx
 import { Button } from "flowbite-react";
 import { HiOutlineArrowRight } from "react-icons/hi";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from './FormReq.module.css';
 import Datepicker from "react-tailwindcss-datepicker";
@@ -39,6 +39,34 @@ export default function FormReq() {
 
   const navigate = useNavigate();
 
+  const [date, setDate] = useState({
+    startDate: new Date(),
+    endDate: new Date(new Date().setMonth(11)), 
+  });
+  useEffect(()=>{
+    if (source) {
+      localStorage.setItem('from', source);
+    }
+  },[source])
+
+  useEffect(()=>{
+    if (destination) {
+      localStorage.setItem('to', destination);
+    }
+  },[destination])
+
+  useEffect(() => {
+    if (date.startDate) {
+      localStorage.setItem('startDate', date.startDate.toString());
+    }
+    if (date.endDate) {
+      localStorage.setItem('endDate', date.endDate.toString());
+    }
+  }, [date]);
+  
+  
+  
+
   const handleCategoryClick = (categoryName: string) => {
     setSelectedCategories((prevSelected) =>
       prevSelected.includes(categoryName)
@@ -53,7 +81,7 @@ export default function FormReq() {
         console.error("Destination cannot be empty.");
         return;
       }
-  
+      
       try {
         const response = await axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
           params: {
@@ -87,13 +115,12 @@ export default function FormReq() {
   };
   
 
-  const [date, setDate] = useState({
-    startDate: new Date(),
-    endDate: new Date(new Date().setMonth(11)), // Ensure this is a Date object
-  });
+
 
   const handleValueChange = (newValue: any) => {
+    console.log('date');
     setDate(newValue);
+    
   };
 
   return (
