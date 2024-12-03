@@ -28,10 +28,11 @@ def get_month_name(month):
     months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
               'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
     return months[month - 1]
-
 def get_day_of_week(date_obj):
-    days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-    return days[date_obj.weekday()]
+    return date_obj.strftime("%A")[:3]
+# def get_day_of_week(date_obj):
+#     days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+#     return days[date_obj.weekday()]
 
 # Function to extract flight details
 def extract_flight_details(flight_element):
@@ -138,7 +139,7 @@ try:
     today = datetime.today()
     month = sys.argv[1] if len(sys.argv) > 1 else today.strftime("%B")
     date = int(sys.argv[2]) if len(sys.argv) > 2 else int(today.day)
-    
+    year=2025
     print(month,date)
 
     # # Define target month and date
@@ -197,7 +198,7 @@ try:
             break
         else:
             next_month_button = WebDriverWait(driver, 10).until(
-                EC.element_to_be_clickable((By.CSS_SELECTOR, '.DayPicker-NavButton--next'))
+                EC.element_to_be_clickable((By.CSS_SELECTOR, "svg[data-testid='rightArrow']"))
             )
             next_month_button.click()
             delay(0.5)
@@ -206,10 +207,16 @@ try:
     # day_of_week = get_day_of_week(time.strptime(target_date, "%Y-%b-%d"))
     # aria_label = f"{day_of_week} {get_month_name(12)} {date} 2025"
     # print(f"Target aria-label: {aria_label}")
-    target_date = f"2025-{get_month_name(12)}-{date}"
-    parsed_date = datetime.strptime(target_date, "%Y-%b-%d")
-    day_of_week = get_day_of_week(parsed_date)
-    aria_label = f"{day_of_week} {get_month_name(12)} {date} 2024"
+    # target_date = f"2025-{get_month_name(12)}-{date}"
+    # parsed_date = datetime.strptime(target_date, "%Y-%b-%d")
+    # day_of_week = get_day_of_week(parsed_date)
+    # aria_label = f"{day_of_week} {get_month_name(12)} {date} 2024"
+    target_date = f"{year}-{month}-{date}"
+   
+    date_obj = datetime(year, datetime.strptime(month, "%B").month,date)
+    mon1=month[:3]
+    day_of_week = get_day_of_week(date_obj)
+    aria_label = f"{day_of_week} {mon1} {date} {year}"
     print(f"Target aria-label: {aria_label}")
 
     date_selector = f'[aria-label="{aria_label}"]'

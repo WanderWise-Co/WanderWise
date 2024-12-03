@@ -65,16 +65,58 @@ def scrape_Busses(srcplace, destplace, check_in_date):
 
     # Click on the date field and select the check-in date
     try:
+        # date_button = WebDriverWait(driver, 30).until(
+        #     EC.element_to_be_clickable((By.CSS_SELECTOR, "input[placeholder='Pick a date']"))
+        # )
+        # date_button.click()
+        # date_xpath = f"//li[span[text()='{check_in_date}']]"
+        # desired_date = WebDriverWait(driver, 10).until(
+        #     EC.element_to_be_clickable((By.XPATH, date_xpath))
+        # )
+        # desired_date.click()
+        # print(f"Date '{check_in_date}' selected successfully.")
         date_button = WebDriverWait(driver, 30).until(
             EC.element_to_be_clickable((By.CSS_SELECTOR, "input[placeholder='Pick a date']"))
         )
         date_button.click()
-        date_xpath = f"//li[span[text()='{check_in_date}']]"
-        desired_date = WebDriverWait(driver, 10).until(
-            EC.element_to_be_clickable((By.XPATH, date_xpath))
-        )
-        desired_date.click()
-        print(f"Date '{check_in_date}' selected successfully.")
+
+        # Extract desired month and year from the input date
+        import datetime
+        desired_date = datetime.datetime.strptime(check_in_date, "%d-%m-%Y")
+        desired_month_year = desired_date.strftime("%B %Y")
+        desired_day = desired_date.strftime("%d")
+
+        while True:
+            # Find the visible month and year on the calendar
+            visible_month_year = WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located(
+                    (By.CSS_SELECTOR, "p.dcalendarstyles__MonthNamePara-sc-r2jz2t-3")
+                )
+            ).text
+
+            if visible_month_year == desired_month_year:
+                # Select the date
+                date_xpath = f"//li[span[text()='{desired_day}']]"
+                desired_date_element = WebDriverWait(driver, 10).until(
+                    EC.element_to_be_clickable((By.XPATH, date_xpath))
+                )
+                desired_date_element.click()
+                print(f"Date '{check_in_date}' selected successfully.")
+                break
+            else:
+                # Determine whether to navigate left or right
+                if desired_date > datetime.datetime.strptime(visible_month_year, "%B %Y"):
+                    # Click the right arrow to go to the next month
+                    next_button = WebDriverWait(driver, 10).until(
+                        EC.element_to_be_clickable((By.CSS_SELECTOR,"div.dcalendarstyles__MonthChangeRightArrowDiv-sc-r2jz2t-16"))
+                    )
+                    next_button.click()
+                else:
+                    # Click the left arrow to go to the previous month
+                    prev_button = WebDriverWait(driver, 10).until(
+                        EC.element_to_be_clickable((By.CSS_SELECTOR,"div.dcalendarstyles__MonthChangeLeftArrowDiv-sc-r2jz2t-15"))
+                    )
+                    prev_button.click()
     except Exception as e:
         print(f"Failed to select travel date: {e}")
         driver.quit()
