@@ -67,25 +67,26 @@ const get_aero_data = async (req, res) => {
 };
 const get_bus_data = async(req,res)=>{
    
-    const { from,to,startDate, endDate } = req.body;
+    const { from,to,startDate, endDate } = req.query;
     if(!from || !to )
     {
         throw new BadRequestError('provide from and to ')
     }
     const parseDate = (dateString) => {
         const date = new Date(dateString);
-        return {
-            month: date.toLocaleString('default', { month: 'long' }),
-            date: date.getDate(),
-        };
+        const day = String(date.getDate()).padStart(2, '0');
+        const month = String(date.getMonth() + 1).padStart(2, '0');  // Get month (0-based)
+        const year = date.getFullYear();
+        return `${day}-${month}-${year}`;
+
     };
     const today = new Date();
     const start = startDate ? parseDate(startDate) : parseDate(today);
     const end = endDate ? parseDate(endDate) : parseDate(today);
-    const month = start.month;
-    const date = start.date;
+    // const month = start.month;
+    // const date = start.date;
 
-    const python = spawn('python', [path.join(__dirname, '../scripts/busdatafinal.py'),from,to,month,date],{
+    const python = spawn('python', [path.join(__dirname, '../scripts/busdatafinal.py'),from,to,start],{
         cwd: path.join(__dirname, '../scripts')
     });
 

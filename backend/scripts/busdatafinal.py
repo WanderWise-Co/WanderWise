@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 import json
 import os
-from datetime import datetime
+import datetime
 import sys
 
 # Function to scrape bus details based on the source, destination, and travel date input
@@ -269,7 +269,7 @@ def scrape_Busses(srcplace, destplace, check_in_date):
 
 
     print('writing bus data')
-    timestamp = datetime.now().isoformat()
+    timestamp = datetime.datetime.now().isoformat()
 
 # Prepare the data with timestamp
     data_to_save = {
@@ -292,10 +292,11 @@ def scrape_Busses(srcplace, destplace, check_in_date):
 # srcplace = 'banglore'
 # destplace = 'shimoga'
 # check_in_date = 29
-today = datetime.today()
+today = datetime.datetime.today()
 srcplace = sys.argv[1] if len(sys.argv) > 1 else "banglore"
 destplace = sys.argv[2] if len(sys.argv)>2 else "mumbai"
-month = sys.argv[3] if len(sys.argv) > 3 else today.strftime("%B")
-check_in_date = int(sys.argv[4]) if len(sys.argv) > 4 else today.day
+check_in_date = sys.argv[3] if len(sys.argv) > 3 else today.strftime("%B")
+print(check_in_date)
+# check_in_date = int(sys.argv[4]) if len(sys.argv) > 4 else today.day
 print(srcplace,destplace,check_in_date)
 scrape_Busses(srcplace, destplace, check_in_date)
