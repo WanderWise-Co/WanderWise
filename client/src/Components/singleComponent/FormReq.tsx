@@ -75,7 +75,7 @@ export default function FormReq() {
         console.error("Destination cannot be empty.");
         return;
       }
-  
+      
       try {
         const response = await axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
           params: {
@@ -112,7 +112,9 @@ export default function FormReq() {
   
 
   const handleValueChange = (newValue: any) => {
+    console.log('date');
     setDate(newValue);
+    
   };
 
   return (

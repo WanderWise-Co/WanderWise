@@ -6,7 +6,7 @@ const {BadRequestError} = require('../errors/index')
 
 const get_aero_data = async (req, res) => {
     console.log('aeroplaning');
-    const { startDate, endDate } = req.body;
+    const { from ,to,startDate, endDate } = req.query;
         const parseDate = (dateString) => {
             const date = new Date(dateString);
             return {
@@ -24,7 +24,7 @@ const get_aero_data = async (req, res) => {
         console.log(year);
     const pythonScriptPath = path.join(__dirname, '../scripts/aeroplanefinaldata.py');
 
-    const python = spawn('python', [pythonScriptPath,month,date,year], {
+    const python = spawn('python', [pythonScriptPath,month,date,year,from,to], {
         cwd: path.join(__dirname, '../scripts')
     });
 

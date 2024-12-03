@@ -95,6 +95,13 @@ def extract_flight_details(flight_element):
 # Main script execution
 try:
     # Navigate to Cleartrip
+    today = datetime.today()
+    month = sys.argv[1] if len(sys.argv) > 1 else today.strftime("%B")
+    date = int(sys.argv[2]) if len(sys.argv) > 2 else int(today.day)
+    year=int(sys.argv[3]) if len(sys.argv) >3 else int(today.year)
+    fromm  = sys.argv[4] if len(sys.argv) > 4 else "bengaluru"
+    to = sys.argv[5] if len(sys.argv) > 5 else "Delhi"
+    print(month,date)
     driver.get("https://www.cleartrip.com/")
 
     # Close the pop-up if it exists
@@ -110,7 +117,7 @@ try:
     from_input = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.CSS_SELECTOR, 'input[placeholder="Where from?"]'))
     )
-    from_input.send_keys("Bangalore")
+    from_input.send_keys(fromm)
     delay(1)
     from_airport = WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.CSS_SELECTOR, '.airportList li:first-child'))
@@ -122,7 +129,7 @@ try:
     to_input = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.CSS_SELECTOR, 'input[placeholder="Where to?"]'))
     )
-    to_input.send_keys("Mumbai")
+    to_input.send_keys(to)
     delay(1)
     to_airport = WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.CSS_SELECTOR, '.airportList li:first-child'))
@@ -136,11 +143,6 @@ try:
     )
     date_picker.click()
     print("Date picker opened.")
-    today = datetime.today()
-    month = sys.argv[1] if len(sys.argv) > 1 else today.strftime("%B")
-    date = int(sys.argv[2]) if len(sys.argv) > 2 else int(today.day)
-    year=2025
-    print(month,date)
 
     # # Define target month and date
     # target_month = "November"
@@ -187,6 +189,7 @@ try:
     # month = sys.argv[1] if len(sys.argv) > 1 else today.strftime("%B")
     # date = int(sys.argv[2]) if len(sys.argv) > 2 else today.day
     # year = int(sys.argv[3]) if len(sys.agrv) >3 else today.year
+    
 
     while True:
         current_month_element = WebDriverWait(driver, 10).until(
