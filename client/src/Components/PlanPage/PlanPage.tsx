@@ -104,7 +104,6 @@
 import Footer from "../singleComponent/Footer";
 import styles from "../PlanPage/PlanPage.module.css";
 import PlacesList from "../singleComponent/PlacesList";
-import Map from "../singleComponent/Map";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
