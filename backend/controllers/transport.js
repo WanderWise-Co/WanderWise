@@ -12,6 +12,7 @@ const get_aero_data = async (req, res) => {
             return {
                 month: date.toLocaleString('default', { month: 'long' }),
                 date: date.getDate(),
+                year :date.getFullYear(),
             };
         };
     const today = new Date();
@@ -19,10 +20,11 @@ const get_aero_data = async (req, res) => {
     const end = endDate ? parseDate(endDate) : parseDate(today);
     const month = start.month;
     const date = start.date;
-
+    const year = start.year;
+        console.log(year);
     const pythonScriptPath = path.join(__dirname, '../scripts/aeroplanefinaldata.py');
 
-    const python = spawn('python', [pythonScriptPath,month,date], {
+    const python = spawn('python', [pythonScriptPath,month,date,year], {
         cwd: path.join(__dirname, '../scripts')
     });
 
@@ -254,45 +256,10 @@ const get_rental_data = async (req, res) => {
     });
 };
 
-const get_gemeni_data = async (req, res) => {
-    const python = spawn('python', [path.join(__dirname, '../scripts/gemeni.py')], {
-        cwd: path.join(__dirname, '../scripts'),
-    });
-
-    let pythonOutput = '';
-
-    python.stdout.on('data', (data) => {
-        pythonOutput += data.toString(); // Accumulate Python script output
-    });
-
-    python.stderr.on('data', (data) => {
-        console.error(`Python stderr: ${data}`);
-    });
-
-    python.on('close', (code) => {
-        if (code === 0) {
-            console.log('Python script executed successfully');
-            
-            try {
-                // Here, process the string directly.
-                const outputData = pythonOutput.trim(); // Remove any leading/trailing whitespace
-                console.log(outputData);
-
-                // Respond with the data
-                return res.json({ data: outputData });
-            } catch (err) {
-                console.error('Error processing Python script output:', err);
-                return res.status(500).json({ error: 'Failed to process Python output' });
-            }
-        } else {
-            console.error(`Python script failed with exit code ${code}`);
-            return res.status(500).json({ error: 'Python script execution failed' });
-        }
-    });
-};
 
 
-module.exports = {get_aero_data,get_bus_data,get_hotel_data,get_rental_data,get_gemeni_data};
+
+module.exports = {get_aero_data,get_bus_data,get_hotel_data,get_rental_data};
 
 
 
