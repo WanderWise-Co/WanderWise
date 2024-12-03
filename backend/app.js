@@ -11,6 +11,8 @@ const AuthRouter = require('./routes/auth');
 const googlemap=require('./routes/googlemap');
 const userPreferenceRouter = require('./routes/userPreference');
 const transport = require('./routes/transport');
+const recommendation = require('./routes/recommendation');
+const gemini  = require('./routes/gemini');
 
 // Error handlers
 const notFoundMiddleware = require('./middleware/not-found');
@@ -36,8 +38,11 @@ app.use(express.json());  // Ensure JSON middleware is used early
 // Route for authentication
 app.use('/api/v1/auth', AuthRouter);
 app.use('/api/v1',googlemap);
-app.use('/api/v1/planage',authMiddle,userPreferenceRouter);
+app.use('/api/v1/planpage/cart',authMiddle,userPreferenceRouter);
 app.use('/api/v1/planpage/transport',authMiddle,transport);
+app.use('/api/v1/planpage/gemini', authMiddle, gemini);
+app.use('/api/v1/planpage/recommendation', authMiddle, recommendation);
+
 
 // Error handling middleware (keep these last)
 app.use(notFoundMiddleware);

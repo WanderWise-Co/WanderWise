@@ -53,7 +53,7 @@ export default function FormReq() {
         console.error("Destination cannot be empty.");
         return;
       }
-
+  
       try {
         const response = await axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
           params: {
@@ -61,32 +61,39 @@ export default function FormReq() {
             key: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
           },
         });
-
+  
         if (response.data.status !== "OK" || response.data.results.length === 0) {
           console.error("Geocoding failed:", response.data.status);
           return;
         }
-
+  
         const { lat, lng } = response.data.results[0].geometry.location;
-        setCoordinates({ lat, lng });
-
-        navigate("/api/v1/planpage", { state: { coordinates: { lat, lng } } });
-      } catch (error:any) {
+  
+        navigate(`/api/v1/planpage`, {
+          state: {
+            coordinates: { lat, lng },
+            selectedCategories,
+            source,
+            destination,
+            date,
+          },
+        });
+      } catch (error: any) {
         console.error("Error fetching location:", error.message);
       }
     } else {
       navigate("/api/v1/auth/login");
     }
   };
+  
 
-  const [value, setValue] = useState({
+  const [date, setDate] = useState({
     startDate: new Date(),
     endDate: new Date(new Date().setMonth(11)), // Ensure this is a Date object
   });
 
   const handleValueChange = (newValue: any) => {
-    console.log("newValue:", newValue);
-    setValue(newValue);
+    setDate(newValue);
   };
 
   return (
@@ -118,7 +125,7 @@ export default function FormReq() {
             className={`${styles.inputField} ${styles.smallInputField}`}
           />
           <Datepicker
-            value={value}
+            value={date}
             onChange={handleValueChange}
           />
         </div>

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const userPreference = new mongoose.Schema({
+const userPreferenceSchema = new mongoose.Schema({
     userPrefId:{
         type:mongoose.Types.ObjectId,
         ref:'User',
@@ -17,4 +17,4 @@ const userPreference = new mongoose.Schema({
     }
 })
 
-module.exports  = mongoose.model('userPreference',userPreference)
+module.exports  = mongoose.model('userPreference',userPreferenceSchema)

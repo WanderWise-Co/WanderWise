@@ -11,7 +11,7 @@ import BusList from "../singleComponent/BusList"; // Import FlightsList
 
 export default function PlanPage() {
   const location = useLocation();
-  const initialCoordinates = location.state?.coordinates || { lat: 12.9716, lng: 77.5946 }; // Default to Bangalore
+  const initialCoordinates = location.state?.coordinates || { lat: 12.9716, lng: 77.5946 };
   const [coordinates, setCoordinates] = useState(initialCoordinates);
   const [places, setPlaces] = useState([]);
   const [placeType, setPlaceType] = useState("");
@@ -47,14 +47,19 @@ export default function PlanPage() {
   const handleSelectedPlaces = (selectedPlaces: string[]) => {
     setSelectedPlacesByType((prev) => ({
       ...prev,
-      [placeType]: selectedPlaces, // Save selections for the current type
+      [placeType]: selectedPlaces,
     }));
   };
 
+  useEffect(() => {
+    console.log("Transport Plane Data:", transportPlaneData);
+    console.log("Transport Buses Data:", transportBusesData);
+  }, [transportPlaneData, transportBusesData]);
+  
+  
   const handleAddButton = () => {
     console.log("Selected Places By Type:", selectedPlacesByType);
   };
-
   return (
     <>
       <Navbar setPlaceType={setPlaceType} setTransportData={setTransportData} setBusData={setBusData} from={source}
@@ -62,10 +67,11 @@ export default function PlanPage() {
       date={date}/>
       <div className={styles.planPageContainer}>
         <div className={styles.placeList}>
-          {transportData ? (
-            <FlightsList
-              flights={transportData.flights || []} // Fallback to empty array if flights is undefined
-            />
+          {transportPlaneData && transportPlaneData.flights ? (
+            <FlightsList flights={transportPlaneData.flights || []} />
+          ) : transportBusesData && transportBusesData.bus_data ? (
+            <BusList buses={transportBusesData.bus_data || []} />
+            
           ) : (
             <PlacesList
               places={places}

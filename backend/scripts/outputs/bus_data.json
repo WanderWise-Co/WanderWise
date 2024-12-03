@@ -1,175 +1,204 @@
 {
-    "timestamp": "2024-12-03T14:37:38.044898",
+    "timestamp": "2024-12-03T14:38:14.995419",
     "bus_data": [
         {
-            "Bus Name": "FlixBus",
-            "Rating": "4.7\n/5",
-            "Departure Time": "00:10",
-            "Departure Location": "Silk Board",
-            "Arrival Time": "08:15",
-            "Arrival Location": "Velachery",
-            "Price": "1296",
+            "Bus Name": "NueGo",
+            "Rating": "4.5\n/5",
+            "Departure Time": "08:30",
+            "Departure Location": "Majestic",
+            "Arrival Time": "11:55",
+            "Arrival Location": "KSRTC Bus Stand",
+            "Price": "232",
             "Window Seats": "18 window seats",
             "Amenities": [
                 "Water Bottle",
-                "Blankets",
-                "Charging Point",
                 "Reading Light",
-                "Waiting lounge",
+                "Charging Point",
+                "USB port for charger",
+                "Wet Napkin",
                 "M-ticket",
-                "Deep Cleaned Buses"
+                "CCTV",
+                "Leg Rest"
             ]
         },
         {
-            "Bus Name": "FlixBus",
+            "Bus Name": "NueGo",
+            "Rating": "4.1\n/5",
+            "Departure Time": "14:30",
+            "Departure Location": "Majestic",
+            "Arrival Time": "18:10",
+            "Arrival Location": "KSRTC Bus Stand",
+            "Price": "375",
+            "Window Seats": "18 window seats",
+            "Amenities": [
+                "Water Bottle",
+                "Reading Light",
+                "Charging Point",
+                "USB port for charger",
+                "Wet Napkin",
+                "M-ticket",
+                "CCTV",
+                "Leg Rest"
+            ]
+        },
+        {
+            "Bus Name": "NueGo",
+            "Rating": "4.8\n/5",
+            "Departure Time": "21:00",
+            "Departure Location": "Majestic",
+            "Arrival Time": "00:30",
+            "Arrival Location": "KSRTC Bus Stand",
+            "Price": "375",
+            "Window Seats": "18 window seats",
+            "Amenities": [
+                "Water Bottle",
+                "Reading Light",
+                "Charging Point",
+                "USB port for charger",
+                "Wet Napkin",
+                "M-ticket",
+                "CCTV",
+                "Leg Rest"
+            ]
+        },
+        {
+            "Bus Name": "NueGo",
+            "Rating": "4.1\n/5",
+            "Departure Time": "23:45",
+            "Departure Location": "Majestic",
+            "Arrival Time": "03:00",
+            "Arrival Location": "KSRTC Bus Stand",
+            "Price": "375",
+            "Window Seats": "18 window seats",
+            "Amenities": [
+                "Water Bottle",
+                "Reading Light",
+                "Charging Point",
+                "USB port for charger",
+                "Wet Napkin",
+                "M-ticket",
+                "CCTV",
+                "Leg Rest"
+            ]
+        },
+        {
+            "Bus Name": "NueGo",
             "Rating": "4.2\n/5",
-            "Departure Time": "00:10",
-            "Departure Location": "Attibele",
-            "Arrival Time": "06:35",
-            "Arrival Location": "Koyambedu",
-            "Price": "1296",
+            "Departure Time": "16:00",
+            "Departure Location": "Majestic",
+            "Arrival Time": "19:45",
+            "Arrival Location": "KSRTC Bus Stand",
+            "Price": "223",
             "Window Seats": "18 window seats",
             "Amenities": [
                 "Water Bottle",
-                "Blankets",
-                "Charging Point",
                 "Reading Light",
-                "Waiting lounge",
+                "Charging Point",
+                "USB port for charger",
+                "Wet Napkin",
                 "M-ticket",
-                "Deep Cleaned Buses"
+                "CCTV",
+                "Leg Rest"
             ]
         },
         {
-            "Bus Name": "SST Limoliner",
-            "Rating": "5\n/5",
+            "Bus Name": "VKV Travels",
+            "Rating": "3.8\n/5",
+            "Departure Time": "06:05",
+            "Departure Location": "Madiwala",
+            "Arrival Time": "08:40",
+            "Arrival Location": "Colombia Asia Hospital",
+            "Price": "440",
+            "Window Seats": "10 window seats",
+            "Amenities": [
+                "Water Bottle",
+                "Reading Light",
+                "Charging Point",
+                "USB port for charger",
+                "Wet Napkin",
+                "M-ticket",
+                "CCTV",
+                "Leg Rest"
+            ]
+        },
+        {
+            "Bus Name": "PSS Transport",
+            "Rating": "4.7\n/5",
+            "Departure Time": "05:00",
+            "Departure Location": "Kalasipalyam",
+            "Arrival Time": "07:40",
+            "Arrival Location": "PSS Transport Mysuru office",
+            "Price": "475",
+            "Window Seats": "15 window seats",
+            "Amenities": [
+                "Water Bottle",
+                "Reading Light",
+                "Charging Point",
+                "USB port for charger",
+                "Wet Napkin",
+                "M-ticket",
+                "CCTV",
+                "Leg Rest"
+            ]
+        },
+        {
+            "Bus Name": "Gowri Shankar Travels",
+            "Rating": "3.7\n/5",
+            "Departure Time": "22:00",
+            "Departure Location": "Anand Rao Circle",
+            "Arrival Time": "01:30",
+            "Arrival Location": "KSRTC Bus Stand",
+            "Price": "500",
+            "Window Seats": "13 window seats",
+            "Amenities": [
+                "Water Bottle",
+                "Reading Light",
+                "Charging Point",
+                "USB port for charger",
+                "Wet Napkin",
+                "M-ticket",
+                "CCTV",
+                "Leg Rest"
+            ]
+        },
+        {
+            "Bus Name": "VKV Travels",
+            "Rating": "4.1\n/5",
+            "Departure Time": "06:05",
+            "Departure Location": "Madiwala",
+            "Arrival Time": "08:40",
+            "Arrival Location": "Colombia Asia Hospital",
+            "Price": "590",
+            "Window Seats": "10 window seats",
+            "Amenities": [
+                "Water Bottle",
+                "Reading Light",
+                "Charging Point",
+                "USB port for charger",
+                "Wet Napkin",
+                "M-ticket",
+                "CCTV",
+                "Leg Rest"
+            ]
+        },
+        {
+            "Bus Name": "Asian Xpress",
+            "Rating": "4\n/5",
             "Departure Time": "23:00",
             "Departure Location": "Madiwala",
-            "Arrival Time": "05:15",
-            "Arrival Location": "Koyambedu",
-            "Price": "3283",
-            "Window Seats": "11 window seats",
+            "Arrival Time": "02:00",
+            "Arrival Location": "Others",
+            "Price": "645",
+            "Window Seats": "10 window seats",
             "Amenities": [
                 "Water Bottle",
-                "Blankets",
-                "Charging Point",
                 "Reading Light",
-                "Waiting lounge",
-                "M-ticket",
-                "Deep Cleaned Buses"
-            ]
-        },
-        {
-            "Bus Name": "Adithiya AirBus",
-            "Rating": "4.7\n/5",
-            "Departure Time": "21:30",
-            "Departure Location": "Madiwala",
-            "Arrival Time": "04:10",
-            "Arrival Location": "Koyambedu",
-            "Price": "1900",
-            "Window Seats": "18 window seats",
-            "Amenities": [
-                "Water Bottle",
-                "Blankets",
                 "Charging Point",
-                "Reading Light",
-                "Waiting lounge",
+                "USB port for charger",
+                "Wet Napkin",
                 "M-ticket",
-                "Deep Cleaned Buses"
-            ]
-        },
-        {
-            "Bus Name": "FlixBus",
-            "Rating": "4.7\n/5",
-            "Departure Time": "23:59",
-            "Departure Location": "Madiwala",
-            "Arrival Time": "08:15",
-            "Arrival Location": "Velachery",
-            "Price": "1464",
-            "Window Seats": "17 window seats",
-            "Amenities": [
-                "Water Bottle",
-                "Blankets",
-                "Charging Point",
-                "Reading Light",
-                "Waiting lounge",
-                "M-ticket",
-                "Deep Cleaned Buses"
-            ]
-        },
-        {
-            "Bus Name": "KBS Luxury Bus",
-            "Rating": "4.7\n/5",
-            "Departure Time": "20:30",
-            "Departure Location": "Madiwala",
-            "Arrival Time": "03:40",
-            "Arrival Location": "Koyambedu",
-            "Price": "1700",
-            "Window Seats": "16 window seats",
-            "Amenities": [
-                "Water Bottle",
-                "Blankets",
-                "Charging Point",
-                "Reading Light",
-                "Waiting lounge",
-                "M-ticket",
-                "Deep Cleaned Buses"
-            ]
-        },
-        {
-            "Bus Name": "IntrCity SmartBus",
-            "Rating": "4.6\n/5",
-            "Departure Time": "23:20",
-            "Departure Location": "Madiwala",
-            "Arrival Time": "06:50",
-            "Arrival Location": "Koyambedu",
-            "Price": "1259",
-            "Window Seats": "22 window seats",
-            "Amenities": [
-                "Water Bottle",
-                "Blankets",
-                "Charging Point",
-                "Reading Light",
-                "Waiting lounge",
-                "M-ticket",
-                "Deep Cleaned Buses"
-            ]
-        },
-        {
-            "Bus Name": "KMRL Kalaimakal",
-            "Rating": "4.7\n/5",
-            "Departure Time": "22:30",
-            "Departure Location": "Madiwala",
-            "Arrival Time": "05:15",
-            "Arrival Location": "Koyambedu",
-            "Price": "990",
-            "Window Seats": "16 window seats",
-            "Amenities": [
-                "Water Bottle",
-                "Blankets",
-                "Charging Point",
-                "Reading Light",
-                "Waiting lounge",
-                "M-ticket",
-                "Deep Cleaned Buses"
-            ]
-        },
-        {
-            "Bus Name": "VGO BUS",
-            "Rating": "4.8\n/5",
-            "Departure Time": "23:45",
-            "Departure Location": "Madiwala",
-            "Arrival Time": "05:32",
-            "Arrival Location": "Koyambedu",
-            "Price": "1499",
-            "Window Seats": "24 window seats",
-            "Amenities": [
-                "Water Bottle",
-                "Blankets",
-                "Charging Point",
-                "Reading Light",
-                "Waiting lounge",
-                "M-ticket",
-                "Deep Cleaned Buses"
+                "CCTV",
+                "Leg Rest"
             ]
         }
     ]
