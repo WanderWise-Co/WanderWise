@@ -6,8 +6,14 @@ from pyspark.sql.functions import col, lit, when
 from pyspark.sql.types import IntegerType, FloatType
 import re
 import os
+import sys
+
 from dotenv import load_dotenv
 import os
+
+load_dotenv()  # Load environment variables from .env file
+
+pyspark_python = os.getenv('PYSPARK_PYTHON')
 
 load_dotenv()  # Load environment variables from .env file
 
@@ -18,6 +24,8 @@ def load_bus_data(json_file):
     """
     with open(json_file, 'r') as file:
         data = json.load(file)
+    
+    # df = pd.DataFrame(data)
     bus_dat=data['bus_data']
     df = pd.DataFrame(bus_dat)
     

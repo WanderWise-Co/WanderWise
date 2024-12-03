@@ -7,13 +7,13 @@ const {BadRequestError} = require('../errors/index')
 const get_aero_data = async (req, res) => {
     console.log('aeroplaning');
     const { startDate, endDate } = req.body;
-    const parseDate = (dateString) => {
-        const date = new Date(dateString);
-        return {
-            month: date.toLocaleString('default', { month: 'long' }),
-            date: date.getDate(),
+        const parseDate = (dateString) => {
+            const date = new Date(dateString);
+            return {
+                month: date.toLocaleString('default', { month: 'long' }),
+                date: date.getDate(),
+            };
         };
-    };
     const today = new Date();
     const start = startDate ? parseDate(startDate) : parseDate(today);
     const end = endDate ? parseDate(endDate) : parseDate(today);
