@@ -1,9 +1,11 @@
 const express = require('express')
 const router = express.Router();
-const {findLocations} = require('../controllers/userPreference')
+const {findLocations,updateLocations,addLocations} = require('../controllers/userPreference')
 
 
-router.route('/').get(findLocations)
+router.get('/',findLocations)
+router.post('/',addLocations)
+router.post('/update',updateLocations)
 
 
 module.exports = router;
