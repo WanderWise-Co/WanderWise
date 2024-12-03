@@ -1,13 +1,14 @@
 import Footer from "../singleComponent/Footer";
 import styles from "../PlanPage/PlanPage.module.css";
 import PlacesList from "../singleComponent/PlacesList";
-import Map from "../singleComponent/Map";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "../singleComponent/Navbar";
+import CarRental from "../singleComponent/CarRental";
 import FlightsList from "../singleComponent/FlightList"; 
 import BusList from "../singleComponent/BusList"; // Import FlightsList
+import Gemini from "../singleComponent/Gemini";
 
 export default function PlanPage() {
   const location = useLocation();
@@ -18,6 +19,8 @@ export default function PlanPage() {
   const [selectedPlacesByType, setSelectedPlacesByType] = useState<Record<string, string[]>>({});
   const [transportPlaneData, setTransportPlaneData] = useState<any>(null);
   const [transportBusesData, setTransportBusesData] = useState<any>(null);
+  const [transportRentalData, setTransportRentalData] = useState<any>(null);
+  const [GemeniData, setGemeniData] = useState<any>(null);
   const [selectedCategories, setSelectedCategories] = useState(location.state?.selectedCategories || []);
   const [source, setSource] = useState(location.state?.source || "");
   const [destination, setDestination] = useState(location.state?.destination || "");
@@ -77,6 +80,8 @@ export default function PlanPage() {
         setPlaceType={setPlaceType}
         setTransportPlaneData={setTransportPlaneData}
         setTransportBusesData={setTransportBusesData}
+        setTransportRentalData={setTransportRentalData}
+        setGemeniData={setGemeniData}
         setNavButton={setNavButton}
         from={source}
         to={destination}
@@ -90,7 +95,8 @@ export default function PlanPage() {
             <FlightsList flights={transportPlaneData?.flights || []} />
           ) : navButton === "buses" ? (
             <BusList Buses={transportBusesData?.bus_data || []} />
-          ) : navButton === "recommendations" || navButton === "restaurants" || navButton === "hotels" || navButton === "attractions" || navButton === "renting" ? (
+          ):navButton === "renting" ? (<CarRental rentals={transportRentalData ?.car_rentals || []}  />): 
+           navButton === "recommendations"?(<Gemini data={GemeniData||[]}/>): navButton === "restaurants" || navButton === "hotels" || navButton === "attractions" || navButton === "renting" ? (
             <>
             <PlacesList
               places={places}
@@ -109,3 +115,6 @@ export default function PlanPage() {
     </>
   );
 }
+
+
+ 

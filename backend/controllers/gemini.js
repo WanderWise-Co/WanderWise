@@ -5,7 +5,7 @@ const path = require('path')
 const {BadRequestError} = require('../errors/index')
 
 const get_gemeni_data = async (req, res) => {
-    const { from,to,startDate, endDate } = req.body;
+    const { from,to,startDate, endDate } = req.query;
     if(!from || !to )
         {
             throw new BadRequestError('provide from and to ')

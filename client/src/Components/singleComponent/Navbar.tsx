@@ -7,6 +7,8 @@ interface NavbarProps {
   setPlaceType: (type: string) => void;
   setTransportPlaneData: (data: any) => void;
   setTransportBusesData: (data: any) => void;
+  setTransportRentalData: (data: any) => void;
+  setGemeniData: (data: any) => void;
   setNavButton: (data: string) => void;  // Accept the setter function
   from: string;
   to: string;
@@ -17,6 +19,8 @@ export default function Navbar({
   setPlaceType,
   setTransportPlaneData,
   setTransportBusesData,
+  setTransportRentalData,
+  setGemeniData,
   setNavButton,
   from,
   to,
@@ -103,6 +107,57 @@ export default function Navbar({
       console.error("Error fetching bus data:", error.message || error.response?.data);
     }
   };
+ 
+  const handleRentalClick = async () => {
+    console.log("try")
+    try {
+      const token = localStorage.getItem("token");
+      console.log("try 1")
+      console.log(`${import.meta.env.VITE_BASE_SERVER_URL}/planpage/transport/rental`, token);
+      const response = await axios.get(
+        `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/transport/rental`, 
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },params:{from:"Bangalore"},
+        }
+      );
+      console.log("Rental API Response:", response.data);
+      setTransportRentalData(response.data.data); // Pass data to the parent
+    } catch (error: any) {
+      console.error("Error fetching rental data:", error.message || error.response?.data);
+    }
+  };
+  
+  
+
+  const HandelRecoClick = async () => {
+    if (!from || !to) {
+      console.error("From and To locations must be provided.");
+      return;
+    }
+
+    try {
+      // setNavButton("buses"); 
+      const token = localStorage.getItem("token");
+      const response = await axios.get(
+        `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/gemini`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          params: { from: "bangalore",
+            to: "chennai",
+            startDate: "Fri Dec 20 2024 00:00:00 GMT+0530 (India Standard Time)",
+            endDate: "Fri Dec 20 2024 00:00:00 GMT+0530 (India Standard Time)",},
+        }
+      );
+      console.log(response.data)
+      setGemeniData(response.data.data);
+    } catch (error: any) {
+      console.error("Error fetching gimini data:", error.message || error.response?.data);
+    }
+  };
 
   const handleCartClick = () => {
     console.log("Cart icon clicked! Navigating to Cart...");
@@ -117,6 +172,7 @@ export default function Navbar({
           console.log("Recommendation clicked");
           setNavButton("recommendations");
           setPlaceType("recommendation");
+          HandelRecoClick()
         }}
       >
         Recommendation
@@ -157,6 +213,7 @@ export default function Navbar({
           console.log("Renting clicked");
           setNavButton("renting");
           setPlaceType("vehicle rental");
+          handleRentalClick()
         }}
       >
         Renting
