@@ -4,8 +4,8 @@ import axios from "axios";
 
 interface NavbarProps {
   setPlaceType: (type: string) => void;
-  setTransportPlaneData: (data: any) => void;
-  setTransportBusesData: (data: any) => void;
+  setTransportData: (data: any) => void;
+  setBusData: (data: any) => void;
   from: string;
   to: string;
   date: { startDate: string; endDate: string };
@@ -13,8 +13,8 @@ interface NavbarProps {
 
 export default function Navbar({
   setPlaceType,
-  setTransportPlaneData,
-  setTransportBusesData,
+  setTransportData,
+  setBusData,
   from,
   to,
   date,
@@ -38,12 +38,12 @@ export default function Navbar({
           headers: {
             Authorization: `Bearer ${token}`,
           },
-          params: { from, to, startDate, endDate },
+          params: { from:"bangalore", to:"chenai", startDate, endDate },
         }
       );
       console.log("Planes API Response:", response.data);
 
-      setTransportPlaneData(response.data); // Pass plane data to the parent
+      setTransportData(response.data.data); // Pass plane data to the parent
     } catch (error: any) {
       console.error("Error fetching planes data:", error.message || error.response?.data);
     }
@@ -56,6 +56,7 @@ export default function Navbar({
     }
 
     try {
+      
       const token = localStorage.getItem("token");
       console.log(from,to,startDate,endDate);
       const response = await axios.get(
@@ -64,11 +65,14 @@ export default function Navbar({
           headers: {
             Authorization: `Bearer ${token}`,
           },
-          params: { from, to, startDate, endDate },
+          params: { from: "bangalore",
+            to: "chennai",
+            startDate: "Fri Dec 20 2024 00:00:00 GMT+0530 (India Standard Time)",
+            endDate: "Fri Dec 20 2024 00:00:00 GMT+0530 (India Standard Time)",},
         }
       );
       console.log("Buses API",response.data)
-      setTransportBusesData(response.data); // Pass bus data to the parent
+      setBusData(response.data.data); // Pass bus data to the parent
     } catch (error: any) {
       console.error("Error fetching bus data:", error.message || error.response?.data);
     }
@@ -114,7 +118,7 @@ export default function Navbar({
           <i className="fa fa-caret-down"></i>
         </button>
         <div className={styles.dropdownContent}>
-          <a href="#Buses" onClick={handleBusClick}>
+          <a href="#Buses" onClick={handleBusClick} >
             Buses
           </a>
           <a href="#Planes" onClick={handlePlaneClick}>

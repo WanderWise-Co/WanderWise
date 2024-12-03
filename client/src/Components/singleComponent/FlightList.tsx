@@ -1,5 +1,5 @@
 import styles from "./FlightList.module.css";
-
+// import { useState, useEffect } from "react";
 interface Flight {
   airline: string;
   flight_number: string;
