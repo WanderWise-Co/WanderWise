@@ -30,6 +30,27 @@ export default function Navbar({ setPlaceType, setTransportData }: NavbarProps) 
     }
   };
 
+  const handleBusClick = async () => {
+    console.log("try")
+    try {
+      const token = localStorage.getItem("token");
+      console.log("try 1")
+      console.log(`${import.meta.env.VITE_BASE_SERVER_URL}/planpage/transport/bus`, token);
+      const response = await axios.get(
+        `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/transport/bus`, 
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log("Bus API Response:", response.data);
+      setTransportData(response.data.data); // Pass data to the parent
+    } catch (error: any) {
+      console.error("Error fetching bus data:", error.message || error.response?.data);
+    }
+  };
+
   return (
     <div className={styles.navbar}>
       <a href="#recommendation" aria-label="Recommendation" onClick={() => setPlaceType("recommendation")}>
@@ -54,7 +75,7 @@ export default function Navbar({ setPlaceType, setTransportData }: NavbarProps) 
           <i className="fa fa-caret-down"></i>
         </button>
         <div className={styles.dropdownContent}>
-          <a href="#Buses">Buses</a>
+          <a href="#Buses" onClick={handleBusClick}>Buses</a>
           <a href="#Planes" onClick={handlePlaneClick}>
             Planes
           </a>
