@@ -1,3 +1,59 @@
+// import { useState, useEffect } from "react";
+// import styles from "./BusList.module.css";
+
+// interface Bus {
+//   bus_name: string;
+//   rating: string;
+//   departure_time: string;
+//   departure_location: string;
+//   arrival_time: string;
+//   arrival_location: string;
+//   price: string;
+//   window_seats: string;
+//   amenities: string[];
+// }
+
+// interface BusListProps {
+//   buses: Bus[];
+// }
+
+// export default function BusList({ buses }: BusListProps) {
+//   const [sortedBuses, setSortedBuses] = useState<Bus[]>([]);
+//   console.log("Buses",buses);
+  
+//   useEffect(() => {
+//     if (buses) {
+//       setSortedBuses(buses);
+//     }
+//   }, [buses]);
+
+  
+//   if (!sortedBuses || sortedBuses.length === 0) {
+//     return <p>No buses available.</p>;
+//   }
+
+//   return (
+//     <div className={styles.busList}>
+//       {sortedBuses.map((bus, index) => (
+//         <div key={`${bus.bus_name}-${index}`} className={styles.busItem}>
+//           <h4>{bus.bus_name}</h4>
+//           <p><strong>Rating:</strong> {bus.rating}</p>
+//           <p>
+//             <strong>Departure:</strong> {bus.departure_time} ({bus.departure_location})
+//           </p>
+//           <p>
+//             <strong>Arrival:</strong> {bus.arrival_time} ({bus.arrival_location})
+//           </p>
+//           <p><strong>Price:</strong> ₹{bus.price}</p>
+//           <p><strong>Window Seats:</strong> {bus.window_seats}</p>
+//           <p><strong>Amenities:</strong> {bus.amenities.join(", ")}</p>
+//         </div>
+//       ))}
+//     </div>
+//   );
+// }
+
+//charan
 import { useState, useEffect } from "react";
 import styles from "./FlightList.module.css";
 
@@ -12,21 +68,21 @@ import styles from "./FlightList.module.css";
 //     window_seats: string;
 //   }
 
-// interface FlightsListProps {
-//   flights: Bus[];
+// interface BusesListProps {
+//   Buses: Bus[];
 // }
 
-// export default function FlightsList({ flights }: FlightsListProps) {
-//   const [sortedFlights, setSortedFlights] = useState<Bus[]>(flights);
+// export default function BusesList({ Buses }: BusesListProps) {
+//   const [sortedBuses, setSortedBuses] = useState<Bus[]>(Buses);
 //   const [isAscending, setIsAscending] = useState(true);
 //   const [sortField, setSortField] = useState<keyof Bus>("bus_name"); // Default sorting by airline
 
 //   useEffect(() => {
-//     setSortedFlights([...flights]);
-//   }, [flights]);
+//     setSortedBuses([...Buses]);
+//   }, [Buses]);
 
 //   const handleSort = (field: keyof Bus) => {
-//     const sorted = [...sortedFlights].sort((a, b) => {
+//     const sorted = [...sortedBuses].sort((a, b) => {
 //       if (field === "price") {
 //         return isAscending
 //           ? parseInt(a.price) - parseInt(b.price) // Sorting by price as a number
@@ -38,7 +94,7 @@ import styles from "./FlightList.module.css";
 //       }
 //     });
 
-//     setSortedFlights(sorted);
+//     setSortedBuses(sorted);
 //     setIsAscending(!isAscending);
 //     setSortField(field); // Update the field being sorted
 //   };
@@ -64,9 +120,9 @@ import styles from "./FlightList.module.css";
 //         </div>
 //       </div>
 //       <div>
-//         {sortedFlights.length > 0 ? (
-//           sortedFlights.map((Bus, index) => (
-//             // <div key={`${flight.flight_number}-${index}`} className={styles.flightItem}>
+//         {sortedBuses.length > 0 ? (
+//           sortedBuses.map((Bus, index) => (
+//             // <div key={${flight.flight_number}-${index}} className={styles.flightItem}>
 //             //   <div className={styles.flightDetails}>
 //             //     <h4>{flight.airline} - {flight.flight_number}</h4>
 //             //     <p><strong>Departure:</strong> {flight.departure_time}</p>
@@ -76,7 +132,7 @@ import styles from "./FlightList.module.css";
 //             //     <p><strong>Price:</strong> ₹{flight.price}</p>
 //             //   </div>
 //             // </div>
-//             <div key={`${Bus.bus_name}-${index}`} className={styles.busItem}>
+//             <div key={${Bus.bus_name}-${index}} className={styles.busItem}>
 //             <div className={styles.busDetails}>
 //                 <h4>{Bus.bus_name}</h4>
 //                 <p><strong>Rating:</strong> {Bus.rating}</p>
@@ -109,21 +165,21 @@ interface Bus {
   amenities: string[];
 }
 
-interface FlightsListProps {
-  flights: Bus[];
+interface BusesListProps {
+  Buses: Bus[];
 }
 
-export default function FlightsList({ flights }: FlightsListProps) {
-  const [sortedFlights, setSortedFlights] = useState<Bus[]>(flights);
+export default function BusesList({ Buses }: BusesListProps) {
+  const [sortedBuses, setSortedBuses] = useState<Bus[]>(Buses);
   const [isAscending, setIsAscending] = useState(true);
   const [sortField, setSortField] = useState<keyof Bus>("bus_name");
 
   useEffect(() => {
-    setSortedFlights([...flights]);
-  }, [flights]);
+    setSortedBuses([...Buses]);
+  }, [Buses]);
 
   const handleSort = (field: keyof Bus) => {
-    const sorted = [...sortedFlights].sort((a, b) => {
+    const sorted = [...sortedBuses].sort((a, b) => {
       if (field === "price") {
         return isAscending
           ? parseInt(a.price) - parseInt(b.price)
@@ -135,7 +191,7 @@ export default function FlightsList({ flights }: FlightsListProps) {
       }
     });
 
-    setSortedFlights(sorted);
+    setSortedBuses(sorted);
     setIsAscending(!isAscending);
     setSortField(field);
   };
@@ -159,9 +215,9 @@ export default function FlightsList({ flights }: FlightsListProps) {
         </div>
       </div>
       <div>
-        {sortedFlights.length > 0 ? (
+        {sortedBuses.length > 0 ? (
           <ul className={styles.busList}>
-            {sortedFlights.map((bus, index) => (
+            {sortedBuses.map((bus, index) => (
               <li key={`${bus.bus_name}-${index}`} className={styles.busItem}>
                 <div className={styles.busDetails}>
                   <h3>{bus.bus_name}</h3>
@@ -190,6 +246,6 @@ export default function FlightsList({ flights }: FlightsListProps) {
           <p>No buses available.</p>
         )}
       </div>
-    </div>
-  );
+ </div>
+);
 }

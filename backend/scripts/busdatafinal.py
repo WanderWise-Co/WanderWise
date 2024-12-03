@@ -216,7 +216,7 @@ def scrape_Busses(srcplace, destplace, check_in_date):
                     # 'Total Seats Left': total_seats,
                     'Amenities': amenities,
                     # 'Bus Link': bus_link
-                }
+                    }
                 bus_data.append(bus_info)
                 if k >= 10:
                     break
