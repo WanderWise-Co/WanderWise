@@ -194,17 +194,17 @@ export default function PlanPage() {
           ) : navButton === "buses" ? (
             <BusList Buses={transportBusesData?.bus_data || []} />
           ) : navButton === "recommendations" || navButton === "restaurants" || navButton === "hotels" || navButton === "attractions" || navButton === "renting" ? (
+            <>
             <PlacesList
               places={places}
+              coordinates={coordinates}
               selectedPlaces={selectedPlacesByType[placeType] || []}
               onSelectedPlacesChange={handleSelectedPlaces}
               onAdd={handleAddButton}
             />
+            
+            </>
           ) : null}
-        </div>
-
-        <div className={styles.mapContainer}>
-          <Map coordinates={coordinates} places={places} />
         </div>
       </div>
 
