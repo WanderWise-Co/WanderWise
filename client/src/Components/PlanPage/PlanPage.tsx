@@ -16,13 +16,13 @@ export default function PlanPage() {
   const [places, setPlaces] = useState([]);
   const [placeType, setPlaceType] = useState("");
   const [selectedPlacesByType, setSelectedPlacesByType] = useState<Record<string, string[]>>({});
-  const [transportPlaneData, setTransportPlaneData] = useState<any>(null); // Separate state for planes
-  const [transportBusesData, setTransportBusesData] = useState<any>(null); // Separate state for buses
+  const [transportPlaneData, setTransportPlaneData] = useState<any>(null);
+  const [transportBusesData, setTransportBusesData] = useState<any>(null);
   const [selectedCategories, setSelectedCategories] = useState(location.state?.selectedCategories || []);
   const [source, setSource] = useState(location.state?.source || "");
   const [destination, setDestination] = useState(location.state?.destination || "");
   const [date, setDate] = useState(location.state?.date || "");
-  const [page,showppage] = useState('restaurant');
+  const [navButton, setNavButton] = useState("");  // State for tracking the selected nav button
 
   useEffect(() => {
     console.log("Received Data in PlanPage:");
@@ -63,46 +63,51 @@ export default function PlanPage() {
   };
 
   useEffect(() => {
-    console.log("Transport Plane Data:", transportPlaneData);
-    console.log("Transport Buses Data:", transportBusesData);
+    console.log("Transport Plane Data:", JSON.stringify(transportPlaneData, null, 2));
+    console.log("Transport Buses Data:", JSON.stringify(transportBusesData, null, 2));
   }, [transportPlaneData, transportBusesData]);
-  
-  
+
   const handleAddButton = () => {
     console.log("Selected Places By Type:", selectedPlacesByType);
   };
+
   return (
     <>
       <Navbar
-      setPlaceType={setPlaceType}
-      setTransportPlaneData={setTransportPlaneData} // Pass the actual state setter
-      setTransportBusesData={setTransportBusesData} // Pass the actual state setter
-      from={source}
-      to={destination}
-      date={date}
+        setPlaceType={setPlaceType}
+        setTransportPlaneData={setTransportPlaneData}
+        setTransportBusesData={setTransportBusesData}
+        setNavButton={setNavButton}
+        from={source}
+        to={destination}
+        date={date}
       />
 
-
       <div className={styles.planPageContainer}>
-        <div className={styles.placeList}>
-          {transportPlaneData && transportPlaneData.flights ? (
-            <FlightsList flights={transportPlaneData.flights || []} />
-          ) : transportBusesData && transportBusesData.bus_data ? (
-            <BusList buses={transportBusesData.bus_data || []} />
-            
-          ) : (
+        <div className={styles.contentContainer}>
+          {/* Render content based on navButton */}
+          {navButton === "planes" ? (
+            <FlightsList flights={transportPlaneData?.flights || []} />
+          ) : navButton === "buses" ? (
+            <BusList Buses={transportBusesData?.bus_data || []} />
+          ) : navButton === "recommendations" || navButton === "restaurants" || navButton === "hotels" || navButton === "attractions" || navButton === "renting" ? (
+            <>
             <PlacesList
               places={places}
               selectedPlaces={selectedPlacesByType[placeType] || []}
               onSelectedPlacesChange={handleSelectedPlaces}
               onAdd={handleAddButton}
             />
-          )}
+            <div className={styles.mapContainer}>
+            <Map coordinates={coordinates} places={places} />
+            </div>
+            </>
+          ) : null}
         </div>
-        <div className={styles.mapContainer}>
-          <Map coordinates={coordinates} places={places} />
-        </div>
+
+        
       </div>
+
       <Footer />
     </>
   );

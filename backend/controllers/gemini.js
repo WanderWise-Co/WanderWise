@@ -5,6 +5,7 @@ const path = require('path')
 const {BadRequestError} = require('../errors/index')
 
 const get_gemeni_data = async (req, res) => {
+    console.log('gemining');
     const python = spawn('python', [path.join(__dirname, '../scripts/gemeni.py')], {
         cwd: path.join(__dirname, '../scripts'),
     });

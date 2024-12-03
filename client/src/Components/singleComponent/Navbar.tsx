@@ -6,6 +6,7 @@ interface NavbarProps {
   setPlaceType: (type: string) => void;
   setTransportPlaneData: (data: any) => void;
   setTransportBusesData: (data: any) => void;
+  setNavButton: (data: string) => void;  // Accept the setter function
   from: string;
   to: string;
   date: { startDate: string; endDate: string };
@@ -15,13 +16,12 @@ export default function Navbar({
   setPlaceType,
   setTransportPlaneData,
   setTransportBusesData,
+  setNavButton,
   from,
   to,
   date,
 }: NavbarProps) {
   const { startDate, endDate } = date;
-  
-  
 
   const handlePlaneClick = async () => {
     
@@ -31,20 +31,22 @@ export default function Navbar({
     }
 
     try {
+      setNavButton("planes"); // Set the navButton state to "planes"
       const token = localStorage.getItem("token");
-      console.log(from,to,startDate,endDate);
+      const from = localStorage.getItem("from");
+      const to = localStorage.getItem("to");
+      const startDate = localStorage.hetItem("startDate");
+      const endDate = localStorage.getItem("endDate");
       const response = await axios.get(
         `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/transport/aeroplane`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
           },
-          params: { from, to, startDate, endDate },
+          params: { from, to, startDate,endDate},
         }
       );
-      console.log("Planes API Response:", response.data);
-
-      setTransportPlaneData(response.data); // Pass plane data to the parent
+      setTransportPlaneData(response.data.data);
     } catch (error: any) {
       console.error("Error fetching planes data:", error.message || error.response?.data);
     }
@@ -57,19 +59,22 @@ export default function Navbar({
     }
 
     try {
+      setNavButton("buses"); // Set the navButton state to "buses"
       const token = localStorage.getItem("token");
-      console.log(from,to,startDate,endDate);
       const response = await axios.get(
         `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/transport/bus`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
           },
-          params: { from, to, startDate, endDate },
+          params: { from: "bangalore",
+            to: "chennai",
+            startDate: "Fri Dec 20 2024 00:00:00 GMT+0530 (India Standard Time)",
+            endDate: "Fri Dec 20 2024 00:00:00 GMT+0530 (India Standard Time)",},
         }
       );
-      console.log("Buses API",response.data)
-      setTransportBusesData(response.data); // Pass bus data to the parent
+      console.log(response.data.data)
+      setTransportBusesData(response.data.data);
     } catch (error: any) {
       console.error("Error fetching bus data:", error.message || error.response?.data);
     }
@@ -79,38 +84,49 @@ export default function Navbar({
     <div className={styles.navbar}>
       <a
         href="#recommendation"
-        aria-label="Recommendation"
-        onClick={() => setPlaceType("recommendation")}
+        onClick={() => {
+          setNavButton("recommendations");
+          setPlaceType("recommendation");
+        }}
       >
         Recommendation
       </a>
       <a
         href="#restaurants"
-        aria-label="Restaurants"
-        onClick={() => setPlaceType("restaurant")}
+        onClick={() => {
+          setNavButton("restaurants");
+          setPlaceType("restaurant");
+        }}
       >
         Restaurants
       </a>
-      <a href="#hotels" aria-label="Hotels" onClick={() => setPlaceType("hotel")}>
+      <a href="#hotels" onClick={() => {
+          setNavButton("hotels");
+          setPlaceType("hotel");
+        }}>
         Hotels
       </a>
       <a
         href="#attractions"
-        aria-label="Attractions"
-        onClick={() => setPlaceType("tourist_attraction")}
+        onClick={() => {
+          setNavButton("attractions");
+          setPlaceType("tourist_attraction");
+        }}
       >
         Attractions
       </a>
       <a
         href="#renting"
-        aria-label="Renting"
-        onClick={() => setPlaceType("vehicle rental")}
+        onClick={() => {
+          setNavButton("renting");
+          setPlaceType("vehicle rental");
+        }}
       >
         Renting
       </a>
 
       <div className={styles.dropdown}>
-        <button className={styles.dropbtn} aria-haspopup="true" aria-expanded="false">
+        <button className={styles.dropbtn}>
           Travel
           <i className="fa fa-caret-down"></i>
         </button>
@@ -125,7 +141,7 @@ export default function Navbar({
       </div>
 
       <div className={styles.cartIcon}>
-        <FaShoppingCart className={styles.cart} />
+        <FaShoppingCart />
       </div>
     </div>
   );
