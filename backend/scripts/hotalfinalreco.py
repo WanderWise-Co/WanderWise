@@ -2,18 +2,62 @@ from pyspark.sql import SparkSession
 from pyspark.ml.recommendation import ALS
 from pyspark.ml.feature import StringIndexer
 from pyspark.sql.functions import col, explode, avg
+import os
+import json
+import pandas as pd
+from dotenv import load_dotenv
+import os
 
+load_dotenv()  # Load environment variables from .env file
+
+pyspark_python = os.getenv('PYSPARK_PYTHON')
 # Step 1: Initialize Spark session
 spark = SparkSession.builder.appName('HotelRecommenderSystem').getOrCreate()
-
+# file_path = os.path.join(os.path.dirname(__file__), 'outputs', 'hotel_features.json')
+# file_path1 = os.path.join(os.path.dirname(__file__), 'outputs', 'hotel_reviews.json')
+# file_path1 = 'C:\\Users\\Saicharan\\Desktop\\finalyear\\WanderWise\\backend\\scripts\\outputs\\hotel_reviews.json'
 # Step 2: Load datasets
 # Load the hotel review dataset
-reviews_df = spark.read.csv('hotel_reviews.csv', header=True, inferSchema=True)
+# reviews_df = spark.read.csv('hotel_reviews.csv', header=True, inferSchema=True)
 
+# reviews_df1 = spark.read.json(file_path1)
+# reviews_df = reviews_df1.select("data")
+
+
+# reviews_df_raw = spark.read.json(file_path1)
+# reviews_df_raw.printSchema()
+# # Explode the 'data' array into individual rows
+# reviews_df = reviews_df_raw.select(explode(col("data")).alias("review"))
+
+# Extract relevant fields from the nested structure
+# reviews_df = reviews_df.select(
+#     col("review.UserID").alias("UserID"),
+#     col("review.Hotel_Name").alias("Hotel_Name"),
+#     col("review.Rating").alias("Rating"),
+#     col("review.Date").alias("Date")
+# )
+# reviews_df.show(truncate=False)
 # Load the hotel feature dataset
-features_df = spark.read.csv('hotel_features.csv', header=True, inferSchema=True)
-
+# features_df = spark.read.csv('hotel_features.csv', header=True, inferSchema=True)
+# features_df1 = spark.read.json(file_path)
+# features_df = features_df1.select("data")
 # Step 3: Preprocess the Data
+reviews_file_path = "C:\\Users\\Saicharan\\Desktop\\finalyear\\WanderWise\\backend\\scripts\\outputs\\hotel_reviews.json"
+features_file_path = "C:\\Users\\Saicharan\\Desktop\\finalyear\\WanderWise\\backend\\scripts\\outputs\\hotel_features.json"
+
+# Load reviews data using json and pandas
+with open(reviews_file_path, 'r') as file:
+    reviews_data = json.load(file)
+reviews_df_raw = pd.DataFrame(reviews_data['data'])
+
+# Load features data using json and pandas
+with open(features_file_path, 'r') as file:
+    features_data = json.load(file)
+features_df_raw = pd.DataFrame(features_data['data'])
+
+# Convert pandas DataFrame to Spark DataFrame
+reviews_df = spark.createDataFrame(reviews_df_raw)
+features_df = spark.createDataFrame(features_df_raw)
 # Convert 'Rating' to float for proper numerical processing
 reviews_df = reviews_df.withColumn("Rating", col("Rating").cast("float"))
 
@@ -31,10 +75,10 @@ combined_df = reviews_df.join(features_df, on="Hotel_Name", how="inner")
 
 # Step 6: Filter Hotels by User-Selected Features
 # User-selected features (example: Internet services, Swimming pool, Garden)
-selected_features = ['Internet services', 'Swimming pool [indoor]', 'Garden']
+selected_features = ['Internet services', 'Elevator', 'Toiletries']
 
 # Filter hotels that meet the criteria for selected features
-feature_filter = (col("Internet services") == 1.0) & (col("Swimming pool [indoor]") == 1.0) & (col("Garden") == 1.0)
+feature_filter = (col("Internet services") == 1.0) & (col("Elevator") == 1.0) & (col("Toiletries") == 1.0)
 filtered_df = combined_df.filter(feature_filter)
 
 # Step 7: Prepare the User-Item Matrix
@@ -55,7 +99,7 @@ model = als.fit(filtered_df)
 
 # Step 9: Generate Recommendations
 # Generate top N hotel recommendations for each user
-user_recommendations = model.recommendForAllUsers(5)
+user_recommendations = model.recommendForAllUsers(20)
 
 # Step 10: Get the Hotel Names
 # Explode the recommendations into a more readable format
@@ -83,6 +127,6 @@ user_recommendations_exploded_avg = user_recommendations_exploded.groupBy("Hotel
 
 # Step 12: Show the recommendations sorted by Predicted_Rating in descending order
 user_recommendations_exploded_avg.orderBy(col("Predicted_Rating").desc()).show(truncate=False)
-
+# user_recommendations_exploded.orderBy(col("Predicted_Rating").desc()).show(truncate=False)
 # Optional: Stop the Spark session
 spark.stop()

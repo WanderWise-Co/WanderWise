@@ -5,15 +5,21 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, lit, when
 from pyspark.sql.types import IntegerType, FloatType
 import re
+import os
+from dotenv import load_dotenv
+import os
 
+load_dotenv()  # Load environment variables from .env file
+
+pyspark_python = os.getenv('PYSPARK_PYTHON')
 def load_bus_data(json_file):
     """
     Load bus data from a JSON file and preprocess it.
     """
     with open(json_file, 'r') as file:
         data = json.load(file)
-    
-    df = pd.DataFrame(data)
+    bus_dat=data['bus_data']
+    df = pd.DataFrame(bus_dat)
     
     # Clean Rating: Extract numeric value from string like '4.6\n/5'
     df['Rating'] = df['Rating'].apply(lambda x: float(re.sub(r'[^\d.]', '', x)) if isinstance(x, str) else 0)
@@ -26,7 +32,7 @@ def load_bus_data(json_file):
     
     # Clean Total Seats Left: You can either extract information or drop it if it's non-numeric
     # For simplicity, we're setting this to 0 if it's non-numeric.
-    df['Total Seats Left'] = df['Total Seats Left'].apply(lambda x: 0 if not isinstance(x, (int, float)) else 0)
+    # df['Total Seats Left'] = df['Total Seats Left'].apply(lambda x: 0 if not isinstance(x, (int, float)) else 0)
 
     df['Amenities Count'] = df['Amenities'].apply(len)
     
@@ -38,7 +44,13 @@ def create_spark_df(df):
     """
     Convert pandas DataFrame to Spark DataFrame.
     """
-    spark = SparkSession.builder.appName("BusRecommendationSystem").getOrCreate()
+    # spark = SparkSession.builder.appName("BusRecommendationSystem").getOrCreate()
+    spark = SparkSession.builder \
+    .appName("BusRecommendationSystem") \
+    .config("spark.driver.memory", "4g") \
+    .config("spark.executor.memory", "4g") \
+    .config("spark.network.timeout", "600s") \
+    .getOrCreate()
     spark_df = spark.createDataFrame(df)
     return spark, spark_df
 
@@ -55,7 +67,7 @@ def prepare_data_for_als(spark_df):
         (col('Rating') * 0.4) + 
         ((1 / (col('Price') + 1)) * 0.3) + 
         (col('Window Seats') * 0.1) + 
-        (col('Total Seats Left') * 0.1) + 
+        # (col('Total Seats Left') * 0.1) + 
         (col('Amenities Count') * 0.1)
     )
     
@@ -94,8 +106,8 @@ def save_recommendations(top_buses, output_file='top_buses.json'):
     """
     Save recommended buses to a JSON file.
     """
-    top_buses.to_json(output_file, orient='records', indent=4)
-    print(f"Top recommended buses saved to {output_file}.")
+    # top_buses.to_json(output_file, orient='records', indent=4)
+    print(f"Top recommended buses saved to {top_buses}.")
 
 # Main function
 def recommend_buses_with_als(json_file, output_file='top_buses.json'):
@@ -119,4 +131,5 @@ def recommend_buses_with_als(json_file, output_file='top_buses.json'):
     save_recommendations(top_buses, output_file)
 
 # Example usage
-recommend_buses_with_als('bus_data1.json')
+file_path = os.path.join(os.path.dirname(__file__), 'outputs', 'bus_data.json')
+recommend_buses_with_als(file_path)

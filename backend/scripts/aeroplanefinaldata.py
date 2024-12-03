@@ -137,7 +137,7 @@ try:
     print("Date picker opened.")
     today = datetime.today()
     month = sys.argv[1] if len(sys.argv) > 1 else today.strftime("%B")
-    date = int(sys.argv[2]) if len(sys.argv) > 2 else today.day
+    date = int(sys.argv[2]) if len(sys.argv) > 2 else int(today.day)
     
     print(month,date)
 
