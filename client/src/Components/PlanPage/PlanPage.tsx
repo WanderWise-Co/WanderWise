@@ -111,6 +111,7 @@ import { useLocation } from "react-router-dom";
 import Navbar from "../singleComponent/Navbar";
 import FlightsList from "../singleComponent/FlightList"; 
 import BusList from "../singleComponent/BusList"; // Import FlightsList
+import Gemini from "../singleComponent/Gemini";
 
 export default function PlanPage() {
   const location = useLocation();
@@ -121,6 +122,7 @@ export default function PlanPage() {
   const [selectedPlacesByType, setSelectedPlacesByType] = useState<Record<string, string[]>>({});
   const [transportPlaneData, setTransportPlaneData] = useState<any>(null);
   const [transportBusesData, setTransportBusesData] = useState<any>(null);
+  const [GemeniData, setGemeniData] = useState<any>(null);
   const [selectedCategories, setSelectedCategories] = useState(location.state?.selectedCategories || []);
   const [source, setSource] = useState(location.state?.source || "");
   const [destination, setDestination] = useState(location.state?.destination || "");
@@ -180,6 +182,7 @@ export default function PlanPage() {
         setPlaceType={setPlaceType}
         setTransportPlaneData={setTransportPlaneData}
         setTransportBusesData={setTransportBusesData}
+        setGemeniData={setGemeniData}
         setNavButton={setNavButton}
         from={source}
         to={destination}
@@ -193,7 +196,7 @@ export default function PlanPage() {
             <FlightsList flights={transportPlaneData?.flights || []} />
           ) : navButton === "buses" ? (
             <BusList Buses={transportBusesData?.bus_data || []} />
-          ) : navButton === "recommendations" || navButton === "restaurants" || navButton === "hotels" || navButton === "attractions" || navButton === "renting" ? (
+          ) : navButton === "recommendations"?(<Gemini data={GemeniData||[]}/>): navButton === "restaurants" || navButton === "hotels" || navButton === "attractions" || navButton === "renting" ? (
             <>
             <PlacesList
               places={places}

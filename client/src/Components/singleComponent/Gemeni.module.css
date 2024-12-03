@@ -1,0 +1,64 @@
+/* General container styling */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9; /* Light background for better readability */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-family: "Arial", sans-serif;
+  }
+  
+  /* Header styling */
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .header h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+  }
+  
+  /* Plan details styling */
+  .planDetails {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    overflow-x: auto; /* Ensure horizontal scrolling for long lines */
+  }
+  
+  .planDetails p {
+    color: #666;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  /* Preformatted text styling */
+  .planText {
+    font-family: "Courier New", monospace; /* Monospaced font for structured text */
+    color: #444;
+    font-size: 16px;
+    line-height: 1.6;
+    white-space: pre-wrap; /* Preserve formatting but allow wrapping */
+    word-wrap: break-word; /* Handle long words gracefully */
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .container {
+      padding: 15px;
+    }
+  
+    .header h3 {
+      font-size: 20px;
+    }
+  
+    .planText {
+      font-size: 14px;
+    }
+  }
+  

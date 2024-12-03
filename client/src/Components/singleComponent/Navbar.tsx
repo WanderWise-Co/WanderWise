@@ -6,6 +6,7 @@ interface NavbarProps {
   setPlaceType: (type: string) => void;
   setTransportPlaneData: (data: any) => void;
   setTransportBusesData: (data: any) => void;
+  setGemeniData: (data: any) => void;
   setNavButton: (data: string) => void;  // Accept the setter function
   from: string;
   to: string;
@@ -16,6 +17,7 @@ export default function Navbar({
   setPlaceType,
   setTransportPlaneData,
   setTransportBusesData,
+  setGemeniData,
   setNavButton,
   from,
   to,
@@ -75,6 +77,34 @@ export default function Navbar({
     }
   };
 
+  const HandelRecoClick = async () => {
+    if (!from || !to) {
+      console.error("From and To locations must be provided.");
+      return;
+    }
+
+    try {
+      // setNavButton("buses"); 
+      const token = localStorage.getItem("token");
+      const response = await axios.get(
+        `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/gemini`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          params: { from: "bangalore",
+            to: "chennai",
+            startDate: "Fri Dec 20 2024 00:00:00 GMT+0530 (India Standard Time)",
+            endDate: "Fri Dec 20 2024 00:00:00 GMT+0530 (India Standard Time)",},
+        }
+      );
+      console.log(response.data)
+      setGemeniData(response.data.data);
+    } catch (error: any) {
+      console.error("Error fetching gimini data:", error.message || error.response?.data);
+    }
+  };
+
   return (
     <div className={styles.navbar}>
       <a
@@ -82,6 +112,7 @@ export default function Navbar({
         onClick={() => {
           setNavButton("recommendations");
           setPlaceType("recommendation");
+          HandelRecoClick()
         }}
       >
         Recommendation
