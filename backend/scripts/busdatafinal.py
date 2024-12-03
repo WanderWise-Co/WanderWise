@@ -202,14 +202,14 @@ def scrape_Busses(srcplace, destplace, check_in_date):
                     amenities = []
 
                 bus_info = {
-                    'Bus Name': bus_name,
-                    'Rating': bus_rating,
-                    'Departure Time': departure_time,
-                    'Departure Location': departure_location,
-                    'Arrival Time': arrival_time,
-                    'Arrival Location': arrival_location,
-                    'Price': price,
-                    'Window Seats': window_seats,
+                    'bus_name': bus_name,
+                    'rating': bus_rating,
+                    'departure_time': departure_time,
+                    'departure_location': departure_location,
+                    'arrival_time': arrival_time,
+                    'arrival_location': arrival_location,
+                    'price': price,
+                    'window_seats': window_seats,
                     # 'Total Seats Left': total_seats,
                     'Amenities': amenities,
                     # 'Bus Link': bus_link

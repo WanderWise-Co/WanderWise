@@ -6,7 +6,8 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "../singleComponent/Navbar";
-import FlightsList from "../singleComponent/FlightList"; // Import FlightsList
+import FlightsList from "../singleComponent/FlightList"; 
+import BusList from "../singleComponent/BusList"; // Import FlightsList
 
 export default function PlanPage() {
   const location = useLocation();
@@ -16,6 +17,10 @@ export default function PlanPage() {
   const [placeType, setPlaceType] = useState("");
   const [selectedPlacesByType, setSelectedPlacesByType] = useState<Record<string, string[]>>({}); // Categorize selected places
   const [transportData, setTransportData] = useState<any>(null); // State to hold transport data
+  const [BusData, setBusData] = useState<any>(null); 
+  const [source, setSource] = useState(location.state?.source || "");
+  const [destination, setDestination] = useState(location.state?.destination || "");
+  const [date, setDate] = useState(location.state?.date || "Fri Dec 20 2024 00:00:00 GMT+0530 (India Standard Time)");
 
   const fetchNearbyPlaces = async (lat: number, lng: number, type: string) => {
     try {
@@ -52,12 +57,26 @@ export default function PlanPage() {
 
   return (
     <>
-      <Navbar setPlaceType={setPlaceType} setTransportData={setTransportData} />
+      <Navbar setPlaceType={setPlaceType} setTransportData={setTransportData} setBusData={setBusData} from={source}
+      to={destination}
+      date={date}/>
       <div className={styles.planPageContainer}>
         <div className={styles.placeList}>
           {transportData ? (
             <FlightsList
               flights={transportData.flights || []} // Fallback to empty array if flights is undefined
+            />
+          ) : (
+            <PlacesList
+              places={places}
+              selectedPlaces={selectedPlacesByType[placeType] || []}
+              onSelectedPlacesChange={handleSelectedPlaces}
+              onAdd={handleAddButton}
+            />
+          )}
+          { BusData ? (
+            <BusList
+              flights={BusData.bus_data } // Fallback to empty array if flights is undefined
             />
           ) : (
             <PlacesList
