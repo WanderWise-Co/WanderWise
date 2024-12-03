@@ -27,7 +27,7 @@ function App() {
             <Route path="/api/v1/auth/register" element={<Signup />} />
             <Route path="/api/v1/auth/forgotpassword" element={<ForgotPassword/>}/>
             <Route path="api/v1/error" element ={<Errorpage/>}/>
-            <Route path="api/v1/cart" element={<Cart/>}/>
+            <Route path="api/v1/planpage/cart" element={<Cart/>}/>
         </Routes>
       </Router>
     </>

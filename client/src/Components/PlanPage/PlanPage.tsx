@@ -6,12 +6,12 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "../singleComponent/Navbar";
-import FlightsList from "../singleComponent/FlightList";
-import BusList from "../singleComponent/BusList"; // Import BusList
+import FlightsList from "../singleComponent/FlightList"; 
+import BusList from "../singleComponent/BusList"; // Import FlightsList
 
 export default function PlanPage() {
   const location = useLocation();
-  const initialCoordinates = location.state?.coordinates || { lat: 12.9716, lng: 77.5946 };
+  const initialCoordinates = location.state?.coordinates || { lat: 12.9716, lng: 77.5946 }; // Default to Bangalore
   const [coordinates, setCoordinates] = useState(initialCoordinates);
   const [places, setPlaces] = useState([]);
   const [placeType, setPlaceType] = useState("");
@@ -58,7 +58,7 @@ export default function PlanPage() {
   const handleSelectedPlaces = (selectedPlaces: string[]) => {
     setSelectedPlacesByType((prev) => ({
       ...prev,
-      [placeType]: selectedPlaces,
+      [placeType]: selectedPlaces, // Save selections for the current type
     }));
   };
 
@@ -94,18 +94,15 @@ export default function PlanPage() {
             <>
             <PlacesList
               places={places}
+              coordinates={coordinates}
               selectedPlaces={selectedPlacesByType[placeType] || []}
               onSelectedPlacesChange={handleSelectedPlaces}
               onAdd={handleAddButton}
             />
-            <div className={styles.mapContainer}>
-            <Map coordinates={coordinates} places={places} />
-            </div>
+            
             </>
           ) : null}
         </div>
-
-        
       </div>
 
       <Footer />
