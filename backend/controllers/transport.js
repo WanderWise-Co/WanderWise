@@ -203,9 +203,10 @@ const get_hotel_data = async (req, res) => {
 
 const get_rental_data = async (req, res) => {
 
-    const { from } = req.body;
+    const { from } = req.query;
     if(!from )
     {
+        console.log("error")
         throw new BadRequestError('provide from and to ')
     }
     // const parseDate = (dateString) => {

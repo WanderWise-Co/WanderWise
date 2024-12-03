@@ -50,7 +50,29 @@ export default function Navbar({ setPlaceType, setTransportData }: NavbarProps) 
       console.error("Error fetching bus data:", error.message || error.response?.data);
     }
   };
-
+ 
+  const handleRentalClick = async () => {
+    console.log("try")
+    try {
+      const token = localStorage.getItem("token");
+      console.log("try 1")
+      console.log(`${import.meta.env.VITE_BASE_SERVER_URL}/planpage/transport/rental`, token);
+      const response = await axios.get(
+        `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/transport/rental`, 
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },params:{from:"Bangalore"},
+        }
+      );
+      console.log("Rental API Response:", response.data);
+      setTransportData(response.data.data.car_rentals); // Pass data to the parent
+    } catch (error: any) {
+      console.error("Error fetching rental data:", error.message || error.response?.data);
+    }
+  };
+  
+  
   return (
     <div className={styles.navbar}>
       <a href="#recommendation" aria-label="Recommendation" onClick={() => setPlaceType("recommendation")}>
@@ -65,7 +87,7 @@ export default function Navbar({ setPlaceType, setTransportData }: NavbarProps) 
       <a href="#attractions" aria-label="Attractions" onClick={() => setPlaceType("tourist_attraction")}>
         Attractions
       </a>
-      <a href="#renting" aria-label="Renting" onClick={() => setPlaceType("vehicle rental")}>
+      <a href="#renting" aria-label="Renting" onClick={handleRentalClick}>
         Renting
       </a>
 

@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "../singleComponent/Navbar";
 import FlightsList from "../singleComponent/FlightList"; // Import FlightsList
+import CarRental from "../singleComponent/CarRental";
 
 export default function PlanPage() {
   const location = useLocation();
@@ -59,6 +60,10 @@ export default function PlanPage() {
             <FlightsList
               flights={transportData.flights || []} // Fallback to empty array if flights is undefined
             />
+          ) : transportData.carRentals ? (
+            <CarRental
+              rentals={transportData.carRentals || []} // Fallback to empty array if carRentals is undefined
+            /> 
           ) : (
             <PlacesList
               places={places}
@@ -68,6 +73,7 @@ export default function PlanPage() {
             />
           )}
         </div>
+
         <div className={styles.mapContainer}>
           <Map coordinates={coordinates} places={places} />
         </div>
@@ -76,3 +82,5 @@ export default function PlanPage() {
     </>
   );
 }
+
+ 
