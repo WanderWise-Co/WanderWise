@@ -1,7 +1,7 @@
 // FormReq.tsx
 import { Button } from "flowbite-react";
 import { HiOutlineArrowRight } from "react-icons/hi";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from './FormReq.module.css';
 import Datepicker from "react-tailwindcss-datepicker";
@@ -38,7 +38,29 @@ export default function FormReq() {
   const [coordinates, setCoordinates] = useState<{ lat: number, lng: number } | null>(null);
 
   const navigate = useNavigate();
+  const [date, setDate] = useState({
+    startDate: new Date(),
+    endDate: new Date(new Date().setMonth(11)), 
+  });
+  useEffect(()=>{
+    if (source) {
+      localStorage.setItem('from', source);
+    }
+  },[source])
 
+  useEffect(()=>{
+    if (destination) {
+      localStorage.setItem('to', destination);
+    }
+  },[destination])
+  useEffect(() => {
+    if (date.startDate) {
+      localStorage.setItem('startDate', date.startDate.toString());
+    }
+    if (date.endDate) {
+      localStorage.setItem('endDate', date.endDate.toString());
+    }
+  },  [date]);
   const handleCategoryClick = (categoryName: string) => {
     setSelectedCategories((prevSelected) =>
       prevSelected.includes(categoryName)
@@ -53,7 +75,7 @@ export default function FormReq() {
         console.error("Destination cannot be empty.");
         return;
       }
-
+  
       try {
         const response = await axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
           params: {
@@ -61,32 +83,36 @@ export default function FormReq() {
             key: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
           },
         });
-
+  
         if (response.data.status !== "OK" || response.data.results.length === 0) {
           console.error("Geocoding failed:", response.data.status);
           return;
         }
-
+  
         const { lat, lng } = response.data.results[0].geometry.location;
-        setCoordinates({ lat, lng });
-
-        navigate("/api/v1/planpage", { state: { coordinates: { lat, lng } } });
-      } catch (error:any) {
+  
+        navigate(`/api/v1/planpage`, {
+          state: {
+            coordinates: { lat, lng },
+            selectedCategories,
+            source,
+            destination,
+            date,
+          },
+        });
+      } catch (error: any) {
         console.error("Error fetching location:", error.message);
       }
     } else {
       navigate("/api/v1/auth/login");
     }
   };
+  
 
-  const [value, setValue] = useState({
-    startDate: new Date(),
-    endDate: new Date(new Date().setMonth(11)), // Ensure this is a Date object
-  });
+  
 
   const handleValueChange = (newValue: any) => {
-    console.log("newValue:", newValue);
-    setValue(newValue);
+    setDate(newValue);
   };
 
   return (
@@ -118,7 +144,7 @@ export default function FormReq() {
             className={`${styles.inputField} ${styles.smallInputField}`}
           />
           <Datepicker
-            value={value}
+            value={date}
             onChange={handleValueChange}
           />
         </div>

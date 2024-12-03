@@ -4,48 +4,74 @@ import axios from "axios";
 
 interface NavbarProps {
   setPlaceType: (type: string) => void;
-  setTransportData: (data: any) => void; // Callback to send API response back
+  setTransportPlaneData: (data: any) => void;
+  setTransportBusesData: (data: any) => void;
+  setTransportRentalData: (data: any) => void;
+  setNavButton: (data: string) => void;  // Accept the setter function
+  from: string;
+  to: string;
+  date: { startDate: string; endDate: string };
 }
 
-export default function Navbar({ setPlaceType, setTransportData }: NavbarProps) {
+export default function Navbar({
+  setPlaceType,
+  setTransportPlaneData,
+  setTransportBusesData,
+  setTransportRentalData,
+  setNavButton,
+  from,
+  to,
+  date,
+}: NavbarProps) {
+  const { startDate, endDate } = date;
 
   const handlePlaneClick = async () => {
-    console.log("try")
+    if (!from || !to) {
+      console.error("From and To locations must be provided.");
+      return;
+    }
+
     try {
+      setNavButton("planes"); // Set the navButton state to "planes"
       const token = localStorage.getItem("token");
-      console.log("try 1")
-      console.log(`${import.meta.env.VITE_BASE_SERVER_URL}/planpage/transport/aeroplane`, token);
       const response = await axios.get(
-        `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/transport/aeroplane`, 
+        `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/transport/aeroplane`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
           },
+          params: { from:"bangalore", to:"chenai", startDate,endDate},
         }
       );
-      console.log("Planes API Response:", response.data);
-      setTransportData(response.data.data); // Pass data to the parent
+      setTransportPlaneData(response.data.data);
     } catch (error: any) {
       console.error("Error fetching planes data:", error.message || error.response?.data);
     }
   };
 
   const handleBusClick = async () => {
-    console.log("try")
+    if (!from || !to) {
+      console.error("From and To locations must be provided.");
+      return;
+    }
+
     try {
+      setNavButton("buses"); // Set the navButton state to "buses"
       const token = localStorage.getItem("token");
-      console.log("try 1")
-      console.log(`${import.meta.env.VITE_BASE_SERVER_URL}/planpage/transport/bus`, token);
       const response = await axios.get(
-        `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/transport/bus`, 
+        `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/transport/bus`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
           },
+          params: { from: "bangalore",
+            to: "chennai",
+            startDate: "Fri Dec 20 2024 00:00:00 GMT+0530 (India Standard Time)",
+            endDate: "Fri Dec 20 2024 00:00:00 GMT+0530 (India Standard Time)",},
         }
       );
-      console.log("Bus API Response:", response.data);
-      setTransportData(response.data.data); // Pass data to the parent
+      console.log(response.data.data)
+      setTransportBusesData(response.data.data);
     } catch (error: any) {
       console.error("Error fetching bus data:", error.message || error.response?.data);
     }
@@ -66,7 +92,7 @@ export default function Navbar({ setPlaceType, setTransportData }: NavbarProps) 
         }
       );
       console.log("Rental API Response:", response.data);
-      setTransportData(response.data.data.car_rentals); // Pass data to the parent
+      setTransportRentalData(response.data.data); // Pass data to the parent
     } catch (error: any) {
       console.error("Error fetching rental data:", error.message || error.response?.data);
     }
@@ -75,29 +101,59 @@ export default function Navbar({ setPlaceType, setTransportData }: NavbarProps) 
   
   return (
     <div className={styles.navbar}>
-      <a href="#recommendation" aria-label="Recommendation" onClick={() => setPlaceType("recommendation")}>
+      <a
+        href="#recommendation"
+        onClick={() => {
+          setNavButton("recommendations");
+          setPlaceType("recommendation");
+        }}
+      >
         Recommendation
       </a>
-      <a href="#restaurants" aria-label="Restaurants" onClick={() => setPlaceType("restaurant")}>
+      <a
+        href="#restaurants"
+        onClick={() => {
+          setNavButton("restaurants");
+          setPlaceType("restaurant");
+        }}
+      >
         Restaurants
       </a>
-      <a href="#hotels" aria-label="Hotels" onClick={() => setPlaceType("hotel")}>
+      <a href="#hotels" onClick={() => {
+          setNavButton("hotels");
+          setPlaceType("hotel");
+        }}>
         Hotels
       </a>
-      <a href="#attractions" aria-label="Attractions" onClick={() => setPlaceType("tourist_attraction")}>
+      <a
+        href="#attractions"
+        onClick={() => {
+          setNavButton("attractions");
+          setPlaceType("tourist_attraction");
+        }}
+      >
         Attractions
       </a>
-      <a href="#renting" aria-label="Renting" onClick={handleRentalClick}>
+      <a
+        href="#renting"
+        onClick={() => {
+          setNavButton("renting");
+          setPlaceType("vehicle rental");
+          handleRentalClick()
+        }}
+      >
         Renting
       </a>
 
       <div className={styles.dropdown}>
-        <button className={styles.dropbtn} aria-haspopup="true" aria-expanded="false">
+        <button className={styles.dropbtn}>
           Travel
           <i className="fa fa-caret-down"></i>
         </button>
         <div className={styles.dropdownContent}>
-          <a href="#Buses" onClick={handleBusClick}>Buses</a>
+          <a href="#Buses" onClick={handleBusClick}>
+            Buses
+          </a>
           <a href="#Planes" onClick={handlePlaneClick}>
             Planes
           </a>
@@ -105,7 +161,7 @@ export default function Navbar({ setPlaceType, setTransportData }: NavbarProps) 
       </div>
 
       <div className={styles.cartIcon}>
-        <FaShoppingCart className={styles.cart} />
+        <FaShoppingCart />
       </div>
     </div>
   );
