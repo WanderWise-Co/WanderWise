@@ -4,48 +4,71 @@ import axios from "axios";
 
 interface NavbarProps {
   setPlaceType: (type: string) => void;
-  setTransportData: (data: any) => void; // Callback to send API response back
+  setTransportPlaneData: (data: any) => void;
+  setTransportBusesData: (data: any) => void;
+  from: string;
+  to: string;
+  date: { startDate: string; endDate: string };
 }
 
-export default function Navbar({ setPlaceType, setTransportData }: NavbarProps) {
+export default function Navbar({
+  setPlaceType,
+  setTransportPlaneData,
+  setTransportBusesData,
+  from,
+  to,
+  date,
+}: NavbarProps) {
+  const { startDate, endDate } = date;
+  
+  
 
   const handlePlaneClick = async () => {
-    console.log("try")
+    if (!from || !to) {
+      console.error("From and To locations must be provided.");
+      return;
+    }
+
     try {
       const token = localStorage.getItem("token");
-      console.log("try 1")
-      console.log(`${import.meta.env.VITE_BASE_SERVER_URL}/planpage/transport/aeroplane`, token);
+      console.log(from,to,startDate,endDate);
       const response = await axios.get(
-        `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/transport/aeroplane`, 
+        `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/transport/aeroplane`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
           },
+          params: { from, to, startDate, endDate },
         }
       );
       console.log("Planes API Response:", response.data);
-      setTransportData(response.data.data); // Pass data to the parent
+
+      setTransportPlaneData(response.data); // Pass plane data to the parent
     } catch (error: any) {
       console.error("Error fetching planes data:", error.message || error.response?.data);
     }
   };
 
   const handleBusClick = async () => {
-    console.log("try")
+    if (!from || !to) {
+      console.error("From and To locations must be provided.");
+      return;
+    }
+
     try {
       const token = localStorage.getItem("token");
-      console.log("try 1")
-      console.log(`${import.meta.env.VITE_BASE_SERVER_URL}/planpage/transport/bus`, token);
+      console.log(from,to,startDate,endDate);
       const response = await axios.get(
-        `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/transport/bus`, 
+        `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/transport/bus`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
           },
+          params: { from, to, startDate, endDate },
         }
       );
-      console.log("Bus API Response:", response.data);
-      setTransportData(response.data.data); // Pass data to the parent
+      console.log("Buses API",response.data)
+      setTransportBusesData(response.data); // Pass bus data to the parent
     } catch (error: any) {
       console.error("Error fetching bus data:", error.message || error.response?.data);
     }
@@ -53,19 +76,35 @@ export default function Navbar({ setPlaceType, setTransportData }: NavbarProps) 
 
   return (
     <div className={styles.navbar}>
-      <a href="#recommendation" aria-label="Recommendation" onClick={() => setPlaceType("recommendation")}>
+      <a
+        href="#recommendation"
+        aria-label="Recommendation"
+        onClick={() => setPlaceType("recommendation")}
+      >
         Recommendation
       </a>
-      <a href="#restaurants" aria-label="Restaurants" onClick={() => setPlaceType("restaurant")}>
+      <a
+        href="#restaurants"
+        aria-label="Restaurants"
+        onClick={() => setPlaceType("restaurant")}
+      >
         Restaurants
       </a>
       <a href="#hotels" aria-label="Hotels" onClick={() => setPlaceType("hotel")}>
         Hotels
       </a>
-      <a href="#attractions" aria-label="Attractions" onClick={() => setPlaceType("tourist_attraction")}>
+      <a
+        href="#attractions"
+        aria-label="Attractions"
+        onClick={() => setPlaceType("tourist_attraction")}
+      >
         Attractions
       </a>
-      <a href="#renting" aria-label="Renting" onClick={() => setPlaceType("vehicle rental")}>
+      <a
+        href="#renting"
+        aria-label="Renting"
+        onClick={() => setPlaceType("vehicle rental")}
+      >
         Renting
       </a>
 
@@ -75,7 +114,9 @@ export default function Navbar({ setPlaceType, setTransportData }: NavbarProps) 
           <i className="fa fa-caret-down"></i>
         </button>
         <div className={styles.dropdownContent}>
-          <a href="#Buses" onClick={handleBusClick}>Buses</a>
+          <a href="#Buses" onClick={handleBusClick}>
+            Buses
+          </a>
           <a href="#Planes" onClick={handlePlaneClick}>
             Planes
           </a>

@@ -13,8 +13,11 @@ import sys
 bus_data = []
 def scrape_Busses(srcplace, destplace, check_in_date):
     # Set up WebDriver service
-    chrome_service = Service("C:\\Users\\Saicharan\\Documents\\chromedriver-win64\\chromedriver.exe")
-    driver = webdriver.Chrome(service=chrome_service)
+    current_dir = os.path.dirname(os.path.realpath(__file__))
+    driver_path = os.path.join(current_dir,  'resources', 'chromedriver-win64', 'chromedriver.exe')
+    service = Service(driver_path)
+    # chrome_service = Service("C:\\Users\\Saicharan\\Documents\\chromedriver-win64\\chromedriver.exe")
+    driver = webdriver.Chrome(service=service)
     
     # Open Goibibo Bus page
     driver.get("https://www.goibibo.com/bus/")

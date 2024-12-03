@@ -1,154 +1,204 @@
 {
-    "timestamp": "2024-12-02T16:13:38.536520",
+    "timestamp": "2024-12-03T14:38:14.995419",
     "bus_data": [
         {
-            "Bus Name": "Sri Durgamba Travels - R No M",
-            "Rating": "4.6\n/5",
-            "Departure Time": "22:35",
-            "Departure Location": "Nelamangala",
-            "Arrival Time": "04:00",
-            "Arrival Location": "Sharadha Travels Shimoga",
-            "Price": "1499",
-            "Window Seats": "14 window seats",
-            "Amenities": [
-                "Emergency Contact Number",
-                "Charging Point",
-                "M-ticket"
-            ]
-        },
-        {
-            "Bus Name": "Shrungagiri Travels",
-            "Rating": "3.8\n/5",
-            "Departure Time": "20:00",
-            "Departure Location": "Arekere",
-            "Arrival Time": "04:30",
-            "Arrival Location": "shivamogga",
-            "Price": "665",
-            "Window Seats": "16 window seats",
-            "Amenities": [
-                "Emergency Contact Number",
-                "Charging Point",
-                "M-ticket"
-            ]
-        },
-        {
-            "Bus Name": "Guru Shakthi Motors",
-            "Rating": "4.7\n/5",
-            "Departure Time": "21:45",
-            "Departure Location": "Mantri Square Metro Station",
-            "Arrival Time": "04:30",
-            "Arrival Location": "Near Mayura Hotel",
-            "Price": "1000",
-            "Window Seats": "16 window seats",
-            "Amenities": [
-                "Emergency Contact Number",
-                "Charging Point",
-                "M-ticket"
-            ]
-        },
-        {
-            "Bus Name": "Gajamukha Travels",
-            "Rating": "4.7\n/5",
-            "Departure Time": "22:30",
-            "Departure Location": "Yeshwantpur",
-            "Arrival Time": "05:00",
-            "Arrival Location": "Bus stand",
-            "Price": "800",
-            "Window Seats": "15 window seats",
-            "Amenities": [
-                "Emergency Contact Number",
-                "Charging Point",
-                "M-ticket"
-            ]
-        },
-        {
-            "Bus Name": "Sri Vivek Travels",
-            "Rating": "4.6\n/5",
-            "Departure Time": "22:30",
+            "Bus Name": "NueGo",
+            "Rating": "4.5\n/5",
+            "Departure Time": "08:30",
             "Departure Location": "Majestic",
-            "Arrival Time": "04:30",
-            "Arrival Location": "Shivamogga",
-            "Price": "900",
-            "Window Seats": "16 window seats",
+            "Arrival Time": "11:55",
+            "Arrival Location": "KSRTC Bus Stand",
+            "Price": "232",
+            "Window Seats": "18 window seats",
             "Amenities": [
-                "Emergency Contact Number",
+                "Water Bottle",
+                "Reading Light",
                 "Charging Point",
-                "M-ticket"
+                "USB port for charger",
+                "Wet Napkin",
+                "M-ticket",
+                "CCTV",
+                "Leg Rest"
             ]
         },
         {
-            "Bus Name": "Sugama Tourist",
-            "Rating": "4.4\n/5",
-            "Departure Time": "22:15",
-            "Departure Location": "Anand Rao Circle",
-            "Arrival Time": "04:45",
-            "Arrival Location": "Shimoga Sugama Tourist",
-            "Price": "950",
+            "Bus Name": "NueGo",
+            "Rating": "4.1\n/5",
+            "Departure Time": "14:30",
+            "Departure Location": "Majestic",
+            "Arrival Time": "18:10",
+            "Arrival Location": "KSRTC Bus Stand",
+            "Price": "375",
+            "Window Seats": "18 window seats",
+            "Amenities": [
+                "Water Bottle",
+                "Reading Light",
+                "Charging Point",
+                "USB port for charger",
+                "Wet Napkin",
+                "M-ticket",
+                "CCTV",
+                "Leg Rest"
+            ]
+        },
+        {
+            "Bus Name": "NueGo",
+            "Rating": "4.8\n/5",
+            "Departure Time": "21:00",
+            "Departure Location": "Majestic",
+            "Arrival Time": "00:30",
+            "Arrival Location": "KSRTC Bus Stand",
+            "Price": "375",
+            "Window Seats": "18 window seats",
+            "Amenities": [
+                "Water Bottle",
+                "Reading Light",
+                "Charging Point",
+                "USB port for charger",
+                "Wet Napkin",
+                "M-ticket",
+                "CCTV",
+                "Leg Rest"
+            ]
+        },
+        {
+            "Bus Name": "NueGo",
+            "Rating": "4.1\n/5",
+            "Departure Time": "23:45",
+            "Departure Location": "Majestic",
+            "Arrival Time": "03:00",
+            "Arrival Location": "KSRTC Bus Stand",
+            "Price": "375",
+            "Window Seats": "18 window seats",
+            "Amenities": [
+                "Water Bottle",
+                "Reading Light",
+                "Charging Point",
+                "USB port for charger",
+                "Wet Napkin",
+                "M-ticket",
+                "CCTV",
+                "Leg Rest"
+            ]
+        },
+        {
+            "Bus Name": "NueGo",
+            "Rating": "4.2\n/5",
+            "Departure Time": "16:00",
+            "Departure Location": "Majestic",
+            "Arrival Time": "19:45",
+            "Arrival Location": "KSRTC Bus Stand",
+            "Price": "223",
+            "Window Seats": "18 window seats",
+            "Amenities": [
+                "Water Bottle",
+                "Reading Light",
+                "Charging Point",
+                "USB port for charger",
+                "Wet Napkin",
+                "M-ticket",
+                "CCTV",
+                "Leg Rest"
+            ]
+        },
+        {
+            "Bus Name": "VKV Travels",
+            "Rating": "3.8\n/5",
+            "Departure Time": "06:05",
+            "Departure Location": "Madiwala",
+            "Arrival Time": "08:40",
+            "Arrival Location": "Colombia Asia Hospital",
+            "Price": "440",
             "Window Seats": "10 window seats",
             "Amenities": [
-                "Emergency Contact Number",
+                "Water Bottle",
+                "Reading Light",
                 "Charging Point",
-                "M-ticket"
+                "USB port for charger",
+                "Wet Napkin",
+                "M-ticket",
+                "CCTV",
+                "Leg Rest"
             ]
         },
         {
-            "Bus Name": "Sri Ranganatha Tours and Travels",
-            "Rating": "4.3\n/5",
-            "Departure Time": "22:45",
-            "Departure Location": "Navarang Theater",
-            "Arrival Time": "05:15",
-            "Arrival Location": "shivamogga",
-            "Price": "799",
+            "Bus Name": "PSS Transport",
+            "Rating": "4.7\n/5",
+            "Departure Time": "05:00",
+            "Departure Location": "Kalasipalyam",
+            "Arrival Time": "07:40",
+            "Arrival Location": "PSS Transport Mysuru office",
+            "Price": "475",
             "Window Seats": "15 window seats",
             "Amenities": [
-                "Emergency Contact Number",
+                "Water Bottle",
+                "Reading Light",
                 "Charging Point",
-                "M-ticket"
+                "USB port for charger",
+                "Wet Napkin",
+                "M-ticket",
+                "CCTV",
+                "Leg Rest"
             ]
         },
         {
-            "Bus Name": "VSM Travels",
-            "Rating": "4.2\n/5",
-            "Departure Time": "22:45",
-            "Departure Location": "Majestic",
-            "Arrival Time": "05:15",
-            "Arrival Location": "Shivamogga",
-            "Price": "850",
-            "Window Seats": "16 window seats",
+            "Bus Name": "Gowri Shankar Travels",
+            "Rating": "3.7\n/5",
+            "Departure Time": "22:00",
+            "Departure Location": "Anand Rao Circle",
+            "Arrival Time": "01:30",
+            "Arrival Location": "KSRTC Bus Stand",
+            "Price": "500",
+            "Window Seats": "13 window seats",
             "Amenities": [
-                "Emergency Contact Number",
+                "Water Bottle",
+                "Reading Light",
                 "Charging Point",
-                "M-ticket"
+                "USB port for charger",
+                "Wet Napkin",
+                "M-ticket",
+                "CCTV",
+                "Leg Rest"
             ]
         },
         {
-            "Bus Name": "VSM Travels",
+            "Bus Name": "VKV Travels",
             "Rating": "4.1\n/5",
-            "Departure Time": "23:30",
-            "Departure Location": "Majestic",
-            "Arrival Time": "05:45",
-            "Arrival Location": "JPN Road",
-            "Price": "750",
-            "Window Seats": "16 window seats",
+            "Departure Time": "06:05",
+            "Departure Location": "Madiwala",
+            "Arrival Time": "08:40",
+            "Arrival Location": "Colombia Asia Hospital",
+            "Price": "590",
+            "Window Seats": "10 window seats",
             "Amenities": [
-                "Emergency Contact Number",
+                "Water Bottle",
+                "Reading Light",
                 "Charging Point",
-                "M-ticket"
+                "USB port for charger",
+                "Wet Napkin",
+                "M-ticket",
+                "CCTV",
+                "Leg Rest"
             ]
         },
         {
-            "Bus Name": "Nelson Travels",
+            "Bus Name": "Asian Xpress",
             "Rating": "4\n/5",
-            "Departure Time": "23:40",
-            "Departure Location": "Majestic",
-            "Arrival Time": "05:45",
-            "Arrival Location": "Private Bus Stand",
-            "Price": "1500",
-            "Window Seats": "12 window seats",
+            "Departure Time": "23:00",
+            "Departure Location": "Madiwala",
+            "Arrival Time": "02:00",
+            "Arrival Location": "Others",
+            "Price": "645",
+            "Window Seats": "10 window seats",
             "Amenities": [
-                "Emergency Contact Number",
+                "Water Bottle",
+                "Reading Light",
                 "Charging Point",
-                "M-ticket"
+                "USB port for charger",
+                "Wet Napkin",
+                "M-ticket",
+                "CCTV",
+                "Leg Rest"
             ]
         }
     ]
