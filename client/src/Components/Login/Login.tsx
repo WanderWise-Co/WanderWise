@@ -62,7 +62,7 @@ export default function Login() {
     });
     if(res.data.message ==='success'){
     localStorage.setItem("token",res.data.token)
-      navigate("/home");
+      navigate("/api/v1/planpage");
     }
         console.log(res);    
     },

@@ -12,7 +12,7 @@ import Gemini from "../singleComponent/Gemini";
 
 export default function PlanPage() {
   const location = useLocation();
-  const initialCoordinates = location.state?.coordinates || { lat: 12.9716, lng: 77.5946 }; // Default to Bangalore
+  const initialCoordinates = location.state?.coordinates;// || { lat: 12.9716, lng: 77.5946 }; // Default to Bangalore
   const [coordinates, setCoordinates] = useState(initialCoordinates);
   const [places, setPlaces] = useState([]);
   const [placeType, setPlaceType] = useState("");
@@ -83,9 +83,7 @@ export default function PlanPage() {
         setTransportRentalData={setTransportRentalData}
         setGemeniData={setGemeniData}
         setNavButton={setNavButton}
-        from={source}
-        to={destination}
-        date={date}
+        
       />
 
       <div className={styles.planPageContainer}>
