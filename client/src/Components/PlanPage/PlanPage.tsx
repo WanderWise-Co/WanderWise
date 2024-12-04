@@ -5,7 +5,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "../singleComponent/Navbar";
- import CarRental from "../singleComponent/CarRental";
+import CarRental from "../singleComponent/CarRental";
 import FlightsList from "../singleComponent/FlightList"; 
 import BusList from "../singleComponent/BusList"; // Import FlightsList
 import Gemini from "../singleComponent/Gemini";
