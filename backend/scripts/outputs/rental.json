@@ -1,5 +1,5 @@
 {
-    "timestamp": "2024-12-04T10:59:18.540588",
+    "timestamp": "2024-12-04T11:03:57.197779",
     "car_rentals": [
         {
             "car_name": "Classic Car Rentals",
@@ -44,25 +44,18 @@
             "phone_number": "07411578133"
         },
         {
-            "car_name": "Hi-Fi Self Drive Car's Mysore",
-            "rating": "4.6",
-            "link": "https://www.justdial.com/Mysore/Hi-Fi-Self-Drive-Cars-Mysore-Opp-More-Super-Market-J-P-Nagar/0821PX821-X821-220522153720-A4C6_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
-            "location": "Main Road J P Nagar, Mysore",
-            "phone_number": "08511897612"
+            "car_name": "Mysore Car Rent S B A",
+            "rating": "4.5",
+            "link": "https://www.justdial.com/Mysore/Mysore-Car-Rent-S-B-A-Near-Shabnam-Brigade-Layout-Udayagiri/0821PX821-X821-231203165606-R1G8_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
+            "location": "P and T Quarters Udayagiri, Mysore",
+            "phone_number": "08971720418"
         },
         {
-            "car_name": "Jp Ram Mysore Self Drive",
-            "rating": "4.1",
-            "link": "https://www.justdial.com/Mysore/Jp-Ram-Mysore-Self-Drive-Near-Orchid-Public-School-Sharadadevi-Nagar/0821PX821-X821-211018153025-L2S9_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
-            "location": "Road Sharadadevi Nagar, Mysore",
-            "phone_number": "08401778846"
-        },
-        {
-            "car_name": "Alpha Tours And Travels",
-            "rating": "4.4",
-            "link": "https://www.justdial.com/Mysore/Alpha-Tours-And-Travels-Opposite-Madina-Majid-Udayagiri/0821PX821-X821-170617102130-U6J9_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
-            "location": "Muneshwar Nagar Udayagiri, Mysore",
-            "phone_number": "07411832419"
+            "car_name": "Affordable Self Drive Cars",
+            "rating": "5.0",
+            "link": "https://www.justdial.com/Mysore/Affordable-Self-Drive-Cars-Near-Kadamba-Bakery-Kanakadasa-Nagar/0821PX821-X821-240904112604-L4C7_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
+            "location": "3rd Stage Kanakadasa Nagar, Mysore",
+            "phone_number": "09972826674"
         },
         {
             "car_name": "Heritage Self Drive Car's",
@@ -70,6 +63,13 @@
             "link": "https://www.justdial.com/Mysore/Heritage-Self-Drive-Cars-Near-Ramabhai-Nagar-Bus-Stop-Saraswathipuram/0821PX821-X821-220927114731-K9G4_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
             "location": "Sri Nagar Saraswathipuram, Mysore",
             "phone_number": "08511909672"
+        },
+        {
+            "car_name": "Mysore Travels",
+            "rating": "3.8",
+            "link": "https://www.justdial.com/Mysore/Mysore-Travels-Siddiquenagar-Bannimantap-Extension/0821PX821-X821-150826121340-X8I1_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
+            "location": "2nd A Cross, Mysore",
+            "phone_number": "08511361228"
         }
     ]
 }

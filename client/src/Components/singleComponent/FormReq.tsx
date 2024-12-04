@@ -42,6 +42,7 @@ export default function FormReq() {
     startDate: new Date(),
     endDate: new Date(new Date().setMonth(11)), 
   });
+
   useEffect(()=>{
     if (source) {
       localStorage.setItem('from', source);
@@ -61,6 +62,7 @@ export default function FormReq() {
       localStorage.setItem('endDate', date.endDate.toString());
     }
   },  [date]);
+
   const handleCategoryClick = (categoryName: string) => {
     setSelectedCategories((prevSelected) =>
       prevSelected.includes(categoryName)
@@ -77,9 +79,10 @@ export default function FormReq() {
       }
       
       try {
+        const to = localStorage.getItem("to");
         const response = await axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
           params: {
-            address: destination.trim(),
+            address: to,
             key: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
           },
         });
@@ -90,7 +93,12 @@ export default function FormReq() {
         }
   
         const { lat, lng } = response.data.results[0].geometry.location;
-  
+
+        if (lat && lng){
+          localStorage.setItem('lat',lat);
+          localStorage.setItem('lng',lng);
+        }
+        
         navigate(`/api/v1/planpage`, {
           state: {
             coordinates: { lat, lng },
