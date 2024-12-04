@@ -29,18 +29,18 @@ def load_bus_data(json_file):
     bus_dat=data['bus_data']
     df = pd.DataFrame(bus_dat)
     
-    # Clean Rating: Extract numeric value from string like '4.6\n/5'
-    df['Rating'] = df['Rating'].apply(lambda x: float(re.sub(r'[^\d.]', '', x)) if isinstance(x, str) else 0)
+    # Clean rating: Extract numeric value from string like '4.6\n/5'
+    df['rating'] = df['rating'].apply(lambda x: float(re.sub(r'[^\d.]', '', x)) if isinstance(x, str) else 0)
     
-    # Clean Price: Remove '₹' and ',' and convert to float
-    df['Price'] = df['Price'].replace('₹', '', regex=True).replace(',', '', regex=True).astype(float)
+    # Clean price: Remove '₹' and ',' and convert to float
+    df['price'] = df['price'].replace('₹', '', regex=True).replace(',', '', regex=True).astype(float)
     
-    # Clean Window Seats: Extract the number of window seats (e.g., '24 window seats')
-    df['Window Seats'] = df['Window Seats'].apply(lambda x: int(re.search(r'\d+', x).group()) if isinstance(x, str) else 0)
+    # Clean window_seats: Extract the number of window seats (e.g., '24 window seats')
+    df['window_seats'] = df['window_seats'].apply(lambda x: int(re.search(r'\d+', x).group()) if isinstance(x, str) else 0)
     
-    # Clean Total Seats Left: You can either extract information or drop it if it's non-numeric
+    # CleanwTotal_seats Left: You can either extract information or drop it if it's non-numeric
     # For simplicity, we're setting this to 0 if it's non-numeric.
-    # df['Total Seats Left'] = df['Total Seats Left'].apply(lambda x: 0 if not isinstance(x, (int, float)) else 0)
+    # df[wTotal_seats Left'] = df[wTotal_seats Left'].apply(lambda x: 0 if not isinstance(x, (int, float)) else 0)
 
     df['Amenities Count'] = df['Amenities'].apply(len)
     
@@ -72,10 +72,10 @@ def prepare_data_for_als(spark_df):
     # Compute interaction score (weighted sum of features)
     user_data = user_data.withColumn(
         'Interaction Score',
-        (col('Rating') * 0.4) + 
-        ((1 / (col('Price') + 1)) * 0.3) + 
-        (col('Window Seats') * 0.1) + 
-        # (col('Total Seats Left') * 0.1) + 
+        (col('rating') * 0.4) + 
+        ((1 / (col('price') + 1)) * 0.3) + 
+        (col('window_seats') * 0.1) + 
+        # (col(wTotal_seats Left') * 0.1) + 
         (col('Amenities Count') * 0.1)
     )
     

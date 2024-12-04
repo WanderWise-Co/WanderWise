@@ -4,3 +4,4 @@ scripts/resources/chromedriver-win64/*
 !scripts/resources/chromedriver-win64/chromedriver.exe
 scripts/outputs/*
 !scripts/outputs/.gitkeep    
+scripts/try.py
