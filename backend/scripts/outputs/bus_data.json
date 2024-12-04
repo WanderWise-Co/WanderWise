@@ -1,6 +1,23 @@
 {
-    "timestamp": "2024-12-03T17:51:20.007460",
+    "timestamp": "2024-12-04T09:47:49.411758",
     "bus_data": [
+        {
+            "bus_name": "Mettur Super Services(mss)",
+            "rating": "4.5\n/5",
+            "departure_time": "23:00",
+            "departure_location": "Madiwala",
+            "arrival_time": "05:30",
+            "arrival_location": "Koyambedu",
+            "price": "364",
+            "window_seats": "21 window seats",
+            "Amenities": [
+                "Water Bottle",
+                "Blankets",
+                "Charging Point",
+                "Reading Light",
+                "CCTV"
+            ]
+        },
         {
             "bus_name": "FlixBus",
             "rating": "4.7\n/5",
@@ -8,16 +25,14 @@
             "departure_location": "Silk Board",
             "arrival_time": "08:15",
             "arrival_location": "Velachery",
-            "price": "1296",
+            "price": "1257",
             "window_seats": "18 window seats",
             "Amenities": [
                 "Water Bottle",
                 "Blankets",
                 "Charging Point",
                 "Reading Light",
-                "Waiting lounge",
-                "M-ticket",
-                "Deep Cleaned Buses"
+                "CCTV"
             ]
         },
         {
@@ -27,92 +42,31 @@
             "departure_location": "Attibele",
             "arrival_time": "06:35",
             "arrival_location": "Koyambedu",
-            "price": "1296",
+            "price": "1257",
             "window_seats": "18 window seats",
             "Amenities": [
                 "Water Bottle",
                 "Blankets",
                 "Charging Point",
                 "Reading Light",
-                "Waiting lounge",
-                "M-ticket",
-                "Deep Cleaned Buses"
+                "CCTV"
             ]
         },
         {
-            "bus_name": "SST Limoliner",
-            "rating": "5\n/5",
-            "departure_time": "23:00",
+            "bus_name": "KMRL Kalaimakal(sk)",
+            "rating": "4.9\n/5",
+            "departure_time": "22:00",
             "departure_location": "Madiwala",
-            "arrival_time": "05:15",
+            "arrival_time": "04:45",
             "arrival_location": "Koyambedu",
-            "price": "3283",
-            "window_seats": "11 window seats",
+            "price": "540",
+            "window_seats": "14 window seats",
             "Amenities": [
                 "Water Bottle",
                 "Blankets",
                 "Charging Point",
                 "Reading Light",
-                "Waiting lounge",
-                "M-ticket",
-                "Deep Cleaned Buses"
-            ]
-        },
-        {
-            "bus_name": "Adithiya AirBus",
-            "rating": "4.7\n/5",
-            "departure_time": "21:30",
-            "departure_location": "Madiwala",
-            "arrival_time": "04:10",
-            "arrival_location": "Koyambedu",
-            "price": "1900",
-            "window_seats": "18 window seats",
-            "Amenities": [
-                "Water Bottle",
-                "Blankets",
-                "Charging Point",
-                "Reading Light",
-                "Waiting lounge",
-                "M-ticket",
-                "Deep Cleaned Buses"
-            ]
-        },
-        {
-            "bus_name": "FlixBus",
-            "rating": "4.7\n/5",
-            "departure_time": "23:59",
-            "departure_location": "Madiwala",
-            "arrival_time": "08:15",
-            "arrival_location": "Velachery",
-            "price": "1464",
-            "window_seats": "17 window seats",
-            "Amenities": [
-                "Water Bottle",
-                "Blankets",
-                "Charging Point",
-                "Reading Light",
-                "Waiting lounge",
-                "M-ticket",
-                "Deep Cleaned Buses"
-            ]
-        },
-        {
-            "bus_name": "KBS Luxury Bus",
-            "rating": "4.7\n/5",
-            "departure_time": "20:30",
-            "departure_location": "Madiwala",
-            "arrival_time": "03:40",
-            "arrival_location": "Koyambedu",
-            "price": "1700",
-            "window_seats": "16 window seats",
-            "Amenities": [
-                "Water Bottle",
-                "Blankets",
-                "Charging Point",
-                "Reading Light",
-                "Waiting lounge",
-                "M-ticket",
-                "Deep Cleaned Buses"
+                "CCTV"
             ]
         },
         {
@@ -122,16 +76,36 @@
             "departure_location": "Madiwala",
             "arrival_time": "06:50",
             "arrival_location": "Koyambedu",
-            "price": "1259",
-            "window_seats": "22 window seats",
+            "price": "729",
+            "window_seats": "24 window seats",
+            "Amenities": []
+        },
+        {
+            "bus_name": "Adithiya AirBus",
+            "rating": "4.7\n/5",
+            "departure_time": "21:30",
+            "departure_location": "Madiwala",
+            "arrival_time": "04:10",
+            "arrival_location": "Koyambedu",
+            "price": "1190",
+            "window_seats": "18 window seats",
+            "Amenities": []
+        },
+        {
+            "bus_name": "IntrCity SmartBus",
+            "rating": "4.5\n/5",
+            "departure_time": "23:10",
+            "departure_location": "Madiwala",
+            "arrival_time": "06:05",
+            "arrival_location": "Koyambedu",
+            "price": "689",
+            "window_seats": "24 window seats",
             "Amenities": [
                 "Water Bottle",
                 "Blankets",
                 "Charging Point",
                 "Reading Light",
-                "Waiting lounge",
-                "M-ticket",
-                "Deep Cleaned Buses"
+                "CCTV"
             ]
         },
         {
@@ -148,28 +122,24 @@
                 "Blankets",
                 "Charging Point",
                 "Reading Light",
-                "Waiting lounge",
-                "M-ticket",
-                "Deep Cleaned Buses"
+                "CCTV"
             ]
         },
         {
-            "bus_name": "KMRL Kalaimakal(sk)",
-            "rating": "4.8\n/5",
-            "departure_time": "22:00",
+            "bus_name": "Asian Xpress",
+            "rating": "4.7\n/5",
+            "departure_time": "22:05",
             "departure_location": "Madiwala",
-            "arrival_time": "04:45",
+            "arrival_time": "05:00",
             "arrival_location": "Koyambedu",
-            "price": "790",
+            "price": "495",
             "window_seats": "10 window seats",
             "Amenities": [
                 "Water Bottle",
                 "Blankets",
                 "Charging Point",
                 "Reading Light",
-                "Waiting lounge",
-                "M-ticket",
-                "Deep Cleaned Buses"
+                "CCTV"
             ]
         }
     ]

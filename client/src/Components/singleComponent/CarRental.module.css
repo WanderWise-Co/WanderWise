@@ -1,0 +1,88 @@
+/* FlightList.module.css */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  
+  .sortButtons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .sortButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .sortButton:hover {
+    background-color: #0056b3;
+  }
+  
+  .sortButton:active {
+    transform: scale(0.95);
+  }
+  
+  .sortButton:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.7);
+  }
+  
+  .carItem {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    margin-bottom: 16px;
+    transition: box-shadow 0.3s;
+  }
+  
+  .carItem:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .carDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .carDetails h4 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .carDetails p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .carDetails a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 8px;
+  }
+  
+  .carDetails a:hover {
+    text-decoration: underline;
+  }
+  
+  .link {
+    margin-top: 8px;
+    font-size: 14px;
+  }
+  

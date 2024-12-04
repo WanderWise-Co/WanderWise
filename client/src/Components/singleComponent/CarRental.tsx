@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import styles from "./FlightList.module.css";
+import styles from "./CarRental.module.css";
 
 interface CarRental {
   car_name: string;
