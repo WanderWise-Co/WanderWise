@@ -10,9 +10,6 @@ interface NavbarProps {
   setTransportRentalData: (data: any) => void;
   setGemeniData: (data: any) => void;
   setNavButton: (data: string) => void;  // Accept the setter function
-  from: string;
-  to: string;
-  date: { startDate: string; endDate: string };
 }
 
 export default function Navbar({
@@ -22,12 +19,8 @@ export default function Navbar({
   setTransportRentalData,
   setGemeniData,
   setNavButton,
-  from,
-  to,
-  date,
 }: NavbarProps) {
 
-  const { startDate, endDate } = date;
   const navigate = useNavigate(); // Initialize useNavigate
 
   const handlePlaneClick = async () => {
