@@ -94,8 +94,8 @@ export default function Navbar({
             Authorization: `Bearer ${token}`,
           },
           params: {
-            from: "bangalore",
-            to: "chennai",
+            from,
+            to,
             startDate: sDate,
             endDate: eDate,
           },
@@ -112,6 +112,8 @@ export default function Navbar({
     console.log("try")
     try {
       const token = localStorage.getItem("token");
+      const to = localStorage.getItem("to");
+
       console.log("try 1")
       console.log(`${import.meta.env.VITE_BASE_SERVER_URL}/planpage/transport/rental`, token);
       const response = await axios.get(
@@ -119,7 +121,7 @@ export default function Navbar({
         {
           headers: {
             Authorization: `Bearer ${token}`,
-          },params:{from:"Bangalore"},
+          },params:{to},
         }
       );
       console.log("Rental API Response:", response.data);

@@ -1,146 +1,49 @@
 {
-    "timestamp": "2024-12-04T09:47:49.411758",
+    "timestamp": "2024-12-04T10:55:19.148523",
     "bus_data": [
         {
-            "bus_name": "Mettur Super Services(mss)",
-            "rating": "4.5\n/5",
-            "departure_time": "23:00",
-            "departure_location": "Madiwala",
-            "arrival_time": "05:30",
-            "arrival_location": "Koyambedu",
-            "price": "364",
-            "window_seats": "21 window seats",
-            "Amenities": [
-                "Water Bottle",
-                "Blankets",
-                "Charging Point",
-                "Reading Light",
-                "CCTV"
-            ]
-        },
-        {
-            "bus_name": "FlixBus",
-            "rating": "4.7\n/5",
-            "departure_time": "00:10",
-            "departure_location": "Silk Board",
-            "arrival_time": "08:15",
-            "arrival_location": "Velachery",
-            "price": "1257",
-            "window_seats": "18 window seats",
-            "Amenities": [
-                "Water Bottle",
-                "Blankets",
-                "Charging Point",
-                "Reading Light",
-                "CCTV"
-            ]
-        },
-        {
-            "bus_name": "FlixBus",
-            "rating": "4.2\n/5",
-            "departure_time": "00:10",
-            "departure_location": "Attibele",
-            "arrival_time": "06:35",
-            "arrival_location": "Koyambedu",
-            "price": "1257",
-            "window_seats": "18 window seats",
-            "Amenities": [
-                "Water Bottle",
-                "Blankets",
-                "Charging Point",
-                "Reading Light",
-                "CCTV"
-            ]
-        },
-        {
-            "bus_name": "KMRL Kalaimakal(sk)",
-            "rating": "4.9\n/5",
-            "departure_time": "22:00",
-            "departure_location": "Madiwala",
-            "arrival_time": "04:45",
-            "arrival_location": "Koyambedu",
-            "price": "540",
-            "window_seats": "14 window seats",
-            "Amenities": [
-                "Water Bottle",
-                "Blankets",
-                "Charging Point",
-                "Reading Light",
-                "CCTV"
-            ]
-        },
-        {
-            "bus_name": "IntrCity SmartBus",
+            "bus_name": "Shri Abinesh Roadways",
             "rating": "4.6\n/5",
-            "departure_time": "23:20",
-            "departure_location": "Madiwala",
-            "arrival_time": "06:50",
-            "arrival_location": "Koyambedu",
-            "price": "729",
-            "window_seats": "24 window seats",
+            "departure_time": "22:45",
+            "departure_location": "Koyambedu",
+            "arrival_time": "08:15",
+            "arrival_location": "Srirangapattana",
+            "price": "1030",
+            "window_seats": "9 window seats",
             "Amenities": []
         },
         {
-            "bus_name": "Adithiya AirBus",
-            "rating": "4.7\n/5",
-            "departure_time": "21:30",
-            "departure_location": "Madiwala",
-            "arrival_time": "04:10",
-            "arrival_location": "Koyambedu",
-            "price": "1190",
+            "bus_name": "Sri Sugam Bus Tours and Travels",
+            "rating": "3.9\n/5",
+            "departure_time": "16:00",
+            "departure_location": "Koyambedu",
+            "arrival_time": "01:40",
+            "arrival_location": "Colombia Asia Hospital",
+            "price": "3500",
+            "window_seats": "20 window seats",
+            "Amenities": []
+        },
+        {
+            "bus_name": "Orange Tours And Travels",
+            "rating": "3.5\n/5",
+            "departure_time": "22:15",
+            "departure_location": "Koyambedu",
+            "arrival_time": "08:15",
+            "arrival_location": "Infosys Gate",
+            "price": "1200",
             "window_seats": "18 window seats",
             "Amenities": []
         },
         {
-            "bus_name": "IntrCity SmartBus",
-            "rating": "4.5\n/5",
-            "departure_time": "23:10",
-            "departure_location": "Madiwala",
-            "arrival_time": "06:05",
-            "arrival_location": "Koyambedu",
-            "price": "689",
-            "window_seats": "24 window seats",
-            "Amenities": [
-                "Water Bottle",
-                "Blankets",
-                "Charging Point",
-                "Reading Light",
-                "CCTV"
-            ]
-        },
-        {
-            "bus_name": "VGO BUS",
-            "rating": "4.8\n/5",
-            "departure_time": "23:45",
-            "departure_location": "Madiwala",
-            "arrival_time": "05:32",
-            "arrival_location": "Koyambedu",
-            "price": "1499",
-            "window_seats": "24 window seats",
-            "Amenities": [
-                "Water Bottle",
-                "Blankets",
-                "Charging Point",
-                "Reading Light",
-                "CCTV"
-            ]
-        },
-        {
-            "bus_name": "Asian Xpress",
-            "rating": "4.7\n/5",
-            "departure_time": "22:05",
-            "departure_location": "Madiwala",
+            "bus_name": "Bharathi Travels",
+            "rating": "2\n/5",
+            "departure_time": "17:55",
+            "departure_location": "Siruseri",
             "arrival_time": "05:00",
-            "arrival_location": "Koyambedu",
-            "price": "495",
-            "window_seats": "10 window seats",
-            "Amenities": [
-                "Water Bottle",
-                "Blankets",
-                "Charging Point",
-                "Reading Light",
-                "CCTV"
-            ]
+            "arrival_location": "Mysuru",
+            "price": "1790",
+            "window_seats": "12 window seats",
+            "Amenities": []
         }
     ]
 }

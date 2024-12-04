@@ -1,75 +1,75 @@
 {
-    "timestamp": "2024-12-04T09:49:01.712239",
+    "timestamp": "2024-12-04T10:59:18.540588",
     "car_rentals": [
         {
-            "car_name": "S K Self Driven Car",
-            "rating": "4.4",
-            "link": "https://www.justdial.com/Bangalore/S-K-Self-Driven-Car-Near-MEI-Layout-Ground-Hessargatta-Main-Road/080PXX80-XX80-181114190322-K1Y1_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Bangalore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
-            "location": "Hessargatta Main Road, Bangalore",
-            "phone_number": "08511432804"
-        },
-        {
-            "car_name": "Asili Cars",
-            "rating": "4.1",
-            "link": "https://www.justdial.com/Bangalore/Asili-Cars-Near-to-DS-Max-Appartment-SS-Farm-Horamavu-Agara/080PXX80-XX80-190613093755-K2C3_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Bangalore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
-            "location": "- 560043 Horamavu Agara, Bangalore",
-            "phone_number": "09980556385"
-        },
-        {
-            "car_name": "Prestige Self Drive Cars",
-            "rating": "4.6",
-            "link": "https://www.justdial.com/Bangalore/Prestige-Self-Drive-Cars-Opp-to-Appartment-Nagasandra/080PXX80-XX80-231012094351-M1B9_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Bangalore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
-            "location": "Jindal Prestage Nagasandra, Bangalore",
-            "phone_number": "07041763982"
-        },
-        {
-            "car_name": "Decan Self Drive Cars",
-            "rating": "4.3",
-            "link": "https://www.justdial.com/Bangalore/Decan-Self-Drive-Cars-Near-Indian-Oil-Petrol-Bunk-Kadugondanahalli/080PXX80-XX80-230404150941-H1M7_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Bangalore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
-            "location": "Main Road Kadugondanahalli, Bangalore",
-            "phone_number": "09035044717"
-        },
-        {
-            "car_name": "Slv Self Drive Services",
-            "rating": "4.4",
-            "link": "https://www.justdial.com/Bangalore/Slv-Self-Drive-Services-Near-By-Lalith-Castle-International-School-Rajarajeshwari-Nagar/080PXX80-XX80-230130105903-Z6C9_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Bangalore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
-            "location": "BEML Layout Rajarajeshwari Nagar, Bangalore",
-            "phone_number": "09035039141"
-        },
-        {
-            "car_name": "Smart Self Drive Car",
-            "rating": "4.8",
-            "link": "https://www.justdial.com/Bangalore/Smart-Self-Drive-Car-Near-Bel-Circle-Sanjay-Nagar/080PXX80-XX80-210129160944-K3U7_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Bangalore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
-            "location": "Sanjay Nagar, Bangalore",
-            "phone_number": "09980918003"
-        },
-        {
-            "car_name": "Hari Hara Puthra Self Drive Carz",
-            "rating": "3.7",
-            "link": "https://www.justdial.com/Bangalore/Hari-Hara-Puthra-Self-Drive-Carz-Near-Udupi-Tadaka-Hotel-BTM-Layout-2nd-Stage/080PXX80-XX80-180516160919-H5Z4_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Bangalore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
-            "location": "Ns Palya BTM Layout 2nd Stage, Bangalore",
-            "phone_number": "Show Number"
-        },
-        {
-            "car_name": "Mera Gaadi",
-            "rating": "4.1",
-            "link": "https://www.justdial.com/Bangalore/Mera-Gaadi-Opposite-to-Gopalan-Mall-Btm-Layout-1st-Stage/080PXX80-XX80-180530124139-Q2I5_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Bangalore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
-            "location": "Layout Btm Layout 1st Stage, Bangalore",
-            "phone_number": "09035036506"
-        },
-        {
-            "car_name": "Snp Consultant and Services",
+            "car_name": "Classic Car Rentals",
             "rating": "4.7",
-            "link": "https://www.justdial.com/Bangalore/Snp-Consultant-and-Services-Near-By-Anjaneya-Swamy-Temple-Rajarajeshwari-Nagar/080PXX80-XX80-240106104753-S3Y8_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Bangalore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
-            "location": "Rajarajeshwari Nagar, Bangalore",
-            "phone_number": "08147538658"
+            "link": "https://www.justdial.com/Mysore/Classic-Car-Rentals-Near-Huda-Public-School-Shivarathreeswara-Nagar/0821PX821-X821-220219171702-Y8A9_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
+            "location": "Shivarathreeswara Nagar, Mysore",
+            "phone_number": "07487869093"
         },
         {
-            "car_name": "Maruthi Self Drive",
+            "car_name": "Classic Self Drive",
+            "rating": "4.6",
+            "link": "https://www.justdial.com/Mysore/Classic-Self-Drive-Near-Huda-School-Shivarathreeswara-Nagar/0821PX821-X821-240920164749-P3T5_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
+            "location": "Ss Nagar Shivarathreeswara Nagar, Mysore",
+            "phone_number": "07411596316"
+        },
+        {
+            "car_name": "Royal Classic Self Drive Cars",
+            "rating": "4.9",
+            "link": "https://www.justdial.com/Mysore/Royal-Classic-Self-Drive-Cars-Near-Bhuvaneshwari-Convention-Hall-Bannimantap/0821PX821-X821-221027115518-Z8F9_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
+            "location": "Hall Road Bannimantap, Mysore",
+            "phone_number": "08197608682"
+        },
+        {
+            "car_name": "VR SELF DRIVE CARS",
+            "rating": "4.3",
+            "link": "https://www.justdial.com/Mysore/VR-SELF-DRIVE-CARS-Vijaynagar-4th-Stage/0821PX821-X821-240213084801-G3K2_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
+            "location": "3RD STAGE Vijaynagar 4th Stage, Mysore",
+            "phone_number": "09054633173"
+        },
+        {
+            "car_name": "Alarz Car Self Drive",
+            "rating": "4.4",
+            "link": "https://www.justdial.com/Mysore/Alarz-Car-Self-Drive-Bannimantap/0821PX821-X821-221217215647-Z2L8_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
+            "location": "Bannimantap, Mysore",
+            "phone_number": "08401764851"
+        },
+        {
+            "car_name": "Sri Kalabhairava Holidays",
             "rating": "4.5",
-            "link": "https://www.justdial.com/Bangalore/Maruthi-Self-Drive-Opposite-to-Golds-Gym-Road-Rajarajeshwari-Nagar/080PXX80-XX80-220620100414-M6I7_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Bangalore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
-            "location": "Road Rajarajeshwari Nagar, Bangalore",
-            "phone_number": "09035024336"
+            "link": "https://www.justdial.com/Mysore/Sri-Kalabhairava-Holidays-Near-Bhramaramba-Choutry-Sriramapura-2nd-Stage/0821PX821-X821-240813120144-N6W5_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
+            "location": "Main Road Sriramapura 2nd Stage, Mysore",
+            "phone_number": "07411578133"
+        },
+        {
+            "car_name": "Hi-Fi Self Drive Car's Mysore",
+            "rating": "4.6",
+            "link": "https://www.justdial.com/Mysore/Hi-Fi-Self-Drive-Cars-Mysore-Opp-More-Super-Market-J-P-Nagar/0821PX821-X821-220522153720-A4C6_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
+            "location": "Main Road J P Nagar, Mysore",
+            "phone_number": "08511897612"
+        },
+        {
+            "car_name": "Jp Ram Mysore Self Drive",
+            "rating": "4.1",
+            "link": "https://www.justdial.com/Mysore/Jp-Ram-Mysore-Self-Drive-Near-Orchid-Public-School-Sharadadevi-Nagar/0821PX821-X821-211018153025-L2S9_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
+            "location": "Road Sharadadevi Nagar, Mysore",
+            "phone_number": "08401778846"
+        },
+        {
+            "car_name": "Alpha Tours And Travels",
+            "rating": "4.4",
+            "link": "https://www.justdial.com/Mysore/Alpha-Tours-And-Travels-Opposite-Madina-Majid-Udayagiri/0821PX821-X821-170617102130-U6J9_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
+            "location": "Muneshwar Nagar Udayagiri, Mysore",
+            "phone_number": "07411832419"
+        },
+        {
+            "car_name": "Heritage Self Drive Car's",
+            "rating": "4.5",
+            "link": "https://www.justdial.com/Mysore/Heritage-Self-Drive-Cars-Near-Ramabhai-Nagar-Bus-Stop-Saraswathipuram/0821PX821-X821-220927114731-K9G4_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
+            "location": "Sri Nagar Saraswathipuram, Mysore",
+            "phone_number": "08511909672"
         }
     ]
 }

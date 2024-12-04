@@ -206,8 +206,8 @@ const get_hotel_data = async (req, res) => {
 
 const get_rental_data = async (req, res) => {
 
-    const { from } = req.query;
-    if(!from )
+    const { to } = req.query;
+    if(!to )
     {
         console.log("error")
         throw new BadRequestError('provide from and to ')
@@ -220,7 +220,7 @@ const get_rental_data = async (req, res) => {
     //     };
     // };
 
-    const python = spawn('python', [path.join(__dirname, '../scripts/rental.py'),from],{
+    const python = spawn('python', [path.join(__dirname, '../scripts/rental.py'),to],{
         cwd: path.join(__dirname, '../scripts') 
     });
 
