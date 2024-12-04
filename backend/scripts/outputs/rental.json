@@ -1,12 +1,12 @@
 {
-    "timestamp": "2024-12-03T17:33:29.105376",
+    "timestamp": "2024-12-04T11:01:22.702548",
     "car_rentals": [
         {
-            "car_name": "Maruthi Self Drive",
-            "rating": "4.5",
-            "link": "https://www.justdial.com/Bangalore/Maruthi-Self-Drive-Opposite-to-Golds-Gym-Road-Rajarajeshwari-Nagar/080PXX80-XX80-220620100414-M6I7_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Bangalore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
-            "location": "Road Rajarajeshwari Nagar, Bangalore",
-            "phone_number": "09035024336"
+            "car_name": "High Class Self Drive Carz",
+            "rating": "4.7",
+            "link": "https://www.justdial.com/Bangalore/High-Class-Self-Drive-Carz-Near-St-Xaviers-College-Govindapura/080PXX80-XX80-180727151529-E4P1_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Bangalore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
+            "location": "Hbr Layout Govindapura, Bangalore",
+            "phone_number": "08197784870"
         },
         {
             "car_name": "Asili Cars",
@@ -21,6 +21,13 @@
             "link": "https://www.justdial.com/Bangalore/Prestige-Self-Drive-Cars-Opp-to-Appartment-Nagasandra/080PXX80-XX80-231012094351-M1B9_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Bangalore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
             "location": "Jindal Prestage Nagasandra, Bangalore",
             "phone_number": "07041763982"
+        },
+        {
+            "car_name": "M S Self Driven Cars",
+            "rating": "4.1",
+            "link": "https://www.justdial.com/Bangalore/M-S-Self-Driven-Cars-Near-to-Shantiniketan-School-Hebbal/080PXX80-XX80-210702212550-W4D6_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Bangalore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
+            "location": "Kodigehally Road Hebbal, Bangalore",
+            "phone_number": "09980956382"
         },
         {
             "car_name": "Mera Gaadi",
@@ -44,18 +51,11 @@
             "phone_number": "09035044717"
         },
         {
-            "car_name": "Sr Tours and Travels",
-            "rating": "3.5",
-            "link": "https://www.justdial.com/Bangalore/Sr-Tours-and-Travels-Near-Carmel-School-Jp-Nagar/080PXX80-XX80-241030110558-T3F8_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Bangalore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
-            "location": "Chinnaswamy Layout Jp Nagar, Bangalore",
-            "phone_number": "08128806809"
-        },
-        {
-            "car_name": "SMR Car Rentals",
-            "rating": "4.8",
-            "link": "https://www.justdial.com/Bangalore/SMR-Car-Rentals-Near-Appolo-Nurses-Hostel-Arekere-Village/080PXX80-XX80-211223105934-Y2Z1_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Bangalore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
-            "location": "BTS Layout Arekere Village, Bangalore",
-            "phone_number": "09035013096"
+            "car_name": "Hr Carz Point",
+            "rating": "4.6",
+            "link": "https://www.justdial.com/Bangalore/Hr-Carz-Point-Near-Murgan-Cafe-Jogpalya-Ulsoor/080PXX80-XX80-200601130900-N6B2_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Bangalore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
+            "location": "Jogpalya-Ulsoor, Bangalore",
+            "phone_number": "07041775909"
         },
         {
             "car_name": "Ashwini B Tours and Travels",
@@ -65,12 +65,11 @@
             "phone_number": "08460403101"
         },
         {
-            "car_name": "Bangalore City Tours & Travels",
-            "rating": "4.3",
-            "link": "https://www.justdial.com/Bangalore/Bangalore-City-Tours-Travels-Thambuchetty-Palya/080PXX80-XX80-160304170800-I8I3_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Bangalore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
-            "location": "1st Cross Thambuchetty Palya, Bangalore",
-            "phone_number": "09980204559"
+            "car_name": "Sr Tours and Travels",
+            "rating": "3.5",
+            "link": "https://www.justdial.com/Bangalore/Sr-Tours-and-Travels-Near-Carmel-School-Jp-Nagar/080PXX80-XX80-241030110558-T3F8_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Bangalore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
+            "location": "Chinnaswamy Layout Jp Nagar, Bangalore",
+            "phone_number": "08128806809"
         }
     ]
->>>>>>> f262687a9d06c0fe18fa229362e828a69c06e305
 }
