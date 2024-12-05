@@ -35,7 +35,6 @@ export default function FormReq() {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [source, setSource] = useState("");
   const [destination, setDestination] = useState("");
-  const [coordinates, setCoordinates] = useState<{ lat: number, lng: number } | null>(null);
 
   const navigate = useNavigate();
   const [date, setDate] = useState({
@@ -47,21 +46,18 @@ export default function FormReq() {
     if (source) {
       localStorage.setItem('from', source);
     }
-  },[source])
-
-  useEffect(()=>{
     if (destination) {
       localStorage.setItem('to', destination);
     }
-  },[destination])
-  useEffect(() => {
     if (date.startDate) {
       localStorage.setItem('startDate', date.startDate.toString());
     }
     if (date.endDate) {
       localStorage.setItem('endDate', date.endDate.toString());
     }
-  },  [date]);
+  },[source,destination,date])
+
+
 
   const handleCategoryClick = (categoryName: string) => {
     setSelectedCategories((prevSelected) =>
@@ -72,6 +68,7 @@ export default function FormReq() {
   };
 
   const handleChoosePlanClick = async () => {
+
     if (isLoggedin()) {
       if (!destination.trim()) {
         console.error("Destination cannot be empty.");
@@ -99,15 +96,7 @@ export default function FormReq() {
           localStorage.setItem('lng',lng);
         }
         
-        navigate(`/api/v1/planpage`, {
-          state: {
-            coordinates: { lat, lng },
-            selectedCategories,
-            source,
-            destination,
-            date,
-          },
-        });
+        navigate(`/api/v1/homefilter`);
       } catch (error: any) {
         console.error("Error fetching location:", error.message);
       }
@@ -115,14 +104,9 @@ export default function FormReq() {
       navigate("/api/v1/auth/login");
     }
   };
-  
-
-  
 
   const handleValueChange = (newValue: any) => {
-    console.log('date');
     setDate(newValue);
-    
   };
 
   return (

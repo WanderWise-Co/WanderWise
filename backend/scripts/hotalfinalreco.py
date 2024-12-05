@@ -42,8 +42,11 @@ spark = SparkSession.builder.appName('HotelRecommenderSystem').getOrCreate()
 # features_df1 = spark.read.json(file_path)
 # features_df = features_df1.select("data")
 # Step 3: Preprocess the Data
-reviews_file_path = "C:\\Users\\Saicharan\\Desktop\\finalyear\\WanderWise\\backend\\scripts\\outputs\\hotel_reviews.json"
-features_file_path = "C:\\Users\\Saicharan\\Desktop\\finalyear\\WanderWise\\backend\\scripts\\outputs\\hotel_features.json"
+# reviews_file_path = "C:\\Users\\Saicharan\\Desktop\\finalyear\\WanderWise\\backend\\scripts\\outputs\\hotel_reviews.json"
+# features_file_path = "C:\\Users\\Saicharan\\Desktop\\finalyear\\WanderWise\\backend\\scripts\\outputs\\hotel_features.json"
+
+reviews_file_path = file_path = os.path.join(os.path.dirname(__file__), 'outputs', 'hotel_reviews.json')
+features_file_path = file_path = os.path.join(os.path.dirname(__file__), 'outputs', 'hotel_features.json')
 
 # Load reviews data using json and pandas
 with open(reviews_file_path, 'r') as file:
