@@ -4,34 +4,33 @@ import PlacesItem from "./PlacesItem";
 import styles from "./PlacesList.module.css";
 import { Button } from "flowbite-react";
 import { HiOutlineArrowRight } from "react-icons/hi";
-import Map from "../singleComponent/Map"
+import axios from "axios";
+import Map from "../singleComponent/Map";
+import toast from "react-hot-toast";
+
 interface PlacesListProps {
   places: Places[];
   coordinates: { lat: number; lng: number };
-  selectedPlaces: string[];
-  onSelectedPlacesChange: (selectedPlaces: string[]) => void;
-  onAdd: () => void;
+  setNavButton: string;
 }
 
-export default function PlacesList({ places, coordinates,selectedPlaces, onSelectedPlacesChange, onAdd }: PlacesListProps) {
-  const [currentSelected, setCurrentSelected] = useState<string[]>(selectedPlaces);
+export default function PlacesList({ places, coordinates, setNavButton }: PlacesListProps) {
+  const [currentSelected, setCurrentSelected] = useState<string[]>([]);
   const [sortedPlaces, setSortedPlaces] = useState<Places[]>(places);
   const [isAscending, setIsAscending] = useState(true);
-  useEffect(() => {
-    setCurrentSelected(selectedPlaces);
-  }, [selectedPlaces]);
 
   useEffect(() => {
     setSortedPlaces([...places]); // Sync sortedPlaces with incoming places
   }, [places]);
 
   const handleCheckboxToggle = (placeName: string, isChecked: boolean) => {
-    const updatedSelection = isChecked
-      ? [...currentSelected, placeName]
-      : currentSelected.filter((name) => name !== placeName);
-
-    setCurrentSelected(updatedSelection);
-    onSelectedPlacesChange(updatedSelection);
+    setCurrentSelected((prev) => {
+      if (isChecked) {
+        return [...prev, placeName]; // Add place if checked
+      } else {
+        return prev.filter((name) => name !== placeName); // Remove place if unchecked
+      }
+    });
   };
 
   const handleSort = () => {
@@ -42,6 +41,36 @@ export default function PlacesList({ places, coordinates,selectedPlaces, onSelec
     );
     setSortedPlaces(sorted);
     setIsAscending(!isAscending);
+  };
+
+  const onAdd = async () => {
+    if (currentSelected.length === 0) {
+      toast.error("List is empty. Please select at least one place to add.");
+      return; 
+    }
+    try {
+      const token = localStorage.getItem("token");
+      console.log(setNavButton,currentSelected)
+      const response = await axios.post(
+        `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/cart`,
+        {
+          category: setNavButton,
+          location: currentSelected,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      
+
+      console.log("Response from server:", response.data);
+      alert("Places successfully added!");
+    } catch (error: any) {
+      console.error("Error adding places:", error.message || error.response?.data);
+      alert("Failed to add places. Please try again.");
+    }
   };
 
   return (
@@ -72,7 +101,7 @@ export default function PlacesList({ places, coordinates,selectedPlaces, onSelec
         </div>
       </div>
       <div className={styles.mapContainer}>
-      <Map coordinates={coordinates} places={places} />
+        <Map coordinates={coordinates} places={places} />
       </div>
     </div>
   );

@@ -68,12 +68,13 @@ body {
   align-items: center; /* Vertically align the cart icon */
 }
 
-.cart {
-  font-size: 2rem; /* Large cart icon */
-  color: white;
-  cursor: pointer;
+.cartIcon svg {
+  font-size: 2.5rem; /* Slightly larger cart icon */
+  color: white; /* White color for the icon */
+  cursor: pointer; /* Pointer cursor for interactivity */
 }
 
-.cart:hover {
+.cartIcon:hover svg {
   color: #ddd; /* Hover effect for cart icon */
 }
+

@@ -10,6 +10,7 @@ import beach from '../../assets/beach.jpeg';
 import hill from '../../assets/hillstation.jpeg';
 import temple from '../../assets/temple.webp';
 import { isLoggedin } from '../../Utils/Auth';
+import toast from "react-hot-toast";
 
 const categories = [
   { id: 1, name: 'Beaches', imgSrc: beach },
@@ -68,13 +69,16 @@ export default function FormReq() {
   };
 
   const handleChoosePlanClick = async () => {
-
+    if (!destination) {
+      toast.error("Destination cannot be empty.");
+      return;
+    }
+    if (!source) {
+      toast.error("Source cannot be empty.");
+      return;
+    }
     if (isLoggedin()) {
-      if (!destination.trim()) {
-        console.error("Destination cannot be empty.");
-        return;
-      }
-      
+            
       try {
         const to = localStorage.getItem("to");
         const response = await axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
@@ -90,7 +94,7 @@ export default function FormReq() {
         }
   
         const { lat, lng } = response.data.results[0].geometry.location;
-
+        console.log(lat,lng)
         if (lat && lng){
           localStorage.setItem('lat',lat);
           localStorage.setItem('lng',lng);

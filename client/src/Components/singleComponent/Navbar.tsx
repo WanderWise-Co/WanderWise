@@ -228,7 +228,7 @@ export default function Navbar({
         href="#restaurants"
         onClick={() => {
           console.log("Restaurants clicked");
-          setNavButton("restaurants");
+          setNavButton("restaurant");
           setPlaceType("restaurant");
         }}
       >
@@ -238,7 +238,7 @@ export default function Navbar({
         href="#hotels"
         onClick={() => {
           console.log("Hotels clicked");
-          setNavButton("hotels");
+          setNavButton("hotel");
           setPlaceType("hotel");
         }}
       >
@@ -248,7 +248,7 @@ export default function Navbar({
         href="#attractions"
         onClick={() => {
           console.log("Attractions clicked");
-          setNavButton("attractions");
+          setNavButton("attraction");
           setPlaceType("tourist_attraction");
         }}
       >
@@ -281,7 +281,6 @@ export default function Navbar({
         </div>
       </div>
 
-      {/* Cart Icon in the Navbar with a click event */}
       <div className={styles.cartIcon} onClick={handleCartClick}>
         <FaShoppingCart />
       </div>

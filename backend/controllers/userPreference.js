@@ -21,7 +21,9 @@ const findLocations = async(req,res)=>{
     res.status(StatusCodes.OK).json({locations});
 }
 const addLocations = async (req, res) => {
+    console.log("entering")
     const { user: { _id: userPrefId }, body: { location, category } } = req;
+    console.log("entering 2")
     console.log(userPrefId, category, location);
 
     if (!userPrefId || !location || !category) {

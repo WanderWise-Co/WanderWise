@@ -15,8 +15,11 @@ import FlightRec from "../singleComponent/FlightRec";
 
 export default function PlanPage() {
   const location = useLocation();
-  const initialCoordinates = location.state?.coordinates;
-  const [coordinates, setCoordinates] = useState(initialCoordinates);
+  const lat = Number(localStorage.getItem("lat")) || 0; // Default to 0 if null or invalid
+  const lng = Number(localStorage.getItem("lng")) || 0; // Default to 0 if null or invalid
+  const [coordinates, setCoordinates] = useState({ lat, lng });
+
+
   const [places, setPlaces] = useState([]);
   const [placeType, setPlaceType] = useState("");
   const [selectedPlacesByType, setSelectedPlacesByType] = useState<Record<string, string[]>>({});
@@ -121,17 +124,15 @@ export default function PlanPage() {
               <Gemini data={gemeniData || []} />
               <HotelReco hotelreco={hotelRecoData?.data || []} />
             </>
-          ) : navButton === "restaurants" ||
-            navButton === "hotels" ||
-            navButton === "attractions" ||
+          ) : navButton === "restaurant" ||
+            navButton === "hotel" ||
+            navButton === "attraction" ||
             navButton === "renting" ? (
-            <PlacesList
+              <PlacesList
               places={places}
               coordinates={coordinates}
-              selectedPlaces={selectedPlacesByType[placeType] || []}
-              onSelectedPlacesChange={handleSelectedPlaces}
-              onAdd={handleAddButton}
-            />
+              setNavButton={navButton} // Pass navButton instead of setNavButton
+            />            
           ) : null}
         </div>
       </div>
