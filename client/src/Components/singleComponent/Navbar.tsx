@@ -2,28 +2,33 @@ import { FaShoppingCart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
 import axios from "axios";
 import styles from "./Navbar.module.css";
-import {useState} from 'react'
 
 interface NavbarProps {
   setPlaceType: (type: string) => void;
   setTransportPlaneData: (data: any) => void;
+  setTransportPlaneRecoData: (data: any) => void;
   setTransportBusesData: (data: any) => void;
+  setTransportBusesRecoData: (data: any) => void;
   setTransportRentalData: (data: any) => void;
   setGemeniData: (data: any) => void;
+  setHotelRecoData: (data: any) => void;
   setNavButton: (data: string) => void;  // Accept the setter function
 }
 
 export default function Navbar({
   setPlaceType,
   setTransportPlaneData,
+  setTransportPlaneRecoData,
   setTransportBusesData,
+  setTransportBusesRecoData,
   setTransportRentalData,
   setGemeniData,
+  setHotelRecoData,
   setNavButton,
 }: NavbarProps) {
 
   const navigate = useNavigate(); // Initialize useNavigate
-  const [busRecoData, setBusRecoData] = useState(null);
+  
   // const [transportBusesData, setTransportBusesData] = useState(null);
 
 
@@ -60,6 +65,16 @@ export default function Navbar({
       );
       console.log("Planes data fetched successfully:", response.data.data);
       setTransportPlaneData(response.data.data);
+      const reco_response = await axios.get(
+        `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/recommendation/aeroreco`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      console.log("Planes Reco data",reco_response);
+      setTransportPlaneRecoData(reco_response.data.data);
     } catch (error: any) {
       console.error("Error fetching planes data:", error.message || error.response?.data);
     }
@@ -111,7 +126,7 @@ export default function Navbar({
         }
       );
       console.log(reco_response);
-      setBusRecoData(reco_response.data.data);   
+      setTransportBusesRecoData(reco_response.data.data);   
     } catch (error: any) {
       console.error("Error fetching bus data:", error.message || error.response?.data);
     }
@@ -174,6 +189,18 @@ export default function Navbar({
       );
       console.log(response.data)
       setGemeniData(response.data.data);
+      const categories = JSON.parse(localStorage.getItem('selectedCategories')||"[]");
+      const reco_response = await axios.get(
+        `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/recommendation/hotelreco`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          params: {categories}
+        }
+      );
+      console.log(reco_response.data)
+      setHotelRecoData(reco_response.data);
     } catch (error: any) {
       console.error("Error fetching gimini data:", error.message || error.response?.data);
     }

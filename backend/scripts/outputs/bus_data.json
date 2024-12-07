@@ -1,154 +1,174 @@
 {
-    "timestamp": "2024-12-06T20:38:59.171299",
+    "timestamp": "2024-12-07T14:08:26.967648",
     "bus_data": [
         {
-            "bus_name": "Sri Durgamba Travels - R No M",
+            "bus_name": "Mettur Super Services(mss)",
+            "rating": "4.4\n/5",
+            "departure_time": "22:30",
+            "departure_location": "Koyambedu",
+            "arrival_time": "05:30",
+            "arrival_location": "Kalasipalyam",
+            "price": "324",
+            "window_seats": "20 window seats",
+            "Amenities": [
+                "Water Bottle",
+                "Blankets",
+                "Charging Point",
+                "Reading Light",
+                "CCTV"
+            ]
+        },
+        {
+            "bus_name": "KMRL Kalaimakal(sk)",
+            "rating": "4.9\n/5",
+            "departure_time": "23:15",
+            "departure_location": "Koyambedu 2 kmrl kalaimakal office",
+            "arrival_time": "06:00",
+            "arrival_location": "Madiwala",
+            "price": "540",
+            "window_seats": "18 window seats",
+            "Amenities": [
+                "Water Bottle",
+                "Blankets",
+                "Charging Point",
+                "Reading Light",
+                "CCTV"
+            ]
+        },
+        {
+            "bus_name": "IntrCity SmartBus",
             "rating": "4.6\n/5",
-            "departure_time": "22:35",
-            "departure_location": "Nelamangala",
-            "arrival_time": "04:00",
-            "arrival_location": "Sharadha Travels Shimoga",
-            "price": "1499",
-            "window_seats": "14 window seats",
+            "departure_time": "23:25",
+            "departure_location": "Koyambedu",
+            "arrival_time": "05:50",
+            "arrival_location": "Madiwala",
+            "price": "729",
+            "window_seats": "24 window seats",
             "Amenities": [
-                "Emergency Contact Number",
+                "Water Bottle",
+                "Blankets",
                 "Charging Point",
-                "M-ticket"
+                "Reading Light",
+                "CCTV"
             ]
         },
         {
-            "bus_name": "Shrungagiri Travels",
-            "rating": "3.7\n/5",
-            "departure_time": "20:00",
-            "departure_location": "Arekere",
-            "arrival_time": "04:30",
-            "arrival_location": "shivamogga",
-            "price": "665",
-            "window_seats": "16 window seats",
-            "Amenities": [
-                "Emergency Contact Number",
-                "Charging Point",
-                "M-ticket"
-            ]
-        },
-        {
-            "bus_name": "Sri Ranganatha Tours and Travels",
-            "rating": "4.8\n/5",
-            "departure_time": "22:45",
-            "departure_location": "Navarang Theater",
-            "arrival_time": "05:15",
-            "arrival_location": "shivamogga",
-            "price": "719",
+            "bus_name": "Jayavin Travels",
+            "rating": "3.9\n/5",
+            "departure_time": "22:30",
+            "departure_location": "Koyembedu",
+            "arrival_time": "05:25",
+            "arrival_location": "Madiwala",
+            "price": "1080",
             "window_seats": "15 window seats",
             "Amenities": [
-                "Emergency Contact Number",
+                "Water Bottle",
+                "Blankets",
                 "Charging Point",
-                "M-ticket"
+                "Reading Light",
+                "CCTV"
             ]
         },
         {
-            "bus_name": "Gajamukha Travels",
-            "rating": "4.7\n/5",
-            "departure_time": "22:30",
-            "departure_location": "Yeshwantpur",
-            "arrival_time": "05:00",
-            "arrival_location": "Bus stand",
-            "price": "800",
-            "window_seats": "14 window seats",
+            "bus_name": "IntrCity SmartBus",
+            "rating": "4.5\n/5",
+            "departure_time": "23:45",
+            "departure_location": "Koyambedu",
+            "arrival_time": "06:05",
+            "arrival_location": "Bommasandra",
+            "price": "729",
+            "window_seats": "24 window seats",
             "Amenities": [
-                "Emergency Contact Number",
+                "Water Bottle",
+                "Blankets",
                 "Charging Point",
-                "M-ticket"
+                "Reading Light",
+                "CCTV"
             ]
         },
         {
-            "bus_name": "Sri Vivek Travels",
-            "rating": "4.6\n/5",
+            "bus_name": "IntrCity SmartBus",
+            "rating": "4.5\n/5",
             "departure_time": "22:30",
-            "departure_location": "Majestic",
-            "arrival_time": "04:30",
-            "arrival_location": "Shivamogga",
-            "price": "900",
-            "window_seats": "16 window seats",
+            "departure_location": "Koyambedu",
+            "arrival_time": "05:40",
+            "arrival_location": "Madiwala",
+            "price": "689",
+            "window_seats": "23 window seats",
             "Amenities": [
-                "Emergency Contact Number",
+                "Water Bottle",
+                "Blankets",
                 "Charging Point",
-                "M-ticket"
+                "Reading Light",
+                "CCTV"
             ]
         },
         {
-            "bus_name": "Sugama Tourist",
-            "rating": "4.4\n/5",
-            "departure_time": "22:15",
-            "departure_location": "Anand Rao Circle",
-            "arrival_time": "04:45",
-            "arrival_location": "Shimoga Sugama Tourist",
-            "price": "950",
+            "bus_name": "Asian Xpress",
+            "rating": "4.8\n/5",
+            "departure_time": "23:10",
+            "departure_location": "Koyambedu",
+            "arrival_time": "06:15",
+            "arrival_location": "Majestic",
+            "price": "495",
             "window_seats": "10 window seats",
             "Amenities": [
-                "Emergency Contact Number",
+                "Water Bottle",
+                "Blankets",
                 "Charging Point",
-                "M-ticket"
+                "Reading Light",
+                "CCTV"
             ]
         },
         {
-            "bus_name": "Guru Shakthi Motors",
+            "bus_name": "KMRL Kalaimakal",
             "rating": "4.7\n/5",
-            "departure_time": "21:45",
-            "departure_location": "Mantri Square Metro Station",
-            "arrival_time": "04:30",
-            "arrival_location": "Near Mayura Hotel",
-            "price": "1000",
+            "departure_time": "22:45",
+            "departure_location": "Koyambedu 2 kmrl kalaimakal office",
+            "arrival_time": "05:30",
+            "arrival_location": "Madiwala",
+            "price": "740",
+            "window_seats": "18 window seats",
+            "Amenities": [
+                "Water Bottle",
+                "Blankets",
+                "Charging Point",
+                "Reading Light",
+                "CCTV"
+            ]
+        },
+        {
+            "bus_name": "KBS Luxury Bus",
+            "rating": "4.5\n/5",
+            "departure_time": "17:40",
+            "departure_location": "Koyambedu",
+            "arrival_time": "01:00",
+            "arrival_location": "Madiwala",
+            "price": "547",
+            "window_seats": "19 window seats",
+            "Amenities": [
+                "Water Bottle",
+                "Blankets",
+                "Charging Point",
+                "Reading Light",
+                "CCTV"
+            ]
+        },
+        {
+            "bus_name": "GRS Travels",
+            "rating": "4.8\n/5",
+            "departure_time": "22:35",
+            "departure_location": "Koyambedu",
+            "arrival_time": "05:25",
+            "arrival_location": "Madiwala",
+            "price": "900",
             "window_seats": "13 window seats",
             "Amenities": [
-                "Emergency Contact Number",
+                "Water Bottle",
+                "Blankets",
                 "Charging Point",
-                "M-ticket"
-            ]
-        },
-        {
-            "bus_name": "Sri Durgamba Travels - R No 8",
-            "rating": "4.6\n/5",
-            "departure_time": "22:30",
-            "departure_location": "Nelamangala",
-            "arrival_time": "04:00",
-            "arrival_location": "Near Ashok Hotel Shimogga",
-            "price": "1100",
-            "window_seats": "9 window seats",
-            "Amenities": [
-                "Emergency Contact Number",
-                "Charging Point",
-                "M-ticket"
-            ]
-        },
-        {
-            "bus_name": "VSM Travels",
-            "rating": "4.2\n/5",
-            "departure_time": "22:45",
-            "departure_location": "Majestic",
-            "arrival_time": "05:15",
-            "arrival_location": "Shivamogga",
-            "price": "850",
-            "window_seats": "16 window seats",
-            "Amenities": [
-                "Emergency Contact Number",
-                "Charging Point",
-                "M-ticket"
-            ]
-        },
-        {
-            "bus_name": "Deepika Tours And Travels",
-            "rating": "3.6\n/5",
-            "departure_time": "22:35",
-            "departure_location": "Anand Rao Circle",
-            "arrival_time": "04:00",
-            "arrival_location": "Shimogga",
-            "price": "2398",
-            "window_seats": "15 window seats",
-            "Amenities": [
-                "Emergency Contact Number",
-                "Charging Point",
-                "M-ticket"
+                "Reading Light",
+                "CCTV"
             ]
         }
     ]
