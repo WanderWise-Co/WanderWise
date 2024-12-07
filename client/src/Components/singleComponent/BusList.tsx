@@ -40,20 +40,30 @@ export default function BusesList({
   const handleSort = (field: keyof Bus) => {
     const sorted = [...sortedBuses].sort((a, b) => {
       if (field === "price") {
+        // Sort numeric fields like price
         return isAscending
           ? parseInt(a.price) - parseInt(b.price)
           : parseInt(b.price) - parseInt(a.price);
-      } else {
+      } else if (typeof a[field] === "string" && typeof b[field] === "string") {
+        // Sort string fields
         return isAscending
-          ? a[field].localeCompare(b[field])
-          : b[field].localeCompare(a[field]);
+          ? (a[field] as string).localeCompare(b[field] as string)
+          : (b[field] as string).localeCompare(a[field] as string);
+      } else if (Array.isArray(a[field]) && Array.isArray(b[field])) {
+        // Optional: Define how to sort array fields like amenities (e.g., by length)
+        return isAscending
+          ? a[field].length - b[field].length
+          : b[field].length - a[field].length;
+      } else {
+        return 0; // Default: no sorting for unsupported fields
       }
     });
-
+  
     setSortedBuses(sorted);
     setIsAscending(!isAscending);
     setSortField(field);
   };
+  
 
   const sortedRecommendedBuses = recommendedBuses
     .sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating))
