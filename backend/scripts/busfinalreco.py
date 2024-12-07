@@ -110,15 +110,15 @@ def recommend_top_buses(model, spark_df, user_id=1, top_n=5):
     top_buses = spark_df.filter(col('Bus ID').isin(recommended_bus_ids)).toPandas()
     return top_buses
 
-def save_recommendations(top_buses, output_file='top_buses.json'):
+def save_recommendations(top_buses, output_file):
     """
     Save recommended buses to a JSON file.
     """
-    # top_buses.to_json(output_file, orient='records', indent=4)
+    top_buses.to_json(output_file, orient='records', indent=4)
     print(f"Top recommended buses saved to {top_buses}.")
 
 # Main function
-def recommend_buses_with_als(json_file, output_file='top_buses.json'):
+def recommend_buses_with_als(json_file, output_file=os.path.join(os.path.dirname(__file__), 'outputs', 'bus_reco.json')):
     """
     Main function to recommend buses using ALS.
     """

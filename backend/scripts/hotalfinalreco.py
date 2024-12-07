@@ -127,7 +127,12 @@ user_recommendations_exploded = user_recommendations_exploded.join(
 user_recommendations_exploded_avg = user_recommendations_exploded.groupBy("Hotel_Name").agg(
     avg("Predicted_Rating").alias("Predicted_Rating")
 )
+output_file_path = "C:\\Users\\Saicharan\\Desktop\\finalyear\\WanderWise\\backend\\scripts\\outputs\\hotel_recommendations.json"
 
+user_recommendations_exploded_avg.orderBy(col("Predicted_Rating").desc()) \
+    .write \
+    .mode("overwrite") \
+    .json(output_file_path)
 # Step 12: Show the recommendations sorted by Predicted_Rating in descending order
 user_recommendations_exploded_avg.orderBy(col("Predicted_Rating").desc()).show(truncate=False)
 # user_recommendations_exploded.orderBy(col("Predicted_Rating").desc()).show(truncate=False)
