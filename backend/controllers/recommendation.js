@@ -31,14 +31,37 @@ const hotel_reco = async(req,res)=>{
         if (code === 0) {
             console.log('Python script executed successfully');
             
+            // try {
+            //     // Process the accumulated output (trim whitespace)
+            //     // const outputData = pythonOutput.trim();
+            //     // console.log(outputData);
+
+            //     // // Respond with the data
+            //     // return res.json({ data: outputData });
+                
+            // } 
             try {
                 // Process the accumulated output (trim whitespace)
-                const outputData = pythonOutput.trim();
-                console.log(outputData);
+                // const outputData = pythonOutput.trim();
+                // console.log(outputData);
 
-                // Respond with the data
-                return res.json({ data: outputData });
-            } catch (err) {
+                // // Respond with the data
+                // return res.json({ data: outputData });
+                const outputFilePath = path.join(__dirname, '../scripts/outputs/hotel_reco.json');
+            fs.readFile(outputFilePath, 'utf-8', (err, data) => {
+                if (err) {
+                    console.error('Error reading bus_data.json:', err);
+                    return res.status(500).json({ error: 'Failed to load bus data' });
+                }
+
+                try {
+                    const busData = JSON.parse(data);
+                    res.json({ data: busData, pythonLogs: pythonOutput });
+                } catch (err) {
+                    console.error('Error parsing bus_data.json:', err);
+                    res.status(500).json({ error: 'Invalid JSON data in bus_data.json' });
+            }})}
+            catch (err) {
                 console.error('Error processing Python script output:', err);
                 return res.status(500).json({ error: 'Failed to process Python output' });
             }
@@ -73,10 +96,24 @@ const aero_reco = async (req, res) => {
             console.log('Python script executed successfully');
             
             try {
-                const outputData = pythonOutput.trim();
-                console.log(outputData);
+                // const outputData = pythonOutput.trim();
+                // console.log(outputData);
 
-                return res.json({ data: outputData });
+                // return res.json({ data: outputData });
+                const outputFilePath = path.join(__dirname, '../scripts/outputs/flight_reco.json');
+            fs.readFile(outputFilePath, 'utf-8', (err, data) => {
+                if (err) {
+                    console.error('Error reading bus_data.json:', err);
+                    return res.status(500).json({ error: 'Failed to load bus data' });
+                }
+
+                try {
+                    const busData = JSON.parse(data);
+                    res.json({ data: busData, pythonLogs: pythonOutput });
+                } catch (err) {
+                    console.error('Error parsing bus_data.json:', err);
+                    res.status(500).json({ error: 'Invalid JSON data in bus_data.json' });
+            }})
             } catch (err) {
                 console.error('Error processing Python script output:', err);
                 return res.status(500).json({ error: 'Failed to process Python output' });

@@ -2,24 +2,17 @@ import json
 import pandas as pd
 import numpy as np
 from datetime import datetime
-
-# Path to the JSON file
-# file_path = 'backend\\scripts\\outputs\\flights.json'
 import os
 
 # Path to the JSON file
 file_path = os.path.join(os.path.dirname(__file__), 'outputs', 'flights.json')
 
-# 
 # Load JSON data from file with UTF-8 encoding
 with open(file_path, 'r', encoding='utf-8') as file:
     data = json.load(file)
 
 # Convert JSON data to DataFrame
-# df = pd.DataFrame(data)
 flights_data = data['flights']
-
-# Convert JSON data to DataFrame
 df = pd.DataFrame(flights_data)
 
 # Clean the price column (convert to numeric)
@@ -72,6 +65,23 @@ df_filtered = df[(df['departure_time_dt'] >= start_time) & (df['departure_time_d
 
 # Sort filtered flights by score
 recommended_flights = df_filtered.sort_values(by='score', ascending=False)
+
+# Convert non-serializable objects to strings
+recommended_flights['departure_time'] = recommended_flights['departure_time_dt'].apply(lambda x: x.strftime('%H:%M'))
+recommended_flights['arrival_time'] = recommended_flights['arrival_time'].apply(lambda x: x.strftime('%H:%M') if isinstance(x, datetime) else x)
+
+# Drop non-serializable columns
+recommended_flights = recommended_flights.drop(columns=['departure_time_dt'])
+
+# Convert the DataFrame to JSON-serializable format
+recommended_flights_json = recommended_flights.to_dict(orient='records')
+
+# Define output file path
+output_file_path = os.path.join(os.path.dirname(__file__), 'outputs', 'flight_reco.json')
+
+# Write the recommended flights to a JSON file
+with open(output_file_path, 'w', encoding='utf-8') as json_file:
+    json.dump(recommended_flights_json, json_file, ensure_ascii=False, indent=4)
 
 # Print recommended flights
 print("Recommended Flights:")

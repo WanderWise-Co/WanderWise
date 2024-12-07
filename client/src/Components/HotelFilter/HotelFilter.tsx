@@ -40,24 +40,8 @@ export default function HomeFilter() {
 const handleSubmit = async () => {
   
   try {
-    
-
-    // Retrieve categories from localStorage
     const categories = JSON.parse(localStorage.getItem('selectedCategories')||"[]");
-    const token = localStorage.getItem('token');
-
-    console.log(categories)
-    // Make API request with categories as a parameter
-    const response = await axios.get(
-      `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/recommendation/hotelreco`,
-      {
-        params: { categories }, // Send as query params
-      headers: {
-        Authorization: `Bearer ${token}`, // Add the token in the Authorization header
-      },
-    });
-
-    console.log('Response:', response.data);
+    console.log(categories);
     navigate('/api/v1/planpage'); // Navigate after a successful API call
 
   } catch (err: any) {

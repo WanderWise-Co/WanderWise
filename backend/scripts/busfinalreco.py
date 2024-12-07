@@ -133,7 +133,7 @@ def recommend_buses_with_als(json_file, output_file=os.path.join(os.path.dirname
     model = train_als_model(interaction_data)
     
     # Get top recommendations
-    top_buses = recommend_top_buses(model, spark_df, user_id=1, top_n=5)
+    top_buses = recommend_top_buses(model, spark_df, user_id=1, top_n=3)
     
     # Save recommendations
     save_recommendations(top_buses, output_file)

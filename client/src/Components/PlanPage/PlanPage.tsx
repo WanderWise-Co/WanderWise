@@ -6,35 +6,42 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "../singleComponent/Navbar";
 import CarRental from "../singleComponent/CarRental";
-import FlightsList from "../singleComponent/FlightList"; 
-import BusList from "../singleComponent/BusList"; // Import FlightsList
+import FlightsList from "../singleComponent/FlightList";
+import BusList from "../singleComponent/BusList";
 import Gemini from "../singleComponent/Gemini";
+import BusListRec from "../singleComponent/BusListRec";
+import HotelReco from "../singleComponent/HotelReco";
+import FlightRec from "../singleComponent/FlightRec";
 
 export default function PlanPage() {
   const location = useLocation();
-  const initialCoordinates = location.state?.coordinates;// || { lat: 12.9716, lng: 77.5946 }; // Default to Bangalore
+  const initialCoordinates = location.state?.coordinates;
   const [coordinates, setCoordinates] = useState(initialCoordinates);
   const [places, setPlaces] = useState([]);
   const [placeType, setPlaceType] = useState("");
   const [selectedPlacesByType, setSelectedPlacesByType] = useState<Record<string, string[]>>({});
   const [transportPlaneData, setTransportPlaneData] = useState<any>(null);
+  const [transportPlaneRecoData, setTransportPlaneRecoData] = useState<any>(null);
   const [transportBusesData, setTransportBusesData] = useState<any>(null);
+  const [transportBusesRecoData, setTransportBusesRecoData] = useState<any>(null);
   const [transportRentalData, setTransportRentalData] = useState<any>(null);
-  const [GemeniData, setGemeniData] = useState<any>(null);
+  const [gemeniData, setGemeniData] = useState<any>(null);
+  const [hotelRecoData, setHotelRecoData] = useState<any>(null);
   const [selectedCategories, setSelectedCategories] = useState(location.state?.selectedCategories || []);
-  const [source, setSource] = useState(location.state?.source || "");
-  const [destination, setDestination] = useState(location.state?.destination || "");
-  const [date, setDate] = useState(location.state?.date || "");
-  const [navButton, setNavButton] = useState("");  // State for tracking the selected nav button
+  const [navButton, setNavButton] = useState(""); // State for tracking the selected nav button
+
+  const [source, setSource] = useState(localStorage.getItem("from") || "");
+  const [destination, setDestination] = useState(localStorage.getItem("to") || "");
+  const [endDate, setEndDate] = useState(localStorage.getItem("endDate") || "");
+  const [startDate, setStartDate] = useState(localStorage.getItem("startDate") || "");
 
   useEffect(() => {
     console.log("Received Data in PlanPage:");
-    console.log("Coordinates:", coordinates);
-    console.log("Selected Categories:", selectedCategories);
     console.log("Source:", source);
     console.log("Destination:", destination);
-    console.log("Date", date);
-  }, [coordinates, selectedCategories, source, destination, date]);
+    console.log("Start Date:", startDate);
+    console.log("End Date:", endDate);
+  }, [source, destination, startDate, endDate]);
 
   const fetchNearbyPlaces = async (lat: number, lng: number, type: string) => {
     try {
@@ -67,8 +74,11 @@ export default function PlanPage() {
 
   useEffect(() => {
     console.log("Transport Plane Data:", JSON.stringify(transportPlaneData, null, 2));
+    console.log("Transport Plane Recommendation Data:", JSON.stringify(transportPlaneRecoData, null, 2));
     console.log("Transport Buses Data:", JSON.stringify(transportBusesData, null, 2));
-  }, [transportPlaneData, transportBusesData]);
+    console.log("Transport Buses Recommendation Data:", JSON.stringify(transportBusesRecoData, null, 2));
+    console.log("Hotel Recommendation Data:", hotelRecoData);
+  }, [transportPlaneData, transportPlaneRecoData, transportBusesData, transportBusesRecoData, hotelRecoData]);
 
   const handleAddButton = () => {
     console.log("Selected Places By Type:", selectedPlacesByType);
@@ -79,23 +89,42 @@ export default function PlanPage() {
       <Navbar
         setPlaceType={setPlaceType}
         setTransportPlaneData={setTransportPlaneData}
+        setTransportPlaneRecoData={setTransportPlaneRecoData}
         setTransportBusesData={setTransportBusesData}
+        setTransportBusesRecoData={setTransportBusesRecoData}
         setTransportRentalData={setTransportRentalData}
         setGemeniData={setGemeniData}
+        setHotelRecoData={setHotelRecoData}
         setNavButton={setNavButton}
-        
       />
 
       <div className={styles.planPageContainer}>
         <div className={styles.contentContainer}>
-          {/* Render content based on navButton */}
           {navButton === "planes" ? (
-            <FlightsList flights={transportPlaneData?.flights || []} />
-          ) : navButton === "buses" ? (
-            <BusList Buses={transportBusesData?.bus_data || []} />
-          ):navButton === "renting" ? (<CarRental rentals={transportRentalData ?.car_rentals || []}  />): 
-           navButton === "recommendations"?(<Gemini data={GemeniData||[]}/>): navButton === "restaurants" || navButton === "hotels" || navButton === "attractions" || navButton === "renting" ? (
             <>
+              <FlightsList flights={transportPlaneData?.flights || []} />
+              <FlightRec flightrec={transportPlaneRecoData || []} />
+            </>
+          ) : navButton === "buses" ? (
+            <div className={styles.busContainer}>
+              <div className={styles.left}>
+                <BusList Buses={transportBusesData?.bus_data || []} />
+              </div>
+              <div className={styles.right}>
+                <BusListRec buses={transportBusesRecoData || []} />
+              </div>
+            </div>
+          ) : navButton === "renting" ? (
+            <CarRental rentals={transportRentalData?.car_rentals || []} />
+          ) : navButton === "recommendations" ? (
+            <>
+              <Gemini data={gemeniData || []} />
+              <HotelReco hotelreco={hotelRecoData?.data || []} />
+            </>
+          ) : navButton === "restaurants" ||
+            navButton === "hotels" ||
+            navButton === "attractions" ||
+            navButton === "renting" ? (
             <PlacesList
               places={places}
               coordinates={coordinates}
@@ -103,8 +132,6 @@ export default function PlanPage() {
               onSelectedPlacesChange={handleSelectedPlaces}
               onAdd={handleAddButton}
             />
-            
-            </>
           ) : null}
         </div>
       </div>
@@ -113,6 +140,3 @@ export default function PlanPage() {
     </>
   );
 }
-
-
- 
