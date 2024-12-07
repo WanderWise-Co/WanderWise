@@ -13,6 +13,10 @@ load_dotenv()  # Load environment variables from .env file
 pyspark_python = os.getenv('PYSPARK_PYTHON')
 # Step 1: Initialize Spark session
 spark = SparkSession.builder.appName('HotelRecommenderSystem').getOrCreate()
+# Define file paths
+reviews_file_path = os.path.join(os.path.dirname(__file__), 'outputs', 'hotel_reviews.json')
+features_file_path = os.path.join(os.path.dirname(__file__), 'outputs', 'hotel_features.json')
+output_file_path = os.path.join(os.path.dirname(__file__), 'outputs', 'hotel_reco.json')
 # file_path = os.path.join(os.path.dirname(__file__), 'outputs', 'hotel_features.json')
 # file_path1 = os.path.join(os.path.dirname(__file__), 'outputs', 'hotel_reviews.json')
 # file_path1 = 'C:\\Users\\Saicharan\\Desktop\\finalyear\\WanderWise\\backend\\scripts\\outputs\\hotel_reviews.json'
@@ -45,8 +49,8 @@ spark = SparkSession.builder.appName('HotelRecommenderSystem').getOrCreate()
 # reviews_file_path = "C:\\Users\\Saicharan\\Desktop\\finalyear\\WanderWise\\backend\\scripts\\outputs\\hotel_reviews.json"
 # features_file_path = "C:\\Users\\Saicharan\\Desktop\\finalyear\\WanderWise\\backend\\scripts\\outputs\\hotel_features.json"
 
-reviews_file_path = file_path = os.path.join(os.path.dirname(__file__), 'outputs', 'hotel_reviews.json')
-features_file_path = file_path = os.path.join(os.path.dirname(__file__), 'outputs', 'hotel_features.json')
+# reviews_file_path = file_path = os.path.join(os.path.dirname(__file__), 'outputs', 'hotel_reviews.json')
+# features_file_path = file_path = os.path.join(os.path.dirname(__file__), 'outputs', 'hotel_features.json')
 
 # Load reviews data using json and pandas
 with open(reviews_file_path, 'r') as file:
@@ -127,14 +131,39 @@ user_recommendations_exploded = user_recommendations_exploded.join(
 user_recommendations_exploded_avg = user_recommendations_exploded.groupBy("Hotel_Name").agg(
     avg("Predicted_Rating").alias("Predicted_Rating")
 )
-output_file_path = "C:\\Users\\Saicharan\\Desktop\\finalyear\\WanderWise\\backend\\scripts\\outputs\\hotel_recommendations.json"
-
-user_recommendations_exploded_avg.orderBy(col("Predicted_Rating").desc()) \
-    .write \
-    .mode("overwrite") \
-    .json(output_file_path)
+# output_file_path = os.path.join(os.path.dirname(__file__), 'outputs', 'hotel_reco.json')
+# user_recommendations_exploded_avg.orderBy(col("Predicted_Rating").desc()) \
+#     .write \
+#     .mode("overwrite") \
+#     .json(output_file_path)
 # Step 12: Show the recommendations sorted by Predicted_Rating in descending order
+
 user_recommendations_exploded_avg.orderBy(col("Predicted_Rating").desc()).show(truncate=False)
+recommendations_list = user_recommendations_exploded_avg.orderBy(col("Predicted_Rating").desc()).collect()
+recommendations_json = [
+    {
+        "Hotel_Name": row["Hotel_Name"],
+        "Predicted_Rating": row["Predicted_Rating"]
+    }
+    for row in recommendations_list
+]
+print(recommendations_json)
+
+# Ensure output directory exists
+os.makedirs(os.path.dirname(output_file_path), exist_ok=True)
+
+# Write JSON to file
+try:
+    with open(output_file_path, "w", encoding="utf-8") as json_file:
+        json.dump(recommendations_json, json_file, ensure_ascii=False, indent=4)
+    print(f"Recommendations JSON written to: {output_file_path}")
+except Exception as e:
+    print(f"Error writing JSON file: {e}")
+
+# Optional: Show the recommendations in the console
+print("Top Recommendations:")
+for recommendation in recommendations_json:
+    print(recommendation)
 # user_recommendations_exploded.orderBy(col("Predicted_Rating").desc()).show(truncate=False)
 # Optional: Stop the Spark session
 spark.stop()

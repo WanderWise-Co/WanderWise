@@ -2,6 +2,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
 import axios from "axios";
 import styles from "./Navbar.module.css";
+import {useState} from 'react'
 
 interface NavbarProps {
   setPlaceType: (type: string) => void;
@@ -22,6 +23,9 @@ export default function Navbar({
 }: NavbarProps) {
 
   const navigate = useNavigate(); // Initialize useNavigate
+  const [busRecoData, setBusRecoData] = useState(null);
+  // const [transportBusesData, setTransportBusesData] = useState(null);
+
 
   const handlePlaneClick = async () => {
     console.log("Plane button clicked!");
@@ -70,6 +74,8 @@ export default function Navbar({
 
     try {
       setNavButton("buses");
+
+      console.log('fetching')
       const token = localStorage.getItem("token");
       const from = localStorage.getItem("from");
       const to = localStorage.getItem("to");
@@ -96,6 +102,16 @@ export default function Navbar({
       );
       console.log("Bus data fetched successfully:", response.data.data);
       setTransportBusesData(response.data.data);
+      const reco_response = await axios.get(
+        `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/recommendation/busreco`,
+        {
+          headers: {
+            Authorization: ` Bearer ${token} `,
+          },
+        }
+      );
+      console.log(reco_response);
+      setBusRecoData(reco_response.data.data);   
     } catch (error: any) {
       console.error("Error fetching bus data:", error.message || error.response?.data);
     }
