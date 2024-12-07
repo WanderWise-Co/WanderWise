@@ -8,13 +8,11 @@ import Cart from "./Components/Cart/Cart"
 import HomeFilter from "./Components/HotelFilter/HotelFilter"
 import {BrowserRouter as Router,Routes,Route} from  "react-router-dom";
 import Auth from "./Utils/Auth";
-import { useEffect } from "react";
+
 
 function App() {
-  // To change the name of tab
-  useEffect(() => {
-    document.title = "Wander Wise";
-  }, []);
+
+  
 
   return (
     <>
