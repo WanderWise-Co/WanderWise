@@ -84,28 +84,32 @@ export default function Cart() {
 
   return (
     <>
-      <div className={styles.container}>
-      <div className={styles.overlay}>
-        {loading ? (
-          <p>Loading...</p>
-        ) : error ? (
-          <p className={styles.error}>{error}</p>
-        ) : (
-          <div>
-            <Section title="Restaurants" locations={restaurants} />
-            <Section title="Hotels" locations={hotels} />
-            <Section title="Attractions" locations={attractions} />
+      <div className={styles.page}>
+        <div className={styles.container}>
+          <div className={styles.overlay}>
+            {loading ? (
+              <p>Loading...</p>
+            ) : error ? (
+              <p className={styles.error}>{error}</p>
+            ) : (
+              <div>
+                <Section title="Restaurants" locations={restaurants} />
+                <Section title="Hotels" locations={hotels} />
+                <Section title="Attractions" locations={attractions} />
+              </div>
+            )}
           </div>
-        )}
-        
-      </div>
-      </div>
-      <Button
+          <Button
           color="primary"
           className={styles.bottomRightButton}
           onClick={handlegemini1}
-        >Create Plan</Button>
+        >
+          Create Plan &#8594;
+        </Button>
+        </div>
+        
+      </div>
     </>
-    
   );
+  
 }
