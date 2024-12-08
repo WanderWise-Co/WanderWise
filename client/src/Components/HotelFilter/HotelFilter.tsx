@@ -20,7 +20,7 @@ export default function HomeFilter() {
     { id: 3, name: 'Car Parking', imgSrc: cp },
     { id: 4, name: 'Swimming Pool', imgSrc: swimmingPool},
     { id: 5, name: 'Internet Access', imgSrc: internetAccess},
-    { id:6,name:'Indoor Activities',imagSrc:indoorAct},
+    { id:6,name:'Indoor Activities',imgSrc:indoorAct},
   ];
 
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
@@ -63,7 +63,7 @@ const handleSubmit = async () => {
         <MDBBtn className={styles.skipButton} onClick={handleSkipClick}>Skip</MDBBtn>
       </div>
       <div className={styles.headingContainer}>
-        <h1>Explore Categories</h1>
+        <h1>Select Your Preferences </h1>
       </div>
       <div className={styles.buttonColumns}>
         {categories.map((category:any) => (

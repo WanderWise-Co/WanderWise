@@ -33,14 +33,22 @@
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
+.filterContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .buttonColumns {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Two columns layout */
   gap: 20px; /* Space between buttons */
-  justify-content: center; /* Center the grid */
+  justify-items: center; /* Center buttons within grid cells */
   align-items: center; /* Align items vertically in the center */
   width: 100%;
   max-width: 600px; /* Optional: Limit the width of the grid */
+  margin-bottom: 20px; /* Adds space below the filter buttons */
 }
 
 .categoryButton {
@@ -82,14 +90,14 @@
 }
 
 .submitButton {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
+  grid-column: span 2; /* Make the Next button span across both columns */
   background-color: #28a745;
   color: white;
   font-weight: bold;
   padding: 10px 20px;
   border-radius: 8px;
+  margin-top: 20px; /* Adds space between the filter buttons and "Next" button */
+  width: 150px; /* Same width as the filter buttons */
 }
 
 .submitButton:hover {
