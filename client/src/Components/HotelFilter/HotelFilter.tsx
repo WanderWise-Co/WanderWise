@@ -15,11 +15,11 @@ export default function HomeFilter() {
   const navigate = useNavigate();
   
   const categories = [
-    { id: 1, name: 'AC', imgSrc: ac },
-    { id: 2, name: 'Food', imgSrc: food },
-    { id: 3, name: 'Car Parking', imgSrc: cp },
-    { id: 4, name: 'Swimming Pool', imgSrc: swimmingPool},
-    { id: 5, name: 'Internet Access', imgSrc: internetAccess},
+    { id: 1, name: 'Air conditioning', imgSrc: ac },
+    { id: 2, name: 'Breakfast [buffet]', imgSrc: food },
+    { id: 3, name: 'Car park [free of charge]', imgSrc: cp },
+    { id: 4, name: 'Swimming pool [indoor]', imgSrc: swimmingPool},
+    { id: 5, name: 'Internet services', imgSrc: internetAccess},
     { id:6,name:'Indoor Activities',imgSrc:indoorAct},
   ];
 

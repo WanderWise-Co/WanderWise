@@ -84,7 +84,7 @@ def getHotelLinks():
             print(f"Error extracting href from link {i + 1}: {e}")
     
     try:
-        next_button = driver.find_element(By.XPATH, "//button[@data-element-name='activities-pagination-next-btn']")
+        next_button = driver.find_element(By.XPATH, "//button[@id = 'paginationNext']")
     except NoSuchElementException:
         next_button = None
 
@@ -252,7 +252,7 @@ try:
 
     next_button, links = getHotelLinks()
     print(links)    
-    while next_button is None and counter < 5:
+    while next_button is not None and counter < 5:
         if c>=10:break
         try:
             for link in links:

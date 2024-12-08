@@ -207,18 +207,20 @@ export default function Navbar({
       console.log(hotel_response);
 
 
-      const categories = JSON.parse(localStorage.getItem('selectedCategories')||"[]");
+
+      const selected_features = JSON.parse(localStorage.getItem('selected_features')||"[]");
       const reco_response = await axios.get(
         `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/recommendation/hotelreco`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
           },
-          params: {categories}
+          params: {selected_features}
         }
       );
       console.log(reco_response.data)
       setHotelRecoData(reco_response.data);
+            
     } catch (error: any) {
       console.error("Error fetching gimini data:", error.message || error.response?.data);
     }

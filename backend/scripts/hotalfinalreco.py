@@ -56,6 +56,7 @@ output_file_path = os.path.join(os.path.dirname(__file__), 'outputs', 'hotel_rec
 # Load reviews data using json and pandas
 choices=sys.argv[1] if len(sys.argv) > 1 else ["Internet services","Elevator","toi"]
 print(choices)
+choices=choices.split(",")
 with open(reviews_file_path, 'r') as file:
     reviews_data = json.load(file)
 reviews_df_raw = pd.DataFrame(reviews_data['data'])
@@ -86,7 +87,7 @@ combined_df = reviews_df.join(features_df, on="Hotel_Name", how="inner")
 # Step 6: Filter Hotels by User-Selected Features
 # User-selected features (example: Internet services, Swimming pool, Garden)
 selected_features = ['Internet services', 'Elevator', 'Toiletries']
-choices=json.loads(choices)
+# choices=json.loads(choices)
 print(choices)
 
 print(choices[0])

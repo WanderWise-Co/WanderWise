@@ -14,6 +14,12 @@ const userPreferenceSchema = new mongoose.Schema({
     location:{
         type:[String],
         required:[true,'atleast one item should be selected'],
+    },from:{
+        type:[String],
+        required:[true,'input from'],
+    },to:{
+        type:[String],
+        required:[true,'input to'],
     }
 })
 

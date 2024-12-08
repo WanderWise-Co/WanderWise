@@ -15,13 +15,13 @@ def generate_travel_plan(user_preferences, start_date, end_date, budget):
     
     # Generate the travel plan prompt
     prompt = f"""
-    I want to travel to Mysore for a 3-day trip with a budget of {budget} INR. 
+    I want to travel  {fromm} to {to} between {start_date} to {end_date} trip with a budget of {budget} INR. 
     The user has provided the following preferences:
 
     Preferences: {preference_details}
-    Dates: {start_date} to {end_date}
 
-    Please create a detailed travel plan based on the given preferences, including hotel, travel, restaurant, and attractions recommendations, keeping the budget in mind.
+    Please create a detailed travel plan based on the given preferences, including hotel, travel, restaurant, and 
+    attractions recommendations, keeping the budget in mind. and also hide all personal information.
     """
     return prompt
 
