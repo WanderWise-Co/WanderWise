@@ -50,12 +50,16 @@ export default function PlacesList({ places, coordinates, setNavButton }: Places
     }
     try {
       const token = localStorage.getItem("token");
+      const to = localStorage.getItem("to");
+      const from = localStorage.getItem("from");
       console.log(setNavButton,currentSelected)
       const response = await axios.post(
         `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/cart`,
         {
           category: setNavButton,
           location: currentSelected,
+          from,
+          to,
         },
         {
           headers: {
@@ -66,7 +70,7 @@ export default function PlacesList({ places, coordinates, setNavButton }: Places
       
 
       console.log("Response from server:", response.data);
-      alert("Places successfully added!");
+      toast.success("Places successfully added!");
     } catch (error: any) {
       console.error("Error adding places:", error.message || error.response?.data);
       alert("Failed to add places. Please try again.");

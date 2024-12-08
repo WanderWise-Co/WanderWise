@@ -4,7 +4,6 @@ import Section from "./Section"; // Reusable section component
 import styles from "./Cart.module.css";
 import { Button } from "flowbite-react";
 
-// Define the CategoryItem type
 type CategoryItem = {
   category: "restaurant" | "hotel" | "attraction";
   location: string[]; // Array of locations (strings)
@@ -23,34 +22,40 @@ export default function Cart() {
         setLoading(true);
         setError(null);
         const token = localStorage.getItem("token");
+        const to = localStorage.getItem("to");
+        const from = localStorage.getItem("from");
 
-        // Fetch data from the API (single request)
-        const response = await axios.get<{ locations: CategoryItem[] }>(
+        const response = await axios.get(
           `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/cart`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
             },
+            params: {
+              to,
+              from,
+            },
           }
         );
 
-        // Segregate the locations based on category
-        const restaurantsData = response.data.locations
-          .filter((item) => item.category === "restaurant")
-          .map((item) => item.location)
+        // Extract userPreferences and segregate by category
+        const userPreferences = response.data.userPreferences;
+
+        const restaurantsData = userPreferences
+          .filter((item: CategoryItem) => item.category === "restaurant")
+          .map((item: CategoryItem) => item.location)
           .flat();
 
-        const hotelsData = response.data.locations
-          .filter((item) => item.category === "hotel")
-          .map((item) => item.location)
+        const hotelsData = userPreferences
+          .filter((item: CategoryItem) => item.category === "hotel")
+          .map((item: CategoryItem) => item.location)
           .flat();
 
-        const attractionsData = response.data.locations
-          .filter((item) => item.category === "attraction")
-          .map((item) => item.location)
+        const attractionsData = userPreferences
+          .filter((item: CategoryItem) => item.category === "attraction")
+          .map((item: CategoryItem) => item.location)
           .flat();
 
-        // Update the state with the segregated data
         setRestaurants(restaurantsData);
         setHotels(hotelsData);
         setAttractions(attractionsData);
@@ -68,14 +73,33 @@ export default function Cart() {
   const handlegemini1 = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get(
-        `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/gemini1`,
-        {
+      const to = localStorage.getItem("to");
+      const from = localStorage.getItem("from");
+      const startDate = localStorage.getItem("startDate");
+      const endDate = localStorage.getItem("endDate");
+      const response = await axios
+        .get(`${import.meta.env.VITE_BASE_SERVER_URL}/planpage/gemini2`, {
+          responseType: "blob",
           headers: {
             Authorization: `Bearer ${token}`,
           },
-        }
-      );
+          params:{
+            from,
+            to,
+            startDate ,
+            endDate,
+          }
+        })
+        .then((response) => {
+          const url = window.URL.createObjectURL(new Blob([response.data]));
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = "TravelPlan.pdf";
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+        });
+
       console.log(response);
     } catch (error: any) {
       console.log("Error", error);
@@ -83,33 +107,29 @@ export default function Cart() {
   };
 
   return (
-    <>
-      <div className={styles.page}>
-        <div className={styles.container}>
-          <div className={styles.overlay}>
-            {loading ? (
-              <p>Loading...</p>
-            ) : error ? (
-              <p className={styles.error}>{error}</p>
-            ) : (
-              <div>
-                <Section title="Restaurants" locations={restaurants} />
-                <Section title="Hotels" locations={hotels} />
-                <Section title="Attractions" locations={attractions} />
-              </div>
-            )}
-          </div>
-          <Button
+    <div className={styles.page}>
+      <div className={styles.container}>
+        <div className={styles.overlay}>
+          {loading ? (
+            <p>Loading...</p>
+          ) : error ? (
+            <p className={styles.error}>{error}</p>
+          ) : (
+            <div>
+              <Section title="Restaurants" locations={restaurants} />
+              <Section title="Hotels" locations={hotels} />
+              <Section title="Attractions" locations={attractions} />
+            </div>
+          )}
+        </div>
+        <Button
           color="primary"
           className={styles.bottomRightButton}
           onClick={handlegemini1}
         >
           Create Plan &#8594;
         </Button>
-        </div>
-        
       </div>
-    </>
+    </div>
   );
-  
 }
