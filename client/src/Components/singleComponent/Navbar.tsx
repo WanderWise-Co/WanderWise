@@ -2,6 +2,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
 import axios from "axios";
 import styles from "./Navbar.module.css";
+import toast from 'react-hot-toast'
 
 interface NavbarProps {
   setPlaceType: (type: string) => void;
@@ -168,13 +169,13 @@ export default function Navbar({
     const sDate = localStorage.getItem("startDate");
     const eDate = localStorage.getItem("endDate");
     if (!(token && from && to && sDate && eDate)) {
-      alert('Input token and other details');
+      toast.error('Input token and other details');
       return;
     }
 
     try {
       // setNavButton("buses"); 
-      const token = localStorage.getItem("token");
+      
       const response = await axios.get(
         `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/gemini`,
         {
@@ -189,6 +190,23 @@ export default function Navbar({
       );
       console.log(response.data)
       setGemeniData(response.data.data);
+
+      const hotel_response = await axios.get(`${import.meta.env.VITE_BASE_SERVER_URL}/planpage/transport/hotel`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          params: {
+            from,
+            to,
+            sDate,
+            eDate,
+          }
+        }
+      )  
+      console.log(hotel_response);
+
+
       const categories = JSON.parse(localStorage.getItem('selectedCategories')||"[]");
       const reco_response = await axios.get(
         `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/recommendation/hotelreco`,

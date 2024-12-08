@@ -27,7 +27,7 @@ export default function HomeFilter() {
 
   useEffect(()=>{
     if (selectedCategories) {
-      localStorage.setItem('selectedCategories', JSON.stringify(selectedCategories));
+      localStorage.setItem('selected_features', JSON.stringify(selectedCategories));
     }
   },[selectedCategories])
 
@@ -42,7 +42,7 @@ export default function HomeFilter() {
 const handleSubmit = async () => {
   
   try {
-    const categories = JSON.parse(localStorage.getItem('selectedCategories')||"[]");
+    const categories = JSON.parse(localStorage.getItem('selected_features')||"[]");
     console.log(categories);
     navigate('/api/v1/planpage'); // Navigate after a successful API call
 
