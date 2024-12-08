@@ -5,7 +5,7 @@ import json
 from datetime import datetime
 
 # Directly configure the API with your key
-genai.configure(api_key="AIzaSyDuPzMgyvnpad9JqImtkCiFz2Y-zeO8H_")
+genai.configure(api_key="AIzaSyDuPzMgyvnpad9JqImtkCiFz2Y-zeO8H_Q")
 
 # Function to format the user preferences into a structured prompt
 def generate_travel_plan(user_preferences, start_date, end_date, budget):
@@ -65,5 +65,14 @@ chat_session = model.start_chat(history=[])
 
 # Send the prompt to Gemini and get the response
 response = chat_session.send_message(prompt)
-sys.stdout.reconfigure(encoding='utf-8')
-print(response.text)
+
+# Save the response text in JSON format
+output_data = {
+    "travel_plan": response.text
+}
+current_dir = os.path.dirname(os.path.realpath(__file__))
+output_file = os.path.join(current_dir,  'outputs', 'gemini2.json')
+with open(output_file, "w", encoding="utf-8") as file:
+    json.dump(output_data, file, ensure_ascii=False, indent=4)
+
+print(f"Travel plan saved to {output_file}")

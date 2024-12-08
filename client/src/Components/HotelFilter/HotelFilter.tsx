@@ -7,6 +7,7 @@ import food from '../../assets/food.jpg';
 import cp from '../../assets/cp.jpg';
 import swimmingPool from '../../assets/s.jpg';
 import internetAccess from '../../assets/inac.jpeg';
+import indoorAct from '../../assets/indoor.png';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
@@ -19,6 +20,7 @@ export default function HomeFilter() {
     { id: 3, name: 'Car Parking', imgSrc: cp },
     { id: 4, name: 'Swimming Pool', imgSrc: swimmingPool},
     { id: 5, name: 'Internet Access', imgSrc: internetAccess},
+    { id:6,name:'Indoor Activities',imagSrc:indoorAct},
   ];
 
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);

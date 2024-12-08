@@ -34,11 +34,13 @@
 }
 
 .buttonColumns {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns layout */
+  gap: 20px; /* Space between buttons */
+  justify-content: center; /* Center the grid */
+  align-items: center; /* Align items vertically in the center */
   width: 100%;
+  max-width: 600px; /* Optional: Limit the width of the grid */
 }
 
 .categoryButton {
@@ -46,8 +48,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 120px;
-  height: 120px;
+  width: 150px; /* Increased button size */
+  height: 150px; /* Increased button size */
   background-color: rgba(255, 255, 255, 0.8);
   border: 2px solid transparent;
   border-radius: 10px;
@@ -58,13 +60,13 @@
 }
 
 .categoryButton img {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 8px;
+  width: 70px; /* Larger image */
+  height: 70px; /* Larger image */
+  margin-bottom: 10px;
 }
 
 .categoryButton span {
-  font-size: 1rem;
+  font-size: 1.2rem; /* Slightly larger text */
   font-weight: bold;
   color: #333333;
 }
