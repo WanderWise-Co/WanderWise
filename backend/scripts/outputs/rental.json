@@ -1,5 +1,5 @@
 {
-    "timestamp": "2024-12-07T22:26:19.428143",
+    "timestamp": "2024-12-08T11:29:39.461502",
     "car_rentals": [
         {
             "car_name": "Classic Car Rentals",
@@ -37,25 +37,11 @@
             "phone_number": "08401764851"
         },
         {
-            "car_name": "GoDrive Self Car Rentals",
-            "rating": "4.7",
-            "link": "https://www.justdial.com/Mysore/GoDrive-Self-Car-Rentals-Next-to-Knowledge-Tree-Preschool-Subhashnagar/0821PX821-X821-240715225705-E8K9_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
-            "location": "Karnataka Subhashnagar, Mysore",
-            "phone_number": "08460303546"
-        },
-        {
-            "car_name": "Mysore Travels",
-            "rating": "3.8",
-            "link": "https://www.justdial.com/Mysore/Mysore-Travels-Siddiquenagar-Bannimantap-Extension/0821PX821-X821-150826121340-X8I1_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
-            "location": "2nd A Cross, Mysore",
-            "phone_number": "08511361228"
-        },
-        {
-            "car_name": "Paddu Tours and Travels",
-            "rating": "4.5",
-            "link": "https://www.justdial.com/Mysore/Paddu-Tours-and-Travels-Near-Silent-Shores-Resort-Hunsur-Road/0821PX821-X821-200827132022-I9V9_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
-            "location": "Hootagalli Hunsur Road, Mysore",
-            "phone_number": "08511013367"
+            "car_name": "Classic Self Drive",
+            "rating": "4.6",
+            "link": "https://www.justdial.com/Mysore/Classic-Self-Drive-Near-Huda-Public-School-Shivarathreeswara-Nagar/0821PX821-X821-190428152218-B8I2_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
+            "location": "Mysore Shivarathreeswara Nagar, Mysore",
+            "phone_number": "08867881613"
         },
         {
             "car_name": "Sri Kalabhairava Holidays",
@@ -65,11 +51,25 @@
             "phone_number": "07411578133"
         },
         {
+            "car_name": "Affordable Self Drive Cars",
+            "rating": "5.0",
+            "link": "https://www.justdial.com/Mysore/Affordable-Self-Drive-Cars-Near-Kadamba-Bakery-Kanakadasa-Nagar/0821PX821-X821-240904112604-L4C7_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
+            "location": "3rd Stage Kanakadasa Nagar, Mysore",
+            "phone_number": "09972826674"
+        },
+        {
             "car_name": "Jp Ram Mysore Self Drive",
             "rating": "4.1",
             "link": "https://www.justdial.com/Mysore/Jp-Ram-Mysore-Self-Drive-Near-Orchid-Public-School-Sharadadevi-Nagar/0821PX821-X821-211018153025-L2S9_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
             "location": "Road Sharadadevi Nagar, Mysore",
             "phone_number": "08401778846"
+        },
+        {
+            "car_name": "Alpha Tours And Travels",
+            "rating": "4.4",
+            "link": "https://www.justdial.com/Mysore/Alpha-Tours-And-Travels-Opposite-Madina-Majid-Udayagiri/0821PX821-X821-170617102130-U6J9_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
+            "location": "Muneshwar Nagar Udayagiri, Mysore",
+            "phone_number": "07411832419"
         }
     ]
 }

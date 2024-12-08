@@ -56,7 +56,10 @@ export default function FormReq() {
     if (date.endDate) {
       localStorage.setItem('endDate', date.endDate.toString());
     }
-  },[source,destination,date])
+    if (selectedCategories) {
+      localStorage.setItem('placesCategories', JSON.stringify(selectedCategories));
+    }    
+  },[source,destination,date,selectedCategories])
 
 
 
@@ -77,10 +80,8 @@ export default function FormReq() {
       toast.error("Source cannot be empty.");
       return;
     }
-    if (isLoggedin()) {
-            
-      try {
-        const to = localStorage.getItem("to");
+    try{
+      const to = localStorage.getItem("to");
         const response = await axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
           params: {
             address: to,
@@ -99,7 +100,13 @@ export default function FormReq() {
           localStorage.setItem('lat',lat);
           localStorage.setItem('lng',lng);
         }
-        
+    }catch(error:any){
+      console.log("Error",error)
+    }
+    if (isLoggedin()) {
+            
+      try {
+    
         navigate(`/api/v1/homefilter`);
       } catch (error: any) {
         console.error("Error fetching location:", error.message);

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Section from "./Section"; // Reusable section component
 import styles from "./Cart.module.css";
+import { Button } from "flowbite-react";
 
 // Define the CategoryItem type
 type CategoryItem = {
@@ -24,26 +25,29 @@ export default function Cart() {
         const token = localStorage.getItem("token");
 
         // Fetch data from the API (single request)
-        const response = await axios.get<{ locations: CategoryItem[] }>(`${import.meta.env.VITE_BASE_SERVER_URL}/planpage/cart`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await axios.get<{ locations: CategoryItem[] }>(
+          `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/cart`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
 
         // Segregate the locations based on category
         const restaurantsData = response.data.locations
-          .filter(item => item.category === "restaurant")
-          .map(item => item.location)
+          .filter((item) => item.category === "restaurant")
+          .map((item) => item.location)
           .flat();
 
         const hotelsData = response.data.locations
-          .filter(item => item.category === "hotel")
-          .map(item => item.location)
+          .filter((item) => item.category === "hotel")
+          .map((item) => item.location)
           .flat();
 
         const attractionsData = response.data.locations
-          .filter(item => item.category === "attraction")
-          .map(item => item.location)
+          .filter((item) => item.category === "attraction")
+          .map((item) => item.location)
           .flat();
 
         // Update the state with the segregated data
@@ -61,8 +65,26 @@ export default function Cart() {
     fetchData();
   }, []);
 
+  const handlegemini1 = async () => {
+    try {
+      const token = localStorage.getItem("token");
+      const response = await axios.get(
+        `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/gemini1`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log(response);
+    } catch (error: any) {
+      console.log("Error", error);
+    }
+  };
+
   return (
-    <div className={styles.container}>
+    <>
+      <div className={styles.container}>
       <div className={styles.overlay}>
         {loading ? (
           <p>Loading...</p>
@@ -75,7 +97,15 @@ export default function Cart() {
             <Section title="Attractions" locations={attractions} />
           </div>
         )}
+        
       </div>
-    </div>
+      </div>
+      <Button
+          color="primary"
+          className={styles.bottomRightButton}
+          onClick={handlegemini1}
+        >Create Plan</Button>
+    </>
+    
   );
 }

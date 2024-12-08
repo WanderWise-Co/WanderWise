@@ -22,7 +22,7 @@ export default function PlanPage() {
 
   const [places, setPlaces] = useState([]);
   const [placeType, setPlaceType] = useState("");
-  const [selectedPlacesByType, setSelectedPlacesByType] = useState<Record<string, string[]>>({});
+  //const [selectedPlacesByType, setSelectedPlacesByType] = useState<Record<string, string[]>>({});
   const [transportPlaneData, setTransportPlaneData] = useState<any>(null);
   const [transportPlaneRecoData, setTransportPlaneRecoData] = useState<any>(null);
   const [transportBusesData, setTransportBusesData] = useState<any>(null);
@@ -30,7 +30,7 @@ export default function PlanPage() {
   const [transportRentalData, setTransportRentalData] = useState<any>(null);
   const [gemeniData, setGemeniData] = useState<any>(null);
   const [hotelRecoData, setHotelRecoData] = useState<any>(null);
-  const [selectedCategories, setSelectedCategories] = useState(location.state?.selectedCategories || []);
+  // const [selectedCategories, setSelectedCategories] = useState(location.state?.selectedCategories || []);
   const [navButton, setNavButton] = useState(""); // State for tracking the selected nav button
 
   const [source, setSource] = useState(localStorage.getItem("from") || "");
@@ -47,6 +47,7 @@ export default function PlanPage() {
   }, [source, destination, startDate, endDate]);
 
   const fetchNearbyPlaces = async (lat: number, lng: number, type: string) => {
+    console.log("fetchNearbyPlaces");
     try {
       const response = await axios.get(`http://localhost:3000/api/v1/googleApi`, {
         params: {
@@ -63,17 +64,21 @@ export default function PlanPage() {
   };
 
   useEffect(() => {
-    if (coordinates && coordinates.lat && coordinates.lng) {
+    console.log("use effect 1")
+    console.log(coordinates,placeType)
+    if (coordinates && coordinates.lat && coordinates.lng && placeType) {
+      console.log("use effect 1.1 if")
       fetchNearbyPlaces(coordinates.lat, coordinates.lng, placeType);
+      console.log("use effect 1.2 if")
     }
   }, [coordinates, placeType]);
 
-  const handleSelectedPlaces = (selectedPlaces: string[]) => {
-    setSelectedPlacesByType((prev) => ({
-      ...prev,
-      [placeType]: selectedPlaces, // Save selections for the current type
-    }));
-  };
+  // const handleSelectedPlaces = (selectedPlaces: string[]) => {
+  //   setSelectedPlacesByType((prev) => ({
+  //     ...prev,
+  //     [placeType]: selectedPlaces, // Save selections for the current type
+  //   }));
+  // };
 
   useEffect(() => {
     console.log("Transport Plane Data:", JSON.stringify(transportPlaneData, null, 2));
@@ -83,9 +88,9 @@ export default function PlanPage() {
     console.log("Hotel Recommendation Data:", hotelRecoData);
   }, [transportPlaneData, transportPlaneRecoData, transportBusesData, transportBusesRecoData, hotelRecoData]);
 
-  const handleAddButton = () => {
-    console.log("Selected Places By Type:", selectedPlacesByType);
-  };
+  // const handleAddButton = () => {
+  //   console.log("Selected Places By Type:", selectedPlacesByType);
+  // };
 
   return (
     <>

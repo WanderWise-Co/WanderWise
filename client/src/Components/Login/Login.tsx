@@ -42,7 +42,7 @@ export default function Login() {
       toast.success(response.data.message);
 
       localStorage.setItem("token",response.data.token)
-      navigate("/api/v1/planpage");
+      navigate("/api/v1/homefilter");
     } catch (error: any) {
       toast.error(error.response.data.message);
       console.log(error);
@@ -62,7 +62,7 @@ export default function Login() {
     });
     if(res.data.message ==='success'){
     localStorage.setItem("token",res.data.token)
-      navigate("/api/v1/planpage");
+      navigate("/api/v1/homefilter");
     }
         console.log(res);    
     },
