@@ -5,11 +5,12 @@ const path = require('path')
 const {BadRequestError} = require('../errors/index')
 
 const hotel_reco = async(req,res)=>{
-    const {selected_features} = req.body;
+    const {selected_features} = req.query;
+    console.log(selected_features)
     const pythonScriptPath = path.join(__dirname, '../scripts/hotalfinalreco.py');
     
     // Spawn the Python process
-    const python = spawn('python', [pythonScriptPath], {
+    const python = spawn('python', [pythonScriptPath,selected_features], {
         cwd: path.join(__dirname, '../scripts')
     });
 

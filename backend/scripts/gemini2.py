@@ -7,6 +7,7 @@ from datetime import datetime
 # Directly configure the API with your key
 genai.configure(api_key="AIzaSyDuPzMgyvnpad9JqImtkCiFz2Y-zeO8H_Q")
 
+    
 # Function to format the user preferences into a structured prompt
 def generate_travel_plan(user_preferences, start_date, end_date, budget):
     # Build the request structure with the preferences, dates, and budget
@@ -24,8 +25,19 @@ def generate_travel_plan(user_preferences, start_date, end_date, budget):
     """
     return prompt
 
+
+
+# Example of dates and budget
+# start_date = "2024-12-05"
+# end_date = "2024-12-08"
+budget = 20000  # 20 thousand INR
+today = datetime.today()
+start_date = sys.argv[1] if len(sys.argv) > 1 else today
+end_date = sys.argv[2] if len(sys.argv) > 2 else today
+fromm  = sys.argv[3] if len(sys.argv) > 3 else "bengaluru"
+to = sys.argv[4] if len(sys.argv) > 4 else "Mumbai"
 # Example user preferences from the backend (Mocked data for demonstration)
-user_preferences = {
+user_preferences =sys.argv[5] if len(sys.argv) > 5 else  {
     "category": "hotel",
     "location": ["Hotel A", "Hotel B", "Hotel C"]
 }, {
@@ -38,12 +50,7 @@ user_preferences = {
     "category": "travel",
     "location": ["Train", "Cab"]
 }
-
-# Example of dates and budget
-start_date = "2024-12-05"
-end_date = "2024-12-08"
-budget = 20000  # 20 thousand INR
-
+print("incoming:",start_date,end_date,fromm,to,user_preferences)
 # Generate the travel plan prompt
 prompt = generate_travel_plan(user_preferences, start_date, end_date, budget)
 

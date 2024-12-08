@@ -7,6 +7,7 @@ import json
 import pandas as pd
 from dotenv import load_dotenv
 import os
+import sys
 
 load_dotenv()  # Load environment variables from .env file
 
@@ -53,6 +54,8 @@ output_file_path = os.path.join(os.path.dirname(__file__), 'outputs', 'hotel_rec
 # features_file_path = file_path = os.path.join(os.path.dirname(__file__), 'outputs', 'hotel_features.json')
 
 # Load reviews data using json and pandas
+choices=sys.argv[1] if len(sys.argv) > 1 else ["Internet services","Elevator","toi"]
+print(choices)
 with open(reviews_file_path, 'r') as file:
     reviews_data = json.load(file)
 reviews_df_raw = pd.DataFrame(reviews_data['data'])
@@ -83,9 +86,12 @@ combined_df = reviews_df.join(features_df, on="Hotel_Name", how="inner")
 # Step 6: Filter Hotels by User-Selected Features
 # User-selected features (example: Internet services, Swimming pool, Garden)
 selected_features = ['Internet services', 'Elevator', 'Toiletries']
+choices=json.loads(choices)
+print(choices)
 
+print(choices[0])
 # Filter hotels that meet the criteria for selected features
-feature_filter = (col("Internet services") == 1.0) & (col("Elevator") == 1.0) & (col("Toiletries") == 1.0)
+feature_filter = (col(choices[0]) == 1.0) & (col(choices[1]) == 1.0) & (col(choices[2]) == 1.0)
 filtered_df = combined_df.filter(feature_filter)
 
 # Step 7: Prepare the User-Item Matrix

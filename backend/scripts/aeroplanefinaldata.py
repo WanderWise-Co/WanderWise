@@ -100,7 +100,7 @@ try:
     date = int(sys.argv[2]) if len(sys.argv) > 2 else int(today.day)
     year=int(sys.argv[3]) if len(sys.argv) >3 else int(today.year)
     fromm  = sys.argv[4] if len(sys.argv) > 4 else "bengaluru"
-    to = sys.argv[5] if len(sys.argv) > 5 else "Delhi"
+    to = sys.argv[5] if len(sys.argv) > 5 else "Mumbai"
     print(month,date)
     driver.get("https://www.cleartrip.com/")
 
@@ -118,7 +118,7 @@ try:
         EC.presence_of_element_located((By.CSS_SELECTOR, 'input[placeholder="Where from?"]'))
     )
     from_input.send_keys(fromm)
-    delay(1)
+    delay(3)
     from_airport = WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.CSS_SELECTOR, '.airportList li:first-child'))
     )
@@ -130,7 +130,7 @@ try:
         EC.presence_of_element_located((By.CSS_SELECTOR, 'input[placeholder="Where to?"]'))
     )
     to_input.send_keys(to)
-    delay(1)
+    delay(3)
     to_airport = WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.CSS_SELECTOR, '.airportList li:first-child'))
     )
