@@ -76,7 +76,7 @@
 .categoryButton span {
   font-size: 1.2rem; /* Slightly larger text */
   font-weight: bold;
-  color: #333333;
+  color: #000000;
 }
 
 .categoryButton:hover {
@@ -86,13 +86,13 @@
 }
 
 .selected {
-  border: 2px solid #76f747;
+  border: 2px solid #f51707;
 }
 
 .submitButton {
   grid-column: span 2; /* Make the Next button span across both columns */
-  background-color: #28a745;
-  color: white;
+  background-color: rgb(80, 69, 236);
+  color: rgb(0, 0, 0);
   font-weight: bold;
   padding: 10px 20px;
   border-radius: 8px;
@@ -101,5 +101,5 @@
 }
 
 .submitButton:hover {
-  background-color: #218838;
+  background-color: rgb(143, 138, 228);
 }

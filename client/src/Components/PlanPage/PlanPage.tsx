@@ -3,7 +3,6 @@ import styles from "../PlanPage/PlanPage.module.css";
 import PlacesList from "../singleComponent/PlacesList";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import Navbar from "../singleComponent/Navbar";
 import CarRental from "../singleComponent/CarRental";
 import FlightsList from "../singleComponent/FlightList";
@@ -14,7 +13,7 @@ import HotelReco from "../singleComponent/HotelReco";
 import FlightRec from "../singleComponent/FlightRec";
 
 export default function PlanPage() {
-  const location = useLocation();
+  // const location = useLocation();
   const lat = Number(localStorage.getItem("lat")) || 0; // Default to 0 if null or invalid
   const lng = Number(localStorage.getItem("lng")) || 0; // Default to 0 if null or invalid
   const [coordinates, setCoordinates] = useState({ lat, lng });
@@ -64,12 +63,12 @@ export default function PlanPage() {
   };
 
   useEffect(() => {
-    console.log("use effect 1")
+    console.log("inside use effect")
     console.log(coordinates,placeType)
     if (coordinates && coordinates.lat && coordinates.lng && placeType) {
-      console.log("use effect 1.1 if")
+      console.log("inside use effect inside if")
       fetchNearbyPlaces(coordinates.lat, coordinates.lng, placeType);
-      console.log("use effect 1.2 if")
+      console.log("inside use effect inside if")
     }
   }, [coordinates, placeType]);
 
@@ -138,10 +137,9 @@ export default function PlanPage() {
               coordinates={coordinates}
               setNavButton={navButton} // Pass navButton instead of setNavButton
             />            
-          ) : null}
+          ) : <div className={styles.centeredText}>Begin Your Planning </div>}
         </div>
       </div>
-
       <Footer />
     </>
   );

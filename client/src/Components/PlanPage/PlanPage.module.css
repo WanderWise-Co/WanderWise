@@ -21,3 +21,14 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
+  .centeredText {
+    font-size: 48px; /* Adjust font size */
+    text-align: center; /* Center text horizontally */
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 10rem;
+    color: rgb(137, 45, 45);
+    font-family: "Edu AU VIC WA NT Arrows", cursive;
+  }
+  
