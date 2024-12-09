@@ -31,7 +31,7 @@ export default function Map({
   places: Places[];
 }) {
   const [selectedPlaces, setSelectedPlaces] = useState<Places | null>(null);
-
+  console.log("se",selectedPlaces);
   return (
     <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
       <GoogleMap mapContainerStyle={mapContainerStyle} center={coordinates} zoom={14}>

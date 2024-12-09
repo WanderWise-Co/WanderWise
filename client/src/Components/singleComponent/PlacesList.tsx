@@ -67,7 +67,7 @@ export default function PlacesList({ places, coordinates, setNavButton }: Places
           },
         }
       );
-      
+      setCurrentSelected([''])
 
       console.log("Response from server:", response.data);
       toast.success("Places successfully added!");

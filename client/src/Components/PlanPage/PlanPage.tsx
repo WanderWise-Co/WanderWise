@@ -11,6 +11,7 @@ import Gemini from "../singleComponent/Gemini";
 import BusListRec from "../singleComponent/BusListRec";
 import HotelReco from "../singleComponent/HotelReco";
 import FlightRec from "../singleComponent/FlightRec";
+import RouteMap from "../singleComponent/RouteMap";
 
 export default function PlanPage() {
   // const location = useLocation();
@@ -114,6 +115,8 @@ export default function PlanPage() {
             </div>
             <div className={styles.right}>
               <FlightRec flightrec={transportPlaneRecoData || []} />
+              <RouteMap source={source} destination={destination} />
+
             </div>
           </div>
           ) : navButton === "buses" ? (
@@ -123,6 +126,8 @@ export default function PlanPage() {
               </div>
               <div className={styles.right}>
                 <BusListRec buses={transportBusesRecoData || []} />
+                <RouteMap source={source} destination={destination} />
+
               </div>
             </div>
           ) : navButton === "renting" ? (
