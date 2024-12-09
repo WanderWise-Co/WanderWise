@@ -71,6 +71,26 @@ export default function FormReq() {
     );
   };
 
+  const validateLocation = async (address: string): Promise<boolean> => {
+    try {
+      const response = await axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
+        params: {
+          address,
+          key: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
+        },
+      });
+  
+      if (response.data.status === "OK" && response.data.results.length > 0) {
+        return true; // Valid location
+      } else {
+        return false; // Invalid location
+      }
+    } catch (error) {
+      console.error("Error validating location:", error);
+      return false; // Treat errors as invalid locations
+    }
+  };
+
   const handleChoosePlanClick = async () => {
     if (!destination) {
       toast.error("Destination cannot be empty.");
@@ -80,6 +100,21 @@ export default function FormReq() {
       toast.error("Source cannot be empty.");
       return;
     }
+
+    // Validate source and destination
+    const isSourceValid = await validateLocation(source);
+    const isDestinationValid = await validateLocation(destination);
+
+    if (!isSourceValid) {
+      toast.error("Invalid source location. Please enter a valid location.");
+      return;
+    }
+  
+    if (!isDestinationValid) {
+      toast.error("Invalid destination location. Please enter a valid location.");
+      return;
+    }
+
     try{
       const to = localStorage.getItem("to");
         const response = await axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
@@ -104,9 +139,7 @@ export default function FormReq() {
       console.log("Error",error)
     }
     if (isLoggedin()) {
-            
       try {
-    
         navigate(`/api/v1/homefilter`);
       } catch (error: any) {
         console.error("Error fetching location:", error.message);
@@ -117,6 +150,25 @@ export default function FormReq() {
   };
 
   const handleValueChange = (newValue: any) => {
+    if (!newValue.startDate || !newValue.endDate) {
+      toast.error("Please select a valid date range.");
+      return;
+    }
+
+    const today = new Date();
+    const selectedStart = new Date(newValue.startDate);
+    const selectedEnd = new Date(newValue.endDate);
+
+    if (selectedStart < today) {
+      toast.error("Start date cannot be in the past.");
+      return;
+    }
+
+    if (selectedEnd < selectedStart) {
+      toast.error("End date cannot be earlier than the start date.");
+      return;
+    }
+
     setDate(newValue);
   };
 
