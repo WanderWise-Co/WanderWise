@@ -1,75 +1,75 @@
 {
-    "timestamp": "2024-12-08T13:48:54.903233",
+    "timestamp": "2024-12-09T00:02:22.655046",
     "car_rentals": [
         {
-            "car_name": "Classic Car Rentals",
-            "rating": "4.7",
-            "link": "https://www.justdial.com/Mysore/Classic-Car-Rentals-Near-Huda-Public-School-Shivarathreeswara-Nagar/0821PX821-X821-220219171702-Y8A9_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
-            "location": "Shivarathreeswara Nagar, Mysore",
-            "phone_number": "07487869093"
-        },
-        {
-            "car_name": "Classic Self Drive",
-            "rating": "4.6",
-            "link": "https://www.justdial.com/Mysore/Classic-Self-Drive-Near-Huda-School-Shivarathreeswara-Nagar/0821PX821-X821-240920164749-P3T5_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
-            "location": "Ss Nagar Shivarathreeswara Nagar, Mysore",
-            "phone_number": "07411596316"
-        },
-        {
-            "car_name": "Royal Classic Self Drive Cars",
-            "rating": "4.9",
-            "link": "https://www.justdial.com/Mysore/Royal-Classic-Self-Drive-Cars-Near-Bhuvaneshwari-Convention-Hall-Bannimantap/0821PX821-X821-221027115518-Z8F9_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
-            "location": "Hall Road Bannimantap, Mysore",
-            "phone_number": "08197608682"
-        },
-        {
-            "car_name": "VR SELF DRIVE CARS",
-            "rating": "4.3",
-            "link": "https://www.justdial.com/Mysore/VR-SELF-DRIVE-CARS-Vijaynagar-4th-Stage/0821PX821-X821-240213084801-G3K2_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
-            "location": "3RD STAGE Vijaynagar 4th Stage, Mysore",
-            "phone_number": "09054633173"
-        },
-        {
-            "car_name": "Alarz Car Self Drive",
+            "car_name": "Abcd Cars Rental",
             "rating": "4.4",
-            "link": "https://www.justdial.com/Mysore/Alarz-Car-Self-Drive-Bannimantap/0821PX821-X821-221217215647-Z2L8_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
-            "location": "Bannimantap, Mysore",
-            "phone_number": "08401764851"
+            "link": "https://www.justdial.com/Chennai/Abcd-Cars-Rental-Near-By-Chennai-Lee-Palace-Porur/044PXX44-XX44-180620184336-E7Q3_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Chennai&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
+            "location": "Neithal Street Ponni Nagar Porur, Chennai",
+            "phone_number": "08296217698"
         },
         {
-            "car_name": "Paddu Tours and Travels",
+            "car_name": "Smile Self Driven Cars",
+            "rating": "4.6",
+            "link": "https://www.justdial.com/Chennai/Smile-Self-Driven-Cars-Near-Water-Tank-Anna-Nagar-West/044PXX44-XX44-090909062113-V6V9_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Chennai&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
+            "location": "TVS Anna Nagar West, Chennai",
+            "phone_number": "07383585636"
+        },
+        {
+            "car_name": "Amazing Rental Carz",
+            "rating": "4.6",
+            "link": "https://www.justdial.com/Chennai/Amazing-Rental-Carz-Maduravoyal-Adayalampattu-Maduravoyal/044PXX44-XX44-240628151704-M7F6_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Chennai&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
+            "location": "Bridge Service Road Maduravoyal, Chennai",
+            "phone_number": "07041997707"
+        },
+        {
+            "car_name": "Royal Cars and Travels",
+            "rating": "4.1",
+            "link": "https://www.justdial.com/Chennai/Royal-Cars-and-Travels-Near-Ayanavaram-Bus-Terminus-Ayanavaram/044PXX44-XX44-141206143430-D9G8_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Chennai&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
+            "location": "Anderson Road Ayanavaram, Chennai",
+            "phone_number": "07041960089"
+        },
+        {
+            "car_name": "Annai Call Drivers",
             "rating": "4.5",
-            "link": "https://www.justdial.com/Mysore/Paddu-Tours-and-Travels-Near-Silent-Shores-Resort-Hunsur-Road/0821PX821-X821-200827132022-I9V9_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
-            "location": "Hootagalli Hunsur Road, Mysore",
-            "phone_number": "08511013367"
+            "link": "https://www.justdial.com/Chennai/Annai-Call-Drivers-Near-K4-Police-Station-Anna-Nagar/044PXX44-XX44-220606174326-M7C3_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Chennai&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
+            "location": "ICF South Colony Anna Nagar, Chennai",
+            "phone_number": "08296573358"
         },
         {
-            "car_name": "Mysore Car Rent S B A",
-            "rating": "4.5",
-            "link": "https://www.justdial.com/Mysore/Mysore-Car-Rent-S-B-A-Near-Shabnam-Brigade-Layout-Udayagiri/0821PX821-X821-231203165606-R1G8_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
-            "location": "P and T Quarters Udayagiri, Mysore",
-            "phone_number": "08971720418"
-        },
-        {
-            "car_name": "Affordable Self Drive Cars",
-            "rating": "5.0",
-            "link": "https://www.justdial.com/Mysore/Affordable-Self-Drive-Cars-Near-Kadamba-Bakery-Kanakadasa-Nagar/0821PX821-X821-240904112604-L4C7_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
-            "location": "3rd Stage Kanakadasa Nagar, Mysore",
-            "phone_number": "09972826674"
-        },
-        {
-            "car_name": "Sri Kalabhairava Holidays",
-            "rating": "4.5",
-            "link": "https://www.justdial.com/Mysore/Sri-Kalabhairava-Holidays-Near-Bhramaramba-Choutry-Sriramapura-2nd-Stage/0821PX821-X821-240813120144-N6W5_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
-            "location": "Main Road Sriramapura 2nd Stage, Mysore",
-            "phone_number": "07411578133"
-        },
-        {
-            "car_name": "U Drive",
+            "car_name": "Vrm Pre Own Car",
             "rating": "4.7",
-            "link": "https://www.justdial.com/Mysore/U-Drive-Near-Amrutha-School-Bogadi/0821PX821-X821-180808112802-D8C7_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Mysore&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
-            "location": "Bogadi Main Road Bogadi, Mysore",
-            "phone_number": "08511445864"
+            "link": "https://www.justdial.com/Chennai/Vrm-Pre-Own-Car-Near-Kovur-EB-Office-Kovur/044PXX44-XX44-240817211553-N5P1_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Chennai&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
+            "location": "Sikkarayapuram Kovur, Chennai",
+            "phone_number": "08460565123"
+        },
+        {
+            "car_name": "King Car Zone",
+            "rating": "4.1",
+            "link": "https://www.justdial.com/Chennai/King-Car-Zone-Rajiv-Nagar-Park-Behind-Perungudi/044PXX44-XX44-190301180520-Y4W6_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Chennai&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
+            "location": "Rajiv Nagar Perungudi, Chennai",
+            "phone_number": "Show Number"
+        },
+        {
+            "car_name": "Parameshwari Tours And Travels",
+            "rating": "4.7",
+            "link": "https://www.justdial.com/Chennai/Parameshwari-Tours-And-Travels-Near-By-Takkaru-Dress-Shop-Saidapet/044PXX44-XX44-170829105209-S1H3_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Chennai&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
+            "location": "East Jones Roqd Saidapet, Chennai",
+            "phone_number": "Show Number"
+        },
+        {
+            "car_name": "Vetri Self Drive Cars",
+            "rating": "4.8",
+            "link": "https://www.justdial.com/Chennai/Vetri-Self-Drive-Cars-Near-By-Railway-Station-Villivakkam/044PXX44-XX44-240326130504-N5G4_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Chennai&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
+            "location": "Rajaji Nagar Villivakkam, Chennai",
+            "phone_number": "06366439987"
+        },
+        {
+            "car_name": "Yellowcars",
+            "rating": "4.6",
+            "link": "https://www.justdial.com/Chennai/Yellowcars-Near-By-Aditya-Garden-Poonamallee/044PXX44-XX44-230720055028-T9D5_BZDET?trkid=&term=&ncatid=11276270&area=&search=Drive%20Your%20Adventure%20:%20Car%20Rental%20For%20Self%20Driven%20in%20Chennai&mncatname=Car%20Rental%20For%20Self%20Driven&abd_btn=Send%20Enquiry&abd_heading=Car%20Rental%20For%20Self%20Driven&isOpenAbd=1&bd=1&cat_b2b_flag=0&",
+            "location": "Royal Garden Poonamallee, Chennai",
+            "phone_number": "07041780198"
         }
     ]
 }

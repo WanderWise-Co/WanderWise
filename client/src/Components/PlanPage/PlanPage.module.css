@@ -1,26 +1,3 @@
-.busListRec {
-    padding: 10px;
-  }
-  
-  .busListRec h2 {
-    margin-bottom: 10px;
-    font-size: 1.5rem;
-    color: #333;
-  }
-  
-  .busListRec ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .busListRec .busItem {
-    background-color: #f8f8f8;
-    border-radius: 8px;
-    padding: 10px;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
   .centeredText {
     font-size: 48px; /* Adjust font size */
     text-align: center; /* Center text horizontally */
@@ -30,5 +7,56 @@
     height: 10rem;
     color: rgb(137, 45, 45);
     font-family: "Edu AU VIC WA NT Arrows", cursive;
+  }
+  .planesContainer {
+    display: flex;
+    width: 100%;
+    gap: 16px; /* Optional: Space between left and right sections */
+  }
+  
+  .left,
+  .right {
+    width: 50%;
+    padding: 16px; /* Optional: Add padding for spacing */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+  }
+  
+  .left {
+    background-color: #f9f9f9; /* Optional: Add a background color for distinction */
+  }
+  
+  .right {
+    background-color: #fff; /* Optional: Add a different background color */
+  }
+  .busesContainer {
+    display: flex;
+    width: 100%;
+    gap: 16px; /* Space between left and right sections */
+  }
+  
+  .left,
+  .right {
+    width: 50%;
+    padding: 16px; /* Add padding for spacing */
+    box-sizing: border-box; /* Ensure padding doesn’t affect the width */
+  }
+  
+  .left {
+    background-color: #eef6f9; /* Light blue background for the left section */
+  }
+  
+  .right {
+    background-color: #f9f9f9; /* Light gray background for the right section */
+  }
+  
+  /* Optional: Add styling for responsive behavior */
+  @media (max-width: 768px) {
+    .busesContainer {
+      flex-direction: column; /* Stack the sections vertically on smaller screens */
+    }
+    .left,
+    .right {
+      width: 100%; /* Full width for stacked sections */
+    }
   }
   

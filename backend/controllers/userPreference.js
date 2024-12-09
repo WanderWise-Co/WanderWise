@@ -14,7 +14,7 @@ const findLocations = async(req,res)=>{
     }
     if(!from || !to)
     {
-        throw new BadRequestError('provide from and to')
+        throw new BadRequestError('provide from and to' )
     }
     const userPreferences = await userPreference.find({userPrefId,from ,to});
     console.log(userPreferences)
@@ -37,15 +37,8 @@ const addLocations = async (req, res) => {
     }
     console.log('CREATING');
     try {
-        const userPreferences = await userPreference.find({userPrefId,from ,to});
-        if(userPreferences)
-        {
-            res.status(StatusCodes.CREATED).json({ userPreferences });
-        }
-        else{
         const data = await userPreference.create({ userPrefId:userPrefId, category:category, location:location,from,to });
         res.status(StatusCodes.CREATED).json({ data });
-        }
     } catch (err) {
         console.error(err);
         throw new BadRequestError('Error creating location preference');

@@ -108,12 +108,16 @@ export default function PlanPage() {
       <div className={styles.planPageContainer}>
         <div className={styles.contentContainer}>
           {navButton === "planes" ? (
-            <>
+            <div className={styles.planesContainer}>
+            <div className={styles.left}>
               <FlightsList flights={transportPlaneData?.flights || []} />
+            </div>
+            <div className={styles.right}>
               <FlightRec flightrec={transportPlaneRecoData || []} />
-            </>
+            </div>
+          </div>
           ) : navButton === "buses" ? (
-            <div className={styles.busContainer}>
+            <div className={styles.busesContainer}>
               <div className={styles.left}>
                 <BusList Buses={transportBusesData?.bus_data || []} />
               </div>

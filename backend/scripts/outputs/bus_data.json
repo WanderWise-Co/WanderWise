@@ -1,5 +1,5 @@
 {
-    "timestamp": "2024-12-07T14:08:26.967648",
+    "timestamp": "2024-12-09T09:44:12.584575",
     "bus_data": [
         {
             "bus_name": "Mettur Super Services(mss)",
@@ -9,7 +9,24 @@
             "arrival_time": "05:30",
             "arrival_location": "Kalasipalyam",
             "price": "324",
-            "window_seats": "20 window seats",
+            "window_seats": "22 window seats",
+            "Amenities": [
+                "Water Bottle",
+                "Blankets",
+                "Charging Point",
+                "Reading Light",
+                "CCTV"
+            ]
+        },
+        {
+            "bus_name": "RKK Travels",
+            "rating": "4.1\n/5",
+            "departure_time": "04:00",
+            "departure_location": "Koyambedu",
+            "arrival_time": "09:30",
+            "arrival_location": "Madiwala",
+            "price": "695",
+            "window_seats": "13 window seats",
             "Amenities": [
                 "Water Bottle",
                 "Blankets",
@@ -26,7 +43,7 @@
             "arrival_time": "06:00",
             "arrival_location": "Madiwala",
             "price": "540",
-            "window_seats": "18 window seats",
+            "window_seats": "16 window seats",
             "Amenities": [
                 "Water Bottle",
                 "Blankets",
@@ -42,7 +59,7 @@
             "departure_location": "Koyambedu",
             "arrival_time": "05:50",
             "arrival_location": "Madiwala",
-            "price": "729",
+            "price": "809",
             "window_seats": "24 window seats",
             "Amenities": [
                 "Water Bottle",
@@ -53,14 +70,25 @@
             ]
         },
         {
-            "bus_name": "Jayavin Travels",
-            "rating": "3.9\n/5",
-            "departure_time": "22:30",
-            "departure_location": "Koyembedu",
-            "arrival_time": "05:25",
+            "bus_name": "Asian Xpress",
+            "rating": "4.8\n/5",
+            "departure_time": "23:10",
+            "departure_location": "Koyambedu",
+            "arrival_time": "06:15",
+            "arrival_location": "Majestic",
+            "price": "595",
+            "window_seats": "10 window seats",
+            "Amenities": []
+        },
+        {
+            "bus_name": "IntrCity SmartBus",
+            "rating": "4.5\n/5",
+            "departure_time": "23:40",
+            "departure_location": "Koyambedu",
+            "arrival_time": "06:20",
             "arrival_location": "Madiwala",
-            "price": "1080",
-            "window_seats": "15 window seats",
+            "price": "809",
+            "window_seats": "24 window seats",
             "Amenities": [
                 "Water Bottle",
                 "Blankets",
@@ -76,7 +104,7 @@
             "departure_location": "Koyambedu",
             "arrival_time": "06:05",
             "arrival_location": "Bommasandra",
-            "price": "729",
+            "price": "909",
             "window_seats": "24 window seats",
             "Amenities": [
                 "Water Bottle",
@@ -93,7 +121,7 @@
             "departure_location": "Koyambedu",
             "arrival_time": "05:40",
             "arrival_location": "Madiwala",
-            "price": "689",
+            "price": "909",
             "window_seats": "23 window seats",
             "Amenities": [
                 "Water Bottle",
@@ -104,48 +132,14 @@
             ]
         },
         {
-            "bus_name": "Asian Xpress",
-            "rating": "4.8\n/5",
-            "departure_time": "23:10",
-            "departure_location": "Koyambedu",
-            "arrival_time": "06:15",
-            "arrival_location": "Majestic",
-            "price": "495",
-            "window_seats": "10 window seats",
-            "Amenities": [
-                "Water Bottle",
-                "Blankets",
-                "Charging Point",
-                "Reading Light",
-                "CCTV"
-            ]
-        },
-        {
-            "bus_name": "KMRL Kalaimakal",
-            "rating": "4.7\n/5",
-            "departure_time": "22:45",
-            "departure_location": "Koyambedu 2 kmrl kalaimakal office",
-            "arrival_time": "05:30",
-            "arrival_location": "Madiwala",
-            "price": "740",
-            "window_seats": "18 window seats",
-            "Amenities": [
-                "Water Bottle",
-                "Blankets",
-                "Charging Point",
-                "Reading Light",
-                "CCTV"
-            ]
-        },
-        {
             "bus_name": "KBS Luxury Bus",
-            "rating": "4.5\n/5",
-            "departure_time": "17:40",
+            "rating": "4.8\n/5",
+            "departure_time": "20:35",
             "departure_location": "Koyambedu",
-            "arrival_time": "01:00",
+            "arrival_time": "03:40",
             "arrival_location": "Madiwala",
-            "price": "547",
-            "window_seats": "19 window seats",
+            "price": "874",
+            "window_seats": "12 window seats",
             "Amenities": [
                 "Water Bottle",
                 "Blankets",
@@ -155,14 +149,14 @@
             ]
         },
         {
-            "bus_name": "GRS Travels",
-            "rating": "4.8\n/5",
-            "departure_time": "22:35",
+            "bus_name": "Adithiya AirBus",
+            "rating": "4.7\n/5",
+            "departure_time": "21:40",
             "departure_location": "Koyambedu",
-            "arrival_time": "05:25",
+            "arrival_time": "04:35",
             "arrival_location": "Madiwala",
-            "price": "900",
-            "window_seats": "13 window seats",
+            "price": "1040",
+            "window_seats": "18 window seats",
             "Amenities": [
                 "Water Bottle",
                 "Blankets",
