@@ -1,3 +1,4 @@
+import PlaneComp from "../AnimationComponent/PlaneComp";
 import styles from "./FlightRec.module.css";
 
 interface Flight {
@@ -18,9 +19,11 @@ interface FlightRecProps {
 export default function FlightRec({ flightrec }: FlightRecProps) {
   if (!flightrec || flightrec.length === 0) {
     return (
-      <div className={styles.noFlights}>
-        <p>No recommended flights available.</p>
-      </div>
+      <>
+      <h2>Recommended Flights</h2>
+      <PlaneComp/>
+      </>
+      
     );
   }
 

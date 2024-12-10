@@ -1,11 +1,10 @@
-
-
 import { useState, useEffect } from "react";
 import rehypeSanitize from "rehype-sanitize";
 import { unified } from "unified";
 import parse from "rehype-parse";
 import stringify from "rehype-stringify";
 import styles from "./Gemeni.module.css";
+import PlaneComp from "../AnimationComponent/PlaneComp";
 
 // Interface for the API response data structure
 interface TravelPlanProps {
@@ -25,7 +24,6 @@ async function cleanAndSanitizeData(data: string): Promise<string> {
 
 export default function TravelPlanList({ data }: TravelPlanProps) {
   const [planDetails, setPlanDetails] = useState<string>("");
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const processData = async () => {
@@ -33,11 +31,10 @@ export default function TravelPlanList({ data }: TravelPlanProps) {
         if (data) {
           const cleanData = await cleanAndSanitizeData(data);
           setPlanDetails(cleanData);
-          setError(null); // Clear any previous errors
         }
       } catch (err) {
         console.error("Error processing data:", err);
-        setError("Failed to process the travel plan. Please try again later.");
+        setPlanDetails(""); // If an error occurs, clear the planDetails state
       }
     };
 
@@ -50,15 +47,13 @@ export default function TravelPlanList({ data }: TravelPlanProps) {
         <h3>Travel Plan</h3>
       </div>
       <div className={styles.planDetails}>
-        {error ? (
-          <p className={styles.errorText}>{error}</p> // Display error message
-        ) : planDetails ? (
+        {planDetails ? (
           <div
             className={styles.planText}
             dangerouslySetInnerHTML={{ __html: planDetails }}
           />
         ) : (
-          <p>No travel plan available.</p>
+          <PlaneComp /> // Display PlaneComp if there's no travel plan data
         )}
       </div>
     </div>

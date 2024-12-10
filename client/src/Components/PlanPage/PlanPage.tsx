@@ -12,6 +12,7 @@ import BusListRec from "../singleComponent/BusListRec";
 import HotelReco from "../singleComponent/HotelReco";
 import FlightRec from "../singleComponent/FlightRec";
 import RouteMap from "../singleComponent/RouteMap";
+import GeoMap from "../../Utils/GeoMAp"
 
 export default function PlanPage() {
   // const location = useLocation();
@@ -47,8 +48,12 @@ export default function PlanPage() {
   }, [source, destination, startDate, endDate]);
 
   const fetchNearbyPlaces = async (lat: number, lng: number, type: string) => {
-    console.log("fetchNearbyPlaces");
+
+    await GeoMap();
+    console.log("fetchNearbyPlaces MAP CALL");
+    
     try {
+      console.log("fetchNearbyPlaces MAP CALL TRY 1");
       const response = await axios.get(`http://localhost:3000/api/v1/googleApi`, {
         params: {
           location: `${lat},${lng}`,
@@ -57,7 +62,9 @@ export default function PlanPage() {
           key: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
         },
       });
+      console.log(response)
       setPlaces(response.data.results || []);
+      console.log("fetchNearbyPlaces MAP CALL TRY 2");
     } catch (error: any) {
       console.error("Error fetching places:", error.message || error.response?.data);
     }
@@ -139,8 +146,7 @@ export default function PlanPage() {
             </>
           ) : navButton === "restaurant" ||
             navButton === "hotel" ||
-            navButton === "attraction" ||
-            navButton === "renting" ? (
+            navButton === "attraction" ? (
               <PlacesList
               places={places}
               coordinates={coordinates}
