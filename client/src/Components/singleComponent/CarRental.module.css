@@ -85,4 +85,57 @@
     margin-top: 8px;
     font-size: 14px;
   }
+  .loader {
+    text-align: center;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    max-width: 35rem;
+    height: 30rem;
+    margin: 0 auto;
+  }
+  
+  .plane {
+    position: absolute;
+    top: 50%; /* Align the plane vertically */
+    left: 50%; /* Align the plane horizontally */
+    transform: translate(-50%, -50%); /* Center the plane */
+    width: 200px; /* Adjust plane size if necessary */
+    height: auto;
+    z-index: 2; /* Ensure plane is above the earth */
+    color: black;
+  }
+  
+  .planeImg {
+    filter: brightness(0) saturate(100%);
+    -webkit-animation: spin 2.5s linear infinite;
+    -moz-animation: spin 2.5s linear infinite;
+    animation: spin 2.5s linear infinite;
+  }
+  
+  @keyframes earthAnim {
+    0% {
+      background-position-x: 0;
+    }
+    100% {
+      background-position-x: -340px;
+    }
+  }
+  
+  @keyframes spin {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @media screen and (max-width: 420px) {
+    .plane {
+      width: 150px; /* Adjust plane size for smaller screens */
+    }
+    .earthWrapper {
+      top: 70%; /* Adjust earth position for smaller screens */
+      width: 120px;
+      height: 120px;
+    }
+  }
   

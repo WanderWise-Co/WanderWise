@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "./FlightList.module.css";
-// import { useState, useEffect } from "react";
+import PlaneComp from "../AnimationComponent/PlaneComp";
+
 interface Flight {
   airline: string;
   flight_number: string;
@@ -61,6 +62,7 @@ export default function FlightsList({ flights }: FlightsListProps) {
         </div>
       </div>
       <div>
+      <h2> Flights</h2>
         {sortedFlights.length > 0 ? (
           <ul className={styles.flightList}>
             {sortedFlights.map((flight, index) => (
@@ -82,7 +84,7 @@ export default function FlightsList({ flights }: FlightsListProps) {
             ))}
           </ul>
         ) : (
-          <p>No flights available.</p>
+          <PlaneComp/>
         )}
       </div>
     </div>

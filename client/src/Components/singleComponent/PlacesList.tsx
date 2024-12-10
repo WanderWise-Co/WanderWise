@@ -5,7 +5,7 @@ import styles from "./PlacesList.module.css";
 import { Button } from "flowbite-react";
 import { HiOutlineArrowRight } from "react-icons/hi";
 import axios from "axios";
-import Map from "../singleComponent/Map";
+import Map from "./Map";
 import toast from "react-hot-toast";
 
 interface PlacesListProps {

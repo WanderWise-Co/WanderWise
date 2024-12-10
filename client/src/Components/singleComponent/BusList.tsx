@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from "./BusList.module.css";
+import PlaneComp from "../AnimationComponent/PlaneComp";
 
 interface Bus {
   bus_name: string;
@@ -58,20 +59,15 @@ export default function BusesList({ Buses }: BusesListProps) {
     <div>
       <div className={styles.header}>
         <div className={styles.sortButtons}>
-          <button
-            className={styles.sortButton}
-            onClick={() => handleSort("bus_name")}
-          >
+          <button className={styles.sortButton} onClick={() => handleSort("bus_name")}>
             Sort by Name {sortField === "bus_name" && (isAscending ? "↑" : "↓")}
           </button>
-          <button
-            className={styles.sortButton}
-            onClick={() => handleSort("price")}
-          >
+          <button className={styles.sortButton} onClick={() => handleSort("price")}>
             Sort by Price {sortField === "price" && (isAscending ? "↑" : "↓")}
           </button>
         </div>
       </div>
+        <h1 >Buses List</h1>
       <div>
         {sortedBuses.length > 0 ? (
           <ul className={styles.busList}>
@@ -95,7 +91,7 @@ export default function BusesList({ Buses }: BusesListProps) {
             ))}
           </ul>
         ) : (
-          <p>No buses available.</p>
+          <PlaneComp/>
         )}
       </div>
     </div>

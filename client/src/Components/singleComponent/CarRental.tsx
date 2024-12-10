@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from "./CarRental.module.css";
+import PlaneComp from "../AnimationComponent/PlaneComp";
 
 interface CarRental {
   car_name: string;
@@ -82,7 +83,7 @@ export default function CarRentalList({ rentals }: CarRentalListProps) {
             </div>
           ))
         ) : (
-          <p>No rentals available.</p>
+          <PlaneComp/>
         )}
       </div>
     </div>

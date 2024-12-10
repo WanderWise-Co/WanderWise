@@ -1,99 +1,165 @@
 {
-    "timestamp": "2024-12-09T12:42:23.065129",
+    "timestamp": "2024-12-09T23:09:41.946167",
     "bus_data": [
         {
-            "bus_name": "VGO BUS",
-            "rating": "4.7\n/5",
-            "departure_time": "23:45",
-            "departure_location": "Madiwala",
-            "arrival_time": "05:32",
-            "arrival_location": "Koyambedu",
-            "price": "449",
-            "window_seats": "24 window seats",
+            "bus_name": "NueGo",
+            "rating": "4.3\n/5",
+            "departure_time": "06:00",
+            "departure_location": "Majestic",
+            "arrival_time": "09:20",
+            "arrival_location": "KSRTC Bus Stand",
+            "price": "232",
+            "window_seats": "18 window seats",
             "Amenities": [
-                "Charging Point"
+                "Water Bottle",
+                "Charging Point",
+                "Reading Light",
+                "CCTV"
             ]
         },
         {
-            "bus_name": "SST Limoliner",
-            "rating": "4.8\n/5",
-            "departure_time": "23:00",
-            "departure_location": "Madiwala",
-            "arrival_time": "05:15",
-            "arrival_location": "Koyambedu",
-            "price": "699",
-            "window_seats": "8 window seats",
-            "Amenities": []
-        },
-        {
-            "bus_name": "Jabbar Travels",
-            "rating": "3.4\n/5",
-            "departure_time": "23:30",
-            "departure_location": "Madiwala",
-            "arrival_time": "06:30",
-            "arrival_location": "Central Railway Station",
-            "price": "360",
-            "window_seats": "16 window seats",
-            "Amenities": [
-                "Charging Point"
-            ]
-        },
-        {
-            "bus_name": "IntrCity SmartBus",
+            "bus_name": "NueGo",
             "rating": "4.5\n/5",
-            "departure_time": "23:20",
-            "departure_location": "Madiwala",
-            "arrival_time": "06:50",
-            "arrival_location": "Koyambedu",
-            "price": "409",
-            "window_seats": "20 window seats",
-            "Amenities": []
+            "departure_time": "08:30",
+            "departure_location": "Majestic",
+            "arrival_time": "11:55",
+            "arrival_location": "KSRTC Bus Stand",
+            "price": "232",
+            "window_seats": "17 window seats",
+            "Amenities": [
+                "Water Bottle",
+                "Charging Point",
+                "Reading Light",
+                "CCTV"
+            ]
         },
         {
-            "bus_name": "KMRL Kalaimakal(sk)",
-            "rating": "5\n/5",
-            "departure_time": "22:00",
-            "departure_location": "Madiwala",
-            "arrival_time": "04:45",
-            "arrival_location": "Koyambedu",
-            "price": "540",
+            "bus_name": "NueGo",
+            "rating": "4.1\n/5",
+            "departure_time": "14:30",
+            "departure_location": "Majestic",
+            "arrival_time": "18:10",
+            "arrival_location": "KSRTC Bus Stand",
+            "price": "375",
+            "window_seats": "18 window seats",
+            "Amenities": [
+                "Water Bottle",
+                "Charging Point",
+                "Reading Light",
+                "CCTV"
+            ]
+        },
+        {
+            "bus_name": "NueGo",
+            "rating": "4.9\n/5",
+            "departure_time": "21:00",
+            "departure_location": "Majestic",
+            "arrival_time": "00:30",
+            "arrival_location": "KSRTC Bus Stand",
+            "price": "375",
+            "window_seats": "18 window seats",
+            "Amenities": [
+                "Water Bottle",
+                "Charging Point",
+                "Reading Light",
+                "CCTV"
+            ]
+        },
+        {
+            "bus_name": "NueGo",
+            "rating": "4.4\n/5",
+            "departure_time": "23:45",
+            "departure_location": "Majestic",
+            "arrival_time": "03:00",
+            "arrival_location": "KSRTC Bus Stand",
+            "price": "375",
+            "window_seats": "18 window seats",
+            "Amenities": [
+                "Water Bottle",
+                "Charging Point",
+                "Reading Light",
+                "CCTV"
+            ]
+        },
+        {
+            "bus_name": "NueGo",
+            "rating": "4.3\n/5",
+            "departure_time": "16:00",
+            "departure_location": "Majestic",
+            "arrival_time": "19:45",
+            "arrival_location": "KSRTC Bus Stand",
+            "price": "380",
+            "window_seats": "18 window seats",
+            "Amenities": [
+                "Water Bottle",
+                "Charging Point",
+                "Reading Light",
+                "CCTV"
+            ]
+        },
+        {
+            "bus_name": "PSS Transport",
+            "rating": "4.7\n/5",
+            "departure_time": "05:00",
+            "departure_location": "Kalasipalyam",
+            "arrival_time": "07:40",
+            "arrival_location": "PSS Transport Mysuru office",
+            "price": "475",
             "window_seats": "13 window seats",
             "Amenities": [
-                "Charging Point"
+                "Water Bottle",
+                "Charging Point",
+                "Reading Light",
+                "CCTV"
             ]
         },
         {
-            "bus_name": "Jabbar Travels",
-            "rating": "4.6\n/5",
-            "departure_time": "23:15",
+            "bus_name": "Sri Sugam Bus Tours and Travels",
+            "rating": "3.9\n/5",
+            "departure_time": "22:45",
             "departure_location": "Madiwala",
-            "arrival_time": "05:30",
-            "arrival_location": "Koyambedu",
-            "price": "507",
-            "window_seats": "16 window seats",
-            "Amenities": []
+            "arrival_time": "02:00",
+            "arrival_location": "KSRTC Bus Stand",
+            "price": "499",
+            "window_seats": "13 window seats",
+            "Amenities": [
+                "Water Bottle",
+                "Charging Point",
+                "Reading Light",
+                "CCTV"
+            ]
         },
         {
-            "bus_name": "IntrCity SmartBus",
-            "rating": "4.4\n/5",
-            "departure_time": "23:00",
-            "departure_location": "Madiwala",
-            "arrival_time": "06:40",
-            "arrival_location": "Tidel Park",
-            "price": "409",
-            "window_seats": "21 window seats",
-            "Amenities": []
+            "bus_name": "Gowri Shankar Travels",
+            "rating": "3.7\n/5",
+            "departure_time": "21:50",
+            "departure_location": "Anand Rao Circle",
+            "arrival_time": "01:30",
+            "arrival_location": "KSRTC Bus Stand",
+            "price": "500",
+            "window_seats": "13 window seats",
+            "Amenities": [
+                "Water Bottle",
+                "Charging Point",
+                "Reading Light",
+                "CCTV"
+            ]
         },
         {
-            "bus_name": "KBS Luxury Bus",
-            "rating": "4.7\n/5",
-            "departure_time": "20:30",
-            "departure_location": "Madiwala",
-            "arrival_time": "03:40",
-            "arrival_location": "Koyambedu",
-            "price": "700",
-            "window_seats": "16 window seats",
-            "Amenities": []
+            "bus_name": "Manjushree Travels",
+            "rating": "3.6\n/5",
+            "departure_time": "22:50",
+            "departure_location": "Majestic",
+            "arrival_time": "01:35",
+            "arrival_location": "Colombia Asia Hospital",
+            "price": "599",
+            "window_seats": "13 window seats",
+            "Amenities": [
+                "Water Bottle",
+                "Charging Point",
+                "Reading Light",
+                "CCTV"
+            ]
         }
     ]
 }

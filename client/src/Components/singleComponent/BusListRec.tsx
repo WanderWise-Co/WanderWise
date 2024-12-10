@@ -1,4 +1,5 @@
 import styles from "./BusListRec.module.css";
+import PlaneComp from '../AnimationComponent/PlaneComp'; // Import PlaneComp
 
 // Update the Bus interface to include new fields
 interface Bus {
@@ -16,21 +17,24 @@ interface BusRecProps {
 }
 
 export default function BusListRec({ buses }: BusRecProps) {
-    console.log("BusListRec in page",buses)
     return (
         <div className={styles.busListRec}>
-        <h2>Recommended Buses</h2>
-        <ul>
-            {buses.map((bus, index) => (
-            <li key={`${bus.bus_name}-rec-${index}`} className={styles.busItem}>
-                <p><strong>Name:</strong> {bus.bus_name}</p>
-                <p><strong>Rating:</strong> {bus.rating}</p>
-                <p><strong>Departure:</strong> {bus.departure_location} at {bus.departure_time}</p>
-                <p><strong>Arrival:</strong> {bus.arrival_location} at {bus.arrival_time}</p>
-                <p><strong>Price:</strong> ₹{bus.price}</p>
-            </li>
-            ))}
-        </ul>
+            <h2>Recommended Buses</h2>
+            {buses.length === 0 ? (
+                <PlaneComp />  // Display PlaneComp if no buses
+            ) : (
+                <ul>
+                    {buses.map((bus, index) => (
+                        <li key={`${bus.bus_name}-rec-${index}`} className={styles.busItem}>
+                            <p><strong>Name:</strong> {bus.bus_name}</p>
+                            <p><strong>Rating:</strong> {bus.rating}</p>
+                            <p><strong>Departure:</strong> {bus.departure_location} at {bus.departure_time}</p>
+                            <p><strong>Arrival:</strong> {bus.arrival_location} at {bus.arrival_time}</p>
+                            <p><strong>Price:</strong> ₹{bus.price}</p>
+                        </li>
+                    ))}
+                </ul>
+            )}
         </div>
     );
 }
