@@ -1,8 +1,9 @@
-import { FaShoppingCart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
 import axios from "axios";
 import styles from "./Navbar.module.css";
 import toast from 'react-hot-toast'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlane } from '@fortawesome/free-solid-svg-icons';
 
 interface NavbarProps {
   setPlaceType: (type: string) => void;
@@ -302,7 +303,7 @@ export default function Navbar({
       </div>
 
       <div className={styles.cartIcon} onClick={handleCartClick}>
-        <FaShoppingCart />
+      <FontAwesomeIcon icon={faPlane} />
       </div>
     </div>
   );

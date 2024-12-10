@@ -16,7 +16,7 @@ export default function Footer() {
                   Wander Wise
                 </h6>
                 <p className='footer-text'>
-                  Organize your footer content. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                "Where Every Adventure Finds Its Path."
                 </p>
               </MDBCol>
 
