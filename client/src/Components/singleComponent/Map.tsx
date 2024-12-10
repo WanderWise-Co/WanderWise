@@ -56,9 +56,17 @@ export default function Map({
             onCloseClick={() => setSelectedPlaces(null)}
           >
             <div>
+              
               <h3>{selectedPlaces.name}</h3>
               <p>Rating: {selectedPlaces.rating}</p>
               <p>{selectedPlaces.vicinity}</p>
+              {selectedPlaces.photos && selectedPlaces.photos.length > 0 && (
+                <img
+                src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photoreference=${selectedPlaces.photos[0].photo_reference}&key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}`}
+                alt={selectedPlaces.name}
+                style={{ width: "100%", borderRadius: "4px" }}
+              />
+      )}
             </div>
           </InfoWindow>
         )}
