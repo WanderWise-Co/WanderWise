@@ -12,7 +12,6 @@ import BusListRec from "../singleComponent/BusListRec";
 import HotelReco from "../singleComponent/HotelReco";
 import FlightRec from "../singleComponent/FlightRec";
 import RouteMap from "../singleComponent/RouteMap";
-import GeoMap from "../../Utils/GeoMAp"
 
 export default function PlanPage() {
   // const location = useLocation();
@@ -49,7 +48,7 @@ export default function PlanPage() {
 
   const fetchNearbyPlaces = async (lat: number, lng: number, type: string) => {
 
-    await GeoMap();
+    
     console.log("fetchNearbyPlaces MAP CALL");
     
     try {
@@ -122,7 +121,7 @@ export default function PlanPage() {
             </div>
             <div className={styles.right}>
               <FlightRec flightrec={transportPlaneRecoData || []} />
-              <RouteMap source={source} destination={destination} />
+              <RouteMap/>
 
             </div>
           </div>
@@ -133,7 +132,7 @@ export default function PlanPage() {
               </div>
               <div className={styles.right}>
                 <BusListRec buses={transportBusesRecoData || []} />
-                <RouteMap source={source} destination={destination} />
+                <RouteMap/>
 
               </div>
             </div>

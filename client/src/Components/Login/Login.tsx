@@ -5,8 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { emailRegex, passwordRegex } from '../../Utils/Reg'
 import toast from 'react-hot-toast'
 import axios from 'axios'
-import { LoginSocialFacebook } from 'reactjs-social-login';
-import { FacebookLoginButton, GoogleLoginButton } from 'react-social-login-buttons'
+import {  GoogleLoginButton } from 'react-social-login-buttons'
 import {useGoogleLogin} from '@react-oauth/google';
 
 export default function Login() {
@@ -79,20 +78,6 @@ export default function Login() {
         <div className={styles.formContainer}>
             <h2>Login</h2>
             <div className={styles.social}>
-              <div>
-              <LoginSocialFacebook appId={import.meta.env.VITE_FACEBOOK_CLIENT_URL}
-              onResolve={(res:any)=>{
-                console.log(res);
-                setisloding(true);
-                handleContinueWithFacebook(res);
-              }}
-              onReject={(error:any)=>{
-                console.log(error);                
-              }}
-              >
-                <FacebookLoginButton/>
-              </LoginSocialFacebook>
-              </div>
               <div onClick={() =>handleContinueWithGoogle()}>
                 <GoogleLoginButton></GoogleLoginButton>
                 </div>
