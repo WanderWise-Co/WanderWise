@@ -67,7 +67,7 @@ export default function BusesList({ Buses }: BusesListProps) {
           </button>
         </div>
       </div>
-        <h1 >Buses List</h1>
+      <h1 className={styles.title}>Buses List</h1>
       <div>
         {sortedBuses.length > 0 ? (
           <ul className={styles.busList}>

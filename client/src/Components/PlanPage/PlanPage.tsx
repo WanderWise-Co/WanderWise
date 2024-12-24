@@ -12,6 +12,7 @@ import BusListRec from "../singleComponent/BusListRec";
 import HotelReco from "../singleComponent/HotelReco";
 import FlightRec from "../singleComponent/FlightRec";
 import RouteMap from "../singleComponent/RouteMap";
+import toast from "react-hot-toast";
 
 export default function PlanPage() {
   // const location = useLocation();
@@ -30,6 +31,8 @@ export default function PlanPage() {
   const [transportRentalData, setTransportRentalData] = useState<any>(null);
   const [gemeniData, setGemeniData] = useState<any>(null);
   const [hotelRecoData, setHotelRecoData] = useState<any>(null);
+  const [googleAPIData,setGoogleAPIData] = useState<any>(null);
+  
   // const [selectedCategories, setSelectedCategories] = useState(location.state?.selectedCategories || []);
   const [navButton, setNavButton] = useState(""); // State for tracking the selected nav button
 
@@ -47,7 +50,7 @@ export default function PlanPage() {
   }, [source, destination, startDate, endDate]);
 
   const fetchNearbyPlaces = async (lat: number, lng: number, type: string) => {
-
+    
     
     console.log("fetchNearbyPlaces MAP CALL");
     
@@ -70,14 +73,13 @@ export default function PlanPage() {
   };
 
   useEffect(() => {
-    console.log("inside use effect")
-    console.log(coordinates,placeType)
-    if (coordinates && coordinates.lat && coordinates.lng && placeType) {
-      console.log("inside use effect inside if")
+    console.log("inside useEffect");
+    console.log(coordinates, placeType);
+      console.log("inside useEffect - valid placeType");
       fetchNearbyPlaces(coordinates.lat, coordinates.lng, placeType);
-      console.log("inside use effect inside if")
-    }
-  }, [coordinates, placeType]);
+      console.log("fetchNearbyPlaces called");
+  }, [placeType, coordinates]);
+  
 
   // const handleSelectedPlaces = (selectedPlaces: string[]) => {
   //   setSelectedPlacesByType((prev) => ({

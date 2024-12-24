@@ -8,12 +8,10 @@ import Cart from "./Components/Cart/Cart"
 import HomeFilter from "./Components/HotelFilter/HotelFilter"
 import {BrowserRouter as Router,Routes,Route} from  "react-router-dom";
 import Auth from "./Utils/Auth";
+import ProfilePage from "./Components/ProfilePage/ProfilePage";
 
 
-function App() {
-
-  
-
+export default function App() {
   return (
     <>
       <Router>
@@ -25,6 +23,7 @@ function App() {
             </Route>
             <Route path="/api/v1/auth/register" element={<Signup />} />
             <Route path="/api/v1/auth/forgotpassword" element={<ForgotPassword/>}/>
+            <Route path="/api/v1/auth/profilepage" element={<ProfilePage/>}/>
             <Route path="api/v1/error" element ={<Errorpage/>}/>
             <Route path="api/v1/planpage/cart" element={<Cart/>}/>
             <Route path="api/v1/homefilter" element={<HomeFilter/>}/>
@@ -33,5 +32,3 @@ function App() {
     </>
   )
 }
-
-export default App

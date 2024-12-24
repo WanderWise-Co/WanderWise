@@ -4,6 +4,8 @@ import styles from "./Navbar.module.css";
 import toast from 'react-hot-toast'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlane } from '@fortawesome/free-solid-svg-icons';
+import UserDropdown from "./UserDropdown";
+import { useState } from "react";
 
 interface NavbarProps {
   setPlaceType: (type: string) => void;
@@ -30,7 +32,7 @@ export default function Navbar({
 }: NavbarProps) {
 
   const navigate = useNavigate(); // Initialize useNavigate
-  
+  const [activeButton, setActiveButton] = useState<string>('');
   // const [transportBusesData, setTransportBusesData] = useState(null);
 
 
@@ -227,6 +229,9 @@ export default function Navbar({
     }
   };
 
+  const handleGoogleAPIClick = () =>{
+    toast.success("Please select the places you want to visit")
+  }
   const handleCartClick = () => {
     console.log("Cart icon clicked! Navigating to Cart...");
     navigate("cart"); // Navigate to the cart page when cart icon is clicked
@@ -236,31 +241,39 @@ export default function Navbar({
     <div className={styles.navbar}>
       <a
         href="#recommendation"
+        className={activeButton === 'recommendation' ? styles.activeButton : ''}
         onClick={() => {
           console.log("Recommendation clicked");
           setNavButton("recommendations");
           setPlaceType("recommendation");
-          HandelRecoClick()
+          HandelRecoClick();
+          setActiveButton('recommendation');
         }}
       >
         Recommendation
       </a>
       <a
         href="#restaurants"
+        className={activeButton === 'restaurant' ? styles.activeButton : ''}
         onClick={() => {
           console.log("Restaurants clicked");
           setNavButton("restaurant");
           setPlaceType("restaurant");
+          handleGoogleAPIClick();
+          setActiveButton('restaurant');
         }}
       >
         Restaurants
       </a>
       <a
         href="#hotels"
+        className={activeButton === 'hotel' ? styles.activeButton : ''}
         onClick={() => {
           console.log("Hotels clicked");
           setNavButton("hotel");
           setPlaceType("hotel");
+          handleGoogleAPIClick();
+          setActiveButton('hotel');
         }}
       >
         Hotels
@@ -271,7 +284,10 @@ export default function Navbar({
           console.log("Attractions clicked");
           setNavButton("attraction");
           setPlaceType("tourist_attraction");
+          handleGoogleAPIClick();
+          setActiveButton('attraction');
         }}
+        className={activeButton === 'attraction' ? styles.activeButton : ''}
       >
         Attractions
       </a>
@@ -282,28 +298,33 @@ export default function Navbar({
           setNavButton("renting");
           setPlaceType("vehicle rental");
           handleRentalClick()
+          setActiveButton('renting');
         }}
+        className={activeButton === 'renting' ? styles.activeButton : ''}
       >
         Renting
       </a>
 
       <div className={styles.dropdown}>
-        <button className={styles.dropbtn}>
+        <a className={styles.dropbtn} >
           Travel
-          <i className="fa fa-caret-down"></i>
-        </button>
+        </a>
         <div className={styles.dropdownContent}>
-          <a href="#Buses" onClick={handleBusClick}>
+          <a href="#Buses" onClick={() => {handleBusClick();setActiveButton('travel');}} className={activeButton === 'buses' ? styles.activeButton : ''}>
             Buses
           </a>
-          <a href="#Planes" onClick={handlePlaneClick}>
+          <a href="#Planes" onClick={() => {handlePlaneClick();setActiveButton('travel');}}  className={activeButton === 'planes' ? styles.activeButton : ''}>
             Planes
           </a>
         </div>
+        
       </div>
 
       <div className={styles.cartIcon} onClick={handleCartClick}>
-      <FontAwesomeIcon icon={faPlane} />
+        <FontAwesomeIcon icon={faPlane} />
+        </div>
+      <div className={styles.profileIcon}>
+      <UserDropdown />
       </div>
     </div>
   );

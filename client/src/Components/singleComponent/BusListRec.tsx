@@ -19,7 +19,7 @@ interface BusRecProps {
 export default function BusListRec({ buses }: BusRecProps) {
     return (
         <div className={styles.busListRec}>
-            <h2>Recommended Buses</h2>
+            <h1  className={styles.title}>Recommended Buses</h1>
             {buses.length === 0 ? (
                 <PlaneComp />  // Display PlaneComp if no buses
             ) : (

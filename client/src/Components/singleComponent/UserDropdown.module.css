@@ -1,0 +1,61 @@
+/* Dropdown Container */
+.dropdownContainer {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Avatar Button */
+  .avatarButton {
+    position: relative;
+    width: 2.5rem; /* 10 w */
+    height: 2.5rem; /* 10 h */
+    overflow: hidden;
+    background-color: #f3f4f6; /* gray-100 */
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .avatarIcon {
+    position: absolute;
+    width: 3rem; /* 12 w */
+    height: 3rem; /* 12 h */
+    color: #9ca3af; /* gray-400 */
+    left: -0.25rem; /* -left-1 */
+  }
+  
+  /* Dropdown Menu */
+  .dropdownMenu {
+    z-index: 10;
+    background-color: #ffffff; /* white */
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow */
+    width: 11rem; /* w-44 */
+    position: absolute;
+    right: 0;
+    margin-top: 0.5rem; /* mt-2 */
+    overflow: hidden;
+  }
+  
+  /* Dropdown Item */
+  .dropdownItem {
+    display: block;
+    padding: 0.5rem 1rem; /* px-4 py-2 */
+    font-size: 0.875rem; /* text-sm */
+    color: #374151; /* gray-700 */
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .dropdownItem:hover {
+    background-color: #f3f4f6; /* hover:bg-gray-100 */
+  }
+  
+  .dropdownItemDark {
+    color: #e5e7eb; /* dark:text-gray-200 */
+  }
+  
+  .dropdownItemDark:hover {
+    background-color: #4b5563; /* dark:hover:bg-gray-600 */
+    color: #ffffff; /* dark:hover:text-white */
+  }
+  

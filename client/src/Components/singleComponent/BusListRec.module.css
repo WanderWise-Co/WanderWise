@@ -12,6 +12,11 @@
     list-style-type: none;
     padding: 0;
   }
+  .title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
   
   .busListRec .busItem {
     background-color: #f8f8f8;
