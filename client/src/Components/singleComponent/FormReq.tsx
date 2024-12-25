@@ -3,30 +3,30 @@ import { Button } from "flowbite-react";
 import { HiOutlineArrowRight } from "react-icons/hi";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from './FormReq.module.css';
+import styles from "./FormReq.module.css";
 import Datepicker from "react-tailwindcss-datepicker";
 import axios from "axios";
-import beach from '../../assets/beach.jpeg';
-import hill from '../../assets/hillstation.jpeg';
-import temple from '../../assets/temple.webp';
-import { isLoggedin } from '../../Utils/Auth';
+import beach from "../../assets/beach.jpeg";
+import hill from "../../assets/hillstation.jpeg";
+import temple from "../../assets/temple.webp";
+import { isLoggedin } from "../../Utils/Auth";
 import toast from "react-hot-toast";
 
 const categories = [
-  { id: 1, name: 'Beaches', imgSrc: beach },
-  { id: 2, name: 'Mountains', imgSrc: hill },
-  { id: 3, name: 'Temple', imgSrc: temple },
+  { id: 1, name: "Beaches", imgSrc: beach },
+  { id: 2, name: "Mountains", imgSrc: hill },
+  { id: 3, name: "Temple", imgSrc: temple },
 ];
 
 const CategoryButton = ({ category, isSelected, onClick }: any) => (
   <button
-    className={`${styles.categoryButton} ${isSelected ? styles.selected : ''}`}
+    className={`${styles.categoryButton} ${isSelected ? styles.selected : ""}`}
     onClick={() => onClick(category.name)}
   >
     <img
       src={category.imgSrc}
       alt={category.name}
-      className={`${styles.buttonImage} ${isSelected ? styles.selectedImage : ''}`}
+      className={`${styles.buttonImage} ${isSelected ? styles.selectedImage : ""}`}
     />
     <span>{category.name}</span>
   </button>
@@ -40,28 +40,29 @@ export default function FormReq() {
   const navigate = useNavigate();
   const [date, setDate] = useState({
     startDate: new Date(),
-    endDate: new Date(new Date().setMonth(11)), 
+    endDate: new Date(new Date().setMonth(11)),
   });
 
-  useEffect(()=>{
+  useEffect(() => {
     if (source) {
-      localStorage.setItem('from', source);
+      localStorage.setItem("from", source);
     }
     if (destination) {
-      localStorage.setItem('to', destination);
+      localStorage.setItem("to", destination);
     }
     if (date.startDate) {
-      localStorage.setItem('startDate', date.startDate.toString());
+      localStorage.setItem("startDate", date.startDate.toString());
     }
     if (date.endDate) {
-      localStorage.setItem('endDate', date.endDate.toString());
+      localStorage.setItem("endDate", date.endDate.toString());
     }
     if (selectedCategories) {
-      localStorage.setItem('placesCategories', JSON.stringify(selectedCategories));
-    }    
-  },[source,destination,date,selectedCategories])
-
-
+      localStorage.setItem(
+        "placesCategories",
+        JSON.stringify(selectedCategories)
+      );
+    }
+  }, [source, destination, date, selectedCategories]);
 
   const handleCategoryClick = (categoryName: string) => {
     setSelectedCategories((prevSelected) =>
@@ -73,13 +74,16 @@ export default function FormReq() {
 
   const validateLocation = async (address: string): Promise<boolean> => {
     try {
-      const response = await axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
-        params: {
-          address,
-          key: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
-        },
-      });
-  
+      const response = await axios.get(
+        "https://maps.googleapis.com/maps/api/geocode/json",
+        {
+          params: {
+            address,
+            key: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
+          },
+        }
+      );
+
       if (response.data.status === "OK" && response.data.results.length > 0) {
         return true; // Valid location
       } else {
@@ -109,34 +113,39 @@ export default function FormReq() {
       toast.error("Invalid source location. Please enter a valid location.");
       return;
     }
-  
+
     if (!isDestinationValid) {
-      toast.error("Invalid destination location. Please enter a valid location.");
+      toast.error(
+        "Invalid destination location. Please enter a valid location."
+      );
       return;
     }
 
-    try{
+    try {
       const to = localStorage.getItem("to");
-        const response = await axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
+      const response = await axios.get(
+        "https://maps.googleapis.com/maps/api/geocode/json",
+        {
           params: {
             address: to,
             key: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
           },
-        });
-  
-        if (response.data.status !== "OK" || response.data.results.length === 0) {
-          console.error("Geocoding failed:", response.data.status);
-          return;
         }
-  
-        const { lat, lng } = response.data.results[0].geometry.location;
-        console.log(lat,lng)
-        if (lat && lng){
-          localStorage.setItem('lat',lat);
-          localStorage.setItem('lng',lng);
-        }
-    }catch(error:any){
-      console.log("Error",error)
+      );
+
+      if (response.data.status !== "OK" || response.data.results.length === 0) {
+        console.error("Geocoding failed:", response.data.status);
+        return;
+      }
+
+      const { lat, lng } = response.data.results[0].geometry.location;
+      console.log(lat, lng);
+      if (lat && lng) {
+        localStorage.setItem("lat", lat);
+        localStorage.setItem("lng", lng);
+      }
+    } catch (error: any) {
+      console.log("Error", error);
     }
     if (isLoggedin()) {
       try {
@@ -200,10 +209,7 @@ export default function FormReq() {
             onChange={(e) => setDestination(e.target.value)}
             className={`${styles.inputField} ${styles.smallInputField}`}
           />
-          <Datepicker
-            value={date}
-            onChange={handleValueChange}
-          />
+          <Datepicker value={date} onChange={handleValueChange} />
         </div>
 
         <div className={styles.buttonContainer}>
@@ -224,6 +230,6 @@ export default function FormReq() {
           ))}
         </div>
       </div>
- </div>
-);
+    </div>
+  );
 }

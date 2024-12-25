@@ -14,6 +14,7 @@ const transport = require('./routes/transport');
 const recommendation = require('./routes/recommendation');
 const gemini  = require('./routes/gemini');
 const gemini2 = require('./routes/gemini2')
+const profile = require('./routes/profile');
 
 // Error handlers
 const notFoundMiddleware = require('./middleware/not-found');
@@ -44,7 +45,7 @@ app.use('/api/v1/planpage/transport',authMiddle,transport);
 app.use('/api/v1/planpage/gemini', authMiddle, gemini);
 app.use('/api/v1/planpage/recommendation', authMiddle, recommendation);
 app.use('/api/v1/planpage/gemini2',authMiddle,gemini2);
-
+app.use('/api/v1/profile',authMiddle,profile);
 
 // Error handling middleware (keep these last)
 app.use(notFoundMiddleware);

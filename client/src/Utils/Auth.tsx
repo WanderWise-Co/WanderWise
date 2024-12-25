@@ -1,4 +1,4 @@
-import { useNavigate, Outlet, Navigate } from 'react-router-dom';
+import { useNavigate, Outlet, Navigate } from "react-router-dom";
 
 export const isLoggedin = () => {
   const token = localStorage.getItem("token");
@@ -8,7 +8,7 @@ export const isLoggedin = () => {
 const Auth = () => {
   const navigate = useNavigate(); // Use the hook for navigation
 
-  const handleChoosePlanClick = () =>  {
+  const handleChoosePlanClick = () => {
     if (isLoggedin()) {
       navigate("/api/v1/planpage"); // Programmatically navigate to the plan page if logged in
     } else {

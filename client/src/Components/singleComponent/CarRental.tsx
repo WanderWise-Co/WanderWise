@@ -62,15 +62,18 @@ export default function CarRentalList({ rentals }: CarRentalListProps) {
       <div>
         {sortedRentals.length > 0 ? (
           sortedRentals.map((rental, index) => (
-            <div
-              key={`${rental.car_name}-${index}`}
-              className={styles.carItem}
-            >
+            <div key={`${rental.car_name}-${index}`} className={styles.carItem}>
               <div className={styles.carDetails}>
                 <h4>{rental.car_name}</h4>
-                <p><strong>Location:</strong> {rental.location}</p>
-                <p><strong>Rating:</strong> {rental.rating}</p>
-                <p><strong>Phone:</strong> {rental.phone_number}</p>
+                <p>
+                  <strong>Location:</strong> {rental.location}
+                </p>
+                <p>
+                  <strong>Rating:</strong> {rental.rating}
+                </p>
+                <p>
+                  <strong>Phone:</strong> {rental.phone_number}
+                </p>
                 <a
                   href={rental.link}
                   target="_blank"
@@ -83,7 +86,7 @@ export default function CarRentalList({ rentals }: CarRentalListProps) {
             </div>
           ))
         ) : (
-          <PlaneComp/>
+          <PlaneComp />
         )}
       </div>
     </div>

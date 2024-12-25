@@ -1,5 +1,5 @@
 /* Page container to ensure full viewport height */
-.page{
+.page {
   width: 100;
   height: 100vh;
 }
@@ -9,7 +9,7 @@
   position: relative;
   width: 100%;
   height: 100%;
-  background-image: url('../../assets/cartbackground.jpg');
+  background-image: url("../../assets/cartbackground.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -21,7 +21,12 @@
 
 /* Overlay for content display */
 .overlay {
-  background-color: rgba(255, 255, 255, 0.6); /* Lighter opacity for better visibility */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.6
+  ); /* Lighter opacity for better visibility */
   padding: 30px;
   border-radius: 10px;
   width: 100%;
@@ -69,7 +74,6 @@
   z-index: 1000; /* Ensures the button is above other elements */
   transition: background-color 0.3s ease; /* Smooth background color transition */
   margin-left: 0.5rem;
-  
 }
 
 /* Hover effect for the button */

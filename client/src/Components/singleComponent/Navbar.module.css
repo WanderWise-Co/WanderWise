@@ -20,16 +20,21 @@ body {
   border-radius: 0; /* Remove curved corners */
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
+.navbar a:hover,
+.dropdown:hover .dropbtn {
   background-color: red; /* Remove hover effect */
 }
-
+.activeButton {
+  background-color: red; /* Highlight active button */
+  color: white;
+  border-radius: 4px;
+}
 .dropdown {
   position: relative;
 }
 
 .dropdown .dropbtn {
-  font-size: 15px;
+  font-size: 20px;
   color: white;
   padding: 14px 20px;
   background-color: #333;
@@ -69,6 +74,7 @@ body {
   margin-left: auto; /* Pushes the cart icon to the right */
   display: flex;
   align-items: center; /* Vertically align the cart icon */
+  margin-right: 43rem;
 }
 
 .cartIcon svg {
@@ -79,4 +85,9 @@ body {
 
 .cartIcon:hover svg {
   color: #ddd; /* Hover effect for cart icon */
+}
+
+.profileIcon {
+  margin-right: 1rem;
+  display: flex;
 }

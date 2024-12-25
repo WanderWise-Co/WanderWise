@@ -1,62 +1,61 @@
-  .centeredText {
-    font-size: 48px; /* Adjust font size */
-    text-align: center; /* Center text horizontally */
-    display: flex; /* Enable flexbox */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 10rem;
-    color: rgb(137, 45, 45);
-    font-family: "Edu AU VIC WA NT Arrows", cursive;
-  }
-  .planesContainer {
-    display: flex;
-    width: 100%;
-    gap: 16px; /* Optional: Space between left and right sections */
-  }
-  
-  .left,
-  .right {
-    width: 50%;
-    padding: 16px; /* Optional: Add padding for spacing */
-    box-sizing: border-box; /* Ensure padding doesn't affect width */
-  }
-  
-  .left {
-    background-color: #f9f9f9; /* Optional: Add a background color for distinction */
-  }
-  
-  .right {
-    background-color: #fff; /* Optional: Add a different background color */
-  }
+.centeredText {
+  font-size: 48px; /* Adjust font size */
+  text-align: center; /* Center text horizontally */
+  display: flex; /* Enable flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 10rem;
+  color: rgb(137, 45, 45);
+  font-family: "Edu AU VIC WA NT Arrows", cursive;
+}
+.planesContainer {
+  display: flex;
+  width: 100%;
+  gap: 16px; /* Optional: Space between left and right sections */
+}
+
+.left,
+.right {
+  width: 50%;
+  padding: 16px; /* Optional: Add padding for spacing */
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.left {
+  background-color: #f9f9f9; /* Optional: Add a background color for distinction */
+}
+
+.right {
+  background-color: #fff; /* Optional: Add a different background color */
+}
+.busesContainer {
+  display: flex;
+  width: 100%;
+  gap: 16px; /* Space between left and right sections */
+}
+
+.left,
+.right {
+  width: 50%;
+  padding: 16px; /* Add padding for spacing */
+  box-sizing: border-box; /* Ensure padding doesn’t affect the width */
+}
+
+.left {
+  background-color: #eef6f9; /* Light blue background for the left section */
+}
+
+.right {
+  background-color: #f9f9f9; /* Light gray background for the right section */
+}
+
+/* Optional: Add styling for responsive behavior */
+@media (max-width: 768px) {
   .busesContainer {
-    display: flex;
-    width: 100%;
-    gap: 16px; /* Space between left and right sections */
+    flex-direction: column; /* Stack the sections vertically on smaller screens */
   }
-  
   .left,
   .right {
-    width: 50%;
-    padding: 16px; /* Add padding for spacing */
-    box-sizing: border-box; /* Ensure padding doesn’t affect the width */
+    width: 100%; /* Full width for stacked sections */
   }
-  
-  .left {
-    background-color: #eef6f9; /* Light blue background for the left section */
-  }
-  
-  .right {
-    background-color: #f9f9f9; /* Light gray background for the right section */
-  }
-  
-  /* Optional: Add styling for responsive behavior */
-  @media (max-width: 768px) {
-    .busesContainer {
-      flex-direction: column; /* Stack the sections vertically on smaller screens */
-    }
-    .left,
-    .right {
-      width: 100%; /* Full width for stacked sections */
-    }
-  }
-  
+}

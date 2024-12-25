@@ -3,6 +3,7 @@ import axios from "axios";
 import Section from "./Section"; // Reusable section component
 import styles from "./Cart.module.css";
 import { Button } from "flowbite-react";
+import PlaneComp from "../AnimationComponent/PlaneComp";
 
 type CategoryItem = {
   category: "restaurant" | "hotel" | "attraction";
@@ -83,12 +84,12 @@ export default function Cart() {
           headers: {
             Authorization: `Bearer ${token}`,
           },
-          params:{
+          params: {
             from,
             to,
-            startDate ,
+            startDate,
             endDate,
-          }
+          },
         })
         .then((response) => {
           const url = window.URL.createObjectURL(new Blob([response.data]));
@@ -111,7 +112,7 @@ export default function Cart() {
       <div className={styles.container}>
         <div className={styles.overlay}>
           {loading ? (
-            <p>Loading...</p>
+            <PlaneComp/>
           ) : error ? (
             <p className={styles.error}>{error}</p>
           ) : (

@@ -14,7 +14,11 @@ interface PlacesListProps {
   setNavButton: string;
 }
 
-export default function PlacesList({ places, coordinates, setNavButton }: PlacesListProps) {
+export default function PlacesList({
+  places,
+  coordinates,
+  setNavButton,
+}: PlacesListProps) {
   const [currentSelected, setCurrentSelected] = useState<string[]>([]);
   const [sortedPlaces, setSortedPlaces] = useState<Places[]>(places);
   const [isAscending, setIsAscending] = useState(true);
@@ -34,10 +38,11 @@ export default function PlacesList({ places, coordinates, setNavButton }: Places
   };
 
   const handleSort = () => {
-    const sorted = [...sortedPlaces].sort((a, b) =>
-      isAscending
-        ? a.name.localeCompare(b.name) // Sort ascending
-        : b.name.localeCompare(a.name) // Sort descending
+    const sorted = [...sortedPlaces].sort(
+      (a, b) =>
+        isAscending
+          ? a.name.localeCompare(b.name) // Sort ascending
+          : b.name.localeCompare(a.name) // Sort descending
     );
     setSortedPlaces(sorted);
     setIsAscending(!isAscending);
@@ -46,13 +51,13 @@ export default function PlacesList({ places, coordinates, setNavButton }: Places
   const onAdd = async () => {
     if (currentSelected.length === 0) {
       toast.error("List is empty. Please select at least one place to add.");
-      return; 
+      return;
     }
     try {
       const token = localStorage.getItem("token");
       const to = localStorage.getItem("to");
       const from = localStorage.getItem("from");
-      console.log(setNavButton,currentSelected)
+      console.log(setNavButton, currentSelected);
       const response = await axios.post(
         `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/cart`,
         {
@@ -67,12 +72,15 @@ export default function PlacesList({ places, coordinates, setNavButton }: Places
           },
         }
       );
-      setCurrentSelected([''])
+      setCurrentSelected([""]);
 
       console.log("Response from server:", response.data);
       toast.success("Places successfully added!");
     } catch (error: any) {
-      console.error("Error adding places:", error.message || error.response?.data);
+      console.error(
+        "Error adding places:",
+        error.message || error.response?.data
+      );
       alert("Failed to add places. Please try again.");
     }
   };

@@ -17,8 +17,7 @@ export default function HotelReco({ hotelreco }: HotelRecoProps) {
   return (
     <div className={styles.hotelReco}>
       <h2>Recommended Hotels</h2> {/* Title always displayed */}
-
-      {(!Array.isArray(hotelreco) || hotelreco.length === 0) ? (
+      {!Array.isArray(hotelreco) || hotelreco.length === 0 ? (
         <div className={styles.noHotels}>
           <PlaneComp /> {/* Show PlaneComp if no hotels are available */}
         </div>
@@ -28,7 +27,8 @@ export default function HotelReco({ hotelreco }: HotelRecoProps) {
             <li key={`hotel-${index}`} className={styles.hotelItem}>
               <h3>{hotel.Hotel_Name}</h3>
               <p>
-                <strong>Predicted Rating:</strong> {hotel.Predicted_Rating.toFixed(2)}
+                <strong>Predicted Rating:</strong>{" "}
+                {hotel.Predicted_Rating.toFixed(2)}
               </p>
             </li>
           ))}

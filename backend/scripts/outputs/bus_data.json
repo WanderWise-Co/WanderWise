@@ -1,164 +1,72 @@
 {
-    "timestamp": "2024-12-09T23:09:41.946167",
+    "timestamp": "2024-12-24T16:45:37.489393",
     "bus_data": [
         {
-            "bus_name": "NueGo",
-            "rating": "4.3\n/5",
-            "departure_time": "06:00",
-            "departure_location": "Majestic",
-            "arrival_time": "09:20",
-            "arrival_location": "KSRTC Bus Stand",
-            "price": "232",
-            "window_seats": "18 window seats",
+            "bus_name": "Jabbar Travels",
+            "rating": "3.5\n/5",
+            "departure_time": "04:55",
+            "departure_location": "Anand Rao Circle",
+            "arrival_time": "07:45",
+            "arrival_location": "Colombia Asia Hospital",
+            "price": "400",
+            "window_seats": "4 window seats",
             "Amenities": [
                 "Water Bottle",
+                "Blankets",
                 "Charging Point",
                 "Reading Light",
-                "CCTV"
-            ]
-        },
-        {
-            "bus_name": "NueGo",
-            "rating": "4.5\n/5",
-            "departure_time": "08:30",
-            "departure_location": "Majestic",
-            "arrival_time": "11:55",
-            "arrival_location": "KSRTC Bus Stand",
-            "price": "232",
-            "window_seats": "17 window seats",
-            "Amenities": [
-                "Water Bottle",
-                "Charging Point",
-                "Reading Light",
-                "CCTV"
-            ]
-        },
-        {
-            "bus_name": "NueGo",
-            "rating": "4.1\n/5",
-            "departure_time": "14:30",
-            "departure_location": "Majestic",
-            "arrival_time": "18:10",
-            "arrival_location": "KSRTC Bus Stand",
-            "price": "375",
-            "window_seats": "18 window seats",
-            "Amenities": [
-                "Water Bottle",
-                "Charging Point",
-                "Reading Light",
-                "CCTV"
-            ]
-        },
-        {
-            "bus_name": "NueGo",
-            "rating": "4.9\n/5",
-            "departure_time": "21:00",
-            "departure_location": "Majestic",
-            "arrival_time": "00:30",
-            "arrival_location": "KSRTC Bus Stand",
-            "price": "375",
-            "window_seats": "18 window seats",
-            "Amenities": [
-                "Water Bottle",
-                "Charging Point",
-                "Reading Light",
-                "CCTV"
-            ]
-        },
-        {
-            "bus_name": "NueGo",
-            "rating": "4.4\n/5",
-            "departure_time": "23:45",
-            "departure_location": "Majestic",
-            "arrival_time": "03:00",
-            "arrival_location": "KSRTC Bus Stand",
-            "price": "375",
-            "window_seats": "18 window seats",
-            "Amenities": [
-                "Water Bottle",
-                "Charging Point",
-                "Reading Light",
-                "CCTV"
-            ]
-        },
-        {
-            "bus_name": "NueGo",
-            "rating": "4.3\n/5",
-            "departure_time": "16:00",
-            "departure_location": "Majestic",
-            "arrival_time": "19:45",
-            "arrival_location": "KSRTC Bus Stand",
-            "price": "380",
-            "window_seats": "18 window seats",
-            "Amenities": [
-                "Water Bottle",
-                "Charging Point",
-                "Reading Light",
-                "CCTV"
+                "Bed Sheet"
             ]
         },
         {
             "bus_name": "PSS Transport",
-            "rating": "4.7\n/5",
+            "rating": "4.5\n/5",
             "departure_time": "05:00",
             "departure_location": "Kalasipalyam",
             "arrival_time": "07:40",
             "arrival_location": "PSS Transport Mysuru office",
-            "price": "475",
-            "window_seats": "13 window seats",
-            "Amenities": [
-                "Water Bottle",
-                "Charging Point",
-                "Reading Light",
-                "CCTV"
-            ]
-        },
-        {
-            "bus_name": "Sri Sugam Bus Tours and Travels",
-            "rating": "3.9\n/5",
-            "departure_time": "22:45",
-            "departure_location": "Madiwala",
-            "arrival_time": "02:00",
-            "arrival_location": "KSRTC Bus Stand",
-            "price": "499",
-            "window_seats": "13 window seats",
-            "Amenities": [
-                "Water Bottle",
-                "Charging Point",
-                "Reading Light",
-                "CCTV"
-            ]
-        },
-        {
-            "bus_name": "Gowri Shankar Travels",
-            "rating": "3.7\n/5",
-            "departure_time": "21:50",
-            "departure_location": "Anand Rao Circle",
-            "arrival_time": "01:30",
-            "arrival_location": "KSRTC Bus Stand",
             "price": "500",
-            "window_seats": "13 window seats",
+            "window_seats": "11 window seats",
             "Amenities": [
                 "Water Bottle",
+                "Blankets",
                 "Charging Point",
                 "Reading Light",
-                "CCTV"
+                "Bed Sheet"
             ]
         },
         {
-            "bus_name": "Manjushree Travels",
-            "rating": "3.6\n/5",
-            "departure_time": "22:50",
-            "departure_location": "Majestic",
-            "arrival_time": "01:35",
-            "arrival_location": "Colombia Asia Hospital",
-            "price": "599",
-            "window_seats": "13 window seats",
+            "bus_name": "Kyros Connect",
+            "rating": "3.9\n/5",
+            "departure_time": "07:00",
+            "departure_location": "Madiwala",
+            "arrival_time": "10:30",
+            "arrival_location": "Others",
+            "price": "500",
+            "window_seats": "1 window seat",
             "Amenities": [
                 "Water Bottle",
+                "Blankets",
                 "Charging Point",
                 "Reading Light",
-                "CCTV"
+                "Bed Sheet"
+            ]
+        },
+        {
+            "bus_name": "BSR Tours And Travels",
+            "rating": "4.5\n/5",
+            "departure_time": "04:45",
+            "departure_location": "Marathahalli",
+            "arrival_time": "08:00",
+            "arrival_location": "Colombia Asia Hospital",
+            "price": "509",
+            "window_seats": "5 window seats",
+            "Amenities": [
+                "Water Bottle",
+                "Blankets",
+                "Charging Point",
+                "Reading Light",
+                "Bed Sheet"
             ]
         }
     ]

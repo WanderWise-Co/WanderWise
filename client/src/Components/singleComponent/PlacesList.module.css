@@ -34,7 +34,9 @@
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.3s, transform 0.2s;
+  transition:
+    background-color 0.3s,
+    transform 0.2s;
 }
 
 .sortButton:hover {
@@ -55,7 +57,9 @@
   border-radius: 5px;
   padding: 10px 16px;
   font-size: 16px;
-  transition: background-color 0.3s, transform 0.2s;
+  transition:
+    background-color 0.3s,
+    transform 0.2s;
 }
 
 .addButton:hover {
