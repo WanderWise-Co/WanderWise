@@ -1,7 +1,7 @@
 .container {
   position: relative;
   min-height: 100vh;
-  background: url('../../assets/bg.jpg') no-repeat center center/cover; /* Replace with your background image */
+  background: url("../../assets/bg.jpg") no-repeat center center/cover; /* Replace with your background image */
   display: flex;
   flex-direction: column;
   justify-content: center;

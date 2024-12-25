@@ -20,7 +20,8 @@ body {
   border-radius: 0; /* Remove curved corners */
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
+.navbar a:hover,
+.dropdown:hover .dropbtn {
   background-color: red; /* Remove hover effect */
 }
 .activeButton {
@@ -86,7 +87,7 @@ body {
   color: #ddd; /* Hover effect for cart icon */
 }
 
-.profileIcon{
+.profileIcon {
   margin-right: 1rem;
   display: flex;
 }

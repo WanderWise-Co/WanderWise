@@ -7,7 +7,11 @@ interface PlacesProps {
   onCheckboxToggle: (placeName: string, isChecked: boolean) => void;
 }
 
-export default function PlaceItem({ place, isChecked, onCheckboxToggle }: PlacesProps) {
+export default function PlaceItem({
+  place,
+  isChecked,
+  onCheckboxToggle,
+}: PlacesProps) {
   const { name, rating, price_level, photos, vicinity } = place;
 
   const photoUrl =
@@ -20,7 +24,10 @@ export default function PlaceItem({ place, isChecked, onCheckboxToggle }: Places
   };
 
   return (
-    <div className={styles.placeItem} style={{ backgroundImage: `url(${photoUrl})` }}>
+    <div
+      className={styles.placeItem}
+      style={{ backgroundImage: `url(${photoUrl})` }}
+    >
       <div className={styles.overlay}>
         <div className={styles.info}>
           <div className={styles.header}>

@@ -51,7 +51,8 @@ export default function FlightsList({ flights }: FlightsListProps) {
             className={styles.sortButton}
             onClick={() => handleSort("airline")}
           >
-            Sort by Airline {sortField === "airline" && (isAscending ? "↑" : "↓")}
+            Sort by Airline{" "}
+            {sortField === "airline" && (isAscending ? "↑" : "↓")}
           </button>
           <button
             className={styles.sortButton}
@@ -62,14 +63,19 @@ export default function FlightsList({ flights }: FlightsListProps) {
         </div>
       </div>
       <div>
-      <h2> Flights</h2>
+        <h2> Flights</h2>
         {sortedFlights.length > 0 ? (
           <ul className={styles.flightList}>
             {sortedFlights.map((flight, index) => (
-              <li key={`${flight.flight_number}-${index}`} className={styles.flightItem}>
+              <li
+                key={`${flight.flight_number}-${index}`}
+                className={styles.flightItem}
+              >
                 <div className={styles.flightDetails}>
                   <h4>{flight.airline}</h4>
-                  <p><strong>Flight Number:</strong> {flight.flight_number}</p>
+                  <p>
+                    <strong>Flight Number:</strong> {flight.flight_number}
+                  </p>
                   <p>
                     <strong>Departure:</strong> {flight.departure_time} from{" "}
                     {flight.departure_location}
@@ -78,13 +84,15 @@ export default function FlightsList({ flights }: FlightsListProps) {
                     <strong>Arrival:</strong> {flight.arrival_time} at{" "}
                     {flight.arrival_location}
                   </p>
-                  <p><strong>Price:</strong> ₹{flight.price}</p>
+                  <p>
+                    <strong>Price:</strong> ₹{flight.price}
+                  </p>
                 </div>
               </li>
             ))}
           </ul>
         ) : (
-          <PlaneComp/>
+          <PlaneComp />
         )}
       </div>
     </div>

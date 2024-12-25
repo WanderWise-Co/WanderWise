@@ -20,7 +20,12 @@ const userPreferenceSchema = new mongoose.Schema({
     },to:{
         type:[String],
         required:[true,'input to'],
+    },createdAt: {
+        type: Date,
+        default: Date.now, 
+        index: { expires: '7d' } 
     }
-})
+}, { timestamps:true});
+
 
 module.exports  = mongoose.model('userPreference',userPreferenceSchema)

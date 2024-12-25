@@ -20,46 +20,47 @@ export default function FlightRec({ flightrec }: FlightRecProps) {
   if (!flightrec || flightrec.length === 0) {
     return (
       <>
-      <h2>Recommended Flights</h2>
-      <PlaneComp/>
+        <h2>Recommended Flights</h2>
+        <PlaneComp />
       </>
-      
     );
   }
 
   return (
-    <div className={styles.flightRec}>
-      <h2>Recommended Flights</h2>
-      <ul className={styles.flightList}>
-        {flightrec.map((flight, index) => (
-          <li key={`flight-${index}`} className={styles.flightItem}>
-            <div className={styles.flightHeader}>
-              <h3>{flight.airline}</h3>
-              <span>{flight.flight_number}</span>
-            </div>
-            <div className={styles.flightDetails}>
-              <p>
-                <strong>Departure:</strong> {flight.departure_time}
-              </p>
-              <p>
-                <strong>Arrival:</strong> {flight.arrival_time}
-              </p>
-              <p>
-                <strong>Duration:</strong> {flight.duration}
-              </p>
-              <p>
-                <strong>Stops:</strong> {flight.stops}
-              </p>
-              <p>
-                <strong>Price:</strong> ₹{flight.price.toLocaleString()}
-              </p>
-              <p>
-                <strong>Score:</strong> {flight.score.toFixed(2)}
-              </p>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <h2 className={styles.title}>Recommended Flights</h2>
+      <div className={styles.flightRec}>
+        <ul className={styles.flightList}>
+          {flightrec.map((flight, index) => (
+            <li key={`flight-${index}`} className={styles.flightItem}>
+              <div className={styles.flightHeader}>
+                <h3>{flight.airline}</h3>
+                <span>{flight.flight_number}</span>
+              </div>
+              <div className={styles.flightDetails}>
+                <p>
+                  <strong>Departure:</strong> {flight.departure_time}
+                </p>
+                <p>
+                  <strong>Arrival:</strong> {flight.arrival_time}
+                </p>
+                <p>
+                  <strong>Duration:</strong> {flight.duration}
+                </p>
+                <p>
+                  <strong>Stops:</strong> {flight.stops}
+                </p>
+                <p>
+                  <strong>Price:</strong> ₹{flight.price.toLocaleString()}
+                </p>
+                <p>
+                  <strong>Score:</strong> {flight.score.toFixed(2)}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 }

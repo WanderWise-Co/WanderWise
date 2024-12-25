@@ -1,4 +1,4 @@
-import  { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useJsApiLoader, GoogleMap } from "@react-google-maps/api";
 
 const containerStyle = {
@@ -11,8 +11,7 @@ const center = {
   lng: 78.9629,
 };
 
-
-export default function RouteMap()  {
+export default function RouteMap() {
   const mapRef = useRef<any>(null);
   const directionsRendererRef = useRef<any>(null);
 
@@ -20,13 +19,14 @@ export default function RouteMap()  {
     googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
     libraries: ["places"],
   });
-  const source = localStorage.getItem('from')
-  const destination = localStorage.getItem('to')
+  const source = localStorage.getItem("from");
+  const destination = localStorage.getItem("to");
   useEffect(() => {
     if (isLoaded && source && destination) {
       const directionsService = new window.google.maps.DirectionsService();
       if (!directionsRendererRef.current) {
-        directionsRendererRef.current = new window.google.maps.DirectionsRenderer();
+        directionsRendererRef.current =
+          new window.google.maps.DirectionsRenderer();
       }
 
       directionsService.route(
@@ -61,5 +61,4 @@ export default function RouteMap()  {
       }}
     />
   );
-};
-
+}

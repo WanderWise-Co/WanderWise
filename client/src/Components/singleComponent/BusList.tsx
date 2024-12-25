@@ -48,21 +48,26 @@ export default function BusesList({ Buses }: BusesListProps) {
         return 0; // Default: no sorting for unsupported fields
       }
     });
-  
+
     setSortedBuses(sorted);
     setIsAscending(!isAscending);
     setSortField(field);
   };
-  
 
   return (
     <div>
       <div className={styles.header}>
         <div className={styles.sortButtons}>
-          <button className={styles.sortButton} onClick={() => handleSort("bus_name")}>
+          <button
+            className={styles.sortButton}
+            onClick={() => handleSort("bus_name")}
+          >
             Sort by Name {sortField === "bus_name" && (isAscending ? "↑" : "↓")}
           </button>
-          <button className={styles.sortButton} onClick={() => handleSort("price")}>
+          <button
+            className={styles.sortButton}
+            onClick={() => handleSort("price")}
+          >
             Sort by Price {sortField === "price" && (isAscending ? "↑" : "↓")}
           </button>
         </div>
@@ -75,7 +80,9 @@ export default function BusesList({ Buses }: BusesListProps) {
               <li key={`${bus.bus_name}-${index}`} className={styles.busItem}>
                 <div className={styles.busDetails}>
                   <h3>{bus.bus_name}</h3>
-                  <p><strong>Rating:</strong> {bus.rating}</p>
+                  <p>
+                    <strong>Rating:</strong> {bus.rating}
+                  </p>
                   <p>
                     <strong>Departure:</strong> {bus.departure_time} from{" "}
                     {bus.departure_location}
@@ -84,14 +91,18 @@ export default function BusesList({ Buses }: BusesListProps) {
                     <strong>Arrival:</strong> {bus.arrival_time} at{" "}
                     {bus.arrival_location}
                   </p>
-                  <p><strong>Price:</strong> ₹{bus.price}</p>
-                  <p><strong>Window Seats:</strong> {bus.window_seats}</p>
+                  <p>
+                    <strong>Price:</strong> ₹{bus.price}
+                  </p>
+                  <p>
+                    <strong>Window Seats:</strong> {bus.window_seats}
+                  </p>
                 </div>
               </li>
             ))}
           </ul>
         ) : (
-          <PlaneComp/>
+          <PlaneComp />
         )}
       </div>
     </div>

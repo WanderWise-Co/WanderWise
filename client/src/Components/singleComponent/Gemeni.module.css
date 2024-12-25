@@ -34,7 +34,9 @@
   border-radius: 8px;
   border: 1px solid #ddd;
   overflow-x: auto;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition:
+    transform 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
 }
 
 .planDetails:hover {
@@ -67,14 +69,14 @@
 /* Responsive styling */
 @media (max-width: 768px) {
   .container {
-      padding: 15px;
+    padding: 15px;
   }
 
   .header h3 {
-      font-size: 22px;
+    font-size: 22px;
   }
 
   .planText {
-      font-size: 14px;
+    font-size: 14px;
   }
 }

@@ -10,22 +10,29 @@ export default function UserDropdown() {
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
-
   const handleViewProfile = async () => {
     const token = localStorage.getItem("token");
 
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_BASE_SERVER_URL}/`
+        `${import.meta.env.VITE_BASE_SERVER_URL}/profile`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`, // Add token in Authorization header
+          },
+        }
       );
-      navigate("/api/v1/profilepage");
+      console.log("Profile Data",response.data);
+      navigate("/api/v1/profilepage", {
+        state: { profileData: response.data },
+      });
     } catch (error) {
       console.log("Error in UserDropdown to Profile (token)", error);
     }
   };
 
   const handleSignOut = () => {
-    localStorage.clear()
+    localStorage.clear();
     navigate("/api/v1/home");
   };
 
