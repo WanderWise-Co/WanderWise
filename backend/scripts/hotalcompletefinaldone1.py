@@ -14,9 +14,15 @@ import numpy as np
 import sys 
 from datetime import datetime
 import json
+import os
 # Initialize the Chrome Driver
-chrome_service = Service("C:\\Users\\Saicharan\\Documents\\chromedriver-win64\\chromedriver.exe" )
-driver = webdriver.Chrome(service=chrome_service)
+# chrome_service = Service("C:\\Users\\Saicharan\\Documents\\chromedriver-win64\\chromedriver.exe" )
+# driver = webdriver.Chrome(service=chrome_service)
+current_dir = os.path.dirname(os.path.realpath(__file__))
+driver_path = os.path.join(current_dir,  'resources', 'chromedriver-win64', 'chromedriver.exe')
+service = Service(driver_path)
+# chrome_service = Service("C:\\Users\\Saicharan\\Documents\\chromedriver-win64\\chromedriver.exe")
+driver = webdriver.Chrome(service=service)
 driver.get("https://www.agoda.com/en-in/")
 
 # Define all possible features for consistent columns
@@ -94,7 +100,7 @@ def getHotelLinks():
 def getHotelFeaturesData(hotel_id):
     try:
         hotel_name_element = WebDriverWait(driver, 15).until(
-            EC.presence_of_element_located((By.XPATH, "//h2[@data-selenium='hotel-header-name']"))
+            EC.presence_of_element_located((By.XPATH, "//h1[@data-selenium='hotel-header-name']"))
         )
         hotel_name = hotel_name_element.text
 
@@ -123,7 +129,7 @@ def getHotelReviews(hotel_name):
     reviews = []
     try:
         hotel_name_element = WebDriverWait(driver, 15).until(
-            EC.presence_of_element_located((By.XPATH, "//h2[@data-selenium='hotel-header-name']"))
+            EC.presence_of_element_located((By.XPATH, "//h1[@data-selenium='hotel-header-name']"))
         )
         hotel_name = hotel_name_element.text
         user_ids = WebDriverWait(driver, 15).until(
