@@ -1,4 +1,4 @@
-import PlaneComp from "../AnimationComponent/PlaneComp";
+import PlaneComp from "../Page/AnimationComponent/PlaneComp";
 import styles from "./FlightRec.module.css";
 
 interface Flight {

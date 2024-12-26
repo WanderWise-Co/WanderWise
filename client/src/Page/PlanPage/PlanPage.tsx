@@ -1,17 +1,17 @@
-import Footer from "../singleComponent/Footer";
+import Footer from "../../Component/Footer";
 import styles from "../PlanPage/PlanPage.module.css";
-import PlacesList from "../singleComponent/PlacesList";
+import PlacesList from "../../Component/PlacesList";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Navbar from "../singleComponent/Navbar";
-import CarRental from "../singleComponent/CarRental";
-import FlightsList from "../singleComponent/FlightList";
-import BusList from "../singleComponent/BusList";
-import Gemini from "../singleComponent/Gemini";
-import BusListRec from "../singleComponent/BusListRec";
-import HotelReco from "../singleComponent/HotelReco";
-import FlightRec from "../singleComponent/FlightRec";
-import RouteMap from "../singleComponent/RouteMap";
+import Navbar from "../../Component/Navbar";
+import CarRental from "../../Component/CarRental";
+import FlightsList from "../../Component/FlightList";
+import BusList from "../../Component/BusList";
+import Gemini from "../../Component/Gemini";
+import BusListRec from "../../Component/BusListRec";
+import HotelReco from "../../Component/HotelReco";
+import FlightRec from "../../Component/FlightRec";
+import RouteMap from "../../Component/RouteMap";
 
 export default function PlanPage() {
   const lat = Number(localStorage.getItem("lat")) || 0;

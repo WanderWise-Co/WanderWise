@@ -6,7 +6,7 @@ body {
 
 /* Page Background */
 .imageContainer {
-  background-image: url(../../assets/image1.png); /* Adjust the background image path */
+  background-image: url(../assets/image1.png); /* Adjust the background image path */
   background-size: cover;
   background-position: center;
   height: 100vh;

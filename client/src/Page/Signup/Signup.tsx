@@ -1,5 +1,5 @@
 // Signup.tsx
-import React, { ChangeEvent, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import styles from "./Signup.module.css";
 import { Link } from "react-router-dom";
 import { emailRegex, passwordRegex } from "../../Utils/Reg";

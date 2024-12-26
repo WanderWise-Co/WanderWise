@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from "./BusList.module.css";
-import PlaneComp from "../AnimationComponent/PlaneComp";
+import PlaneComp from "../Page/AnimationComponent/PlaneComp";
 
 interface Bus {
   bus_name: string;

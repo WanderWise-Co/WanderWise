@@ -6,10 +6,10 @@ import { useNavigate } from "react-router-dom";
 import styles from "./FormReq.module.css";
 import Datepicker from "react-tailwindcss-datepicker";
 import axios from "axios";
-import beach from "../../assets/beach.jpeg";
-import hill from "../../assets/hillstation.jpeg";
-import temple from "../../assets/temple.webp";
-import { isLoggedin } from "../../Utils/Auth";
+import beach from "../assets/beach.jpeg";
+import hill from "../assets/hillstation.jpeg";
+import temple from "../assets/temple.webp";
+import { isLoggedin } from "../Utils/Auth";
 import toast from "react-hot-toast";
 
 const categories = [

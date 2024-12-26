@@ -1,25 +1,25 @@
-import React, { Suspense, lazy } from "react";
+import { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Auth from "./Utils/Auth";
-import PlaneComp from "./Components/AnimationComponent/PlaneComp";
+import PlaneComp from "./Page/AnimationComponent/PlaneComp";
 // Lazy-loaded components
-const Home = lazy(() => import("./Components/Home/Home"));
-const Login = lazy(() => import("./Components/Login/Login"));
-const Signup = lazy(() => import("./Components/Signup/Signup"));
+const Home = lazy(() => import("./Page/Home/Home"));
+const Login = lazy(() => import("./Page/Login/Login"));
+const Signup = lazy(() => import("./Page/Signup/Signup"));
 const ForgotPassword = lazy(
-  () => import("./Components/ForgotPassword/ForgotPassword")
+  () => import("./Page/ForgotPassword/ForgotPassword")
 );
-const PlanPage = lazy(() => import("./Components/PlanPage/PlanPage"));
-const Cart = lazy(() => import("./Components/Cart/Cart"));
-const HomeFilter = lazy(() => import("./Components/HotelFilter/HotelFilter"));
-const ProfilePage = lazy(() => import("./Components/ProfilePage/ProfilePage"));
-const Errorpage = lazy(() => import("./Components/singleComponent/Errorpage"));
+const PlanPage = lazy(() => import("./Page/PlanPage/PlanPage"));
+const Cart = lazy(() => import("./Page/Cart/Cart"));
+const HomeFilter = lazy(() => import("./Page/HotelFilter/HotelFilter"));
+const ProfilePage = lazy(() => import("./Page/ProfilePage/ProfilePage"));
+const Errorpage = lazy(() => import("./Component/Errorpage"));
 
 export default function App() {
   return (
     <>
       <Router>
-        <Suspense fallback={<PlaneComp/>}>
+        <Suspense fallback={<PlaneComp />}>
           <Routes>
             <Route path="/api/v1/home" element={<Home />} />
             <Route path="/api/v1/auth/login" element={<Login />} />

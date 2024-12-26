@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from "./CarRental.module.css";
-import PlaneComp from "../AnimationComponent/PlaneComp";
+import PlaneComp from "../Page/AnimationComponent/PlaneComp";
 
 interface CarRental {
   car_name: string;

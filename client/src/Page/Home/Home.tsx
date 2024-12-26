@@ -1,6 +1,6 @@
 // Home.tsx
-import Footer from "../singleComponent/Footer";
-import FormReq from "../singleComponent/FormReq";
+import Footer from "../../Component/Footer";
+import FormReq from "../../Component/FormReq";
 
 export default function Home() {
   return (

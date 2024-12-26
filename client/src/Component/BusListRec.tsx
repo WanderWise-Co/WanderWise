@@ -1,5 +1,5 @@
 import styles from "./BusListRec.module.css";
-import PlaneComp from "../AnimationComponent/PlaneComp"; // Import PlaneComp
+import PlaneComp from "../Page/AnimationComponent/PlaneComp"; // Import PlaneComp
 
 // Update the Bus interface to include new fields
 interface Bus {

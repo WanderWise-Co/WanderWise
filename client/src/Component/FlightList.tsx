@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from "./FlightList.module.css";
-import PlaneComp from "../AnimationComponent/PlaneComp";
+import PlaneComp from "../Page/AnimationComponent/PlaneComp";
 
 interface Flight {
   airline: string;
