@@ -3,7 +3,7 @@ import axios from "axios";
 import styles from "./Navbar.module.css";
 import toast from "react-hot-toast";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlane } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faPlane } from "@fortawesome/free-solid-svg-icons";
 import UserDropdown from "./UserDropdown";
 import { useState } from "react";
 
@@ -241,106 +241,110 @@ export default function Navbar({
   const handleGoogleAPIClick = () => {
     toast.success("Please select the places you want to visit");
   };
-  const handleCartClick = () => {
-    console.log("Cart icon clicked! Navigating to Cart...");
-    navigate("cart"); // Navigate to the cart page when cart icon is clicked
+
+  const [menuOpen, setMenuOpen] = useState(false); // Toggle Menu State
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+    toggleMenu();
   };
 
   return (
     <div className={styles.navbar}>
-      <a
-        href="#recommendation"
-        className={activeButton === "recommendation" ? styles.activeButton : ""}
-        onClick={() => {
-          console.log("Recommendation clicked");
-          setNavButton("recommendations");
-          setPlaceType("recommendation");
-          HandelRecoClick();
-          setActiveButton("recommendation");
-        }}
-      >
-        Recommendation
-      </a>
-      <a
-        href="#restaurants"
-        className={activeButton === "restaurant" ? styles.activeButton : ""}
-        onClick={() => {
-          console.log("Restaurants clicked");
-          setNavButton("restaurant");
-          setPlaceType("restaurant");
-          handleGoogleAPIClick();
-          setActiveButton("restaurant");
-        }}
-      >
-        Restaurants
-      </a>
-      <a
-        href="#hotels"
-        className={activeButton === "hotel" ? styles.activeButton : ""}
-        onClick={() => {
-          console.log("Hotels clicked");
-          setNavButton("hotel");
-          setPlaceType("hotel");
-          handleGoogleAPIClick();
-          setActiveButton("hotel");
-        }}
-      >
-        Hotels
-      </a>
-      <a
-        href="#attractions"
-        onClick={() => {
-          console.log("Attractions clicked");
-          setNavButton("attraction");
-          setPlaceType("tourist_attraction");
-          handleGoogleAPIClick();
-          setActiveButton("attraction");
-        }}
-        className={activeButton === "attraction" ? styles.activeButton : ""}
-      >
-        Attractions
-      </a>
-      <a
-        href="#renting"
-        onClick={() => {
-          console.log("Renting clicked");
-          setNavButton("renting");
-          setPlaceType("vehicle rental");
-          handleRentalClick();
-          setActiveButton("renting");
-        }}
-        className={activeButton === "renting" ? styles.activeButton : ""}
-      >
-        Renting
-      </a>
+      <button className={styles.menu_toggle} onClick={toggleMenu}>
+        <FontAwesomeIcon icon={faBars} />
+      </button>
+      <div className={`${styles.navbarLinks} ${menuOpen ? styles.active : ""}`}>
+        <a
+          href="#recommendation"
+          className={
+            activeButton === "recommendation" ? styles.activeButton : ""
+          }
+          onClick={() => {
+            setNavButton("recommendations");
+            setPlaceType("recommendation");
+            setActiveButton("recommendation");
+            HandelRecoClick();
+          }}
+        >
+          Recommendation
+        </a>
+        <a
+          href="#restaurants"
+          className={activeButton === "restaurant" ? styles.activeButton : ""}
+          onClick={() => {
+            setNavButton("restaurant");
+            setPlaceType("restaurant");
+            setActiveButton("restaurant");
+            handleGoogleAPIClick();
+          }}
+        >
+          Restaurants
+        </a>
+        <a
+          href="#hotels"
+          className={activeButton === "hotel" ? styles.activeButton : ""}
+          onClick={() => {
+            setNavButton("hotel");
+            setPlaceType("hotel");
+            setActiveButton("hotel");
+            handleGoogleAPIClick();
+          }}
+        >
+          Hotels
+        </a>
+        <a
+          href="#attractions"
+          className={activeButton === "attraction" ? styles.activeButton : ""}
+          onClick={() => {
+            setNavButton("attraction");
+            setPlaceType("tourist_attraction");
+            setActiveButton("attraction");
+            handleGoogleAPIClick();
+          }}
+        >
+          Attractions
+        </a>
+        <a
+          href="#renting"
+          className={activeButton === "renting" ? styles.activeButton : ""}
+          onClick={() => {
+            setNavButton("renting");
+            setPlaceType("vehicle rental");
+            setActiveButton("renting");
+            handleRentalClick();
+          }}
+        >
+          Renting
+        </a>
 
-      <div className={styles.dropdown}>
-        <a className={styles.dropbtn}>Travel</a>
-        <div className={styles.dropdownContent}>
-          <a
-            href="#Buses"
-            onClick={() => {
-              handleBusClick();
-              setActiveButton("travel");
-            }}
-            className={activeButton === "buses" ? styles.activeButton : ""}
-          >
-            Buses
-          </a>
-          <a
-            href="#Planes"
-            onClick={() => {
-              handlePlaneClick();
-              setActiveButton("travel");
-            }}
-            className={activeButton === "planes" ? styles.activeButton : ""}
-          >
-            Planes
-          </a>
+        <div className={styles.dropdown}>
+          <a className={styles.dropbtn}>Travel</a>
+          <div className={styles.dropdownContent}>
+            <a
+              href="#Buses"
+              onClick={() => {
+                handleBusClick();
+                setActiveButton("travel");
+              }}
+              className={activeButton === "buses" ? styles.activeButton : ""}
+            >
+              Buses
+            </a>
+            <a
+              href="#Planes"
+              onClick={() => {
+                handlePlaneClick();
+                setActiveButton("travel");
+              }}
+              className={activeButton === "planes" ? styles.activeButton : ""}
+            >
+              Planes
+            </a>
+          </div>
         </div>
       </div>
-
-      <div className={styles.cartIcon} onClick={handleCartClick}>
+      <div className={styles.cartIcon} onClick={() => navigate("cart")}>
         <FontAwesomeIcon icon={faPlane} />
       </div>
       <div className={styles.profileIcon}>

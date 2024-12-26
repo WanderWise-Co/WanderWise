@@ -10,7 +10,7 @@
   width: 2.5rem; /* 10 w */
   height: 2.5rem; /* 10 h */
   overflow: hidden;
-  background-color: #f3f4f6; /* gray-100 */
+  background-color: #ffffff; /* gray-100 */
   border-radius: 50%;
   cursor: pointer;
 }
@@ -35,13 +35,16 @@
   margin-top: 0.5rem; /* mt-2 */
   overflow: hidden;
 }
+.dropdownMenu a{
+  color: #000000;
+}
 
 /* Dropdown Item */
 .dropdownItem {
   display: block;
   padding: 0.5rem 1rem; /* px-4 py-2 */
   font-size: 0.875rem; /* text-sm */
-  color: #374151; /* gray-700 */
+  color: #ffffff; /* gray-700 */
   cursor: pointer;
   z-index: 10;
 }

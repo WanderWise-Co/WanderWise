@@ -1,6 +1,6 @@
 /* Page container to ensure full viewport height */
 .page {
-  width: 100;
+  width: 100%;
   height: 100vh;
 }
 
@@ -61,24 +61,25 @@
 }
 
 /* Button styling for "Create Plan" */
-.bottomRightButton {
-  position: fixed; /* Positions the button relative to the viewport */
-  border-radius: 8px; /* Rounded corners for the button */
+.btnbtn {
+  position: fixed; /* Stick to the viewport */
+  bottom: 20px; /* 20px from the bottom */
+  right: 20px; /* 20px from the right */
+  border-radius: 8px; /* Rounded corners */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
   background-color: #1c31d0; /* Button background color */
   color: #fff; /* Button text color */
   padding: 15px 30px; /* Padding for better appearance */
-  font-size: 18px; /* Adjust font size */
+  font-size: 18px; /* Font size */
   font-weight: bold;
-  cursor: pointer; /* Change cursor to pointer on hover */
-  z-index: 1000; /* Ensures the button is above other elements */
-  transition: background-color 0.3s ease; /* Smooth background color transition */
-  margin-left: 0.5rem;
+  cursor: pointer; /* Pointer cursor on hover */
+  z-index: 1000; /* Ensure button stays on top */
+  transition: background-color 0.3s ease; /* Smooth hover transition */
 }
 
 /* Hover effect for the button */
-.bottomRightButton:hover {
-  background-color: #7568e7; /* Slightly darker green on hover */
+.btnbtn:hover {
+  background-color: #7568e7; /* Slightly darker blue on hover */
 }
 
 /* Responsive adjustments for smaller screens */
@@ -88,8 +89,10 @@
     padding: 20px; /* Reduce padding for smaller screens */
   }
 
-  .bottomRightButton {
-    padding: 8px 16px; /* Adjust padding for smaller screens */
-    font-size: 14px; /* Adjust font size for smaller screens */
+  .btnbtn {
+    padding: 10px 20px; /* Smaller button padding */
+    font-size: 14px; /* Adjust font size */
+    bottom: 10px; /* Slightly higher on smaller screens */
+    right: 10px; /* Adjust position for smaller screens */
   }
 }

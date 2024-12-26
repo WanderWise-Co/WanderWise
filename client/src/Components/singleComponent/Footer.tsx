@@ -35,25 +35,34 @@ export default function Footer() {
                 xl="2"
                 className="products-col mx-auto mb-2"
               >
-                <h6 className="text-uppercase fw-bold mb-3">Products</h6>
+                <h6 className="text-uppercase fw-bold mb-3">Patners</h6>
                 <p>
-                  <a href="#!" className="text-reset">
-                    Angular
+                  <a
+                    href="https://www.goibibo.com/?utm_source=google&utm_medium=cpc&utm_campaign=DF-Brand-EM&utm_adgroup=Only%20Goibibo&utm_term=!SEM!DF!G!Brand!RSA!108599293!6504095653!602838584772!e!goibibo!c!&gad_source=1&gclid=Cj0KCQiA9667BhDoARIsANnamQZ6EgGSDEHK6YGU14DlHK4zKyBK8Jj55AFe-P_0sVsWO_ATb1BUtYYaAkFuEALw_wcB"
+                    className="text-reset"
+                  >
+                    goibibo
                   </a>
                 </p>
                 <p>
-                  <a href="#!" className="text-reset">
-                    React
+                  <a href="https://www.justdial.com/" className="text-reset">
+                    justdial
                   </a>
                 </p>
                 <p>
-                  <a href="#!" className="text-reset">
-                    Vue
+                  <a
+                    href="https://www.cleartrip.com/flights?utm_source=google&utm_medium=cpc&utm_campaign=BR_Cleartrip-Desktab&dxid=Cj0KCQiA9667BhDoARIsANnamQYdsVj3FT_2xcJT8ZPnvT0CgT0hHZKLoFmlgUeuuKJSarY8dJP6fhYaAqlrEALw_wcB&gad_source=1&gclid=Cj0KCQiA9667BhDoARIsANnamQYdsVj3FT_2xcJT8ZPnvT0CgT0hHZKLoFmlgUeuuKJSarY8dJP6fhYaAqlrEALw_wcB"
+                    className="text-reset"
+                  >
+                    cleartrip
                   </a>
                 </p>
                 <p>
-                  <a href="#!" className="text-reset">
-                    Laravel
+                  <a
+                    href="https://www.agoda.com/en-in/?site_id=1922885&tag=6f147157-60b8-459f-af1a-9935d44970e9&gad_source=1&device=c&network=g&adid=702597669000&rand=13170903789539621260&expid=&adpos=&aud=kwd-2230651387&gclid=Cj0KCQiA9667BhDoARIsANnamQZ0y-_DvKKG9ucrj4cJxOmjeiu230_Uj1KA7siNYcS8vy5y3XLZZm0aApWkEALw_wcB&pslc=1&ds=BTVgCHa5WCLX8Bgq"
+                    className="text-reset"
+                  >
+                    agoda
                   </a>
                 </p>
               </MDBCol>

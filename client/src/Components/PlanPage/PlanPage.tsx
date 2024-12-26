@@ -77,7 +77,7 @@ export default function PlanPage() {
   };
 
   useEffect(() => {
-    if (["restaurant", "hotel", "attractions"].includes(placeType)) {
+    if (["restaurant", "hotel", "tourist_attraction"].includes(placeType)) {
       console.log("inside useEffect - valid placeType:", placeType);
       console.log(coordinates, placeType);
       fetchNearbyPlaces(coordinates.lat, coordinates.lng, placeType);

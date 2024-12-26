@@ -123,14 +123,15 @@ export default function Cart() {
             </div>
           )}
         </div>
-        <Button
+        
+      </div>
+      <Button
           color="primary"
-          className={styles.bottomRightButton}
+          className={styles.btnbtn}
           onClick={handlegemini1}
         >
           Create Plan &#8594;
         </Button>
-      </div>
     </div>
   );
 }

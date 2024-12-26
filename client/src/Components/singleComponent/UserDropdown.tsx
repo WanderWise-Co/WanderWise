@@ -22,7 +22,7 @@ export default function UserDropdown() {
           },
         }
       );
-      console.log("Profile Data",response.data);
+      console.log("Profile Data", response.data);
       navigate("/api/v1/profilepage", {
         state: { profileData: response.data },
       });
@@ -57,20 +57,18 @@ export default function UserDropdown() {
       {/* Dropdown Menu */}
       {isOpen && (
         <div className={styles.dropdownMenu}>
-          <div>
-            <a
-              onClick={handleViewProfile}
-              className={`${styles.dropdownItem} ${styles.dropdownItemDark}`}
-            >
-              View Profile
-            </a>
-            <a
-              onClick={handleSignOut}
-              className={`${styles.dropdownItem} ${styles.dropdownItemDark}`}
-            >
-              Sign out
-            </a>
-          </div>
+          <a
+            onClick={handleViewProfile}
+            className={`${styles.dropdownItem} ${styles.dropdownItemDark}`}
+          >
+            View Profile
+          </a>
+          <a
+            onClick={handleSignOut}
+            className={`${styles.dropdownItem} ${styles.dropdownItemDark}`}
+          >
+            Sign out
+          </a>
         </div>
       )}
     </div>
