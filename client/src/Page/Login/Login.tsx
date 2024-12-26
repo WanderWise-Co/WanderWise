@@ -1,87 +1,42 @@
-// Login.tsx
 import { ChangeEvent, useState } from "react";
 import styles from "./Login.module.css";
 import { Link, useNavigate } from "react-router-dom";
-import { emailRegex, passwordRegex } from "../../Utils/Reg";
-import toast from "react-hot-toast";
-import axios from "axios";
 import { GoogleLoginButton } from "react-social-login-buttons";
-import { useGoogleLogin } from "@react-oauth/google";
+import handleLogin from "../../Services/Login/Login";
+import useHandleContinueWithGoogle from "../../Services/Login/HandleContinueWithGoogle";
 
+/**
+ * Login component with email/password and Google login.
+ */
 export default function Login() {
-  const [userDetails, setuserDetails] = useState({
+  const [userDetails, setUserDetails] = useState({
     userEmail: "",
     userPassword: "",
   });
 
   const navigate = useNavigate();
-  function handleInputChage(event: ChangeEvent<HTMLInputElement>): void {
+  const handleGoogleLogin = useHandleContinueWithGoogle(navigate);
+
+  /**
+   * Updates userDetails state on input change.
+   */
+  function handleInputChange(event: ChangeEvent<HTMLInputElement>): void {
     const { name, value } = event.target;
-    setuserDetails((prev) => ({
+    setUserDetails((prev) => ({
       ...prev,
       [name]: value,
     }));
   }
 
-  const handleLogin = async () => {
-    if (!emailRegex.test(userDetails.userEmail)) {
-      toast.error("Please enter a valid email ");
-      return;
-    }
-    if (!passwordRegex.test(userDetails.userPassword)) {
-      toast.error("Please enter a valid password ");
-      return;
-    }
-    try {
-      console.log("logging");
-      const response = await axios.post(
-        `${import.meta.env.VITE_BASE_SERVER_URL}/auth/login`,
-        userDetails
-      );
-      console.log(response);
-
-      toast.success(response.data.message);
-
-      localStorage.setItem("token", response.data.token);
-      navigate("/api/v1/homefilter");
-    } catch (error: any) {
-      toast.error(error.response.data.message);
-      console.log(error);
-    }
-  };
-
-  const [showPassword, setshowPassword] = useState(false);
-
-  const handleContinueWithGoogle = useGoogleLogin({
-    onSuccess: async (response: any) => {
-      console.log(response);
-      const res = await axios.post(
-        `${import.meta.env.VITE_BASE_SERVER_URL}/auth/Oauth?oauth_provider=google`,
-        {},
-        {
-          headers: {
-            Authorization: `Bearer ${response.access_token}`,
-          },
-        }
-      );
-      if (res.data.message === "success") {
-        localStorage.setItem("token", res.data.token);
-        navigate("/api/v1/homefilter");
-      }
-      console.log(res);
-    },
-    onError: async (error: any) => {
-      console.log(error);
-    },
-  });
+  const [showPassword, setShowPassword] = useState(false);
 
   return (
     <div className={styles.container}>
       <div className={styles.formContainer}>
         <h2>Login</h2>
         <div className={styles.social}>
-          <div onClick={() => handleContinueWithGoogle()}>
-            <GoogleLoginButton></GoogleLoginButton>
+          <div onClick={() => handleGoogleLogin()}>
+            <GoogleLoginButton />
           </div>
         </div>
         <div className={styles.inputContainer}>
@@ -90,7 +45,7 @@ export default function Login() {
             type="email"
             name="userEmail"
             placeholder="Enter email..."
-            onChange={handleInputChage}
+            onChange={handleInputChange}
           />
           <div className={styles.passwordContainer}>
             <input
@@ -98,18 +53,19 @@ export default function Login() {
               type={showPassword ? "text" : "password"}
               name="userPassword"
               placeholder="Enter password..."
-              onChange={handleInputChage}
+              onChange={handleInputChange}
             />
             <button
               onClick={() => {
-                setshowPassword(!showPassword);
+                setShowPassword(!showPassword);
               }}
             >
               {showPassword ? "HIDE" : "SHOW"}
             </button>
           </div>
-
-          <button onClick={handleLogin}>Login</button>
+          <button onClick={() => handleLogin(userDetails, navigate)}>
+            Login
+          </button>
         </div>
         <div className={styles.footer}>
           <Link to="/api/v1/auth/register">Don't have an account? Sign Up</Link>

@@ -1,53 +1,32 @@
-// Signup.tsx
 import { ChangeEvent, useState } from "react";
 import styles from "./Signup.module.css";
-import { Link } from "react-router-dom";
-import { emailRegex, passwordRegex } from "../../Utils/Reg";
-import toast from "react-hot-toast";
-import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
+import handleSignUp from "../../Services/Signup/Signup";
 
+/**
+ * Signup component with name, email, and password fields.
+ */
 export default function Signup() {
-  const [userDetails, setuserDetails] = useState({
+  const [userDetails, setUserDetails] = useState({
     userName: "",
     userEmail: "",
     userPassword: "",
   });
 
-  function handleInputChage(event: ChangeEvent<HTMLInputElement>): void {
+  const navigate = useNavigate();
+
+  /**
+   * Updates userDetails state on input change.
+   */
+  function handleInputChange(event: ChangeEvent<HTMLInputElement>): void {
     const { name, value } = event.target;
-    setuserDetails((prev) => ({
+    setUserDetails((prev) => ({
       ...prev,
       [name]: value,
     }));
   }
 
-  const handleSignUp = async () => {
-    if (!emailRegex.test(userDetails.userEmail)) {
-      toast.error("Please enter a valid username ");
-      return;
-    }
-    if (!emailRegex.test(userDetails.userEmail)) {
-      toast.error("Please enter a valid email ");
-      return;
-    }
-    if (!passwordRegex.test(userDetails.userPassword)) {
-      toast.error("Please enter a valid password ");
-      return;
-    }
-    try {
-      const response = await axios.post(
-        `${import.meta.env.VITE_BASE_SERVER_URL}/auth/register`,
-        userDetails
-      );
-      console.log(response);
-    } catch (error) {
-      console.log(error);
-    }
-
-    toast.success("FORM SUBMITED");
-  };
-
-  const [showPassword, setshowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   return (
     <div className={styles.container}>
@@ -59,14 +38,14 @@ export default function Signup() {
             type="text"
             name="userName"
             placeholder="Enter name..."
-            onChange={handleInputChage}
+            onChange={handleInputChange}
           />
           <input
             value={userDetails.userEmail}
             type="email"
             name="userEmail"
             placeholder="Enter email..."
-            onChange={handleInputChage}
+            onChange={handleInputChange}
           />
           <div className={styles.passwordContainer}>
             <input
@@ -74,18 +53,20 @@ export default function Signup() {
               type={showPassword ? "text" : "password"}
               name="userPassword"
               placeholder="Enter password..."
-              onChange={handleInputChage}
+              onChange={handleInputChange}
             />
             <button
               onClick={() => {
-                setshowPassword(!showPassword);
+                setShowPassword(!showPassword);
               }}
             >
               {showPassword ? "HIDE" : "SHOW"}
             </button>
           </div>
 
-          <button onClick={handleSignUp}>Sign Up</button>
+          <button onClick={() => handleSignUp(userDetails, navigate)}>
+            Sign Up
+          </button>
         </div>
         <Link to="/api/v1/auth/login">Already have an account? Login</Link>
       </div>

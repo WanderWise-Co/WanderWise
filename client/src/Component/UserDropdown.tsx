@@ -1,39 +1,15 @@
-import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./UserDropdown.module.css";
+import handleSignOut from "../Services/ProfilePage/SignOut";
+import handleViewProfile from "../Services/ProfilePage/ProfilePage";
 
 export default function UserDropdown() {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Initialize navigate here
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
-  };
-  const handleViewProfile = async () => {
-    const token = localStorage.getItem("token");
-
-    try {
-      const response = await axios.get(
-        `${import.meta.env.VITE_BASE_SERVER_URL}/profile`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`, // Add token in Authorization header
-          },
-        }
-      );
-      console.log("Profile Data", response.data);
-      navigate("/api/v1/profilepage", {
-        state: { profileData: response.data },
-      });
-    } catch (error) {
-      console.log("Error in UserDropdown to Profile (token)", error);
-    }
-  };
-
-  const handleSignOut = () => {
-    localStorage.clear();
-    navigate("/api/v1/home");
   };
 
   return (
@@ -58,13 +34,13 @@ export default function UserDropdown() {
       {isOpen && (
         <div className={styles.dropdownMenu}>
           <a
-            onClick={handleViewProfile}
+            onClick={() => handleViewProfile(navigate)} // Pass navigate here
             className={`${styles.dropdownItem} ${styles.dropdownItemDark}`}
           >
             View Profile
           </a>
           <a
-            onClick={handleSignOut}
+            onClick={() => handleSignOut(navigate)}
             className={`${styles.dropdownItem} ${styles.dropdownItemDark}`}
           >
             Sign out

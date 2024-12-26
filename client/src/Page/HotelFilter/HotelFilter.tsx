@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { MDBBtn } from "mdb-react-ui-kit";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
-import styles from "./HotelFilter.module.css"; // Ensure the CSS module file exists and is correctly named
+import styles from "./HotelFilter.module.css"; 
 import ac from "../../assets/AC.jpg";
 import food from "../../assets/food.jpg";
 import cp from "../../assets/cp.jpg";
@@ -53,14 +53,15 @@ export default function HomeFilter() {
     }
   };
 
-  const handleSkipClick = () => {
-    navigate("/api/v1/planpage");
-  };
-
   return (
     <div className={styles.container}>
       <div className={styles.skipButtonContainer}>
-        <MDBBtn className={styles.skipButton} onClick={handleSkipClick}>
+        <MDBBtn
+          className={styles.skipButton}
+          onClick={() => {
+            navigate("/api/v1/planpage");
+          }}
+        >
           Skip
         </MDBBtn>
       </div>
