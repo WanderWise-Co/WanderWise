@@ -81,40 +81,40 @@ WanderWise/
 
 ## 🌍 Environment Variables
 
-Ensure the following environment variables are configured:
+### Backend (.env)
 
 ```
-VITE_GOOGLE_MAPS_API_KEY=your_api_key
-NODE_ENV=development
+PORT=your_port
 MONGO_URI=your_mongodb_uri
+EMAIL_PASSWORD=your_email_password
+JWT_SECRET=your_jwt_secret
+GOOGLE_API_KEY=your_google_api_key
+GEMENI_API_KEY=your_gemeni_api_key
+PYSPARK_PYTHON=your_python_path
+```
+
+### Client (.env)
+
+```
+VITE_BASE_SERVER_URL=your_base_server_url
+VITE_GOOGLE_CLIENT_ID=your_google_client_id
+VITE_FACEBOOK_CLIENT_URL=your_facebook_client_url
+VITE_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
 ```
 
 ## 📚 Usage
 
-1. Enter your source and destination points.
-2. Select your travel mode (Bus or Plane).
-3. View routes and travel details dynamically.
+1. **Plan Your Travel with Ease:** Enter your source and destination points.
+2. **Flexible Travel Modes:** Choose between Bus or Plane options.
+3. **Interactive Maps:** Visualize and explore travel routes dynamically.
+4. **Real-Time Updates:** Stay informed with live data on travel details.
+5. **Seamless User Experience:** Enjoy a smooth and intuitive interface for all your travel needs.
 
 ## 🤝 Contributors
 
-- **Bharath R Sindhe** _(Lead Developer)_
-- **Abhiram H R**
-- **Charan G S**
-- **Aravind SK**
-
-## 🏆 Achievements
-
-- **2nd Place** at Project Open House Panorama 2024-25.
-
-## 📜 License
-
-This project is licensed under the **MIT License**.
-
-## 📞 Contact
-
-For inquiries or collaboration:
-
-- **Email:** your.email@example.com
-- **LinkedIn:** [Your LinkedIn Profile](https://linkedin.com/in/your-profile)
+- **Abhiram H R** - [LinkedIn](https://www.linkedin.com/in/abhiramhr1/)
+- **Aravind SK** - [LinkedIn](https://www.linkedin.com/in/aravind-sk-6bab89255/)
+- **Bharath R Sindhe** - [LinkedIn](https://www.linkedin.com/in/bharathsindhe03/)
+- **Charan G S** - [LinkedIn](https://www.linkedin.com/in/charan-g-s-990a39255/)
 
 **Happy Exploring with WanderWise! ✈️🗺️**
