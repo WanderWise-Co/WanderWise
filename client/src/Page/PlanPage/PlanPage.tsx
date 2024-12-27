@@ -1,7 +1,6 @@
 import Footer from "../../Component/Footer";
 import styles from "../PlanPage/PlanPage.module.css";
 import PlacesList from "../../Component/PlacesList";
-import axios from "axios";
 import { useState, useEffect } from "react";
 import Navbar from "../../Component/Navbar";
 import CarRental from "../../Component/CarRental";
@@ -12,13 +11,14 @@ import BusListRec from "../../Component/BusListRec";
 import HotelReco from "../../Component/HotelReco";
 import FlightRec from "../../Component/FlightRec";
 import RouteMap from "../../Component/RouteMap";
+import fetchNearbyPlaces from "../../Services/PlanPage/GoogleAPI";
 
 export default function PlanPage() {
   const lat = Number(localStorage.getItem("lat")) || 0;
   const lng = Number(localStorage.getItem("lng")) || 0;
 
   const [coordinates, setCoordinates] = useState({ lat, lng });
-  const [places, setPlaces] = useState([]);
+  const [places, setPlaces] = useState<any[]>([]);
   const [placeType, setPlaceType] = useState("");
 
   const [transportPlaneData, setTransportPlaneData] = useState<any>(null);
@@ -49,38 +49,11 @@ export default function PlanPage() {
     console.log("End Date:", endDate);
   }, [source, destination, startDate, endDate]);
 
-  const fetchNearbyPlaces = async (lat: number, lng: number, type: string) => {
-    console.log("fetchNearbyPlaces MAP CALL");
-
-    try {
-      console.log("fetchNearbyPlaces MAP CALL TRY 1");
-      const response = await axios.get(
-        `http://localhost:3000/api/v1/googleApi`,
-        {
-          params: {
-            location: `${lat},${lng}`,
-            radius: 5000,
-            type: type,
-            key: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
-          },
-        }
-      );
-      console.log(response);
-      setPlaces(response.data.results || []);
-      console.log("fetchNearbyPlaces MAP CALL TRY 2");
-    } catch (error: any) {
-      console.error(
-        "Error fetching places:",
-        error.message || error.response?.data
-      );
-    }
-  };
-
   useEffect(() => {
     if (["restaurant", "hotel", "tourist_attraction"].includes(placeType)) {
       console.log("inside useEffect - valid placeType:", placeType);
       console.log(coordinates, placeType);
-      fetchNearbyPlaces(coordinates.lat, coordinates.lng, placeType);
+      fetchNearbyPlaces(placeType, setPlaces);
       console.log("fetchNearbyPlaces called");
     }
   }, [placeType, coordinates]);

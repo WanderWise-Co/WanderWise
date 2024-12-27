@@ -5,7 +5,7 @@ import {
   Marker,
   InfoWindow,
 } from "@react-google-maps/api";
-
+import  styles  from "./Map.module.css";
 export interface Places {
   place_id: string;
   name: string;
@@ -72,7 +72,7 @@ export default function Map({
                 <img
                   src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photoreference=${selectedPlaces.photos[0].photo_reference}&key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}`}
                   alt={selectedPlaces.name}
-                  style={{ width: "100%", borderRadius: "4px" }}
+                  className={styles.image}
                 />
               )}
             </div>

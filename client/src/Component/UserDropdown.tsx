@@ -5,7 +5,7 @@ import handleSignOut from "../Services/ProfilePage/SignOut";
 import handleViewProfile from "../Services/ProfilePage/ProfilePage";
 
 export default function UserDropdown() {
-  const navigate = useNavigate(); // Initialize navigate here
+  const navigate = useNavigate(); 
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
