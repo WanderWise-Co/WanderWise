@@ -1,7 +1,6 @@
-
-const handleSignOut = (navigate:Function) => {
+const handleSignOut = (navigate: Function) => {
   localStorage.clear();
-  navigate("/api/v1/home");
+  navigate("/");
 };
 
 export default handleSignOut;

@@ -1,28 +1,26 @@
-/* General Styles */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
 }
 
-/* Page Background */
 .imageContainer {
-  background-image: url(../assets/image1.png); /* Adjust the background image path */
+  background-image: url(../assets/image1.png);
   background-size: cover;
   background-position: center;
   height: 100vh;
   width: 100vw;
   display: flex;
-  flex-direction: column; /* Stack header and form vertically */
+  flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Align items to the top */
-  padding-top: 3rem; /* Add spacing from the top */
+  justify-content: flex-start;
+  padding-top: 3rem;
+  background-attachment: lazy;
 }
 
-/* Header */
 .headerContainer {
   text-align: center;
   color: rgb(255, 255, 255);
-  margin-bottom: 2rem; /* Space between header and form */
+  margin-bottom: 2rem;
   font-family: "Roboto Condensed", sans-serif;
   font-optical-sizing: auto;
 }
@@ -37,25 +35,23 @@ body {
   margin-top: 0.5rem;
 }
 
-/* Form Container */
 .container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background-color: rgba(255, 255, 255, 0.5); /* 80% transparent white */
+  background-color: rgba(255, 255, 255, 0.5);
   padding: 2rem;
   border-radius: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 60%;
-  margin-top: 1rem; /* Space below the header */
+  margin-top: 1rem;
 }
 
-/* Form Rows */
 .row {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  flex-wrap: wrap; /* Allow wrapping of items on smaller screens */
+  flex-wrap: wrap;
 }
 
 .inputField,
@@ -64,7 +60,6 @@ body {
   flex: 1;
 }
 
-/* Datepicker Component */
 .datepicker {
   position: relative;
   font-size: 1rem;
@@ -172,14 +167,12 @@ body {
   opacity: 0.9;
 }
 
-/* Button Container */
 .buttonContainer {
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
-/* Categories */
 .categoryContainer {
   display: flex;
   flex-wrap: wrap;
@@ -226,7 +219,6 @@ body {
   width: 100%;
 }
 
-/* Responsive Media Queries */
 @media (max-width: 768px) {
   .container {
     width: 90%;

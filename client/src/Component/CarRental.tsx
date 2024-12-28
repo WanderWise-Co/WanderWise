@@ -17,7 +17,7 @@ interface CarRentalListProps {
 export default function CarRentalList({ rentals }: CarRentalListProps) {
   const [sortedRentals, setSortedRentals] = useState<CarRental[]>(rentals);
   const [isAscending, setIsAscending] = useState(true);
-  const [sortField, setSortField] = useState<keyof CarRental>("rating"); // Default sorting by rating
+  const [sortField, setSortField] = useState<keyof CarRental>("rating");
 
   useEffect(() => {
     setSortedRentals([...rentals]);
@@ -27,11 +27,11 @@ export default function CarRentalList({ rentals }: CarRentalListProps) {
     const sorted = [...sortedRentals].sort((a, b) => {
       if (field === "rating") {
         return isAscending
-          ? parseFloat(a.rating) - parseFloat(b.rating) // Sorting by rating as a number
+          ? parseFloat(a.rating) - parseFloat(b.rating)
           : parseFloat(b.rating) - parseFloat(a.rating);
       } else {
         return isAscending
-          ? a[field].localeCompare(b[field]) // Sorting by string fields (e.g., car_name, location)
+          ? a[field].localeCompare(b[field])
           : b[field].localeCompare(a[field]);
       }
     });

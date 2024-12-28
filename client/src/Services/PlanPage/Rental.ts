@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const handleRentalClick = async ( setTransportRentalData: (data: any) => void) => {
+const handleRentalClick = async (
+  setTransportRentalData: (data: any) => void
+) => {
   try {
     const token = localStorage.getItem("token");
     const to = localStorage.getItem("to");

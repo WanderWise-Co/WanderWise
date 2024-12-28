@@ -1,19 +1,19 @@
 .container {
   display: flex;
   width: 100%;
-  height: 100vh; /* Ensure full height */
+  height: 100vh;
 }
 
 .placesContainer {
-  width: 70%; /* Places take 70% of the width */
-  overflow-y: auto; /* Make sure it's scrollable if content overflows */
+  width: 70%;
+  overflow-y: auto;
   padding: 20px;
   box-sizing: border-box;
 }
 
 .mapContainer {
-  width: 30%; /* Map takes 30% of the width */
-  height: 100%; /* Full height */
+  width: 30%;
+  height: 100%;
   background-color: #f4f4f4;
   padding: 20px;
   box-sizing: border-box;
@@ -23,7 +23,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px; /* Space between header and list */
+  margin-bottom: 16px;
 }
 
 .sortButton {

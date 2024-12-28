@@ -3,9 +3,6 @@ import styles from "./Signup.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import handleSignUp from "../../Services/Signup/Signup";
 
-/**
- * Signup component with name, email, and password fields.
- */
 export default function Signup() {
   const [userDetails, setUserDetails] = useState({
     userName: "",
@@ -15,9 +12,6 @@ export default function Signup() {
 
   const navigate = useNavigate();
 
-  /**
-   * Updates userDetails state on input change.
-   */
   function handleInputChange(event: ChangeEvent<HTMLInputElement>): void {
     const { name, value } = event.target;
     setUserDetails((prev) => ({
@@ -68,7 +62,7 @@ export default function Signup() {
             Sign Up
           </button>
         </div>
-        <Link to="/api/v1/auth/login">Already have an account? Login</Link>
+        <Link to="/auth/login">Already have an account? Login</Link>
       </div>
     </div>
   );

@@ -8,12 +8,12 @@ const handleViewProfile = async (navigate: Function) => {
       `${import.meta.env.VITE_BASE_SERVER_URL}/profile`,
       {
         headers: {
-          Authorization: `Bearer ${token}`, 
+          Authorization: `Bearer ${token}`,
         },
       }
     );
     console.log("Profile Data", response.data);
-    navigate("/api/v1/profilepage", {
+    navigate("/profilepage", {
       state: { profileData: response.data },
     });
   } catch (error) {

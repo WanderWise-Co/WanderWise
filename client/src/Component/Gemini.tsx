@@ -6,20 +6,18 @@ import stringify from "rehype-stringify";
 import styles from "./Gemeni.module.css";
 import PlaneComp from "../Page/AnimationComponent/PlaneComp";
 
-// Interface for the API response data structure
 interface TravelPlanProps {
-  data: string; // The response data from the API will be a string containing the travel plan.
+  data: string;
 }
 
-// Helper function to process and sanitize the data
 async function cleanAndSanitizeData(data: string): Promise<string> {
   const sanitizedHtml = await unified()
-    .use(parse) // Parse the string into a tree
-    .use(rehypeSanitize) // Sanitize the HTML
-    .use(stringify) // Convert the tree back to a string
-    .process(data.replace(/\*/g, "").replace(/(\n\s*\n)/g, "\n")); // Remove stars and extra newlines
+    .use(parse)
+    .use(rehypeSanitize)
+    .use(stringify)
+    .process(data.replace(/\*/g, "").replace(/(\n\s*\n)/g, "\n"));
 
-  return String(sanitizedHtml); // Convert the result to a string
+  return String(sanitizedHtml);
 }
 
 export default function TravelPlanList({ data }: TravelPlanProps) {
@@ -34,7 +32,7 @@ export default function TravelPlanList({ data }: TravelPlanProps) {
         }
       } catch (err) {
         console.error("Error processing data:", err);
-        setPlanDetails(""); // If an error occurs, clear the planDetails state
+        setPlanDetails("");
       }
     };
 
@@ -53,7 +51,7 @@ export default function TravelPlanList({ data }: TravelPlanProps) {
             dangerouslySetInnerHTML={{ __html: planDetails }}
           />
         ) : (
-          <PlaneComp /> // Display PlaneComp if there's no travel plan data
+          <PlaneComp />
         )}
       </div>
     </div>

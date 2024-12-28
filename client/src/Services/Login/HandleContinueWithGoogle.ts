@@ -2,11 +2,6 @@ import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 import { NavigateFunction } from "react-router-dom";
 
-/**
- * Handles Google login integration.
- * @param navigate - React Router's navigate function.
- * @returns A function to trigger Google login.
- */
 const useHandleContinueWithGoogle = (navigate: NavigateFunction) => {
   return useGoogleLogin({
     onSuccess: async (response: any) => {
@@ -23,7 +18,7 @@ const useHandleContinueWithGoogle = (navigate: NavigateFunction) => {
         );
         if (res.data.message === "success") {
           localStorage.setItem("token", res.data.token);
-          navigate("/api/v1/homefilter");
+          navigate("/homefilter");
         }
         console.log(res);
       } catch (error: any) {

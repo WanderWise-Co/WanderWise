@@ -98,12 +98,12 @@
 
 .plane {
   position: absolute;
-  top: 50%; /* Align the plane vertically */
-  left: 50%; /* Align the plane horizontally */
-  transform: translate(-50%, -50%); /* Center the plane */
-  width: 200px; /* Adjust plane size if necessary */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
   height: auto;
-  z-index: 2; /* Ensure plane is above the earth */
+  z-index: 2;
   color: black;
 }
 
@@ -131,10 +131,10 @@
 
 @media screen and (max-width: 420px) {
   .plane {
-    width: 150px; /* Adjust plane size for smaller screens */
+    width: 150px;
   }
   .earthWrapper {
-    top: 70%; /* Adjust earth position for smaller screens */
+    top: 70%;
     width: 120px;
     height: 120px;
   }

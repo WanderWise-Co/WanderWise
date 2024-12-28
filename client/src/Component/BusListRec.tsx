@@ -1,7 +1,6 @@
 import styles from "./BusListRec.module.css";
-import PlaneComp from "../Page/AnimationComponent/PlaneComp"; // Import PlaneComp
+import PlaneComp from "../Page/AnimationComponent/PlaneComp";
 
-// Update the Bus interface to include new fields
 interface Bus {
   bus_name: string;
   rating: number;
@@ -21,7 +20,7 @@ export default function BusListRec({ buses }: BusRecProps) {
     <div className={styles.busListRec}>
       <h1 className={styles.title}>Recommended Buses</h1>
       {buses.length === 0 ? (
-        <PlaneComp /> // Display PlaneComp if no buses
+        <PlaneComp />
       ) : (
         <ul>
           {buses.map((bus, index) => (

@@ -6,22 +6,22 @@
   padding: 16px;
   border-radius: 8px;
   margin-bottom: 16px;
-  color: white; /* To make text readable on the background */
+  color: white;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 120px; /* Ensure enough height for content */
+  min-height: 120px;
+  background-attachment: lazy;
 }
 
-/* Optional overlay for better text visibility */
 .overlay {
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay */
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 8px;
   padding: 16px;
 }
 
 .info {
-  z-index: 1; /* Ensure content stays above the overlay */
+  z-index: 1;
 }
 
 .header {

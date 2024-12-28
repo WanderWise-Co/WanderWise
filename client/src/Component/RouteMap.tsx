@@ -7,7 +7,7 @@ const containerStyle = {
 };
 
 const center = {
-  lat: 20.5937, // Default to India's lat, lng
+  lat: 20.5937,
   lng: 78.9629,
 };
 

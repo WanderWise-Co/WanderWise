@@ -1,12 +1,13 @@
 .container {
   position: relative;
   min-height: 100vh;
-  background: url("../../assets/bg.jpg") no-repeat center center/cover; /* Replace with your background image */
+  background: url("../../assets/bg.jpg") no-repeat center center/cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
+  background-attachment: lazy;
 }
 
 .skipButtonContainer {
@@ -42,13 +43,13 @@
 
 .buttonColumns {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns layout */
-  gap: 20px; /* Space between buttons */
-  justify-items: center; /* Center buttons within grid cells */
-  align-items: center; /* Align items vertically in the center */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
   width: 100%;
-  max-width: 600px; /* Optional: Limit the width of the grid */
-  margin-bottom: 20px; /* Adds space below the filter buttons */
+  max-width: 600px;
+  margin-bottom: 20px;
 }
 
 .categoryButton {
@@ -56,8 +57,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 150px; /* Increased button size */
-  height: 150px; /* Increased button size */
+  width: 150px;
+  height: 150px;
   background-color: rgba(255, 255, 255, 0.8);
   border: 2px solid transparent;
   border-radius: 10px;
@@ -68,13 +69,13 @@
 }
 
 .categoryButton img {
-  width: 70px; /* Larger image */
-  height: 70px; /* Larger image */
+  width: 70px;
+  height: 70px;
   margin-bottom: 10px;
 }
 
 .categoryButton span {
-  font-size: 1.2rem; /* Slightly larger text */
+  font-size: 1.2rem;
   font-weight: bold;
   color: #000000;
 }
@@ -90,14 +91,14 @@
 }
 
 .submitButton {
-  grid-column: span 2; /* Make the Next button span across both columns */
+  grid-column: span 2;
   background-color: rgb(80, 69, 236);
   color: rgb(0, 0, 0);
   font-weight: bold;
   padding: 10px 20px;
   border-radius: 8px;
-  margin-top: 20px; /* Adds space between the filter buttons and "Next" button */
-  width: 150px; /* Same width as the filter buttons */
+  margin-top: 20px;
+  width: 150px;
 }
 
 .submitButton:hover {

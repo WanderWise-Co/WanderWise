@@ -4,14 +4,13 @@ import styles from "./ProfilePage.module.css";
 
 const ProfilePage = () => {
   const location = useLocation();
-  const { profileData } = location.state || {}; // Destructure profileData from state
+  const { profileData } = location.state || {};
   console.log("Profile Data:", profileData);
 
   return (
     <div className={styles.profileContainer}>
       <h1 className={styles.header}>User Profile</h1>
 
-      {/* Display User Details */}
       {profileData ? (
         <div>
           <div className={styles.userDetails}>
@@ -30,7 +29,6 @@ const ProfilePage = () => {
             )}
           </div>
 
-          {/* Display Preferences */}
           <div className={styles.preferences}>
             <h2>Preferences:</h2>
             {profileData.pref && profileData.pref.length > 0 ? (

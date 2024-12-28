@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { MDBBtn } from "mdb-react-ui-kit";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
-import styles from "./HotelFilter.module.css"; 
+import styles from "./HotelFilter.module.css";
 import ac from "../../assets/AC.jpg";
 import food from "../../assets/food.jpg";
 import cp from "../../assets/cp.jpg";
@@ -47,7 +47,7 @@ export default function HomeFilter() {
         localStorage.getItem("selected_features") || "[]"
       );
       console.log(categories);
-      navigate("/api/v1/planpage"); // Navigate after a successful API call
+      navigate("/planpage");
     } catch (err: any) {
       console.error("Error fetching recommendations:", err.message);
     }
@@ -59,7 +59,7 @@ export default function HomeFilter() {
         <MDBBtn
           className={styles.skipButton}
           onClick={() => {
-            navigate("/api/v1/planpage");
+            navigate("/planpage");
           }}
         >
           Skip
@@ -77,7 +77,7 @@ export default function HomeFilter() {
             }`}
             onClick={() => toggleCategorySelection(category.name)}
           >
-            <img src={category.imgSrc} alt={category.name} />
+            <img src={category.imgSrc} alt={category.name} loading="lazy" />
             <span>{category.name}</span>
           </MDBBtn>
         ))}

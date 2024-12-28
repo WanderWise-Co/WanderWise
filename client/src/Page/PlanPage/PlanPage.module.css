@@ -1,9 +1,9 @@
 .centeredText {
-  font-size: 48px; /* Adjust font size */
-  text-align: center; /* Center text horizontally */
-  display: flex; /* Enable flexbox */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  font-size: 48px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 10rem;
   color: rgb(137, 45, 45);
   font-family: "Edu AU VIC WA NT Arrows", cursive;
@@ -11,51 +11,50 @@
 .planesContainer {
   display: flex;
   width: 100%;
-  gap: 16px; /* Optional: Space between left and right sections */
+  gap: 16px;
 }
 
 .left,
 .right {
   width: 50%;
-  padding: 16px; /* Optional: Add padding for spacing */
-  box-sizing: border-box; /* Ensure padding doesn't affect width */
+  padding: 16px;
+  box-sizing: border-box;
 }
 
 .left {
-  background-color: #f9f9f9; /* Optional: Add a background color for distinction */
+  background-color: #f9f9f9;
 }
 
 .right {
-  background-color: #fff; /* Optional: Add a different background color */
+  background-color: #fff;
 }
 .busesContainer {
   display: flex;
   width: 100%;
-  gap: 16px; /* Space between left and right sections */
+  gap: 16px;
 }
 
 .left,
 .right {
   width: 50%;
-  padding: 16px; /* Add padding for spacing */
-  box-sizing: border-box; /* Ensure padding doesn’t affect the width */
+  padding: 16px;
+  box-sizing: border-box;
 }
 
 .left {
-  background-color: #eef6f9; /* Light blue background for the left section */
+  background-color: #eef6f9;
 }
 
 .right {
-  background-color: #f9f9f9; /* Light gray background for the right section */
+  background-color: #f9f9f9;
 }
 
-/* Optional: Add styling for responsive behavior */
 @media (max-width: 768px) {
   .busesContainer {
-    flex-direction: column; /* Stack the sections vertically on smaller screens */
+    flex-direction: column;
   }
   .left,
   .right {
-    width: 100%; /* Full width for stacked sections */
+    width: 100%;
   }
 }

@@ -5,7 +5,7 @@ import {
   Marker,
   InfoWindow,
 } from "@react-google-maps/api";
-import  styles  from "./Map.module.css";
+import styles from "./Map.module.css";
 export interface Places {
   place_id: string;
   name: string;

@@ -1,6 +1,5 @@
 import styles from "./Section.module.css";
 
-// Define the props interface
 interface SectionProps {
   title: string;
   locations: string[];

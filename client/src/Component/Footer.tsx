@@ -1,4 +1,3 @@
-// Footer.tsx
 import {
   MDBFooter,
   MDBContainer,

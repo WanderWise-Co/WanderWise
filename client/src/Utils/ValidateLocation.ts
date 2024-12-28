@@ -13,13 +13,13 @@ const validateLocation = async (address: string): Promise<boolean> => {
     );
 
     if (response.data.status === "OK" && response.data.results.length > 0) {
-      return true; // Valid location
+      return true;
     } else {
-      return false; // Invalid location
+      return false;
     }
   } catch (error) {
     console.error("Error validating location:", error);
-    return false; // Treat errors as invalid locations
+    return false;
   }
 };
 

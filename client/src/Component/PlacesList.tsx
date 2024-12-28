@@ -24,25 +24,22 @@ export default function PlacesList({
   const [isAscending, setIsAscending] = useState(true);
 
   useEffect(() => {
-    setSortedPlaces([...places]); // Sync sortedPlaces with incoming places
+    setSortedPlaces([...places]);
   }, [places]);
 
   const handleCheckboxToggle = (placeName: string, isChecked: boolean) => {
     setCurrentSelected((prev) => {
       if (isChecked) {
-        return [...prev, placeName]; // Add place if checked
+        return [...prev, placeName];
       } else {
-        return prev.filter((name) => name !== placeName); // Remove place if unchecked
+        return prev.filter((name) => name !== placeName);
       }
     });
   };
 
   const handleSort = () => {
-    const sorted = [...sortedPlaces].sort(
-      (a, b) =>
-        isAscending
-          ? a.name.localeCompare(b.name) // Sort ascending
-          : b.name.localeCompare(a.name) // Sort descending
+    const sorted = [...sortedPlaces].sort((a, b) =>
+      isAscending ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name)
     );
     setSortedPlaces(sorted);
     setIsAscending(!isAscending);

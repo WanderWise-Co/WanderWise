@@ -3,11 +3,6 @@ import { emailRegex, passwordRegex } from "../../Utils/Reg";
 import axios from "axios";
 import { NavigateFunction } from "react-router-dom";
 
-/**
- * Handles user login with email and password.
- * @param userDetails - User's email and password.
- * @param navigate - React Router's navigate function.
- */
 const handleLogin = async (
   userDetails: { userEmail: string; userPassword: string },
   navigate: NavigateFunction
@@ -31,7 +26,7 @@ const handleLogin = async (
     toast.success(response.data.message);
 
     localStorage.setItem("token", response.data.token);
-    navigate("/api/v1/homefilter");
+    navigate("/homefilter");
   } catch (error: any) {
     toast.error(error.response?.data?.message || "Login failed");
     console.error(error);

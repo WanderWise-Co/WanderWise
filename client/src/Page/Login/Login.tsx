@@ -5,9 +5,6 @@ import { GoogleLoginButton } from "react-social-login-buttons";
 import handleLogin from "../../Services/Login/Login";
 import useHandleContinueWithGoogle from "../../Services/Login/HandleContinueWithGoogle";
 
-/**
- * Login component with email/password and Google login.
- */
 export default function Login() {
   const [userDetails, setUserDetails] = useState({
     userEmail: "",
@@ -17,9 +14,6 @@ export default function Login() {
   const navigate = useNavigate();
   const handleGoogleLogin = useHandleContinueWithGoogle(navigate);
 
-  /**
-   * Updates userDetails state on input change.
-   */
   function handleInputChange(event: ChangeEvent<HTMLInputElement>): void {
     const { name, value } = event.target;
     setUserDetails((prev) => ({
@@ -68,8 +62,8 @@ export default function Login() {
           </button>
         </div>
         <div className={styles.footer}>
-          <Link to="/api/v1/auth/register">Don't have an account? Sign Up</Link>
-          <Link to="/api/v1/auth/forgotpassword">Forgot Password</Link>
+          <Link to="/auth/register">Don't have an account? Sign Up</Link>
+          <Link to="/auth/forgotpassword">Forgot Password</Link>
         </div>
       </div>
     </div>

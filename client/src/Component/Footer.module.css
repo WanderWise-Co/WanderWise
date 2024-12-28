@@ -1,38 +1,37 @@
-/* Footer.module.css */
 .footer {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  font-size: 0.875rem; /* Decreased font size */
+  font-size: 0.875rem;
 }
 
 .footer-content {
-  padding: 0.5rem 0; /* Less padding for more compact appearance */
+  padding: 0.5rem 0;
 }
 
 .company-col h6,
 .products-col h6,
 .links-col h6,
 .contact-col h6 {
-  font-size: 0.875rem; /* Smaller section headings */
-  margin-bottom: 0.75rem; /* Reduce margin below headings */
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
 }
 
 .footer-text {
-  font-size: 0.75rem; /* Decrease text size for footer content */
-  margin-bottom: 0.75rem; /* Reduce space between paragraphs */
+  font-size: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 
 .footer-bottom {
-  font-size: 0.75rem; /* Smaller font for bottom section */
-  padding: 0.5rem; /* Less padding */
+  font-size: 0.75rem;
+  padding: 0.5rem;
 }
 
 .footer a {
-  font-size: 0.875rem; /* Small size for links */
+  font-size: 0.875rem;
   text-decoration: none;
   color: inherit;
 }
 
 .footer p {
-  margin-bottom: 0.5rem; /* Reduce space between contact details */
+  margin-bottom: 0.5rem;
 }

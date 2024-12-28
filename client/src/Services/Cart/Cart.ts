@@ -2,7 +2,7 @@ import axios from "axios";
 
 type CategoryItem = {
   category: "restaurant" | "hotel" | "attraction";
-  location: string[]; // Array of locations (strings)
+  location: string[];
 };
 
 type CartData = {

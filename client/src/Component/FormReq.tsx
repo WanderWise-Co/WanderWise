@@ -25,6 +25,7 @@ const CategoryButton = ({ category, isSelected, onClick }: any) => (
       src={category.imgSrc}
       alt={category.name}
       className={`${styles.buttonImage} ${isSelected ? styles.selectedImage : ""}`}
+      loading="lazy"
     />
     <span>{category.name}</span>
   </button>
@@ -39,7 +40,7 @@ export default function FormReq() {
     startDate: new Date(),
     endDate: new Date(new Date().setMonth(11)),
   });
-  
+
   const handleChooseClick = handleChoosePlanClick();
 
   useEffect(() => {
@@ -70,7 +71,6 @@ export default function FormReq() {
         : [...prevSelected, categoryName]
     );
   };
-
 
   const handleValueChange = (newValue: any) => {
     if (!newValue.startDate || !newValue.endDate) {

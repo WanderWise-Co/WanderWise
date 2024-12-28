@@ -1,4 +1,3 @@
-// Home.tsx
 import Footer from "../../Component/Footer";
 import FormReq from "../../Component/FormReq";
 

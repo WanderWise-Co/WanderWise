@@ -3,7 +3,6 @@ import { isLoggedin } from "../../Utils/Auth";
 import toast from "react-hot-toast";
 import validateLocation from "../../Utils/ValidateLocation";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
 
 const handleChoosePlanClick = () => {
   const navigate = useNavigate();
@@ -65,9 +64,9 @@ const handleChoosePlanClick = () => {
     }
 
     if (isLoggedin()) {
-      navigate(`/api/v1/homefilter`);
+      navigate(`/homefilter`);
     } else {
-      navigate("/api/v1/auth/login");
+      navigate("/auth/login");
     }
   };
 

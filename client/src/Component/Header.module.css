@@ -1,11 +1,10 @@
-/* Header.module.css */
 .headerContainer {
   width: 100%;
   height: 50%;
-  margin: 0 auto; /* Center horizontally */
-  background-color: #d0e8f5; /* Background color */
-  text-align: center; /* Center the text */
-  padding: 20px; /* Add some padding for spacing */
+  margin: 0 auto;
+  background-color: #d0e8f5;
+  text-align: center;
+  padding: 20px;
   font-size: xx-large;
   font-style: italic bold;
 }

@@ -34,7 +34,6 @@ export default function Navbar({
   setHotelRecoData,
   setNavButton,
 }: NavbarProps) {
-  
   const navigate = useNavigate();
   const [activeButton, setActiveButton] = useState<string>("");
   const [menuOpen, setMenuOpen] = useState(false);
@@ -122,7 +121,10 @@ export default function Navbar({
               href="#Buses"
               onClick={() => {
                 setNavButton("buses");
-                handleBusClick(setTransportBusesData, setTransportBusesRecoData);
+                handleBusClick(
+                  setTransportBusesData,
+                  setTransportBusesRecoData
+                );
                 setActiveButton("buses");
               }}
             >
@@ -132,7 +134,10 @@ export default function Navbar({
               href="#Planes"
               onClick={() => {
                 setNavButton("planes");
-                handlePlaneClick(setTransportPlaneData, setTransportPlaneRecoData);
+                handlePlaneClick(
+                  setTransportPlaneData,
+                  setTransportPlaneRecoData
+                );
                 setActiveButton("planes");
               }}
             >

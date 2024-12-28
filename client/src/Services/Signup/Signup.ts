@@ -3,11 +3,6 @@ import { emailRegex, passwordRegex } from "../../Utils/Reg";
 import axios from "axios";
 import { NavigateFunction } from "react-router-dom";
 
-/**
- * Handles user signup with name, email, and password.
- * @param userDetails - User's name, email, and password.
- * @param navigate - React Router's navigate function.
- */
 const handleSignUp = async (
   userDetails: { userName: string; userEmail: string; userPassword: string },
   navigate: NavigateFunction
@@ -32,7 +27,7 @@ const handleSignUp = async (
     console.log(response);
 
     toast.success(response.data.message || "Signup successful");
-    navigate("/api/v1/auth/login");
+    navigate("/auth/login");
   } catch (error: any) {
     toast.error(error.response?.data?.message || "Signup failed");
     console.error(error);

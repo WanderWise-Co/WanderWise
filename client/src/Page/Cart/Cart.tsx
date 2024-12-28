@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Section from "./Section"; // Reusable section component
+import Section from "./Section";
 import styles from "./Cart.module.css";
 import { Button } from "flowbite-react";
 import PlaneComp from "../AnimationComponent/PlaneComp";

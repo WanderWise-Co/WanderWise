@@ -5,7 +5,7 @@ import handleSignOut from "../Services/ProfilePage/SignOut";
 import handleViewProfile from "../Services/ProfilePage/ProfilePage";
 
 export default function UserDropdown() {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -14,7 +14,6 @@ export default function UserDropdown() {
 
   return (
     <div className={styles.dropdownContainer}>
-      {/* Avatar Button to toggle dropdown */}
       <div className={styles.avatarButton} onClick={toggleDropdown}>
         <svg
           className={styles.avatarIcon}
@@ -30,11 +29,10 @@ export default function UserDropdown() {
         </svg>
       </div>
 
-      {/* Dropdown Menu */}
       {isOpen && (
         <div className={styles.dropdownMenu}>
           <a
-            onClick={() => handleViewProfile(navigate)} // Pass navigate here
+            onClick={() => handleViewProfile(navigate)}
             className={`${styles.dropdownItem} ${styles.dropdownItemDark}`}
           >
             View Profile

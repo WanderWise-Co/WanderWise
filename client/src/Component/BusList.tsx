@@ -30,22 +30,19 @@ export default function BusesList({ Buses }: BusesListProps) {
   const handleSort = (field: keyof Bus) => {
     const sorted = [...sortedBuses].sort((a, b) => {
       if (field === "price") {
-        // Sort numeric fields like price
         return isAscending
           ? parseInt(a.price) - parseInt(b.price)
           : parseInt(b.price) - parseInt(a.price);
       } else if (typeof a[field] === "string" && typeof b[field] === "string") {
-        // Sort string fields
         return isAscending
           ? (a[field] as string).localeCompare(b[field] as string)
           : (b[field] as string).localeCompare(a[field] as string);
       } else if (Array.isArray(a[field]) && Array.isArray(b[field])) {
-        // Optional: Define how to sort array fields like amenities (e.g., by length)
         return isAscending
           ? a[field].length - b[field].length
           : b[field].length - a[field].length;
       } else {
-        return 0; // Default: no sorting for unsupported fields
+        return 0;
       }
     });
 
