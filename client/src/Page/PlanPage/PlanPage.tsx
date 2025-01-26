@@ -17,7 +17,7 @@ export default function PlanPage() {
   const lat = Number(localStorage.getItem("lat")) || 0;
   const lng = Number(localStorage.getItem("lng")) || 0;
 
-  const [coordinates, setCoordinates] = useState({ lat, lng });
+  const [coordinates] = useState({ lat, lng });
   const [places, setPlaces] = useState<any[]>([]);
   const [placeType, setPlaceType] = useState("");
 
@@ -32,14 +32,10 @@ export default function PlanPage() {
   const [hotelRecoData, setHotelRecoData] = useState<any>(null);
   const [navButton, setNavButton] = useState("");
 
-  const [source, setSource] = useState(localStorage.getItem("from") || "");
-  const [destination, setDestination] = useState(
-    localStorage.getItem("to") || ""
-  );
-  const [endDate, setEndDate] = useState(localStorage.getItem("endDate") || "");
-  const [startDate, setStartDate] = useState(
-    localStorage.getItem("startDate") || ""
-  );
+  const [source] = useState(localStorage.getItem("from") || "");
+  const [destination] = useState(localStorage.getItem("to") || "");
+  const [endDate] = useState(localStorage.getItem("endDate") || "");
+  const [startDate] = useState(localStorage.getItem("startDate") || "");
 
   useEffect(() => {
     console.log("Received Data in PlanPage:");
