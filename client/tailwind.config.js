@@ -1,5 +1,4 @@
-const flowbite = require("flowbite-react/tailwind");
-const withMT = require("@material-tailwind/react/utils/withMT");
+import flowbite from "flowbite-react/tailwind";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -7,13 +6,11 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
     flowbite.content(),
-    "./src/**/*.{js,jsx,ts,tsx}", "./node_modules/react-tailwindcss-datepicker/dist/index.esm.js",
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "./node_modules/react-tailwindcss-datepicker/dist/index.esm.js",
   ],
   theme: {
     extend: {},
   },
-  plugins: [
-    flowbite.plugin(),
-  ],
-}
-
+  plugins: [flowbite.plugin()],
+};
