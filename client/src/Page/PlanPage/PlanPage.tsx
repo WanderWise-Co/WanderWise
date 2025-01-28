@@ -72,12 +72,17 @@ export default function PlanPage() {
       JSON.stringify(transportBusesRecoData, null, 2)
     );
     console.log("Hotel Recommendation Data:", hotelRecoData);
+    console.log(
+      "Transport Rental Data:",
+      JSON.stringify(transportRentalData, null, 2)
+    );
   }, [
     transportPlaneData,
     transportPlaneRecoData,
     transportBusesData,
     transportBusesRecoData,
     hotelRecoData,
+    transportRentalData,
   ]);
 
   return (

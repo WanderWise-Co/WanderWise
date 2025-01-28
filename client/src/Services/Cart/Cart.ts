@@ -18,7 +18,7 @@ const fetchData = async (): Promise<CartData> => {
     const from = localStorage.getItem("from");
 
     const response = await axios.get(
-      `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/cart`,
+      `${import.meta.env.VITE_BASE_SERVER_URL}/api/v1/planpage/cart`,
       {
         headers: {
           Authorization: `Bearer ${token}`,

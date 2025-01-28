@@ -8,6 +8,7 @@ import {
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import styles from "./Footer.module.css";
 
+import { FaFacebook ,FaInstagram ,FaThreads } from "react-icons/fa6";
 export default function Footer() {
   return (
     <>
@@ -71,30 +72,33 @@ export default function Footer() {
                 <p>
                   <a
                     href="https://www.facebook.com"
-                    className="text-reset"
+                    className="text-reset flex items-center gap-2"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
+                    <FaFacebook />
                     Facebook
                   </a>
                 </p>
                 <p>
                   <a
                     href="https://www.instagram.com"
-                    className="text-reset"
+                    className="text-reset flex items-center gap-2"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
+                    <FaInstagram />
                     Instagram
                   </a>
                 </p>
                 <p>
                   <a
                     href="https://www.threads.net"
-                    className="text-reset"
+                    className="text-reset flex items-center gap-2"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
+                    <FaThreads />
                     Threads
                   </a>
                 </p>

@@ -8,7 +8,9 @@ const useHandleContinueWithGoogle = (navigate: NavigateFunction) => {
       console.log(response);
       try {
         const res = await axios.post(
-          `${import.meta.env.VITE_BASE_SERVER_URL}/auth/Oauth?oauth_provider=google`,
+          `${
+            import.meta.env.VITE_BASE_SERVER_URL
+          }/api/v1/auth/Oauth?oauth_provider=google`,
           {},
           {
             headers: {

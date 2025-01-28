@@ -51,7 +51,7 @@ const register = async(req,res)=>
         console.log('registering user');
         const { userName, userEmail, userPassword } = req.body;
         const user = await User.create({...req.body});
-        const emailBody = `<p>Please click on the link to verify your account.<b> http://localhost:3000/api/v1/auth/verify/${user.verificationToken.token} </b></p>`
+        const emailBody = `<p>Please click on the link to verify your account.<b> ${process.env.VITE_BASE_SERVER_URL}/api/v1/auth/verify/${user.verificationToken.token} </b></p>`
         const subject = `Verification Email`
         await sendEmail(userEmail, subject, emailBody);
         res.json({message: "Verification link sent to User email.",OTP:user.verificationToken.token});
@@ -69,7 +69,7 @@ const verifyUser = async(req,res) => {
         console.log(isValidToken);
         
         if(!isValidToken){
-            return res.send(`Token Invalid or Expierd <br><a href= "http://localhost:3000/User/resendVerfication/${token}">Resend Verification Mail</a>`)
+            return res.send(`Token Invalid or Expierd <br><a href= "${process.env.VITE_BASE_SERVER_URL}/User/resendVerfication/${token}">Resend Verification Mail</a>`)
         }
         isValidToken.isVerified = true;
         await isValidToken.save()
@@ -97,7 +97,7 @@ const resendVerificationEmail = async (req, res) => {
 
         await user.save();
 
-        const emailBody = `<p>Please click on the link to verify your account. <b>http://localhost:3000/api/v1/auth/resendVerfication/${verificationToken}</b></p>`;
+        const emailBody = `<p>Please click on the link to verify your account. <b>${process.env.VITE_BASE_SERVER_URL}/api/v1/auth/resendVerfication/${verificationToken}</b></p>`;
         const subject = "Verification Email";
 
         await sendEmail(user.userEmail, subject, emailBody);

@@ -1,23 +1,29 @@
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const handleBusClick = async (
   setTransportBusesData: (data: any) => void,
   setTransportBusesRecoData: (data: any) => void
 ) => {
+  const token = localStorage.getItem("token");
+  const from = localStorage.getItem("from");
+  const to = localStorage.getItem("to");
+  const sDate = localStorage.getItem("startDate");
+  const eDate = localStorage.getItem("endDate");
+  if (!token) {
+    toast.error("Unauthorized access");
+    return;
+  }
+  if (!(from && to && sDate && eDate)) {
+    toast.error("Input token and other details are required");
+    return;
+  }
   try {
     console.log("fetching");
-    const token = localStorage.getItem("token");
-    const from = localStorage.getItem("from");
-    const to = localStorage.getItem("to");
-    const sDate = localStorage.getItem("startDate");
-    const eDate = localStorage.getItem("endDate");
-    if (!(token && from && to && sDate && eDate)) {
-      alert("Input token and other details");
-      return;
-    }
+
     console.log("Fetching bus data...");
     const response = await axios.get(
-      `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/transport/bus`,
+      `${import.meta.env.VITE_BASE_SERVER_URL}/api/v1/planpage/transport/bus`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -33,7 +39,7 @@ const handleBusClick = async (
     console.log("Bus data fetched successfully:", response.data.data);
     setTransportBusesData(response.data.data);
     const reco_response = await axios.get(
-      `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/recommendation/busreco`,
+      `${import.meta.env.VITE_BASE_SERVER_URL}/api/v1/planpage/recommendation/busreco`,
       {
         headers: {
           Authorization: ` Bearer ${token} `,

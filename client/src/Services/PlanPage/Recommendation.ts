@@ -1,4 +1,5 @@
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const handleRecoClick = async (setGemeniData: any, setHotelRecoData: any) => {
   const token = localStorage.getItem("token");
@@ -6,19 +7,17 @@ const handleRecoClick = async (setGemeniData: any, setHotelRecoData: any) => {
   const to = localStorage.getItem("to");
   const sDate = localStorage.getItem("startDate");
   const eDate = localStorage.getItem("endDate");
-
+  if (!token) {
+    toast.error("Unauthorized access");
+    return;
+  }
+  if (!(from && to && sDate && eDate)) {
+    toast.error("Input token and other details are required");
+    return;
+  }
   try {
-    const response = await axios.get(
-      `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/gemini`,
-      {
-        headers: { Authorization: `Bearer ${token}` },
-        params: { from, to, startDate: sDate, endDate: eDate },
-      }
-    );
-    setGemeniData(response.data.data);
-
-    const hotel_response = await axios.get(
-      `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/transport/hotel`,
+    const hotel_response = axios.get(
+      `${import.meta.env.VITE_BASE_SERVER_URL}/api/v1/planpage/transport/hotel`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -31,6 +30,17 @@ const handleRecoClick = async (setGemeniData: any, setHotelRecoData: any) => {
         },
       }
     );
+    const response = await axios.get(
+      `${import.meta.env.VITE_BASE_SERVER_URL}/api/v1/planpage/gemini`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        params: { from, to, startDate: sDate, endDate: eDate },
+      }
+    );
+    setGemeniData(response.data.data);
+
     console.log(hotel_response);
 
     const selected_features = JSON.parse(
@@ -38,7 +48,9 @@ const handleRecoClick = async (setGemeniData: any, setHotelRecoData: any) => {
     );
 
     const reco_response = await axios.get(
-      `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/recommendation/hotelreco`,
+      `${
+        import.meta.env.VITE_BASE_SERVER_URL
+      }/api/v1/planpage/recommendation/hotelreco`,
       {
         headers: {
           Authorization: `Bearer ${token}`,

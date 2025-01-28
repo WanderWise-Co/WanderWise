@@ -9,7 +9,7 @@ const handlegemini1 = async () => {
     const endDate = localStorage.getItem("endDate");
 
     const response = await axios.get(
-      `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/gemini2`,
+      `${import.meta.env.VITE_BASE_SERVER_URL}/api/v1/planpage/gemini2`,
       {
         responseType: "blob",
         headers: {

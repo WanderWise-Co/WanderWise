@@ -18,7 +18,7 @@ const handleLogin = async (
   try {
     console.log("Logging in...");
     const response = await axios.post(
-      `${import.meta.env.VITE_BASE_SERVER_URL}/auth/login`,
+      `${import.meta.env.VITE_BASE_SERVER_URL}/api/v1/auth/login`,
       userDetails
     );
     console.log(response);
