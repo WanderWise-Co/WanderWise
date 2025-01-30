@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./Navbar.module.css";
-import toast from "react-hot-toast";
+import { toast } from "react-toastify";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faPlane } from "@fortawesome/free-solid-svg-icons";
 import UserDropdown from "./UserDropdown";
@@ -43,7 +43,7 @@ export default function Navbar({
   };
 
   const handleGoogleAPIClick = () => {
-    toast.success("Please select the places you want to visit");
+    toast.info("Please select the places you want to visit");
   };
 
   return (

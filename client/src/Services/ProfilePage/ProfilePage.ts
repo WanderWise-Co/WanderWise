@@ -1,5 +1,5 @@
 import axios from "axios";
-import toast from "react-hot-toast";
+import { toast } from "react-toastify";
 
 const handleViewProfile = async (navigate: Function) => {
   const token = localStorage.getItem("token");

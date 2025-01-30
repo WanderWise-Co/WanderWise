@@ -1,5 +1,5 @@
 import axios from "axios";
-import toast from "react-hot-toast";
+import { toast } from "react-toastify";
 
 const handleRecoClick = async (setGemeniData: any, setHotelRecoData: any) => {
   const token = localStorage.getItem("token");

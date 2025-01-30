@@ -1,5 +1,5 @@
 import axios from "axios";
-import toast from "react-hot-toast";
+import { toast } from "react-toastify";
 
 export default async function fetchNearbyPlaces(
   type: string,

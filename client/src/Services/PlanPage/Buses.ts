@@ -1,5 +1,5 @@
 import axios from "axios";
-import toast from "react-hot-toast";
+import { toast } from "react-toastify";
 
 const handleBusClick = async (
   setTransportBusesData: (data: any) => void,

@@ -1,4 +1,4 @@
-import toast from "react-hot-toast";
+import { toast } from "react-toastify";
 import { emailRegex, passwordRegex } from "../../Utils/Reg";
 import axios from "axios";
 import { NavigateFunction } from "react-router-dom";

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { isLoggedin } from "../../Utils/Auth";
-import toast from "react-hot-toast";
+import { toast } from "react-toastify";
 import validateLocation from "../../Utils/ValidateLocation";
 import { useNavigate } from "react-router-dom";
 
