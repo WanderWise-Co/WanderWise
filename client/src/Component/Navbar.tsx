@@ -4,36 +4,25 @@ import { toast } from "react-toastify";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faPlane } from "@fortawesome/free-solid-svg-icons";
 import UserDropdown from "./UserDropdown";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import handlePlaneClick from "../Services/PlanPage/Planes";
 import handleBusClick from "../Services/PlanPage/Buses";
 import handleRentalClick from "../Services/PlanPage/Rental";
 import handleRecoClick from "../Services/PlanPage/Recommendation";
+import { AppContext } from "../Hooks/AppProvider";
 
-// Navbar Props Interface
-interface NavbarProps {
-  setPlaceType: (type: string) => void;
-  setTransportPlaneData: (data: any) => void;
-  setTransportPlaneRecoData: (data: any) => void;
-  setTransportBusesData: (data: any) => void;
-  setTransportBusesRecoData: (data: any) => void;
-  setTransportRentalData: (data: any) => void;
-  setGemeniData: (data: any) => void;
-  setHotelRecoData: (data: any) => void;
-  setNavButton: (data: string) => void;
-}
-
-export default function Navbar({
-  setPlaceType,
-  setTransportPlaneData,
-  setTransportPlaneRecoData,
-  setTransportBusesData,
-  setTransportBusesRecoData,
-  setTransportRentalData,
-  setGemeniData,
-  setHotelRecoData,
-  setNavButton,
-}: NavbarProps) {
+export default function Navbar() {
+  const {
+    setPlaceType,
+    setTransportPlaneData,
+    setTransportPlaneRecoData,
+    setTransportBusesData,
+    setTransportBusesRecoData,
+    setTransportRentalData,
+    setGemeniData,
+    setHotelRecoData,
+    setNavButton,
+  } = useContext(AppContext);
   const navigate = useNavigate();
   const [activeButton, setActiveButton] = useState<string>("");
   const [menuOpen, setMenuOpen] = useState(false);

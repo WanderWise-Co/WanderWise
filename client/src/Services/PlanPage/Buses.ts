@@ -1,9 +1,10 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 
+
 const handleBusClick = async (
-  setTransportBusesData: (data: any) => void,
-  setTransportBusesRecoData: (data: any) => void
+  setTransportBusesData: any,
+  setTransportBusesRecoData: any
 ) => {
   const token = localStorage.getItem("token");
   const from = localStorage.getItem("from");
@@ -39,7 +40,9 @@ const handleBusClick = async (
     console.log("Bus data fetched successfully:", response.data.data);
     setTransportBusesData(response.data.data);
     const reco_response = await axios.get(
-      `${import.meta.env.VITE_BASE_SERVER_URL}/api/v1/planpage/recommendation/busreco`,
+      `${
+        import.meta.env.VITE_BASE_SERVER_URL
+      }/api/v1/planpage/recommendation/busreco`,
       {
         headers: {
           Authorization: ` Bearer ${token} `,

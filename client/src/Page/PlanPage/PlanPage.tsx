@@ -1,7 +1,7 @@
 import Footer from "../../Component/Footer";
 import styles from "../PlanPage/PlanPage.module.css";
 import PlacesList from "../../Component/PlacesList";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Navbar from "../../Component/Navbar";
 import CarRental from "../../Component/CarRental";
 import FlightsList from "../../Component/FlightList";
@@ -12,38 +12,31 @@ import HotelReco from "../../Component/HotelReco";
 import FlightRec from "../../Component/FlightRec";
 import RouteMap from "../../Component/RouteMap";
 import fetchNearbyPlaces from "../../Services/PlanPage/GoogleAPI";
+import { AppContext } from "../../Hooks/AppProvider";
 
 export default function PlanPage() {
+  const {
+    placeType,
+    transportPlaneData,
+    transportPlaneRecoData,
+    transportBusesData,
+    transportBusesRecoData,
+    transportRentalData,
+    gemeniData,
+    hotelRecoData,
+    navButton,
+  } = useContext(AppContext);
+
   const lat = Number(localStorage.getItem("lat")) || 0;
   const lng = Number(localStorage.getItem("lng")) || 0;
 
   const [coordinates] = useState({ lat, lng });
   const [places, setPlaces] = useState<any[]>([]);
-  const [placeType, setPlaceType] = useState("");
-
-  const [transportPlaneData, setTransportPlaneData] = useState<any>(null);
-  const [transportPlaneRecoData, setTransportPlaneRecoData] =
-    useState<any>(null);
-  const [transportBusesData, setTransportBusesData] = useState<any>(null);
-  const [transportBusesRecoData, setTransportBusesRecoData] =
-    useState<any>(null);
-  const [transportRentalData, setTransportRentalData] = useState<any>(null);
-  const [gemeniData, setGemeniData] = useState<any>(null);
-  const [hotelRecoData, setHotelRecoData] = useState<any>(null);
-  const [navButton, setNavButton] = useState("");
 
   const [source] = useState(localStorage.getItem("from") || "");
   const [destination] = useState(localStorage.getItem("to") || "");
   const [endDate] = useState(localStorage.getItem("endDate") || "");
   const [startDate] = useState(localStorage.getItem("startDate") || "");
-
-  useEffect(() => {
-    console.log("Received Data in PlanPage:");
-    console.log("Source:", source);
-    console.log("Destination:", destination);
-    console.log("Start Date:", startDate);
-    console.log("End Date:", endDate);
-  }, [source, destination, startDate, endDate]);
 
   useEffect(() => {
     if (["restaurant", "hotel", "tourist_attraction"].includes(placeType)) {
@@ -54,6 +47,7 @@ export default function PlanPage() {
     }
   }, [placeType, coordinates]);
 
+  //debugging purpose
   useEffect(() => {
     console.log(
       "Transport Plane Data:",
@@ -84,20 +78,16 @@ export default function PlanPage() {
     hotelRecoData,
     transportRentalData,
   ]);
-
+  useEffect(() => {
+    console.log("Received Data in PlanPage:");
+    console.log("Source:", source);
+    console.log("Destination:", destination);
+    console.log("Start Date:", startDate);
+    console.log("End Date:", endDate);
+  }, [source, destination, startDate, endDate]);
   return (
     <>
-      <Navbar
-        setPlaceType={setPlaceType}
-        setTransportPlaneData={setTransportPlaneData}
-        setTransportPlaneRecoData={setTransportPlaneRecoData}
-        setTransportBusesData={setTransportBusesData}
-        setTransportBusesRecoData={setTransportBusesRecoData}
-        setTransportRentalData={setTransportRentalData}
-        setGemeniData={setGemeniData}
-        setHotelRecoData={setHotelRecoData}
-        setNavButton={setNavButton}
-      />
+      <Navbar />
 
       <div className={styles.planPageContainer}>
         <div className={styles.contentContainer}>
