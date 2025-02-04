@@ -54,16 +54,18 @@ time.sleep(5)
 car_rentals = []
 
 # Scrape car names, ratings, and links
+# Scrape car names, ratings, and links
 try:
-    car_names = driver.find_elements(By.CLASS_NAME, "jsx-915cb403736563fc.resultbox_title_anchor.line_clamp_1")
-    ratings = driver.find_elements(By.CLASS_NAME, "jsx-915cb403736563fc.resultbox_totalrate.mr-6.font17.fw600.colorFFF")
-    car_links = driver.find_elements(By.CSS_SELECTOR, "a.jsx-915cb403736563fc.slideshow-listing-card")
+    # Updated class names for car names, ratings, and links
+    car_names = driver.find_elements(By.CLASS_NAME, "jsx-fe17fdde4ca6d934.resultbox_title_anchor.line_clamp_1")
+    ratings = driver.find_elements(By.CLASS_NAME, "jsx-fe17fdde4ca6d934.resultbox_totalrate.mr-6.font17.fw600.colorFFF")
+    car_links = driver.find_elements(By.CSS_SELECTOR, "a.jsx-fe17fdde4ca6d934.resultbox_title_anchorbox.font22.fw500.color111")
 
     # Check if we have the same number of names, ratings, and links
     if len(car_names) == len(ratings) == len(car_links):
         for i in range(len(car_names)):
             car_name = car_names[i].text
-            rating = ratings[i].text.split()[0]  # Extract the rating value before the 'star' icon
+            rating = ratings[i].text.split()[0]  # Extract the rating value
             link = car_links[i].get_attribute('href')
             car_rentals.append({
                 "car_name": car_name,
@@ -74,6 +76,7 @@ try:
         print(f"Warning: Mismatch between the number of car names, ratings, and links. Names: {len(car_names)}, Ratings: {len(ratings)}, Links: {len(car_links)}")
 except Exception as e:
     print(f"Error while scraping car details: {e}")
+
 
 # Wait for the location and phone number elements to be present
 wait = WebDriverWait(driver, 10)
@@ -103,7 +106,7 @@ except Exception as e:
     print(f"Error while scraping location and phone number details: {e}")
 
 # Store the data in a JSON file
-# output_dir = os.path.join(os.path.dirname(__file__), 'outputs')
+# output_dir = os.path.join(os.path.dirname(_file_), 'outputs')
 # os.makedirs(output_dir, exist_ok=True)
 output_dir = os.path.join(os.path.dirname(__file__), 'outputs')  # Correctly resolve the 'outputs' directory
 os.makedirs(output_dir, exist_ok=True)  # Ensure the directory exists

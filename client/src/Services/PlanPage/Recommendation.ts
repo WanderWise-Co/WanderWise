@@ -16,7 +16,8 @@ const handleRecoClick = async (setGemeniData: any, setHotelRecoData: any) => {
     return;
   }
   try {
-    const hotel_response = axios.get(
+    //web scraping
+    const hotel_response = await axios.get(
       `${import.meta.env.VITE_BASE_SERVER_URL}/api/v1/planpage/transport/hotel`,
       {
         headers: {
@@ -30,6 +31,7 @@ const handleRecoClick = async (setGemeniData: any, setHotelRecoData: any) => {
         },
       }
     );
+
     const response = await axios.get(
       `${import.meta.env.VITE_BASE_SERVER_URL}/api/v1/planpage/gemini`,
       {
@@ -39,6 +41,9 @@ const handleRecoClick = async (setGemeniData: any, setHotelRecoData: any) => {
         params: { from, to, startDate: sDate, endDate: eDate },
       }
     );
+    if (response.status === 401) {
+      toast.error("Session expired. Please login again");
+    }
     setGemeniData(response.data.data);
 
     console.log(hotel_response);
@@ -46,7 +51,7 @@ const handleRecoClick = async (setGemeniData: any, setHotelRecoData: any) => {
     const selected_features = JSON.parse(
       localStorage.getItem("selected_features") || "[]"
     );
-
+    //recommendation web scraping for hotel
     const reco_response = await axios.get(
       `${
         import.meta.env.VITE_BASE_SERVER_URL
@@ -58,9 +63,15 @@ const handleRecoClick = async (setGemeniData: any, setHotelRecoData: any) => {
         params: { selected_features },
       }
     );
+    if (reco_response.status === 401) {
+      toast.error("Session expired. Please login again");
+    }
     console.log(reco_response.data);
     setHotelRecoData(reco_response.data);
   } catch (error: any) {
+    if (error.response.status === 401) {
+      toast.error("Session expired. Please login again");
+    }
     console.error(
       "Error fetching gimini data:",
       error.message || error.response?.data

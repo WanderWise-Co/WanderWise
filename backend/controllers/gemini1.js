@@ -3,7 +3,7 @@
 // dotenv.config(); // Load API key from .env file
 
 // API Configuration
-const API_KEY = 'AIzaSyDuPzMgyvnpad9JqImtkCiFz2Y-zeO8H_Q';
+const API_KEY = process.env.GEMENI_API_KEY;
 const API_URL = "https://api.generativeai.google/v1beta2/models/gemini-1.5-flash:generateText"; // Replace with actual endpoint
 console.log(API_KEY)
 // Model Configuration

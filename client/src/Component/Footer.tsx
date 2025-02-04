@@ -8,7 +8,7 @@ import {
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import styles from "./Footer.module.css";
 
-import { FaFacebook ,FaInstagram ,FaThreads } from "react-icons/fa6";
+import { FaFacebook, FaInstagram, FaThreads } from "react-icons/fa6";
 export default function Footer() {
   return (
     <>
@@ -117,7 +117,10 @@ export default function Footer() {
                 </p>
                 <p>
                   <MDBIcon icon="envelope" className="me-1" />{" "}
-                  wanderWise2024@ww.co.in
+                  wanderWise@www.co.in
+                </p>
+                <p>
+                  <MDBIcon icon="phone" className="me-1" /> +91 8884828247
                 </p>
                 <p>
                   <MDBIcon icon="phone" className="me-1" /> +91 9036969825
@@ -133,7 +136,7 @@ export default function Footer() {
         <div className="footer-bottom text-center p-3">
           © 2024 Copyright:
           <a className="text-reset fw-bold" href="#">
-            WanderWise.co.in
+            wanderWise@www.co.in
           </a>
         </div>
       </MDBFooter>

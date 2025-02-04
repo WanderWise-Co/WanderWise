@@ -5,7 +5,8 @@ import json
 from datetime import datetime
 
 # Directly configure the API with your key
-genai.configure(api_key="AIzaSyDuPzMgyvnpad9JqImtkCiFz2Y-zeO8H_Q")
+api = os.getenv('GEMENI_API_KEY')
+genai.configure(api_key=api)
 
     
 # Function to format the user preferences into a structured prompt

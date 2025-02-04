@@ -32,12 +32,16 @@ export default function Navbar() {
   };
 
   const handleGoogleAPIClick = () => {
-    toast.info("Please select the places you want to visit");
+    toast.info("Press add after selecting from all categories");
   };
 
   return (
     <div className={styles.navbar}>
-      <button className={styles.menu_toggle} onClick={toggleMenu}>
+      <button
+        className={styles.menu_toggle}
+        onClick={toggleMenu}
+        title="Toggle Menu"
+      >
         <FontAwesomeIcon icon={faBars} />
       </button>
       <div className={`${styles.navbarLinks} ${menuOpen ? styles.active : ""}`}>

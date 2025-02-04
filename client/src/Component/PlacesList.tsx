@@ -52,11 +52,11 @@ export default function PlacesList({
     }
     try {
       const token = localStorage.getItem("token");
-      const to = localStorage.getItem("to");
       const from = localStorage.getItem("from");
+      const to = localStorage.getItem("to");
       console.log(setNavButton, currentSelected);
       const response = await axios.post(
-        `${import.meta.env.VITE_BASE_SERVER_URL}/planpage/cart`,
+        `${import.meta.env.VITE_BASE_SERVER_URL}/api/v1/planpage/cart`,
         {
           category: setNavButton,
           location: currentSelected,
@@ -69,8 +69,7 @@ export default function PlacesList({
           },
         }
       );
-      setCurrentSelected([""]);
-
+      setCurrentSelected([]);
       console.log("Response from server:", response.data);
       toast.success("Places successfully added!");
     } catch (error: any) {
@@ -78,7 +77,7 @@ export default function PlacesList({
         "Error adding places:",
         error.message || error.response?.data
       );
-      alert("Failed to add places. Please try again.");
+      toast.error("Failed to add places. Please try again.");
     }
   };
 

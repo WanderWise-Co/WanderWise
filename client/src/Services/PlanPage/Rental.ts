@@ -16,7 +16,9 @@ const handleRentalClick = async (
   }
   try {
     const response = await axios.get(
-      `${import.meta.env.VITE_BASE_SERVER_URL}/api/v1/planpage/transport/rental`,
+      `${
+        import.meta.env.VITE_BASE_SERVER_URL
+      }/api/v1/planpage/transport/rental`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -24,9 +26,12 @@ const handleRentalClick = async (
         params: { to },
       }
     );
-    
+
     setTransportRentalData(response.data.data);
   } catch (error: any) {
+    if (error.response.status === 401) {
+      toast.error("Session expired. Please login again");
+    }
     console.error("Error fetching rental data:", error.message);
   }
 };

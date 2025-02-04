@@ -29,6 +29,7 @@ const findLocations = async(req,res)=>{
 const addLocations = async (req, res) => {
     console.log("entering")
     const { user: { _id: userPrefId }, body: { location, category,from ,to } } = req;
+    
     console.log("entering 2")
     console.log(userPrefId, category, location);
 

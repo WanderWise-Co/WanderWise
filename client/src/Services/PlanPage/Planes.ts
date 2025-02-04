@@ -28,6 +28,9 @@ const handlePlaneClick = async (
         params: { from, to, startDate: sDate, endDate: eDate },
       }
     );
+    if (response.status === 401) {
+      toast.error("Session expired. Please login again");
+    }
     setTransportPlaneData(response.data.data);
 
     const reco_response = await axios.get(
@@ -40,8 +43,14 @@ const handlePlaneClick = async (
         },
       }
     );
+    if (reco_response.status === 401) {
+      toast.error("Session expired. Please login again");
+    }
     setTransportPlaneRecoData(reco_response.data.data);
   } catch (error: any) {
+    if (error.response.status === 401) {
+      toast.error("Session expired. Please login again");
+    }
     console.error("Error fetching planes data:", error.message);
   }
 };
