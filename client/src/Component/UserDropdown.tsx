@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./UserDropdown.module.css";
 import handleSignOut from "../Services/ProfilePage/SignOut";
 import handleViewProfile from "../Services/ProfilePage/ProfilePage";
+import { AppContext } from "../Hooks/AppProvider";
 
 export default function UserDropdown() {
   const navigate = useNavigate();
@@ -11,6 +12,7 @@ export default function UserDropdown() {
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
+  const { setNavButton } = useContext(AppContext);
 
   return (
     <div className={styles.dropdownContainer}>
@@ -38,7 +40,7 @@ export default function UserDropdown() {
             View Profile
           </a>
           <a
-            onClick={() => handleSignOut(navigate)}
+            onClick={() => handleSignOut(navigate, setNavButton)}
             className={`${styles.dropdownItem} ${styles.dropdownItemDark}`}
           >
             Sign out

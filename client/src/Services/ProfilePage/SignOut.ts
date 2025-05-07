@@ -1,5 +1,9 @@
-const handleSignOut = (navigate: Function) => {
+const handleSignOut = (
+  navigate: Function,
+  setNavButton: (value: string) => void
+) => {
   localStorage.clear();
+  setNavButton("");
   navigate("/");
 };
 
