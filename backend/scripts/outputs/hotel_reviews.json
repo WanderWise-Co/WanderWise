@@ -1,95 +1,101 @@
 {
-    "timestamp": "2024-12-25T22:34:01.059948",
+    "timestamp": "2025-02-05T22:53:21.637886",
     "data": [
         {
-            "UserID": "Bharadwaj from United States",
+            "UserID": "M",
+            "Rating": 7.0,
+            "Date": "Reviewed October 24, 2024",
+            "Hotel_Name": "Hotel Ambika Palace"
+        },
+        {
+            "UserID": "Saranya",
+            "Rating": 8.0,
+            "Date": "Reviewed October 24, 2024",
+            "Hotel_Name": "Hotel Ambika Palace"
+        },
+        {
+            "UserID": "Charan",
+            "Rating": 7.0,
+            "Date": "Reviewed December 20, 2024",
+            "Hotel_Name": "Hotel Ambika Palace"
+        },
+        {
+            "UserID": "Sanyal",
             "Rating": 10.0,
-            "Date": "Reviewed January 21, 2024",
-            "Hotel_Name": "The Park Chennai"
+            "Date": "Reviewed July 17, 2024",
+            "Hotel_Name": "Hotel Ambika Palace"
         },
         {
-            "UserID": "Mohamed from Qatar",
-            "Rating": 6.8,
-            "Date": "Responded January 25, 2024",
-            "Hotel_Name": "The Park Chennai"
+            "UserID": "Mayukh",
+            "Rating": 7.0,
+            "Date": "Reviewed May 20, 2024",
+            "Hotel_Name": "Hotel Ambika Palace"
         },
         {
-            "UserID": "Zainaba from India",
+            "UserID": "Aruchchunan from India",
             "Rating": 9.2,
-            "Date": "Reviewed November 30, 2024",
-            "Hotel_Name": "The Park Chennai"
+            "Date": "Reviewed December 18, 2024",
+            "Hotel_Name": "Super Collection O OMR Perungudi"
         },
         {
-            "UserID": "Alok from India",
+            "UserID": "Kanchana from India",
             "Rating": 10.0,
-            "Date": "Responded November 30, 2024",
-            "Hotel_Name": "The Park Chennai"
+            "Date": "Responded January 02, 2025",
+            "Hotel_Name": "Super Collection O OMR Perungudi"
         },
         {
-            "UserID": "Raviraj from India",
-            "Rating": 9.6,
-            "Date": "Reviewed November 28, 2024",
-            "Hotel_Name": "The Park Chennai"
+            "UserID": "Akshara from India",
+            "Rating": 2.0,
+            "Date": "Reviewed November 23, 2024",
+            "Hotel_Name": "Super Collection O OMR Perungudi"
         },
         {
-            "UserID": "Saravanan from India",
+            "UserID": "Paras from India",
+            "Rating": 10.0,
+            "Date": "Responded December 17, 2024",
+            "Hotel_Name": "Super Collection O OMR Perungudi"
+        },
+        {
+            "UserID": "Tusti from India",
+            "Rating": 10.0,
+            "Date": "Reviewed December 12, 2024",
+            "Hotel_Name": "Super Collection O OMR Perungudi"
+        },
+        {
+            "UserID": "Swathi from India",
+            "Rating": 10.0,
+            "Date": "Reviewed June 13, 2022",
+            "Hotel_Name": "Xaviers Residency"
+        },
+        {
+            "UserID": "Anupam from India",
             "Rating": 8.8,
-            "Date": "Reviewed November 03, 2024",
-            "Hotel_Name": "Gokulam Park Sabari OMR SIPCOT"
+            "Date": "Reviewed March 29, 2024",
+            "Hotel_Name": "Xaviers Residency"
         },
         {
-            "UserID": "Parthiban from India",
-            "Rating": 10.0,
-            "Date": "Responded November 22, 2024",
-            "Hotel_Name": "Gokulam Park Sabari OMR SIPCOT"
+            "UserID": "Partha from India",
+            "Rating": 8.8,
+            "Date": "Reviewed November 29, 2024",
+            "Hotel_Name": "Xaviers Residency"
         },
         {
-            "UserID": "Seenivasan from India",
-            "Rating": 10.0,
-            "Date": "Reviewed May 08, 2024",
-            "Hotel_Name": "Gokulam Park Sabari OMR SIPCOT"
+            "UserID": "Suman from India",
+            "Rating": 4.4,
+            "Date": "Reviewed April 03, 2024",
+            "Hotel_Name": "Xaviers Residency"
         },
         {
-            "UserID": "Muralidharan from India",
-            "Rating": 9.6,
-            "Date": "Responded June 20, 2024",
-            "Hotel_Name": "Gokulam Park Sabari OMR SIPCOT"
-        },
-        {
-            "UserID": "Kishore from India",
-            "Rating": 9.6,
-            "Date": "Reviewed October 30, 2023",
-            "Hotel_Name": "Gokulam Park Sabari OMR SIPCOT"
-        },
-        {
-            "UserID": "Vijay from India",
-            "Rating": 10.0,
-            "Date": "Reviewed January 29, 2023",
-            "Hotel_Name": "Turyaa Chennai- OMR IT Expressway"
-        },
-        {
-            "UserID": "PUSHAPARAJAH from United Kingdom",
-            "Rating": 10.0,
-            "Date": "Responded November 27, 2024",
-            "Hotel_Name": "Turyaa Chennai- OMR IT Expressway"
-        },
-        {
-            "UserID": "Pawan from India",
+            "UserID": "Sweety from India",
             "Rating": 9.2,
-            "Date": "Reviewed October 25, 2024",
-            "Hotel_Name": "Turyaa Chennai- OMR IT Expressway"
+            "Date": "Reviewed November 12, 2024",
+            "Hotel_Name": "Xaviers Residency"
         },
         {
-            "UserID": "Chandra from India",
-            "Rating": 10.0,
-            "Date": "Responded November 27, 2024",
-            "Hotel_Name": "Turyaa Chennai- OMR IT Expressway"
-        },
-        {
-            "UserID": "JJ from India",
-            "Rating": 8.8,
-            "Date": "Reviewed December 17, 2024",
-            "Hotel_Name": "Turyaa Chennai- OMR IT Expressway"
+            "UserID": "Ankur from India",
+            "Rating": 8.0,
+            "Date": "Reviewed January 04, 2025",
+            "Hotel_Name": "Hablis Chennai Hotel"
         },
         {
             "UserID": "GEORGE from India",
@@ -98,9 +104,9 @@
             "Hotel_Name": "Hablis Chennai Hotel"
         },
         {
-            "UserID": "praveen from India",
-            "Rating": 8.4,
-            "Date": "Reviewed November 23, 2024",
+            "UserID": "THIRUMALESHWARA from United States",
+            "Rating": 9.6,
+            "Date": "Reviewed January 19, 2025",
             "Hotel_Name": "Hablis Chennai Hotel"
         },
         {
@@ -110,166 +116,154 @@
             "Hotel_Name": "Hablis Chennai Hotel"
         },
         {
-            "UserID": "Pradipe from India",
-            "Rating": 6.4,
-            "Date": "Reviewed September 27, 2024",
-            "Hotel_Name": "Hablis Chennai Hotel"
-        },
-        {
-            "UserID": "Jill from Tanzania",
-            "Rating": 10.0,
-            "Date": "Reviewed April 22, 2024",
-            "Hotel_Name": "Hablis Chennai Hotel"
-        },
-        {
-            "UserID": "Abdul from Singapore",
+            "UserID": "praveen from India",
             "Rating": 8.4,
-            "Date": "Reviewed August 01, 2024",
-            "Hotel_Name": "ibis Chennai Sipcot Hotel - An Accor Brand"
+            "Date": "Reviewed November 23, 2024",
+            "Hotel_Name": "Hablis Chennai Hotel"
         },
         {
-            "UserID": "Xavier from India",
+            "UserID": "Nishtha from India",
+            "Rating": 4.0,
+            "Date": "Reviewed January 17, 2025",
+            "Hotel_Name": "Collection O Santhome Residency Near Marina Beach"
+        },
+        {
+            "UserID": "Valluri from India",
+            "Rating": 3.6,
+            "Date": "Responded January 22, 2025",
+            "Hotel_Name": "Collection O Santhome Residency Near Marina Beach"
+        },
+        {
+            "UserID": "Gopi from India",
+            "Rating": 2.8,
+            "Date": "Reviewed December 26, 2024",
+            "Hotel_Name": "Collection O Santhome Residency Near Marina Beach"
+        },
+        {
+            "UserID": "SARITHA from India",
+            "Rating": 2.4,
+            "Date": "Responded January 15, 2025",
+            "Hotel_Name": "Collection O Santhome Residency Near Marina Beach"
+        },
+        {
+            "UserID": "kumar from India",
+            "Rating": 2.0,
+            "Date": "Reviewed January 01, 2025",
+            "Hotel_Name": "Collection O Santhome Residency Near Marina Beach"
+        },
+        {
+            "UserID": "Meghana from India",
+            "Rating": 10.0,
+            "Date": "Reviewed March 20, 2024",
+            "Hotel_Name": "The Park View Inn"
+        },
+        {
+            "UserID": "Ajay from Vietnam",
+            "Rating": 6.8,
+            "Date": "Reviewed February 24, 2024",
+            "Hotel_Name": "The Park View Inn"
+        },
+        {
+            "UserID": "Mark from India",
+            "Rating": 6.8,
+            "Date": "Reviewed February 12, 2024",
+            "Hotel_Name": "The Park View Inn"
+        },
+        {
+            "UserID": "Leelawati from India",
+            "Rating": 10.0,
+            "Date": "Reviewed March 19, 2024",
+            "Hotel_Name": "The Park View Inn"
+        },
+        {
+            "UserID": "Abdul from India",
+            "Rating": 10.0,
+            "Date": "Reviewed March 19, 2024",
+            "Hotel_Name": "The Park View Inn"
+        },
+        {
+            "UserID": "Bahauddin from India",
+            "Rating": 10.0,
+            "Date": "Reviewed December 13, 2024",
+            "Hotel_Name": "Aum karthikeya residency"
+        },
+        {
+            "UserID": "Jasmine from United Kingdom",
+            "Rating": 3.2,
+            "Date": "Reviewed October 27, 2024",
+            "Hotel_Name": "Aum karthikeya residency"
+        },
+        {
+            "UserID": "Arulseelan from India",
+            "Rating": 5.2,
+            "Date": "Reviewed March 02, 2024",
+            "Hotel_Name": "Aum karthikeya residency"
+        },
+        {
+            "UserID": "Hari from India",
+            "Rating": 2.0,
+            "Date": "Reviewed January 11, 2025",
+            "Hotel_Name": "Aum karthikeya residency"
+        },
+        {
+            "UserID": "Lahiru from Sri Lanka",
+            "Rating": 6.4,
+            "Date": "Reviewed January 11, 2024",
+            "Hotel_Name": "Aum karthikeya residency"
+        },
+        {
+            "UserID": "D&#39;mello",
             "Rating": 8.0,
-            "Date": "Responded August 02, 2024",
-            "Hotel_Name": "ibis Chennai Sipcot Hotel - An Accor Brand"
+            "Date": "Reviewed April 01, 2023",
+            "Hotel_Name": "GP Mansion"
         },
         {
-            "UserID": "Priya from Thailand",
-            "Rating": 5.6,
-            "Date": "Reviewed December 15, 2024",
-            "Hotel_Name": "ibis Chennai Sipcot Hotel - An Accor Brand"
+            "UserID": "John",
+            "Rating": 7.0,
+            "Date": "Reviewed February 21, 2023",
+            "Hotel_Name": "GP Mansion"
         },
         {
-            "UserID": "Latha from India",
-            "Rating": 9.2,
-            "Date": "Responded December 22, 2024",
-            "Hotel_Name": "ibis Chennai Sipcot Hotel - An Accor Brand"
+            "UserID": "Swami",
+            "Rating": 1.0,
+            "Date": "Reviewed January 02, 2025",
+            "Hotel_Name": "GP Mansion"
         },
         {
-            "UserID": "M from Sri Lanka",
-            "Rating": 10.0,
-            "Date": "Reviewed October 16, 2024",
-            "Hotel_Name": "ibis Chennai Sipcot Hotel - An Accor Brand"
-        },
-        {
-            "UserID": "Srinath from Australia",
-            "Rating": 10.0,
-            "Date": "Reviewed November 25, 2022",
-            "Hotel_Name": "Hotel Southern Comfort"
-        },
-        {
-            "UserID": "Suresh from India",
-            "Rating": 10.0,
-            "Date": "Responded December 20, 2022",
-            "Hotel_Name": "Hotel Southern Comfort"
+            "UserID": "Joyprakash",
+            "Rating": 7.0,
+            "Date": "Reviewed September 02, 2023",
+            "Hotel_Name": "GP Mansion"
         },
         {
             "UserID": "Saravanan from India",
-            "Rating": 8.8,
-            "Date": "Reviewed December 02, 2024",
-            "Hotel_Name": "Hotel Southern Comfort"
-        },
-        {
-            "UserID": "Paul from India",
-            "Rating": 8.4,
-            "Date": "Reviewed August 02, 2024",
-            "Hotel_Name": "Hotel Southern Comfort"
-        },
-        {
-            "UserID": "sajineesh from India",
-            "Rating": 7.2,
-            "Date": "Reviewed November 03, 2024",
-            "Hotel_Name": "Hotel Southern Comfort"
-        },
-        {
-            "UserID": "Sachin from India",
             "Rating": 10.0,
-            "Date": "Reviewed December 02, 2022",
-            "Hotel_Name": "Boulevard By Design Hotel Chennai"
+            "Date": "Reviewed April 21, 2022",
+            "Hotel_Name": "Season 4 Residences - Thiruvanmiyur (near Tidel Park, IIT Madras and Apollo Cancer Centre)"
         },
         {
-            "UserID": "Sai from India",
+            "UserID": "Radhynesh from India",
             "Rating": 10.0,
-            "Date": "Reviewed January 04, 2023",
-            "Hotel_Name": "Boulevard By Design Hotel Chennai"
+            "Date": "Reviewed February 24, 2022",
+            "Hotel_Name": "Season 4 Residences - Thiruvanmiyur (near Tidel Park, IIT Madras and Apollo Cancer Centre)"
         },
         {
-            "UserID": "santhi from Singapore",
-            "Rating": 9.6,
+            "UserID": "Raghunandan from India",
+            "Rating": 5.6,
             "Date": "Reviewed November 19, 2024",
-            "Hotel_Name": "Boulevard By Design Hotel Chennai"
+            "Hotel_Name": "Season 4 Residences - Thiruvanmiyur (near Tidel Park, IIT Madras and Apollo Cancer Centre)"
         },
         {
-            "UserID": "Ananya from India",
-            "Rating": 9.2,
-            "Date": "Responded December 10, 2024",
-            "Hotel_Name": "Boulevard By Design Hotel Chennai"
+            "UserID": "Hemanth from India",
+            "Rating": 5.6,
+            "Date": "Reviewed May 24, 2024",
+            "Hotel_Name": "Season 4 Residences - Thiruvanmiyur (near Tidel Park, IIT Madras and Apollo Cancer Centre)"
         },
         {
-            "UserID": "Antarik from India",
-            "Rating": 10.0,
-            "Date": "Reviewed December 14, 2024",
-            "Hotel_Name": "Boulevard By Design Hotel Chennai"
-        },
-        {
-            "UserID": "Sinduja from India",
-            "Rating": 10.0,
-            "Date": "Reviewed January 29, 2023",
-            "Hotel_Name": "Hotel Park Elanza Chennai"
-        },
-        {
-            "UserID": "Yashvinder from India",
-            "Rating": 10.0,
-            "Date": "Reviewed April 03, 2022",
-            "Hotel_Name": "Hotel Park Elanza Chennai"
-        },
-        {
-            "UserID": "MANIDEEPA from India",
-            "Rating": 8.4,
-            "Date": "Reviewed November 25, 2024",
-            "Hotel_Name": "Hotel Park Elanza Chennai"
-        },
-        {
-            "UserID": "Kevin from India",
-            "Rating": 8.0,
-            "Date": "Reviewed December 14, 2024",
-            "Hotel_Name": "Hotel Park Elanza Chennai"
-        },
-        {
-            "UserID": "Pankaj from India",
-            "Rating": 8.4,
-            "Date": "Reviewed June 05, 2023",
-            "Hotel_Name": "Hotel Park Elanza Chennai"
-        },
-        {
-            "UserID": "Suresh from India",
-            "Rating": 9.2,
-            "Date": "Reviewed September 18, 2024",
-            "Hotel_Name": "Marutham Village Resort"
-        },
-        {
-            "UserID": "Jeya from India",
+            "UserID": "Shivkumar from India",
             "Rating": 9.6,
-            "Date": "Reviewed October 10, 2024",
-            "Hotel_Name": "Marutham Village Resort"
-        },
-        {
-            "UserID": "Sowbakiyavathy from India",
-            "Rating": 9.6,
-            "Date": "Reviewed August 06, 2024",
-            "Hotel_Name": "Marutham Village Resort"
-        },
-        {
-            "UserID": "Srividhya from India",
-            "Rating": 10.0,
-            "Date": "Reviewed November 14, 2024",
-            "Hotel_Name": "Marutham Village Resort"
-        },
-        {
-            "UserID": "Kishore from India",
-            "Rating": 9.2,
-            "Date": "Reviewed October 11, 2024",
-            "Hotel_Name": "Marutham Village Resort"
+            "Date": "Reviewed December 24, 2024",
+            "Hotel_Name": "Season 4 Residences - Thiruvanmiyur (near Tidel Park, IIT Madras and Apollo Cancer Centre)"
         }
     ]
 }
